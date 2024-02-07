@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  
+  <style>
+    body {
+      font-family: "messina-sans" !important;
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    #home {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #background-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background-image: url('<?php echo $images['image1']; ?>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    #menu {
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
+      pointer-events: none;
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      z-index: 1;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20%;
+    }
+
+    #menu a {
+      color: white;
+      text-decoration: none;
+      padding: 0 15px;
+      font-size: 16px;
+    }
+
+    #background-image {
+      width: 100%;
+      height: 100vh; 
+      object-fit: cover; 
+    }
+
+    #title {
+      position: absolute;
+      top: 25px;
+      left: 240px;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    #address {
+      position: absolute;
+      bottom: 50px;
+      left: 240px;
+      color: white;
+      font-size: 22px;
+    }
+
+    .title-text {
+      font-size: 40px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .med-text {
+      font-size: 30px;
+      padding: 0;
+    }
+    #details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 15vh;
+      background-color: #F7F7F7;
+      padding: 30px 120px;
+      overflow: hidden;
+    }
+    #details-menu {
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    #details-menu p {
+      color: black;
+      padding: 0 15px;
+    }
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .subtext {
+      font-size: 15px;
+      margin-top:-20px;
+      color: #6e6e6e;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .text {
+      font-size: 15px;
+      color: black;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .price {
+      margin-left: 8%;
+    }
+    #description {
+      display: flex;
+      flex-direction: column;
+      height: 120vh;
+      padding: 150px 120px 50px 200px;
+    }
+    #files {
+      display: flex;
+    }
+    .file {
+      display: flex; 
+      align-items: center; 
+      margin-right: 80px; 
+      padding-top: 20px;
+    }
+    #propertyDescription {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 40vh;
+      margin: 30px 0 75px 0;
+      padding: 0;
+    }
+    .description {
+      display: flex;
+      width: 45%;
+      line-height: 2.5;
+      letter-spacing: 1px;
+    }
+    .modalImages {
+      width: 45%;
+      height: 46vh;
+    }
+    .horizontal-shape {
+      margin-left: 3%;
+      margin-top: -410px;
+      width: 45%;
+      height: 47vh; 
+      background-color: #80999E; 
+    }
+    .side-modalImages {
+      width: 65%;
+      height: 65vh;
+      margin-top: -50px;
+      padding-left: 100px;
+    }
+    .vertical-shape {
+      margin-left: 17%;
+      margin-top: -585px;
+      width: 65%;
+      height: 65vh;
+      background-color: #80999E;
+    }
+
+    #features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 24vh;
+      margin: 30px 0 75px 0;
+      padding: 0;
+      background-color: #F7F7F7;
+      padding: 30px 120px;
+    }
+
+    #feature-title {
+      margin-top: -60px;
+    }
+    
+    #feature-list {
+      display: flex;
+      flex-wrap: wrap; 
+      align-items: flex-start;
+      width: 60%;
+      margin-top: 40px;
+      
+    }
+
+    #feature-list a {
+      display: inline-flex; 
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      text-decoration: none;
+      border: 1px solid black;
+      transition: background-color 0.3s;
+    }
+
+    #feature-list :hover {
+      background-color: #E3E3E3; 
+      color: black; 
+      transform: scaleX(1.02);
+      transform-origin: center;
+    }
+
+    .feature-text {
+      font-size: 18px;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    #carousel {
+      height: 60vh;
+      margin: 0 0 5% 5%;
+    }
+    .carousel-img {
+      width: 22%;
+      height: 25vh;
+      margin-right: 18px;
+      margin-bottom: 18px;
+    }
+
+  </style>
+
+</head>
+<body>
+  <section>
+    <div id="home">
+      <div id="background-image"></div>
+      <div id="menu">
+        <?php foreach ($menu as $index => $item): ?>
+          <a href="#" id="menu<?= $index + 1 ?>"><?= $item ?></a>
+        <?php endforeach; ?>
+      </div>
+      <div id="title"> <?= $title ?> </div>
+      <div id="address"> <?= $address ?> </div>
+    </div>
+  </section>
+  <section>
+    <div id="details">
+      <div class="price">
+        <p class="subtext">Offered At</p>
+        <p class="title-text" id="price"><?= $price ?></p>
+      </div>
+      <div id="details-menu">
+        <?php foreach ($details as $detail): ?>
+            <div class="detail-item">
+                <i class="material-icons"><?= $detail['icon'] ?></i>
+                <p class="med-text"><?= $detail['text'] ?></p>
+                <?php if (isset($detail['subtext'])): ?>
+                    <p class="subtext"><?= $detail['subtext'] ?></p>
+                <?php endif; ?>
+            </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="description">
+      <div class="title-text" ><?= $address ?></div>
+      <div id="files">
+        <?php foreach ($file as $item): ?>
+            <div class="file">
+                <i class="material-icons"><?= $item['icon'] ?></i>
+                <p class="text"><?= $item['fileName'] ?></p>
+            </div>
+        <?php endforeach; ?>
+      </div>
+      <div id="propertyDescription">
+        <div class="description">
+          <p class="subtext"> <?= $propertyDescription ?> </p>
+        </div> 
+        <div class="side-modalImages">
+          <a href="#" class="modal-trigger" data-image="<?= $images['image9'] ?>">
+              <img src="<?= $images['image9'] ?>" alt="Modal Trigger Image" class="side-modalImages">
+          </a>
+          <div class="vertical-shape"></div>
+        </div>
+      </div>
+      <div id="modalImages">
+        <a href="#" class="modal-trigger" data-image="<?= $images['image11'] ?>">
+          <img src="<?= $images['image11'] ?>" alt="Modal Trigger Image" class="modalImages">
+        </a>
+        <div class="horizontal-shape"></div>
+      </div>  
+    </div>
+  </section>
+  <section>
+    <div id="features">
+      <div id="feature-title">
+        <p class="title-text"> <?= $featureTitle ?> </p>
+      </div>
+      <div id="feature-list">
+        <?php foreach ($features as $index => $feature): ?>
+          <a href="#" class="feature-text" id="features<?= $index + 1 ?>"><?= $feature ?></a>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="carousel">
+      <div id="carousel-image">
+        <?php foreach ($images as $image): ?>
+            <a href="#" class="modal-trigger" data-image="<?= $image ?>">
+                <img src="<?= $image ?>" alt="Modal Trigger Image" class="carousel-img">
+            </a>
+        <?php endforeach; ?>
+    </div>
+    </div>
+  </section>
+</body>
+<script>
+
+</script>
+</html>
+

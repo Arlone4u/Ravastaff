@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      font-family: "messina-sans" !important;
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    #home {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    #menu {
+      position: absolute;
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.344) 20%,rgba(255,255,255,0) 100%);
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      z-index: 1;
+      height: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 20%;
+    }
+
+    #menu a {
+      color: white;
+      text-decoration: none;
+      padding: 0 15px;
+      font-size: 16px;
+    }
+
+    #title {
+      position: absolute;
+      top: 25px;
+      left: 240px;
+      color: white;
+      font-size: 50px;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    #address {
+      position: absolute;
+      bottom: 50px;
+      left: 240px;
+      color: white;
+      font-size: 22px;
+    }
+
+    .title-text {
+      font-size: 40px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .title-textt {
+      font-size: 50px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .med-text {
+      font-size: 30px;
+      padding: 0;
+    }
+    #details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 20vh;
+      background-color: #F7F7F7;
+      padding: 30px 120px;
+      overflow: hidden;
+    }
+    #details-menu {
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+    #details-menu p {
+      color: black;
+      padding: 0 15px;
+    }
+    .detail-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .subtext {
+      font-size: 15px;
+      margin-top:-20px;
+      color: #6e6e6e;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .text {
+      font-size: 15px;
+      color: black;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    .price {
+      margin-left: 8%;
+    }
+    #description {
+      display: flex;
+      flex-direction: column;
+      height: 140vh;
+      padding: 150px 120px 50px 200px;
+    }
+    #files {
+      display: flex;
+    }
+    .file {
+      display: flex; 
+      align-items: center; 
+      margin-right: 80px; 
+      padding-top: 20px;
+    }
+    #propertyDescription {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 65vh;
+      width: 100%;
+      margin: 0 0 30px 0;
+      padding: 0;
+    }
+    .description {
+      display: flex;
+      width: 45%;
+      line-height: 2.5;
+      letter-spacing: 1px;
+    }
+    .modalImages {
+      margin: -5% 0 0 1%;
+      width: 45%;
+      height: 46vh;
+      border-right: 30px solid #80999E;
+      border-bottom: 30px solid #80999E;
+
+    }
+    .side-modalImages {
+      width: 800px;
+      height: 65vh;
+      margin-top: -50px;
+      border-right: 30px solid #80999E;
+      border-bottom: 30px solid #80999E;
+    }
+    #features {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 35vh;
+      margin: 30px 0 75px 0;
+      padding: 0;
+      background-color: #F7F7F7;
+      padding: 30px 120px;
+    }
+
+    #feature-title {
+      margin-top: -60px;
+    }
+    
+    #feature-list {
+      display: flex;
+      flex-wrap: wrap; 
+      align-items: flex-start;
+      width: 60%;
+      margin-top: 40px;
+      
+    }
+
+    #feature-list a {
+      display: inline-flex; 
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      text-decoration: none;
+      border: 1px solid black;
+      transition: background-color 0.3s;
+    }
+
+    #feature-list :hover {
+      background-color: #E3E3E3; 
+      color: black; 
+      transform: scaleX(1.02);
+      transform-origin: center;
+    }
+
+    .feature-text {
+      font-size: 18px;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    /* #carousel {
+      height: 60vh;
+      margin: 0 0 5% 5%;
+      overflow: hidden;
+    }
+    .carousel-img {
+      width: 22%;
+      height: 25vh;
+      margin-right: 18px;
+      margin-bottom: 18px;
+
+    } */
+    #carousel {
+      height: 60vh;
+      margin: 0 auto;
+      overflow: hidden;
+      white-space: nowrap; /* Prevents child elements from wrapping */
+    }
+
+    .carousel-row {
+        display: block; /* Display child elements in a single line */
+        white-space: nowrap; /* Prevents child elements from wrapping */
+    }
+
+    .carousel-img {
+        display: inline-block; /* Display images in a single line */
+        width: 22%;
+        height: 25vh;
+        margin-right: 18px;
+        margin-bottom: 18px;
+    }
+
+    
+    .propertyVideos {
+      display: flex;
+      /* align-items: center; */
+      top: 10px;
+      justify-content: center;
+      background-color: #f0f0f0;
+      height: 80vh;
+    }
+    .propertyMedia {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .propertyCategory {
+      margin-right: 20px;
+      margin-top: -35px;
+      align-items: center;
+
+    }
+    .videoList {
+      list-style: none; 
+      /* margin-top: 35px; */
+      padding: 0;
+    }
+    .videoList li {
+      margin-bottom: 0px;
+    }
+
+    .propertyRealtor {
+      margin: 100px 100px;
+      display: flex;
+      flex-direction: column;
+      height: 60vh;
+      margin-top: 50px;
+    }
+
+    .realtorDetails {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .realtor {
+      display: flex;
+      align-items: center; 
+      margin-bottom: 20px;
+    }
+
+    .realtor-info {
+      flex-grow: 1;
+      margin: 50px;
+
+    }
+    .realtor-details {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      justify-content: space-around;
+    }
+
+    .realtor-img {
+      width: 100%; 
+      height: 20vh;
+      margin-left: 20px;
+    }
+    .realtorImg {
+      display: flex;
+      align-items: center;
+    }
+    
+    .google-maps-section {
+      text-align: center;
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
+    }
+
+    .map-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 60vh;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .parallax {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
+      background-image: url('https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg');
+      height: 100vh;
+    }
+
+    .parallax-card {
+      background-color: white;
+      padding: 10px;
+      border-radius: 15px;
+    }
+    .contact-form-section {
+      max-width: 600px;
+      height: 80vh;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: column wrap;
+      align-items: center;
+      margin-bottom: 0;
+      padding: 50px;
+    }
+    .inquiryButton {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .inquiryBtn {
+      padding: 10px;
+      text-align: center;
+      background-color: black;
+      color: white;
+      margin: 10px;
+      width: 35%;
+    }
+    label {
+      font-size: larger;
+    }
+    .footer {
+      height: 40vh;
+      background-color: #f0f0f0;
+      padding: 50px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+    .footerDetails {
+      width: 65%;
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+    input {
+      height: 5vh;
+      width: 90%;
+    }
+
+
+
+
+  </style>
+
+</head>
+<body>
+  <section>
+    <div id="home">
+      <div id="menu">
+        
+          <a href="#" id="menu1">Overview</a>
+        
+          <a href="#" id="menu2">Features</a>
+        
+          <a href="#" id="menu3">Photos</a>
+        
+          <a href="#" id="menu4">Video</a>
+        
+          <a href="#" id="menu5">3D Tour</a>
+        
+          <a href="#" id="menu6">Floor Plans</a>
+        
+          <a href="#" id="menu7">Map</a>
+        
+          <a href="#" id="menu8">Contact</a>
+        
+      </div>
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="12"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Third slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Fourth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Fifth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Sixth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Seventh slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Eighth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg" alt="Ninth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2810of35%29.jpg" alt="Tenth slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg" alt="Eleventh slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg" alt="Twelveth slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <div id="title">REALCO</div>
+      <div id="address">12 Hannan Pl</div>
+    </div>
+  </section>
+  <section>
+    <div id="details">
+      <div class="price">
+        <p class="subtext">Offered At</p>
+        <p class="title-text" id="price">$5,650,000</p>
+      </div>
+      <div id="details-menu">
+        
+          <div class="detail-item">
+            <i class="material-icons">king_bed</i>
+            <p class="med-text">4 Beds</p>
+            <p class="subtext"></p>
+          </div>
+        
+          <div class="detail-item">
+            <i class="material-icons">bathtub</i>
+            <p class="med-text">6 Baths</p>
+            <p class="subtext"></p>
+          </div>
+        
+          <div class="detail-item">
+            <i class="material-icons">view_quilt</i>
+            <p class="med-text">4,900 sqft</p>
+            <p class="subtext">Home Size</p>
+          </div>
+        
+          <div class="detail-item">
+            <i class="material-icons">layers</i>
+            <p class="med-text">12,500 sf</p>
+            <p class="subtext">Lot Size</p>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+  <section>
+    <div id="description">
+      <div class="title-textt" >12 Hannan Pl</div>
+      <div id="files">
+        
+          <div class="file">
+            <i class="material-icons">download</i>
+            <p class="text">Brochure</p>
+          </div>
+        
+          <div class="file">
+            <i class="material-icons">download</i>
+            <p class="text">Documents</p>
+          </div>
+        
+      </div>
+      <div id="propertyDescription">
+        <div class="description">
+          <p class="subtext">Introducing 12 Hannan Pl, a stunning property located in the desirable city of Rye, NY. This exquisite home boasts an impressive 4 bedrooms and 6 bathrooms, providing ample space for comfortable living. With its generous size of 4,900 square feet and situated on a sizable 12,500 square foot lot, this residence offers both luxury and room to roam. As you step inside this remarkable abode, you'll immediately notice the attention to detail and high-quality finishes throughout. The gleaming hardwood floors create an elegant ambiance that flows seamlessly from room to room. Oversized windows flood the interior with natural light, illuminating every corner of this beautiful home.</p>
+        </div> 
+        <div class="">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg" alt="Modal Trigger Image" class="side-modalImages">
+          </a>
+        </div> 
+      </div>
+      <div id="">
+        <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
+          <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg" alt="Modal Trigger Image" class="modalImages">
+        </a>
+      </div>  
+    </div>
+  </section>
+  <section>
+    <div id="features">
+      <div id="feature-title">
+        <p class="title-text">Features & Amenities</p>
+      </div>
+      <div id="feature-list">
+        
+          <a href="#" class="feature-text" id="features1">Community Clubhouse</a>
+        
+          <a href="#" class="feature-text" id="features2">City Lights View</a>
+        
+          <a href="#" class="feature-text" id="features3">Beach Access</a>
+        
+          <a href="#" class="feature-text" id="features4">Gated Community</a>
+        
+          <a href="#" class="feature-text" id="features5">Great Schools</a>
+        
+          <a href="#" class="feature-text" id="features6">Hardwood Floors</a>
+        
+          <a href="#" class="feature-text" id="features7">Community Pool</a>
+        
+          <a href="#" class="feature-text" id="features8">Frameless Glass Showers</a>
+        
+          <a href="#" class="feature-text" id="features9">Heated Floors</a>
+        
+          <a href="#" class="feature-text" id="features10">Heated Pool</a>
+        
+          <a href="#" class="feature-text" id="features11">Ocean Views</a>
+        
+          <a href="#" class="feature-text" id="features12">New Construction</a>
+        
+          <a href="#" class="feature-text" id="features13">Large Lot</a>
+        
+          <a href="#" class="feature-text" id="features14">Large Kitchen</a>
+        
+          <a href="#" class="feature-text" id="features15">Oversized Windows</a>
+        
+          <a href="#" class="feature-text" id="features16">Pool</a>
+        
+          <a href="#" class="feature-text" id="features17">Shopping Nearby</a>
+        
+          <a href="#" class="feature-text" id="features18">Walk-In Closets</a>
+        
+          <a href="#" class="feature-text" id="features19">Stainless Steel Appliances</a>
+        
+      </div>
+    </div>
+  </section>  
+  <section>
+    <div id="carousel">
+        <div id="carousel-image" class="carousel-row">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+        </div>
+        <div id="carousel-image-2" class="carousel-row">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
+          </a>
+        </div> 
+    </div>
+  </section>
+
+  <section>
+    <div class="propertyVideos">
+      <div class="propertyMedia">
+        
+        <div class="propertyCategory">
+          <p class="title-text">Video Gallery</p>
+          <div class="">
+            <ul class="videoList">
+              
+              <li>Views from Above</li>
+              
+              <li>Explore the Estate</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="propertyCategory">
+          <p class="title-text">3D Tours</p>
+          <div class="">
+            <ul class="videoList">
+              
+              <li>Main House</li>
+              
+              <li>Guest House</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="propertyCategory">
+          <p class="title-text">Floor Plans</p>
+          <div class="">
+            <ul class="videoList">
+              
+              <li>Floor 1</li>
+              
+              <li>Floor 2</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="propertyRealtor">
+      <p class="title-text text-center">Presented By</p>
+      <div class="realtorDetails">
+        
+        <div class="realtor">
+          <div class="realtorImg">
+            <img src="https://cheriwoodard.com/wp-content/uploads/2022/02/Katie-Johnson.jpg" alt="Modal Trigger Image" class="realtor-img">
+          </div>
+          <div class="realtor-info">
+            <h2 class="">Jayne Smith</h2>
+            <div class="realtor-details">
+              <p>TITLE <br>Lead Broker</p>
+              <p>COMPANY<br>TopRealty</p>
+              <p>PHONE<br>(949) 555-6666</p>
+              <p>EMAIL<br><a href="mailto:jayne@example.com">jayne@example.com</a></p>
+              <p>WEBSITE<br><a href="www.relahq.com">www.relahq.com</a></p>
+              <p>LICENSE<br>CalRE# 123456</p>
+            </div>
+            <hr> 
+          </div>
+        </div>
+        
+        <div class="realtor">
+          <div class="realtorImg">
+            <img src="https://i.pinimg.com/236x/48/85/84/4885846b080e050db33dfae0cae157ef.jpg" alt="Modal Trigger Image" class="realtor-img">
+          </div>
+          <div class="realtor-info">
+            <h2 class="">John Doezen</h2>
+            <div class="realtor-details">
+              <p>TITLE <br>Lead Broker</p>
+              <p>COMPANY<br>SellCo</p>
+              <p>PHONE<br>(949) 949-9499</p>
+              <p>EMAIL<br><a href="mailto:john@example.com">john@example.com</a></p>
+              <p>WEBSITE<br><a href="www.relahq.com">www.relahq.com</a></p>
+              <p>LICENSE<br>DRE: 123456</p>
+            </div>
+            <hr> 
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>  
+  <section class="google-maps-section">
+    <div class="">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+  <section>
+    <div class="parallax">
+      <div class="parallax-card">
+        <p class="title-textt">12 Hannan Pl <p>
+        <p class="title-text">Rye, NY 10580</p>
+      </div>
+    </div>
+  </section>
+  <section class="contact-form-section">
+    <p class="title-text">Get in touch</p>
+    <form id="contactForm" action="#" method="post">
+      <div class="form-group">
+        
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+        
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+        
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required>
+        
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" name="phone" required>
+        
+          <label for="comment">Comment:</label>
+          <input type="text" id="comment" name="comment" required>
+        
+      </div>
+      <div class="inquiryButton">
+        
+          <button class="inquiryBtn" type="submit">Send Inquiry</button>
+        
+          <button class="inquiryBtn" type="submit">Schedule a Tour</button>
+        
+      </div>
+    </form>
+  </section>
+  <footer>
+    <div class="footer">
+      <div class="footerDetails">
+        <p class="title-textt text-right">REALCO</p>
+        <p class="title-text">12 Hannan Pl</p>
+        <p class="subtext mt-3">Rye, NY 10580</p>
+        <p>Copyright Rela, Inc 2023. This website is for example purposes only. This is a fictitious listing and is not for sale. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var carousel = document.querySelector('.carousel');
+        var carouselInstance = new bootstrap.Carousel(carousel, {
+            interval: 5000, 
+            //pause: 'hover', 
+            wrap: true
+        });
+  
+        var zoomImages = document.querySelectorAll('.zoomify');
+        zoomImages.forEach(function (image) {
+            var zoomInstance = new Zoomify(image);
+            // Zoom in first
+            zoomInstance.zoomIn();
+            // After 2 seconds, zoom out
+            setTimeout(function () {
+                zoomInstance.zoomOut(); 
+            }, 2000); 
+        });
+    });
+  
+    function scrollCarousel() {
+      const carouselRow = document.getElementById('carousel-image');
+      const imageWidth = carouselRow.firstElementChild.offsetWidth;
+      const fixedOffset = 50; 
+  
+  
+      carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+      carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
+  
+  
+      setTimeout(() => {
+        carouselRow.style.transition = 'none';
+        carouselRow.style.transform = 'translateX(0)';
+        carouselRow.appendChild(carouselRow.firstElementChild);
+      }, 20000);
+    }
+  
+      setInterval(scrollCarousel, 3000);
+  
+  
+      function scrollCarousel2() {
+        const carouselRow2 = document.getElementById('carousel-image-2');
+        const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
+        const fixedOffset2 = 50;
+  
+  
+        carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
+  
+  
+        setTimeout(() => {
+          carouselRow2.style.transition = 'none';
+          carouselRow2.style.transform = 'translateX(0)';
+          carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
+        }, 20000);
+      }
+  
+      setInterval(scrollCarousel2, 3000);
+  </script>
+</body>
+</html>
