@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.css">
@@ -22,8 +22,7 @@
 
   <style>
     body {
-      /* font-family: "messina-sans" !important; */
-      font-family: "PTSerif", serif;
+      font-family: "PTSerif";
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -36,16 +35,16 @@
     }
     
     #menu {
-      font-family: "Poppins";
       position: absolute;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.344) 20%,rgba(255,255,255,0) 100%);
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.358) 20%,rgba(255,255,255,0) 100%);
+      font-family: "Poppins";
       z-index: 1;
       height: 100px;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
-      padding-left: 40%;
+      padding-right:12%;
     }
 
     #menu a {
@@ -53,6 +52,8 @@
       text-decoration: none;
       padding: 0 15px;
       font-size: 16px;
+      float: left;
+
     }
 
     #title {
@@ -60,9 +61,10 @@
       top: 25px;
       left: 240px;
       color: white;
-      font-size: 50px;
+      font-size: 55px;
       font-weight: bold;
       font-family: "PTSerif";
+      text-shadow: #333;
     }
 
     #address {
@@ -71,28 +73,23 @@
       left: 240px;
       color: white;
       font-size: 32px;
-      text-shadow: #333 ;
     }
 
     .title-text {
-      font-size: 40px;
+      font-size: 45px;
       padding: 0;
       margin: 0;
-      font-family: "PTSerif";
-
     }
 
     .title-textt {
-      font-size: 50px;
+      font-size: 55px;
       padding: 0;
       margin: 0;
-      font-family: "PTSerif";
-
     }
 
     .med-text {
       font-size: 30px;
-      margin-bottom: 20%;
+      padding: 0;
     }
     #details {
       display: flex;
@@ -104,7 +101,7 @@
       overflow: hidden;
     }
     #details-menu {
-      font-family: "Merriweather";
+      /* font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; */
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -119,17 +116,15 @@
       align-items: center;
     }
     .subtext {
-      font-size: 16px;
+      font-size: 15px;
       margin-top:-20px;
       color: #6e6e6e;
       font-family: "Poppins";
-
     }
     .text {
       font-size: 15px;
       color: black;
-      font-family: "Merriweather";
-      text-align: justify;
+      font-family: "Poppins";
     }
     .price {
       margin-left: 8%;
@@ -145,7 +140,6 @@
     }
     .file {
       display: flex; 
-      align-items: center; 
       margin-right: 80px; 
       padding-top: 20px;
     }
@@ -183,7 +177,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 40vh;
+      height: 35vh;
       margin: 30px 0 75px 0;
       padding: 0;
       background-color: #F7F7F7;
@@ -224,36 +218,87 @@
     }
 
     .feature-text {
-      font-size: 18px;
-      /* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+      font-size: 20px;
+      font-family: "PTSerif";
     }
 
-    #carousel {
+    #carousels {
       height: 60vh;
       margin: 0 auto;
       overflow: hidden;
-      white-space: nowrap; /* Prevents child elements from wrapping */
+      white-space: nowrap; 
     }
 
     .carousel-row {
-        display: block; /* Display child elements in a single line */
-        white-space: nowrap; /* Prevents child elements from wrapping */
+        display: block; 
+        white-space: nowrap; 
     }
 
     .carousel-img {
-        display: inline-block; /* Display images in a single line */
+        display: inline-block; 
         width: 22%;
         height: 25vh;
         margin-right: 18px;
         margin-bottom: 18px;
     }
-    
+
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 2cm;
+              padding-bottom: 2cm;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              height: 6.5cm;
+              width: 10cm;
+              margin-right: 20px;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+
+
+          @keyframes scrollAnimation {
+              0% {
+                  transform: translateX(0);
+              }
+              100% {
+                  transform: translateX(-100%);
+              }
+          }
+
+          @keyframes scrollAnimationOpposite {
+              0% {
+                  transform: translateX(-50%);
+              }
+              100% {
+                  transform: translateX(0);
+              }
+          }
+              
     .propertyVideos {
       display: flex;
+      flex-direction: column;
       top: 10px;
-      justify-content: center;
+      align-items: center;
       background-color: #f0f0f0;
-      height: 80vh;
+      height: 60vh;
     }
     .propertyMedia {
       display: flex;
@@ -262,25 +307,36 @@
     
     .propertyCategory {
       margin-right: 20px;
+      margin-left: 20px;
       margin-top: -35px;
       align-items: center;
+      text-align: center;
 
     }
     .videoList {
       list-style: none; 
       padding: 0;
-      /* display: flex; 
-      justify-content: center; 
-      flex-wrap: wrap;  */
     }
     .videoList li {
       margin-bottom: 0px;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+      display: inline-block;
+      text-align: center;
       list-style: none; 
       padding: 0;
       margin: 20px;
+    }
+
+    .subVideoList {
+      list-style-type: none;
+      padding: 0;
+      margin-left: 20px;
+    }
+
+    .videoPlayer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; 
     }
 
     .propertyRealtor {
@@ -327,7 +383,6 @@
     
     .google-maps-section {
       text-align: center;
-      /* background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%); */
     }
 
     h1 {
@@ -372,14 +427,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+      background-color: rgba(0, 0, 0, 0.5); 
     }
 
     .parallax-card {
       padding: 20px;
       border-radius: 10px;
-      position: relative; /* Ensure z-index works */
-      z-index: 1; /* Ensure the content appears above the background */
+      position: relative; 
+      z-index: 1; 
     }
 
     .contact-form-section {
@@ -435,32 +490,68 @@
       width: 90%;
     }
 
-
-
+    .floating-menu {
+      font-family: sans-serif;
+      background: white;
+      padding: 18px;;
+      top: 4%;
+      width: 140px;
+      z-index: 100;
+      position: fixed;
+      right: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    }
+    .floating-menu a, 
+    .floating-menu h1 {
+      font-size: 1em;
+      display: block;
+      margin: 0 1em;
+      color: black;
+      align-items: center;
+    }
+    .sideMenuTitle {
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+    }
+    .sideMenu {
+      display: none;
+      /* height: 100vh; */
+      background: white;
+    }
+    .sideMenu.show-menu {
+      display: block;
+    }
+    .sideMenu a {
+      display: block;
+      margin: 0.5em 0;
+      color: black;
+      text-decoration: none;
+    }
 
   </style>
 
 </head>
 <body>
-  <section>
+  <section id="home">
     <div id="home">
       <div id="menu">
         
-          <a href="#" id="menu1">Overview</a>
+          <a href="#1" id="menu1">Overview</a>
         
-          <a href="#" id="menu2">Features</a>
+          <a href="#2" id="menu2">Features</a>
         
-          <a href="#" id="menu3">Photos</a>
+          <a href="#3" id="menu3">Photos</a>
         
-          <a href="#" id="menu4">Video</a>
+          <a href="#4" id="menu4">Video</a>
         
-          <a href="#" id="menu5">3D Tour</a>
+          <a href="#5" id="menu5">3D Tour</a>
         
-          <a href="#" id="menu6">Floor Plans</a>
+          <a href="#6" id="menu6">Floor Plans</a>
         
-          <a href="#" id="menu7">Map</a>
+          <a href="#7" id="menu7">Map</a>
         
-          <a href="#" id="menu8">Contact</a>
+          <a href="#8" id="menu8">Contact</a>
         
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -526,11 +617,36 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div id="title"><p>REALCO</p></div>
-      <div id="address"><p>12 Hannan Pl</p></div>
+      <div id="title">REALCO</div>
+      <div id="address">12 Hannan Pl</div>
     </div>
   </section>
   <section>
+    <nav class="floating-menu">
+      <div class="sideMenuTitle">        
+        <h1>MENU</h1>
+        <i class="material-icons">segment</i>
+      </div>
+      <div class="sideMenu">
+        
+          <a href="#1" id="menu1">Overview</a>
+        
+          <a href="#2" id="menu2">Features</a>
+        
+          <a href="#3" id="menu3">Photos</a>
+        
+          <a href="#4" id="menu4">Video</a>
+        
+          <a href="#5" id="menu5">3D Tour</a>
+        
+          <a href="#6" id="menu6">Floor Plans</a>
+        
+          <a href="#7" id="menu7">Map</a>
+        
+          <a href="#8" id="menu8">Contact</a>
+        
+      </div>
+    </nav>
     <div id="details">
       <div class="price">
         <p class="subtext">Offered At</p>
@@ -565,7 +681,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="1">
     <div id="description">
       <div class="title-textt" >12 Hannan Pl</div>
       <div id="files">
@@ -597,8 +713,8 @@
         </a>
       </div>  
     </div>
-  </section>
-  <section>
+  </section >
+  <section id="2">
     <div id="features">
       <div id="feature-title">
         <p class="title-text">Features & Amenities</p>
@@ -648,7 +764,8 @@
   </section>  
   <section>
     <div id="carousel">
-        <div id="carousel-image" class="carousel-row">
+      <div class="carousel-container">
+        <div class="carousels" id="first-carousel">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -674,7 +791,7 @@
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div>
-        <div id="carousel-image-2" class="carousel-row">
+        <div class="carousels" id="second-carousel">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -699,6 +816,7 @@
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
+        </div>
         </div> 
     </div>
   </section>
@@ -711,9 +829,9 @@
           <div class="propertyCategoryList">
             <ul class="videoList">
               
-              <li>Views from Above</li>
+              <li><a onclick="playVideo('https://player.vimeo.com/external/357563421.sd.mp4?s=6e1fe5085730bec378e8f720517fac94e99a9d49&profile_id=164&oauth2_token_id=57447761')" class="feature-text">Views from Above</a></li>
               
-              <li>Explore the Estate</li>
+              <li><a onclick="playVideo('https://player.vimeo.com/external/539010964.sd.mp4?s=01919518ad80c7c77b5dcbe3099b75cfd656e99e&profile_id=164&oauth2_token_id=57447761')" class="feature-text">Explore the Estate</a></li>
               
             </ul>
           </div>
@@ -724,9 +842,9 @@
           <div class="propertyCategoryList">
             <ul class="videoList">
               
-              <li>Main House</li>
+              <li><a onclick="playVideo('https://player.vimeo.com/external/539011265.sd.mp4?s=ac4e448f51f5a518ea1b971f79fc7a9986f2a359&profile_id=164&oauth2_token_id=57447761')" class="feature-text">Main House</a></li>
               
-              <li>Guest House</li>
+              <li><a onclick="playVideo('https://player.vimeo.com/external/539010630.sd.mp4?s=eece48149dc657ed00be70b5c104a962ca5e7f95&profile_id=164&oauth2_token_id=57447761')" class="feature-text">Guest House</a></li>
               
             </ul>
           </div>
@@ -737,64 +855,23 @@
           <div class="propertyCategoryList">
             <ul class="videoList">
               
-              <li>Floor 1</li>
+              <li><a onclick="playVideo('https://player.vimeo.com/external/546459360.sd.mp4?s=ffda83032f0c2e6dcf7068715e3d8afbb7c66283&profile_id=164&oauth2_token_id=57447761')" class="feature-text">Floor 1</a></li>
               
-              <li>Floor 2</li>
+              <li><a onclick="playVideo('https://player.vimeo.com/external/546459861.sd.mp4?s=7be082eda447b76c99419e8bdb9f1520f074b694&profile_id=164&oauth2_token_id=57447761')" class="feature-text">Floor 2</a></li>
               
             </ul>
           </div>
         </div>
         
+      </div>
+      <div class="videoPlayer">
+        <video controls id="videoPlayer">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </section>
-
-  <!-- <section>
-    <div class="propertyVideos">
-      <div class="propertyMedia">
-        
-        <div class="propertyCategory">
-          <p class="title-text">Video Gallery</p>
-          <div class="">
-            <ul class="videoList">
-              
-              <li>Views from Above</li>
-              
-              <li>Explore the Estate</li>
-              
-            </ul>
-          </div>
-        </div>
-        
-        <div class="propertyCategory">
-          <p class="title-text">3D Tours</p>
-          <div class="">
-            <ul class="videoList">
-              
-              <li>Main House</li>
-              
-              <li>Guest House</li>
-              
-            </ul>
-          </div>
-        </div>
-        
-        <div class="propertyCategory">
-          <p class="title-text">Floor Plans</p>
-          <div class="">
-            <ul class="videoList">
-              
-              <li>Floor 1</li>
-              
-              <li>Floor 2</li>
-              
-            </ul>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </section> -->
   <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">Presented By</p>
@@ -906,9 +983,7 @@
         var zoomImages = document.querySelectorAll('.zoomify');
         zoomImages.forEach(function (image) {
             var zoomInstance = new Zoomify(image);
-            // Zoom in first
             zoomInstance.zoomIn();
-            // After 2 seconds, zoom out
             setTimeout(function () {
                 zoomInstance.zoomOut(); 
             }, 2000); 
@@ -981,6 +1056,24 @@
               videoList.style.display = 'block';
             }
           });
+        });
+      });
+
+      function playVideo(videoUrl) {
+        var videoPlayer = document.getElementById('videoPlayer');
+        var source = videoPlayer.querySelector('source');
+
+        source.src = videoUrl;
+        videoPlayer.load(); 
+        videoPlayer.play();
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const sideMenuTitle = document.querySelector('.sideMenuTitle');
+        const sideMenu = document.querySelector('.sideMenu');
+
+        sideMenuTitle.addEventListener('click', function() {
+          sideMenu.classList.toggle('show-menu');
         });
       });
   </script>
