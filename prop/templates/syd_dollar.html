@@ -868,34 +868,25 @@
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var carousel = document.querySelector('.carousel');
-        var carouselInstance = new bootstrap.Carousel(carousel, {
-            interval: 5000,
-            wrap: true
-        });
+   document.addEventListener("DOMContentLoaded", function () {
+    // Smooth scroll for all menu items
+    var menuItems = document.querySelectorAll('#menu a');
 
-        // Smooth scroll for all menu items
-        var menuItems = document.querySelectorAll('.menu-item');
-        menuItems.forEach(function (menuItem) {
-            menuItem.addEventListener('click', function (e) {
-                e.preventDefault();
-                var targetSection = this.getAttribute('data-section-id');
-                scrollToElement(targetSection);
-            });
-        });
+    menuItems.forEach(function (menuItem) {
+      menuItem.addEventListener('click', function (event) {
+        event.preventDefault();
+        var targetSectionId = this.getAttribute('href').substring(1);
+        var targetSection = document.getElementById(targetSectionId);
 
-        var zoomImages = document.querySelectorAll('.zoomify');
-        zoomImages.forEach(function (image) {
-            var zoomInstance = new Zoomify(image);
-            // Zoom in first
-            zoomInstance.zoomIn();
-            // After 2 seconds, zoom out
-            setTimeout(function () {
-                zoomInstance.zoomOut();
-            }, 2000);
-        });
+        if (targetSection) {
+          // Scroll smoothly to the target section
+          targetSection.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
     });
+  });
 
     function scrollCarousel(carouselRow) {
         const imageWidth = carouselRow.firstElementChild.offsetWidth;
