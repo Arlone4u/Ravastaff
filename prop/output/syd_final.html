@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -22,8 +19,8 @@
 
   <style>
     body {
-      /* font-family: "messina-sans" !important; */
-      font-family: "PTSerif", serif;
+      font-family: "messina-sans" !important;
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -36,16 +33,16 @@
     }
     
     #menu {
-      font-family: "Poppins";
       position: absolute;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.344) 20%,rgba(255,255,255,0) 100%);
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       z-index: 1;
       height: 100px;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-left: 40%;
+      padding-left: 20%;
     }
 
     #menu a {
@@ -62,7 +59,7 @@
       color: white;
       font-size: 50px;
       font-weight: bold;
-      font-family: "PTSerif";
+      font-family: 'Times New Roman', Times, serif;
     }
 
     #address {
@@ -70,29 +67,24 @@
       bottom: 50px;
       left: 240px;
       color: white;
-      font-size: 32px;
-      text-shadow: #333 ;
+      font-size: 22px;
     }
 
     .title-text {
       font-size: 40px;
       padding: 0;
       margin: 0;
-      font-family: "PTSerif";
-
     }
 
     .title-textt {
       font-size: 50px;
       padding: 0;
       margin: 0;
-      font-family: "PTSerif";
-
     }
 
     .med-text {
       font-size: 30px;
-      margin-bottom: 20%;
+      padding: 0;
     }
     #details {
       display: flex;
@@ -104,7 +96,7 @@
       overflow: hidden;
     }
     #details-menu {
-      font-family: "Merriweather";
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -119,16 +111,15 @@
       align-items: center;
     }
     .subtext {
-      font-size: 16px;
+      font-size: 15px;
       margin-top:-20px;
       color: #6e6e6e;
-      font-family: "Poppins";
-
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .text {
       font-size: 15px;
       color: black;
-      font-family: "Merriweather";
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .price {
       margin-left: 8%;
@@ -182,7 +173,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 40vh;
+      height: 35vh;
       margin: 30px 0 75px 0;
       padding: 0;
       background-color: #F7F7F7;
@@ -224,10 +215,22 @@
 
     .feature-text {
       font-size: 18px;
-      /* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
-    #carousel {
+    /* #carousel {
+      height: 60vh;
+      margin: 0 0 5% 5%;
+      overflow: hidden;
+    }
+    .carousel-img {
+      width: 22%;
+      height: 25vh;
+      margin-right: 18px;
+      margin-bottom: 18px;
+
+    } */
+    #carousels {
       height: 60vh;
       margin: 0 auto;
       overflow: hidden;
@@ -297,6 +300,8 @@
               }
           }
 
+
+    
     .propertyVideos {
       display: flex;
       /* align-items: center; */
@@ -463,21 +468,21 @@
     <div id="home">
       <div id="menu">
         
-          <a href="#section1" id="menu1">Overview</a>
+          <a href="#1" id="menu1">Overview</a>
         
-          <a href="#section2"  id="menu2">Features</a>
+          <a href="#2" id="menu2">Features</a>
         
-          <a href="#section3" id="menu3">Photos</a>
+          <a href="#3" id="menu3">Photos</a>
         
-          <a href="#section4" id="menu4">Video</a>
+          <a href="#4" id="menu4">Video</a>
         
-          <a href="#section4" id="menu5">3D Tour</a>
+          <a href="#5" id="menu5">3D Tour</a>
         
-          <a href="#section4" id="menu6">Floor Plans</a>
+          <a href="#6" id="menu6">Floor Plans</a>
         
-          <a href="#google-maps-section" id="menu7">Map</a> 
+          <a href="#7" id="menu7">Map</a>
         
-          <a href="#contact-form-section" id="menu8">Contact</a>
+          <a href="#8" id="menu8">Contact</a>
         
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -543,8 +548,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div id="title"><p>REALCO</p></div>
-      <div id="address"><p>12 Hannan Pl</p></div>
+      <div id="title">REALCO</div>
+      <div id="address">12 Hannan Pl</div>
     </div>
   </section>
   <section>
@@ -582,7 +587,7 @@
       </div>
     </div>
   </section>
-  <section id="section1">
+  <section id="1">
     <div id="description">
       <div class="title-textt" >12 Hannan Pl</div>
       <div id="files">
@@ -614,8 +619,8 @@
         </a>
       </div>  
     </div>
-  </section>
-  <section id="section2">
+  </section >
+  <section id="2">
     <div id="features">
       <div id="feature-title">
         <p class="title-text">Features & Amenities</p>
@@ -663,8 +668,8 @@
       </div>
     </div>
   </section>  
-  <section id="section3">
-    <div id="carousels">
+  <section id ="3">
+    <div id="carousel">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
@@ -717,15 +722,16 @@
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
+        </div>
         </div> 
-      </div> 
     </div>
   </section>
 
-  <section id="section4">
+  <section>
     <div class="propertyVideos">
+      
       <div class="propertyMedia">
-        
+        <section id="4" >
         <div class="propertyCategory">
           <p class="title-text">Video Gallery</p>
           <div class="">
@@ -738,7 +744,8 @@
             </ul>
           </div>
         </div>
-        
+        </section>
+        <section id="5" >
         <div class="propertyCategory">
           <p class="title-text">3D Tours</p>
           <div class="">
@@ -751,7 +758,8 @@
             </ul>
           </div>
         </div>
-        
+      </section>
+      <section id="6" >
         <div class="propertyCategory">
           <p class="title-text">Floor Plans</p>
           <div class="">
@@ -764,11 +772,11 @@
             </ul>
           </div>
         </div>
-        
+      </section> 
       </div>
     </div>
   </section>
-  <section id="section5">
+  <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">Presented By</p>
       <div class="realtorDetails">
@@ -812,12 +820,12 @@
       </div>
     </div>
   </section>  
-  <section id="google-maps-section" class="google-maps-section">
+  <section id="7" class="google-maps-section">
     <div class="">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-  <section id="section6">
+  <section>
     <div class="parallax">
       <div class="parallax-card">
         <p class="title-textt">12 Hannan Pl <p>
@@ -825,9 +833,9 @@
       </div>
     </div>
   </section>
-  <section id="contact-form-section" class="contact-form-section">
+  <section id = "8" class="contact-form-section">
     <p class="title-text">Get in touch</p>
-    <form id="contactForm" onsubmit="submitFormAndScroll(event)">
+    <form id="contactForm" action="#" method="post">
       <div class="form-group">
         
           <label for="firstName">First Name:</label>
@@ -868,72 +876,64 @@
 
 
   <script>
-   document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scroll for all menu items
-    var menuItems = document.querySelectorAll('#menu a');
-
-    menuItems.forEach(function (menuItem) {
-      menuItem.addEventListener('click', function (event) {
-        event.preventDefault();
-        var targetSectionId = this.getAttribute('href').substring(1);
-        var targetSection = document.getElementById(targetSectionId);
-
-        if (targetSection) {
-          // Scroll smoothly to the target section
-          targetSection.scrollIntoView({
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-  });
-
-    function scrollCarousel(carouselRow) {
-        const imageWidth = carouselRow.firstElementChild.offsetWidth;
-        const fixedOffset = 50;
-
-        carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-        carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-
-        setTimeout(() => {
-            carouselRow.style.transition = 'none';
-            carouselRow.style.transform = 'translateX(0)';
-            carouselRow.appendChild(carouselRow.firstElementChild);
-        }, 20000);
-    }
-
-    function scrollCarousel2(carouselRow) {
-        const imageWidth = carouselRow.firstElementChild.offsetWidth;
-        const fixedOffset = 50;
-
-        carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-        carouselRow.style.transform = `translateX(calc(${imageWidth / 2}px + ${fixedOffset}px))`;
-
-        setTimeout(() => {
-            carouselRow.style.transition = 'none';
-            carouselRow.style.transform = 'translateX(0)';
-            carouselRow.insertBefore(carouselRow.lastElementChild, carouselRow.firstElementChild);
-        }, 20000);
-    }
-
-    setInterval(function () {
-        var carouselRow = document.getElementById('carousel-image');
-        scrollCarousel(carouselRow);
-    }, 3000);
-
-    setInterval(function () {
-        var carouselRow2 = document.getElementById('carousel-image-2');
-        scrollCarousel2(carouselRow2);
-    }, 3000);
-
-    function scrollToElement(elementId) {
-        var element = document.getElementById(elementId);
-        element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+    document.addEventListener("DOMContentLoaded", function() {
+        var carousel = document.querySelector('.carousel');
+        var carouselInstance = new bootstrap.Carousel(carousel, {
+            interval: 5000, 
+            //pause: 'hover', 
+            wrap: true
         });
+  
+        var zoomImages = document.querySelectorAll('.zoomify');
+        zoomImages.forEach(function (image) {
+            var zoomInstance = new Zoomify(image);
+            // Zoom in first
+            zoomInstance.zoomIn();
+            // After 2 seconds, zoom out
+            setTimeout(function () {
+                zoomInstance.zoomOut(); 
+            }, 2000); 
+        });
+    });
+  
+    function scrollCarousel() {
+      const carouselRow = document.getElementById('carousel-image');
+      const imageWidth = carouselRow.firstElementChild.offsetWidth;
+      const fixedOffset = 50; 
+  
+  
+      carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+      carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
+  
+  
+      setTimeout(() => {
+        carouselRow.style.transition = 'none';
+        carouselRow.style.transform = 'translateX(0)';
+        carouselRow.appendChild(carouselRow.firstElementChild);
+      }, 20000);
     }
-</script>
-
+  
+      setInterval(scrollCarousel, 3000);
+  
+  
+      function scrollCarousel2() {
+        const carouselRow2 = document.getElementById('carousel-image-2');
+        const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
+        const fixedOffset2 = 50;
+  
+  
+        carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
+  
+  
+        setTimeout(() => {
+          carouselRow2.style.transition = 'none';
+          carouselRow2.style.transform = 'translateX(0)';
+          carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
+        }, 20000);
+      }
+  
+      setInterval(scrollCarousel2, 3000);
+  </script>
 </body>
 </html>
