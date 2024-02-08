@@ -129,6 +129,7 @@
       font-size: 15px;
       color: black;
       font-family: "Merriweather";
+      text-align: justify;
     }
     .price {
       margin-left: 8%;
@@ -247,59 +248,9 @@
         margin-bottom: 18px;
     }
 
-    .carousel-container {
-              overflow: hidden;
-              padding-top: 2cm;
-              padding-bottom: 2cm;
-          }
-          .carousels img {
-              flex: 0 0 auto;
-              height: 6.5cm;
-              width: 10cm;
-              margin-right: 20px;
-          }
-          #first-carousel {
-              display: flex;
-              animation: scrollAnimation 60s linear infinite;
-              margin-bottom: 0.5cm;
-          }
-
-          #first-carousel:hover{
-              animation-play-state: paused;
-          }
-
-          #second-carousel {
-              display: flex;
-              animation: scrollAnimationOpposite 60s linear infinite;
-              margin-bottom: 0.5cm;
-          }
-
-          #second-carousel:hover{
-              animation-play-state: paused;
-          }
-
-
-          @keyframes scrollAnimation {
-              0% {
-                  transform: translateX(0);
-              }
-              100% {
-                  transform: translateX(-100%);
-              }
-          }
-
-          @keyframes scrollAnimationOpposite {
-              0% {
-                  transform: translateX(-50%);
-              }
-              100% {
-                  transform: translateX(0);
-              }
-          }
-
+    
     .propertyVideos {
       display: flex;
-      /* align-items: center; */
       top: 10px;
       justify-content: center;
       background-color: #f0f0f0;
@@ -309,6 +260,7 @@
       display: flex;
       flex-wrap: wrap;
     }
+    
     .propertyCategory {
       margin-right: 20px;
       margin-top: -35px;
@@ -317,11 +269,19 @@
     }
     .videoList {
       list-style: none; 
-      /* margin-top: 35px; */
       padding: 0;
+      /* display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap;  */
     }
     .videoList li {
       margin-bottom: 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      list-style: none; 
+      padding: 0;
+      margin: 20px;
     }
 
     .propertyRealtor {
@@ -368,12 +328,19 @@
     
     .google-maps-section {
       text-align: center;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
+      /* background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%); */
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 6em;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    h3 {
+      font-size: 2.5em;
       margin-bottom: 20px;
+      color: white;
     }
 
     iframe {
@@ -385,21 +352,37 @@
     }
 
     .parallax {
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
       background-image: url('https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg');
-      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 80vh;
+      position: relative;
+    }
+
+    .parallax::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
     }
 
     .parallax-card {
-      background-color: white;
-      padding: 10px;
-      border-radius: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative; /* Ensure z-index works */
+      z-index: 1; /* Ensure the content appears above the background */
     }
+
     .contact-form-section {
       max-width: 600px;
       height: 80vh;
@@ -427,6 +410,7 @@
       color: white;
       margin: 10px;
       width: 35%;
+      font-family: "Poppins";
     }
     label {
       font-size: larger;
@@ -463,9 +447,9 @@
     <div id="home">
       <div id="menu">
         
-          <a href="#section1" id="menu1">Overview</a>
+          <a href="#" id="menu1">Overview</a>
         
-          <a href="#section2"  id="menu2">Features</a>
+          <a href="#" id="menu2">Features</a>
         
           <a href="#" id="menu3">Photos</a>
         
@@ -582,7 +566,7 @@
       </div>
     </div>
   </section>
-  <section id="section1">
+  <section>
     <div id="description">
       <div class="title-textt" >12 Hannan Pl</div>
       <div id="files">
@@ -615,7 +599,7 @@
       </div>  
     </div>
   </section>
-  <section id="section2">
+  <section>
     <div id="features">
       <div id="feature-title">
         <p class="title-text">Features & Amenities</p>
@@ -664,9 +648,8 @@
     </div>
   </section>  
   <section>
-    <div id="carousels">
-      <div class="carousel-container">
-        <div class="carousels" id="first-carousel">
+    <div id="carousel">
+        <div id="carousel-image" class="carousel-row">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -692,7 +675,7 @@
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div>
-        <div class="carousels" id="second-carousel">
+        <div id="carousel-image-2" class="carousel-row">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -718,11 +701,56 @@
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div> 
-      </div> 
+    </div>
+  </section>
+  <section>
+    <div class="propertyVideos">
+      <div class="propertyMedia">
+        
+        <div class="propertyCategory">
+          <p class="title-text">Video Gallery</p>
+          <div class="propertyCategoryList">
+            <ul class="videoList">
+              
+              <li>Views from Above</li>
+              
+              <li>Explore the Estate</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="propertyCategory">
+          <p class="title-text">3D Tours</p>
+          <div class="propertyCategoryList">
+            <ul class="videoList">
+              
+              <li>Main House</li>
+              
+              <li>Guest House</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="propertyCategory">
+          <p class="title-text">Floor Plans</p>
+          <div class="propertyCategoryList">
+            <ul class="videoList">
+              
+              <li>Floor 1</li>
+              
+              <li>Floor 2</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+      </div>
     </div>
   </section>
 
-  <section>
+  <!-- <section>
     <div class="propertyVideos">
       <div class="propertyMedia">
         
@@ -767,7 +795,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
   <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">Presented By</p>
@@ -820,8 +848,8 @@
   <section>
     <div class="parallax">
       <div class="parallax-card">
-        <p class="title-textt">12 Hannan Pl <p>
-        <p class="title-text">Rye, NY 10580</p>
+        <h1>12 Hannan Pl <h1>
+        <h3>Rye, NY 10580</h3>
       </div>
     </div>
   </section>
@@ -861,7 +889,7 @@
         <p class="title-textt text-right">REALCO</p>
         <p class="title-text">12 Hannan Pl</p>
         <p class="subtext mt-3">Rye, NY 10580</p>
-        <p>Copyright Rela, Inc 2023. This website is for example purposes only. This is a fictitious listing and is not for sale. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p class="text">Copyright Rela, Inc 2023. This website is for example purposes only. This is a fictitious listing and is not for sale. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
   </footer>
@@ -902,7 +930,7 @@
         carouselRow.style.transition = 'none';
         carouselRow.style.transform = 'translateX(0)';
         carouselRow.appendChild(carouselRow.firstElementChild);
-      }, 20000);
+      });
     }
   
       setInterval(scrollCarousel, 3000);
@@ -922,10 +950,40 @@
           carouselRow2.style.transition = 'none';
           carouselRow2.style.transform = 'translateX(0)';
           carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
-        }, 20000);
+        });
       }
   
       setInterval(scrollCarousel2, 3000);
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const categories = document.querySelectorAll('.propertyCategory');
+
+        categories.forEach((category, index) => {
+          const videoList = category.querySelector('.videoList');
+          if (index !== 0) {
+            videoList.style.display = 'none';
+          }
+        });
+
+        categories.forEach(category => {
+          const title = category.querySelector('.title-text');
+          const videoList = category.querySelector('.videoList');
+
+          title.addEventListener('click', function() {
+            const isActive = category.classList.contains('active');
+
+            categories.forEach(c => {
+              c.classList.remove('active');
+              c.querySelector('.videoList').style.display = 'none';
+            });
+
+            if (!isActive) {
+              category.classList.add('active');
+              videoList.style.display = 'block';
+            }
+          });
+        });
+      });
   </script>
 </body>
 </html>

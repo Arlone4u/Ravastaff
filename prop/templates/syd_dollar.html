@@ -129,6 +129,7 @@
       font-size: 15px;
       color: black;
       font-family: "Merriweather";
+      text-align: justify;
     }
     .price {
       margin-left: 8%;
@@ -250,7 +251,6 @@
     
     .propertyVideos {
       display: flex;
-      /* align-items: center; */
       top: 10px;
       justify-content: center;
       background-color: #f0f0f0;
@@ -260,6 +260,7 @@
       display: flex;
       flex-wrap: wrap;
     }
+    
     .propertyCategory {
       margin-right: 20px;
       margin-top: -35px;
@@ -268,11 +269,19 @@
     }
     .videoList {
       list-style: none; 
-      /* margin-top: 35px; */
       padding: 0;
+      /* display: flex; 
+      justify-content: center; 
+      flex-wrap: wrap;  */
     }
     .videoList li {
       margin-bottom: 0px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      list-style: none; 
+      padding: 0;
+      margin: 20px;
     }
 
     .propertyRealtor {
@@ -319,12 +328,19 @@
     
     .google-maps-section {
       text-align: center;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
+      /* background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%); */
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 6em;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    h3 {
+      font-size: 2.5em;
       margin-bottom: 20px;
+      color: white;
     }
 
     iframe {
@@ -336,21 +352,37 @@
     }
 
     .parallax {
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
       background-image: url('{{ images.image1 }}');
-      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 80vh;
+      position: relative;
+    }
+
+    .parallax::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
     }
 
     .parallax-card {
-      background-color: white;
-      padding: 10px;
-      border-radius: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative; /* Ensure z-index works */
+      z-index: 1; /* Ensure the content appears above the background */
     }
+
     .contact-form-section {
       max-width: 600px;
       height: 80vh;
@@ -378,6 +410,7 @@
       color: white;
       margin: 10px;
       width: 35%;
+      font-family: "Poppins";
     }
     label {
       font-size: larger;
@@ -597,8 +630,26 @@
         </div> 
     </div>
   </section>
-
   <section>
+    <div class="propertyVideos">
+      <div class="propertyMedia">
+        {% for category, videos in propertyVideos.items() %}
+        <div class="propertyCategory">
+          <p class="title-text">{{ category }}</p>
+          <div class="propertyCategoryList">
+            <ul class="videoList">
+              {% for video in videos %}
+              <li>{{ video }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- <section>
     <div class="propertyVideos">
       <div class="propertyMedia">
         {% for category, videos in propertyVideos.items() %}
@@ -615,7 +666,7 @@
         {% endfor %}
       </div>
     </div>
-  </section>
+  </section> -->
   <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">{{ propertyRealtor.realtorTitle}}</p>
@@ -650,8 +701,8 @@
   <section>
     <div class="parallax">
       <div class="parallax-card">
-        <p class="title-textt">{{ titleAddress }} <p>
-        <p class="title-text">{{ extendedAddress }}</p>
+        <h1>{{ titleAddress }} <h1>
+        <h3>{{ extendedAddress }}</h3>
       </div>
     </div>
   </section>
@@ -677,7 +728,7 @@
         <p class="title-textt text-right">{{title}}</p>
         <p class="title-text">{{address}}</p>
         <p class="subtext mt-3">{{extendedAddress}}</p>
-        <p>{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
+        <p class="text">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
       </div>
     </div>
   </footer>
@@ -742,6 +793,36 @@
       }
   
       setInterval(scrollCarousel2, 3000);
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const categories = document.querySelectorAll('.propertyCategory');
+
+        categories.forEach((category, index) => {
+          const videoList = category.querySelector('.videoList');
+          if (index !== 0) {
+            videoList.style.display = 'none';
+          }
+        });
+
+        categories.forEach(category => {
+          const title = category.querySelector('.title-text');
+          const videoList = category.querySelector('.videoList');
+
+          title.addEventListener('click', function() {
+            const isActive = category.classList.contains('active');
+
+            categories.forEach(c => {
+              c.classList.remove('active');
+              c.querySelector('.videoList').style.display = 'none';
+            });
+
+            if (!isActive) {
+              category.classList.add('active');
+              videoList.style.display = 'block';
+            }
+          });
+        });
+      });
   </script>
 </body>
 </html>
