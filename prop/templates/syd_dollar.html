@@ -247,7 +247,56 @@
         margin-bottom: 18px;
     }
 
-    
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 2cm;
+              padding-bottom: 2cm;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              height: 6.5cm;
+              width: 10cm;
+              margin-right: 20px;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+
+
+          @keyframes scrollAnimation {
+              0% {
+                  transform: translateX(0);
+              }
+              100% {
+                  transform: translateX(-100%);
+              }
+          }
+
+          @keyframes scrollAnimationOpposite {
+              0% {
+                  transform: translateX(-50%);
+              }
+              100% {
+                  transform: translateX(0);
+              }
+          }
+
     .propertyVideos {
       display: flex;
       /* align-items: center; */
@@ -342,7 +391,7 @@
       align-items: center;
       justify-content: center;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
-      background-image: url('{{ images.image1 }}');
+      background-image: url('https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg');
       height: 100vh;
     }
 
@@ -413,9 +462,23 @@
   <section>
     <div id="home">
       <div id="menu">
-        {% for item in menu %}
-          <a href="#" id="menu{{ loop.index }}">{{ item }}</a>
-        {% endfor %}
+        
+          <a href="#section1" id="menu1">Overview</a>
+        
+          <a href="#section2"  id="menu2">Features</a>
+        
+          <a href="#section3" id="menu3">Photos</a>
+        
+          <a href="#section4" id="menu4">Video</a>
+        
+          <a href="#section4" id="menu5">3D Tour</a>
+        
+          <a href="#section4" id="menu6">Floor Plans</a>
+        
+          <a href="#google-maps-section" id="menu7">Map</a> 
+        
+          <a href="#contact-form-section" id="menu8">Contact</a>
+        
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -435,40 +498,40 @@
         </ol>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100 zoomify" src="{{ images.image1 }}" alt="First slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image2 }}" alt="Second slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image3 }}" alt="Third slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image4 }}" alt="Fourth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Fourth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image5 }}" alt="Fifth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Fifth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image6 }}" alt="Sixth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Sixth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image7 }}" alt="Seventh slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Seventh slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image8 }}" alt="Eighth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Eighth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image9 }}" alt="Ninth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg" alt="Ninth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image10 }}" alt="Tenth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2810of35%29.jpg" alt="Tenth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image11 }}" alt="Eleventh slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg" alt="Eleventh slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image12 }}" alt="Twelveth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg" alt="Twelveth slide">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -480,218 +543,348 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div id="title"><p>{{ title }}</p></div>
-      <div id="address"><p>{{ address }}</p></div>
+      <div id="title"><p>REALCO</p></div>
+      <div id="address"><p>12 Hannan Pl</p></div>
     </div>
   </section>
   <section>
     <div id="details">
       <div class="price">
         <p class="subtext">Offered At</p>
-        <p class="title-text" id="price">${{ price }}</p>
+        <p class="title-text" id="price">$5,650,000</p>
       </div>
       <div id="details-menu">
-        {% for detail in details %}
+        
           <div class="detail-item">
-            <i class="material-icons">{{ detail.icon }}</i>
-            <p class="med-text">{{ detail.text }}</p>
-            <p class="subtext">{{ detail.subtext }}</p>
+            <i class="material-icons">king_bed</i>
+            <p class="med-text">4 Beds</p>
+            <p class="subtext"></p>
           </div>
-        {% endfor %}
+        
+          <div class="detail-item">
+            <i class="material-icons">bathtub</i>
+            <p class="med-text">6 Baths</p>
+            <p class="subtext"></p>
+          </div>
+        
+          <div class="detail-item">
+            <i class="material-icons">view_quilt</i>
+            <p class="med-text">4,900 sqft</p>
+            <p class="subtext">Home Size</p>
+          </div>
+        
+          <div class="detail-item">
+            <i class="material-icons">layers</i>
+            <p class="med-text">12,500 sf</p>
+            <p class="subtext">Lot Size</p>
+          </div>
+        
       </div>
     </div>
   </section>
-  <section>
+  <section id="section1">
     <div id="description">
-      <div class="title-textt" >{{ titleAddress }}</div>
+      <div class="title-textt" >12 Hannan Pl</div>
       <div id="files">
-        {% for item in file %}
+        
           <div class="file">
-            <i class="material-icons">{{ item.icon }}</i>
-            <p class="text">{{ item.fileName }}</p>
+            <i class="material-icons">download</i>
+            <p class="text">Brochure</p>
           </div>
-        {% endfor %}
+        
+          <div class="file">
+            <i class="material-icons">download</i>
+            <p class="text">Documents</p>
+          </div>
+        
       </div>
       <div id="propertyDescription">
         <div class="description">
-          <p class="subtext">{{propertyDescription}}</p>
+          <p class="subtext">Introducing 12 Hannan Pl, a stunning property located in the desirable city of Rye, NY. This exquisite home boasts an impressive 4 bedrooms and 6 bathrooms, providing ample space for comfortable living. With its generous size of 4,900 square feet and situated on a sizable 12,500 square foot lot, this residence offers both luxury and room to roam. As you step inside this remarkable abode, you'll immediately notice the attention to detail and high-quality finishes throughout. The gleaming hardwood floors create an elegant ambiance that flows seamlessly from room to room. Oversized windows flood the interior with natural light, illuminating every corner of this beautiful home.</p>
         </div> 
         <div class="">
-          <a href="#" class="modal-trigger" data-image="{{ images.image9 }}">
-            <img src="{{ images.image9 }}" alt="Modal Trigger Image" class="side-modalImages">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg" alt="Modal Trigger Image" class="side-modalImages">
           </a>
         </div> 
       </div>
       <div id="">
-        <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
-          <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
+        <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
+          <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg" alt="Modal Trigger Image" class="modalImages">
         </a>
       </div>  
     </div>
   </section>
-  <section>
+  <section id="section2">
     <div id="features">
       <div id="feature-title">
-        <p class="title-text">{{ featureTitle}}</p>
+        <p class="title-text">Features & Amenities</p>
       </div>
       <div id="feature-list">
-        {% for feature in features %}
-          <a href="#" class="feature-text" id="features{{ loop.index }}">{{ feature }}</a>
-        {% endfor %}
+        
+          <a href="#" class="feature-text" id="features1">Community Clubhouse</a>
+        
+          <a href="#" class="feature-text" id="features2">City Lights View</a>
+        
+          <a href="#" class="feature-text" id="features3">Beach Access</a>
+        
+          <a href="#" class="feature-text" id="features4">Gated Community</a>
+        
+          <a href="#" class="feature-text" id="features5">Great Schools</a>
+        
+          <a href="#" class="feature-text" id="features6">Hardwood Floors</a>
+        
+          <a href="#" class="feature-text" id="features7">Community Pool</a>
+        
+          <a href="#" class="feature-text" id="features8">Frameless Glass Showers</a>
+        
+          <a href="#" class="feature-text" id="features9">Heated Floors</a>
+        
+          <a href="#" class="feature-text" id="features10">Heated Pool</a>
+        
+          <a href="#" class="feature-text" id="features11">Ocean Views</a>
+        
+          <a href="#" class="feature-text" id="features12">New Construction</a>
+        
+          <a href="#" class="feature-text" id="features13">Large Lot</a>
+        
+          <a href="#" class="feature-text" id="features14">Large Kitchen</a>
+        
+          <a href="#" class="feature-text" id="features15">Oversized Windows</a>
+        
+          <a href="#" class="feature-text" id="features16">Pool</a>
+        
+          <a href="#" class="feature-text" id="features17">Shopping Nearby</a>
+        
+          <a href="#" class="feature-text" id="features18">Walk-In Closets</a>
+        
+          <a href="#" class="feature-text" id="features19">Stainless Steel Appliances</a>
+        
       </div>
     </div>
   </section>  
-  <section>
-    <div id="carousel">
-        <div id="carousel-image" class="carousel-row">
-          <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
+  <section id="section3">
+    <div id="carousels">
+      <div class="carousel-container">
+        <div class="carousels" id="first-carousel">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div>
-        <div id="carousel-image-2" class="carousel-row">
-          <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
+        <div class="carousels" id="second-carousel">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
+            <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div> 
+      </div> 
     </div>
   </section>
 
-  <section>
+  <section id="section4">
     <div class="propertyVideos">
       <div class="propertyMedia">
-        {% for category, videos in propertyVideos.items() %}
+        
         <div class="propertyCategory">
-          <p class="title-text">{{ category }}</p>
+          <p class="title-text">Video Gallery</p>
           <div class="">
             <ul class="videoList">
-              {% for video in videos %}
-              <li>{{ video }}</li>
-              {% endfor %}
+              
+              <li>Views from Above</li>
+              
+              <li>Explore the Estate</li>
+              
             </ul>
           </div>
         </div>
-        {% endfor %}
+        
+        <div class="propertyCategory">
+          <p class="title-text">3D Tours</p>
+          <div class="">
+            <ul class="videoList">
+              
+              <li>Main House</li>
+              
+              <li>Guest House</li>
+              
+            </ul>
+          </div>
+        </div>
+        
+        <div class="propertyCategory">
+          <p class="title-text">Floor Plans</p>
+          <div class="">
+            <ul class="videoList">
+              
+              <li>Floor 1</li>
+              
+              <li>Floor 2</li>
+              
+            </ul>
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
-  <section>
+  <section id="section5">
     <div class="propertyRealtor">
-      <p class="title-text text-center">{{ propertyRealtor.realtorTitle}}</p>
+      <p class="title-text text-center">Presented By</p>
       <div class="realtorDetails">
-        {% for realtor, details in propertyRealtor.realtors.items() %}
+        
         <div class="realtor">
           <div class="realtorImg">
-            <img src="{{ details.Image }}" alt="Modal Trigger Image" class="realtor-img">
+            <img src="https://cheriwoodard.com/wp-content/uploads/2022/02/Katie-Johnson.jpg" alt="Modal Trigger Image" class="realtor-img">
           </div>
           <div class="realtor-info">
-            <h2 class="">{{ realtor }}</h2>
+            <h2 class="">Jayne Smith</h2>
             <div class="realtor-details">
-              <p>TITLE <br>{{ details.Title }}</p>
-              <p>COMPANY<br>{{ details.Company }}</p>
-              <p>PHONE<br>{{ details.Phone }}</p>
-              <p>EMAIL<br><a href="mailto:{{ details.Email }}">{{ details.Email }}</a></p>
-              <p>WEBSITE<br><a href="{{ details.Web }}">{{ details.Web }}</a></p>
-              <p>LICENSE<br>{{ details['License #'] }}</p>
+              <p>TITLE <br>Lead Broker</p>
+              <p>COMPANY<br>TopRealty</p>
+              <p>PHONE<br>(949) 555-6666</p>
+              <p>EMAIL<br><a href="mailto:jayne@example.com">jayne@example.com</a></p>
+              <p>WEBSITE<br><a href="www.relahq.com">www.relahq.com</a></p>
+              <p>LICENSE<br>CalRE# 123456</p>
             </div>
             <hr> 
           </div>
         </div>
-        {% endfor %}
+        
+        <div class="realtor">
+          <div class="realtorImg">
+            <img src="https://i.pinimg.com/236x/48/85/84/4885846b080e050db33dfae0cae157ef.jpg" alt="Modal Trigger Image" class="realtor-img">
+          </div>
+          <div class="realtor-info">
+            <h2 class="">John Doezen</h2>
+            <div class="realtor-details">
+              <p>TITLE <br>Lead Broker</p>
+              <p>COMPANY<br>SellCo</p>
+              <p>PHONE<br>(949) 949-9499</p>
+              <p>EMAIL<br><a href="mailto:john@example.com">john@example.com</a></p>
+              <p>WEBSITE<br><a href="www.relahq.com">www.relahq.com</a></p>
+              <p>LICENSE<br>DRE: 123456</p>
+            </div>
+            <hr> 
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>  
-  <section class="google-maps-section">
+  <section id="google-maps-section" class="google-maps-section">
     <div class="">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-  <section>
+  <section id="section6">
     <div class="parallax">
       <div class="parallax-card">
-        <p class="title-textt">{{ titleAddress }} <p>
-        <p class="title-text">{{ extendedAddress }}</p>
+        <p class="title-textt">12 Hannan Pl <p>
+        <p class="title-text">Rye, NY 10580</p>
       </div>
     </div>
   </section>
-  <section class="contact-form-section">
-    <p class="title-text">{{ inquiry.inquiryTitle }}</p>
-    <form id="contactForm" action="#" method="post">
+  <section id="contact-form-section" class="contact-form-section">
+    <p class="title-text">Get in touch</p>
+    <form id="contactForm" onsubmit="submitFormAndScroll(event)">
       <div class="form-group">
-        {% for field, label in inquiry.inquiryDetails.items() %}
-          <label for="{{ field }}">{{ label }}:</label>
-          <input type="text" id="{{ field }}" name="{{ field }}" required>
-        {% endfor %}
+        
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required>
+        
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required>
+        
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" required>
+        
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" name="phone" required>
+        
+          <label for="comment">Comment:</label>
+          <input type="text" id="comment" name="comment" required>
+        
       </div>
       <div class="inquiryButton">
-        {% for button in inquiryButtons %}
-          <button class="inquiryBtn" type="submit">{{ button }}</button>
-        {% endfor %}
+        
+          <button class="inquiryBtn" type="submit">Send Inquiry</button>
+        
+          <button class="inquiryBtn" type="submit">Schedule a Tour</button>
+        
       </div>
     </form>
   </section>
   <footer>
     <div class="footer">
       <div class="footerDetails">
-        <p class="title-textt text-right">{{title}}</p>
-        <p class="title-text">{{address}}</p>
-        <p class="subtext mt-3">{{extendedAddress}}</p>
-        <p>{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
+        <p class="title-textt text-right">REALCO</p>
+        <p class="title-text">12 Hannan Pl</p>
+        <p class="subtext mt-3">Rye, NY 10580</p>
+        <p>Copyright Rela, Inc 2023. This website is for example purposes only. This is a fictitious listing and is not for sale. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
       </div>
     </div>
   </footer>
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var carousel = document.querySelector('.carousel');
         var carouselInstance = new bootstrap.Carousel(carousel, {
-            interval: 5000, 
-            //pause: 'hover', 
+            interval: 5000,
             wrap: true
         });
-  
+
+        // Smooth scroll for all menu items
+        var menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function (e) {
+                e.preventDefault();
+                var targetSection = this.getAttribute('data-section-id');
+                scrollToElement(targetSection);
+            });
+        });
+
         var zoomImages = document.querySelectorAll('.zoomify');
         zoomImages.forEach(function (image) {
             var zoomInstance = new Zoomify(image);
@@ -699,49 +892,57 @@
             zoomInstance.zoomIn();
             // After 2 seconds, zoom out
             setTimeout(function () {
-                zoomInstance.zoomOut(); 
-            }, 2000); 
+                zoomInstance.zoomOut();
+            }, 2000);
         });
     });
-  
-    function scrollCarousel() {
-      const carouselRow = document.getElementById('carousel-image');
-      const imageWidth = carouselRow.firstElementChild.offsetWidth;
-      const fixedOffset = 50; 
-  
-  
-      carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-      carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-  
-  
-      setTimeout(() => {
-        carouselRow.style.transition = 'none';
-        carouselRow.style.transform = 'translateX(0)';
-        carouselRow.appendChild(carouselRow.firstElementChild);
-      }, 20000);
-    }
-  
-      setInterval(scrollCarousel, 3000);
-  
-  
-      function scrollCarousel2() {
-        const carouselRow2 = document.getElementById('carousel-image-2');
-        const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
-        const fixedOffset2 = 50;
-  
-  
-        carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-        carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
-  
-  
+
+    function scrollCarousel(carouselRow) {
+        const imageWidth = carouselRow.firstElementChild.offsetWidth;
+        const fixedOffset = 50;
+
+        carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
+
         setTimeout(() => {
-          carouselRow2.style.transition = 'none';
-          carouselRow2.style.transform = 'translateX(0)';
-          carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
+            carouselRow.style.transition = 'none';
+            carouselRow.style.transform = 'translateX(0)';
+            carouselRow.appendChild(carouselRow.firstElementChild);
         }, 20000);
-      }
-  
-      setInterval(scrollCarousel2, 3000);
-  </script>
+    }
+
+    function scrollCarousel2(carouselRow) {
+        const imageWidth = carouselRow.firstElementChild.offsetWidth;
+        const fixedOffset = 50;
+
+        carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        carouselRow.style.transform = `translateX(calc(${imageWidth / 2}px + ${fixedOffset}px))`;
+
+        setTimeout(() => {
+            carouselRow.style.transition = 'none';
+            carouselRow.style.transform = 'translateX(0)';
+            carouselRow.insertBefore(carouselRow.lastElementChild, carouselRow.firstElementChild);
+        }, 20000);
+    }
+
+    setInterval(function () {
+        var carouselRow = document.getElementById('carousel-image');
+        scrollCarousel(carouselRow);
+    }, 3000);
+
+    setInterval(function () {
+        var carouselRow2 = document.getElementById('carousel-image-2');
+        scrollCarousel2(carouselRow2);
+    }, 3000);
+
+    function scrollToElement(elementId) {
+        var element = document.getElementById(elementId);
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+</script>
+
 </body>
 </html>

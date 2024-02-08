@@ -467,17 +467,17 @@
         
           <a href="#section2"  id="menu2">Features</a>
         
-          <a href="#" id="menu3">Photos</a>
+          <a href="#section3" id="menu3">Photos</a>
         
-          <a href="#" id="menu4">Video</a>
+          <a href="#section4" id="menu4">Video</a>
         
-          <a href="#" id="menu5">3D Tour</a>
+          <a href="#section4" id="menu5">3D Tour</a>
         
-          <a href="#" id="menu6">Floor Plans</a>
+          <a href="#section4" id="menu6">Floor Plans</a>
         
-          <a href="#" id="menu7">Map</a>
+          <a href="#google-maps-section" id="menu7">Map</a> 
         
-          <a href="#" id="menu8">Contact</a>
+          <a href="#contact-form-section" id="menu8">Contact</a>
         
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -663,7 +663,7 @@
       </div>
     </div>
   </section>  
-  <section>
+  <section id="section3">
     <div id="carousels">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
@@ -722,7 +722,7 @@
     </div>
   </section>
 
-  <section>
+  <section id="section4">
     <div class="propertyVideos">
       <div class="propertyMedia">
         
@@ -768,7 +768,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="section5">
     <div class="propertyRealtor">
       <p class="title-text text-center">Presented By</p>
       <div class="realtorDetails">
@@ -812,12 +812,12 @@
       </div>
     </div>
   </section>  
-  <section class="google-maps-section">
+  <section id="google-maps-section" class="google-maps-section">
     <div class="">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
-  <section>
+  <section id="section6">
     <div class="parallax">
       <div class="parallax-card">
         <p class="title-textt">12 Hannan Pl <p>
@@ -825,9 +825,9 @@
       </div>
     </div>
   </section>
-  <section class="contact-form-section">
+  <section id="contact-form-section" class="contact-form-section">
     <p class="title-text">Get in touch</p>
-    <form id="contactForm" action="#" method="post">
+    <form id="contactForm" onsubmit="submitFormAndScroll(event)">
       <div class="form-group">
         
           <label for="firstName">First Name:</label>
@@ -868,14 +868,23 @@
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         var carousel = document.querySelector('.carousel');
         var carouselInstance = new bootstrap.Carousel(carousel, {
-            interval: 5000, 
-            //pause: 'hover', 
+            interval: 5000,
             wrap: true
         });
-  
+
+        // Smooth scroll for all menu items
+        var menuItems = document.querySelectorAll('.menu-item');
+        menuItems.forEach(function (menuItem) {
+            menuItem.addEventListener('click', function (e) {
+                e.preventDefault();
+                var targetSection = this.getAttribute('data-section-id');
+                scrollToElement(targetSection);
+            });
+        });
+
         var zoomImages = document.querySelectorAll('.zoomify');
         zoomImages.forEach(function (image) {
             var zoomInstance = new Zoomify(image);
@@ -883,49 +892,57 @@
             zoomInstance.zoomIn();
             // After 2 seconds, zoom out
             setTimeout(function () {
-                zoomInstance.zoomOut(); 
-            }, 2000); 
+                zoomInstance.zoomOut();
+            }, 2000);
         });
     });
-  
-    function scrollCarousel() {
-      const carouselRow = document.getElementById('carousel-image');
-      const imageWidth = carouselRow.firstElementChild.offsetWidth;
-      const fixedOffset = 50; 
-  
-  
-      carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-      carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-  
-  
-      setTimeout(() => {
-        carouselRow.style.transition = 'none';
-        carouselRow.style.transform = 'translateX(0)';
-        carouselRow.appendChild(carouselRow.firstElementChild);
-      }, 20000);
-    }
-  
-      setInterval(scrollCarousel, 3000);
-  
-  
-      function scrollCarousel2() {
-        const carouselRow2 = document.getElementById('carousel-image-2');
-        const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
-        const fixedOffset2 = 50;
-  
-  
-        carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-        carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
-  
-  
+
+    function scrollCarousel(carouselRow) {
+        const imageWidth = carouselRow.firstElementChild.offsetWidth;
+        const fixedOffset = 50;
+
+        carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
+
         setTimeout(() => {
-          carouselRow2.style.transition = 'none';
-          carouselRow2.style.transform = 'translateX(0)';
-          carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
+            carouselRow.style.transition = 'none';
+            carouselRow.style.transform = 'translateX(0)';
+            carouselRow.appendChild(carouselRow.firstElementChild);
         }, 20000);
-      }
-  
-      setInterval(scrollCarousel2, 3000);
-  </script>
+    }
+
+    function scrollCarousel2(carouselRow) {
+        const imageWidth = carouselRow.firstElementChild.offsetWidth;
+        const fixedOffset = 50;
+
+        carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+        carouselRow.style.transform = `translateX(calc(${imageWidth / 2}px + ${fixedOffset}px))`;
+
+        setTimeout(() => {
+            carouselRow.style.transition = 'none';
+            carouselRow.style.transform = 'translateX(0)';
+            carouselRow.insertBefore(carouselRow.lastElementChild, carouselRow.firstElementChild);
+        }, 20000);
+    }
+
+    setInterval(function () {
+        var carouselRow = document.getElementById('carousel-image');
+        scrollCarousel(carouselRow);
+    }, 3000);
+
+    setInterval(function () {
+        var carouselRow2 = document.getElementById('carousel-image-2');
+        scrollCarousel2(carouselRow2);
+    }, 3000);
+
+    function scrollToElement(elementId) {
+        var element = document.getElementById(elementId);
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+</script>
+
 </body>
 </html>
