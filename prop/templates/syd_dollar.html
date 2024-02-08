@@ -3,9 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -22,8 +19,8 @@
 
   <style>
     body {
-      /* font-family: "messina-sans" !important; */
-      font-family: "PTSerif", serif;
+      font-family: "messina-sans" !important;
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -36,16 +33,16 @@
     }
     
     #menu {
-      font-family: "Poppins";
       position: absolute;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.344) 20%,rgba(255,255,255,0) 100%);
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       z-index: 1;
       height: 100px;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-left: 40%;
+      padding-left: 20%;
     }
 
     #menu a {
@@ -62,7 +59,7 @@
       color: white;
       font-size: 50px;
       font-weight: bold;
-      font-family: "PTSerif";
+      font-family: 'Times New Roman', Times, serif;
     }
 
     #address {
@@ -70,29 +67,24 @@
       bottom: 50px;
       left: 240px;
       color: white;
-      font-size: 32px;
-      text-shadow: #333 ;
+      font-size: 22px;
     }
 
     .title-text {
       font-size: 40px;
       padding: 0;
       margin: 0;
-      font-family: "PTSerif";
-
     }
 
     .title-textt {
       font-size: 50px;
       padding: 0;
       margin: 0;
-      font-family: "PTSerif";
-
     }
 
     .med-text {
       font-size: 30px;
-      margin-bottom: 20%;
+      padding: 0;
     }
     #details {
       display: flex;
@@ -104,7 +96,7 @@
       overflow: hidden;
     }
     #details-menu {
-      font-family: "Merriweather";
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -119,17 +111,15 @@
       align-items: center;
     }
     .subtext {
-      font-size: 16px;
+      font-size: 15px;
       margin-top:-20px;
       color: #6e6e6e;
-      font-family: "Poppins";
-
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .text {
       font-size: 15px;
       color: black;
-      font-family: "Merriweather";
-      text-align: justify;
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .price {
       margin-left: 8%;
@@ -183,7 +173,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 40vh;
+      height: 35vh;
       margin: 30px 0 75px 0;
       padding: 0;
       background-color: #F7F7F7;
@@ -225,10 +215,22 @@
 
     .feature-text {
       font-size: 18px;
-      /* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
+      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
-    #carousel {
+    /* #carousel {
+      height: 60vh;
+      margin: 0 0 5% 5%;
+      overflow: hidden;
+    }
+    .carousel-img {
+      width: 22%;
+      height: 25vh;
+      margin-right: 18px;
+      margin-bottom: 18px;
+
+    } */
+    #carousels {
       height: 60vh;
       margin: 0 auto;
       overflow: hidden;
@@ -247,6 +249,58 @@
         margin-right: 18px;
         margin-bottom: 18px;
     }
+
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 2cm;
+              padding-bottom: 2cm;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              height: 6.5cm;
+              width: 10cm;
+              margin-right: 20px;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+
+
+          @keyframes scrollAnimation {
+              0% {
+                  transform: translateX(0);
+              }
+              100% {
+                  transform: translateX(-100%);
+              }
+          }
+
+          @keyframes scrollAnimationOpposite {
+              0% {
+                  transform: translateX(-50%);
+              }
+              100% {
+                  transform: translateX(0);
+              }
+          }
+
+
     
     .propertyVideos {
       display: flex;
@@ -446,7 +500,7 @@
     <div id="home">
       <div id="menu">
         {% for item in menu %}
-          <a href="#" id="menu{{ loop.index }}">{{ item }}</a>
+          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
         {% endfor %}
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -512,8 +566,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div id="title"><p>{{ title }}</p></div>
-      <div id="address"><p>{{ address }}</p></div>
+      <div id="title">{{ title }}</div>
+      <div id="address">{{ address }}</div>
     </div>
   </section>
   <section>
@@ -533,7 +587,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="1">
     <div id="description">
       <div class="title-textt" >{{ titleAddress }}</div>
       <div id="files">
@@ -560,8 +614,8 @@
         </a>
       </div>  
     </div>
-  </section>
-  <section>
+  </section >
+  <section id="2">
     <div id="features">
       <div id="feature-title">
         <p class="title-text">{{ featureTitle}}</p>
@@ -575,7 +629,8 @@
   </section>  
   <section>
     <div id="carousel">
-        <div id="carousel-image" class="carousel-row">
+      <div class="carousel-container">
+        <div class="carousels" id="first-carousel">
           <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
             <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -601,7 +656,7 @@
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div>
-        <div id="carousel-image-2" class="carousel-row">
+        <div class="carousels" id="second-carousel">
           <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
             <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -626,6 +681,7 @@
           <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
+        </div>
         </div> 
     </div>
   </section>
