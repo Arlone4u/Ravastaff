@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -19,8 +22,8 @@
 
   <style>
     body {
-      font-family: "messina-sans" !important;
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      /* font-family: "messina-sans" !important; */
+      font-family: "PTSerif", serif;
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -33,16 +36,16 @@
     }
     
     #menu {
+      font-family: "Poppins";
       position: absolute;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.344) 20%,rgba(255,255,255,0) 100%);
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       z-index: 1;
       height: 100px;
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-left: 20%;
+      padding-left: 40%;
     }
 
     #menu a {
@@ -59,7 +62,7 @@
       color: white;
       font-size: 50px;
       font-weight: bold;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "PTSerif";
     }
 
     #address {
@@ -67,24 +70,29 @@
       bottom: 50px;
       left: 240px;
       color: white;
-      font-size: 22px;
+      font-size: 32px;
+      text-shadow: #333 ;
     }
 
     .title-text {
       font-size: 40px;
       padding: 0;
       margin: 0;
+      font-family: "PTSerif";
+
     }
 
     .title-textt {
       font-size: 50px;
       padding: 0;
       margin: 0;
+      font-family: "PTSerif";
+
     }
 
     .med-text {
       font-size: 30px;
-      padding: 0;
+      margin-bottom: 20%;
     }
     #details {
       display: flex;
@@ -96,7 +104,7 @@
       overflow: hidden;
     }
     #details-menu {
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-family: "Merriweather";
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -111,15 +119,16 @@
       align-items: center;
     }
     .subtext {
-      font-size: 15px;
+      font-size: 16px;
       margin-top:-20px;
       color: #6e6e6e;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Poppins";
+
     }
     .text {
       font-size: 15px;
       color: black;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Merriweather";
     }
     .price {
       margin-left: 8%;
@@ -173,7 +182,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 35vh;
+      height: 40vh;
       margin: 30px 0 75px 0;
       padding: 0;
       background-color: #F7F7F7;
@@ -215,21 +224,9 @@
 
     .feature-text {
       font-size: 18px;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      /* font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; */
     }
 
-    /* #carousel {
-      height: 60vh;
-      margin: 0 0 5% 5%;
-      overflow: hidden;
-    }
-    .carousel-img {
-      width: 22%;
-      height: 25vh;
-      margin-right: 18px;
-      margin-bottom: 18px;
-
-    } */
     #carousel {
       height: 60vh;
       margin: 0 auto;
@@ -372,11 +369,6 @@
     .google-maps-section {
       text-align: center;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
-    }
-
-    .map-container {
-      max-width: 800px;
-      margin: 0 auto;
     }
 
     h1 {
@@ -551,8 +543,8 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div id="title">REALCO</div>
-      <div id="address">12 Hannan Pl</div>
+      <div id="title"><p>REALCO</p></div>
+      <div id="address"><p>12 Hannan Pl</p></div>
     </div>
   </section>
   <section>
