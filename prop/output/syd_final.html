@@ -247,7 +247,56 @@
         margin-bottom: 18px;
     }
 
-    
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 2cm;
+              padding-bottom: 2cm;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              height: 6.5cm;
+              width: 10cm;
+              margin-right: 20px;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+
+
+          @keyframes scrollAnimation {
+              0% {
+                  transform: translateX(0);
+              }
+              100% {
+                  transform: translateX(-100%);
+              }
+          }
+
+          @keyframes scrollAnimationOpposite {
+              0% {
+                  transform: translateX(-50%);
+              }
+              100% {
+                  transform: translateX(0);
+              }
+          }
+
     .propertyVideos {
       display: flex;
       /* align-items: center; */
@@ -414,9 +463,9 @@
     <div id="home">
       <div id="menu">
         
-          <a href="#" id="menu1">Overview</a>
+          <a href="#section1" id="menu1">Overview</a>
         
-          <a href="#" id="menu2">Features</a>
+          <a href="#section2"  id="menu2">Features</a>
         
           <a href="#" id="menu3">Photos</a>
         
@@ -533,7 +582,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <section id="section1">
     <div id="description">
       <div class="title-textt" >12 Hannan Pl</div>
       <div id="files">
@@ -566,7 +615,7 @@
       </div>  
     </div>
   </section>
-  <section>
+  <section id="section2">
     <div id="features">
       <div id="feature-title">
         <p class="title-text">Features & Amenities</p>
@@ -615,8 +664,9 @@
     </div>
   </section>  
   <section>
-    <div id="carousel">
-        <div id="carousel-image" class="carousel-row">
+    <div id="carousels">
+      <div class="carousel-container">
+        <div class="carousels" id="first-carousel">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -642,7 +692,7 @@
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div>
-        <div id="carousel-image-2" class="carousel-row">
+        <div class="carousels" id="second-carousel">
           <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
@@ -668,6 +718,7 @@
             <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Modal Trigger Image" class="carousel-img">
           </a>
         </div> 
+      </div> 
     </div>
   </section>
 
