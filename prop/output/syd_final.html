@@ -247,7 +247,6 @@
         margin-right: 18px;
         margin-bottom: 18px;
     }
-
     
     .propertyVideos {
       display: flex;
@@ -930,7 +929,7 @@
         carouselRow.style.transition = 'none';
         carouselRow.style.transform = 'translateX(0)';
         carouselRow.appendChild(carouselRow.firstElementChild);
-      });
+      }, 20000);
     }
   
       setInterval(scrollCarousel, 3000);
@@ -950,7 +949,7 @@
           carouselRow2.style.transition = 'none';
           carouselRow2.style.transform = 'translateX(0)';
           carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
-        });
+        }, 20000);
       }
   
       setInterval(scrollCarousel2, 3000);
