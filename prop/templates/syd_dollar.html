@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.css">
@@ -19,13 +21,11 @@
 
   <style>
     body {
-      font-family: "messina-sans" !important;
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-family: "PTSerif";
       margin: 0;
       padding: 0;
       height: 100vh;
     }
-
     #home {
       position: relative;
       height: 100vh;
@@ -34,15 +34,15 @@
     
     #menu {
       position: absolute;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.344) 20%,rgba(255,255,255,0) 100%);
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.358) 20%,rgba(255,255,255,0) 100%);
+      font-family: "Poppins";
       z-index: 1;
       height: 100px;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
-      padding-left: 20%;
+      padding-right:12%;
     }
 
     #menu a {
@@ -50,6 +50,8 @@
       text-decoration: none;
       padding: 0 15px;
       font-size: 16px;
+      float: left;
+
     }
 
     #title {
@@ -57,9 +59,9 @@
       top: 25px;
       left: 240px;
       color: white;
-      font-size: 50px;
+      font-size: 55px;
       font-weight: bold;
-      font-family: 'Times New Roman', Times, serif;
+      font-family: "PTSerif";
     }
 
     #address {
@@ -67,17 +69,17 @@
       bottom: 50px;
       left: 240px;
       color: white;
-      font-size: 22px;
+      font-size: 32px;
     }
 
     .title-text {
-      font-size: 40px;
+      font-size: 45px;
       padding: 0;
       margin: 0;
     }
 
     .title-textt {
-      font-size: 50px;
+      font-size: 55px;
       padding: 0;
       margin: 0;
     }
@@ -96,7 +98,6 @@
       overflow: hidden;
     }
     #details-menu {
-      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -114,12 +115,13 @@
       font-size: 15px;
       margin-top:-20px;
       color: #6e6e6e;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Poppins";
     }
     .text {
       font-size: 15px;
       color: black;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Poppins";
+      text-align: justify;
     }
     .price {
       margin-left: 8%;
@@ -127,7 +129,7 @@
     #description {
       display: flex;
       flex-direction: column;
-      height: 140vh;
+      height: 150vh;
       padding: 150px 120px 50px 200px;
     }
     #files {
@@ -135,7 +137,6 @@
     }
     .file {
       display: flex; 
-      align-items: center; 
       margin-right: 80px; 
       padding-top: 20px;
     }
@@ -146,7 +147,6 @@
       height: 65vh;
       width: 100%;
       margin: 0 0 30px 0;
-      padding: 0;
     }
     .description {
       display: flex;
@@ -158,16 +158,16 @@
       margin: -5% 0 0 1%;
       width: 45%;
       height: 46vh;
-      border-right: 30px solid #80999E;
-      border-bottom: 30px solid #80999E;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
 
     }
     .side-modalImages {
       width: 800px;
       height: 65vh;
       margin-top: -50px;
-      border-right: 30px solid #80999E;
-      border-bottom: 30px solid #80999E;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
     }
     #features {
       display: flex;
@@ -214,36 +214,24 @@
     }
 
     .feature-text {
-      font-size: 18px;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 20px;
+      font-family: "PTSerif";
     }
 
-    /* #carousel {
-      height: 60vh;
-      margin: 0 0 5% 5%;
-      overflow: hidden;
-    }
-    .carousel-img {
-      width: 22%;
-      height: 25vh;
-      margin-right: 18px;
-      margin-bottom: 18px;
-
-    } */
     #carousels {
       height: 60vh;
       margin: 0 auto;
       overflow: hidden;
-      white-space: nowrap; /* Prevents child elements from wrapping */
+      white-space: nowrap; 
     }
 
     .carousel-row {
-        display: block; /* Display child elements in a single line */
-        white-space: nowrap; /* Prevents child elements from wrapping */
+        display: block; 
+        white-space: nowrap; 
     }
 
     .carousel-img {
-        display: inline-block; /* Display images in a single line */
+        display: inline-block; 
         width: 22%;
         height: 25vh;
         margin-right: 18px;
@@ -299,34 +287,50 @@
                   transform: translateX(0);
               }
           }
-
-
-    
+              
     .propertyVideos {
       display: flex;
-      /* align-items: center; */
+      flex-direction: column;
       top: 10px;
-      justify-content: center;
+      align-items: center;
       background-color: #f0f0f0;
-      height: 80vh;
+      height: 60vh;
     }
     .propertyMedia {
       display: flex;
-      flex-wrap: wrap;
     }
+    
     .propertyCategory {
       margin-right: 20px;
+      margin-left: 20px;
       margin-top: -35px;
-      align-items: center;
-
+      text-align: center;
+      display: inline-block;
     }
     .videoList {
       list-style: none; 
-      /* margin-top: 35px; */
       padding: 0;
     }
     .videoList li {
       margin-bottom: 0px;
+      display: inline-block;
+      text-align: center;
+      list-style: none; 
+      padding: 0;
+      margin: 20px;
+    }
+
+    .subVideoList {
+      list-style-type: none;
+      padding: 0;
+      margin-left: 20px;
+    }
+
+    .videoPlayer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; 
     }
 
     .propertyRealtor {
@@ -373,12 +377,18 @@
     
     .google-maps-section {
       text-align: center;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 6em;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    h3 {
+      font-size: 2.5em;
       margin-bottom: 20px;
+      color: white;
     }
 
     iframe {
@@ -390,21 +400,37 @@
     }
 
     .parallax {
-      text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
       background-image: url('{{ images.image1 }}');
-      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 80vh;
+      position: relative;
+    }
+
+    .parallax::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5); 
     }
 
     .parallax-card {
-      background-color: white;
-      padding: 10px;
-      border-radius: 15px;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative; 
+      z-index: 1; 
     }
+
     .contact-form-section {
       max-width: 600px;
       height: 80vh;
@@ -432,6 +458,8 @@
       color: white;
       margin: 10px;
       width: 35%;
+      font-family: "Poppins";
+      font-size: 20px;
     }
     label {
       font-size: larger;
@@ -457,14 +485,50 @@
       width: 90%;
     }
 
-
-
+    .floating-menu {
+      font-family: sans-serif;
+      background: white;
+      padding: 18px;;
+      top: 4%;
+      width: 140px;
+      z-index: 100;
+      position: fixed;
+      right: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    }
+    .floating-menu a, 
+    .floating-menu h1 {
+      font-size: 1em;
+      display: block;
+      margin: 0 1em;
+      color: black;
+      align-items: center;
+    }
+    .sideMenuTitle {
+      display: flex;
+      flex-direction: row;
+      cursor: pointer;
+    }
+    .sideMenu {
+      display: none;
+      /* height: 100vh; */
+      background: white;
+    }
+    .sideMenu.show-menu {
+      display: block;
+    }
+    .sideMenu a {
+      display: block;
+      margin: 0.5em 0;
+      color: black;
+      text-decoration: none;
+    }
 
   </style>
 
 </head>
 <body>
-  <section>
+  <section id="home">
     <div id="home">
       <div id="menu">
         {% for item in menu %}
@@ -539,6 +603,17 @@
     </div>
   </section>
   <section>
+    <nav class="floating-menu">
+      <div class="sideMenuTitle">        
+        <h1>MENU</h1>
+        <i class="material-icons">segment</i>
+      </div>
+      <div class="sideMenu">
+        {% for item in menu %}
+          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+        {% endfor %}
+      </div>
+    </nav>
     <div id="details">
       <div class="price">
         <p class="subtext">Offered At</p>
@@ -576,7 +651,7 @@
           </a>
         </div> 
       </div>
-      <div id="">
+      <div>
         <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
           <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
         </a>
@@ -653,56 +728,29 @@
         </div> 
     </div>
   </section>
-
-  <section>
-    <div class="propertyVideos">
-      
+  <section id="4" >
+    <div class="propertyVideos">  
       <div class="propertyMedia">
-        <section id="4" >
+          {% for category, videos in propertyVideos.items() %}
         <div class="propertyCategory">
-          <p class="title-text">Video Gallery</p>
-          <div class="">
+          <p class="title-text">{{ category }}</p>
+          <div class="propertyCategoryList">
             <ul class="videoList">
-              
-              <li>Views from Above</li>
-              
-              <li>Explore the Estate</li>
-              
+              {% for video_title, video_url in videos.items() %}
+              <li><a onclick="playVideo('{{ video_url }}')" class="feature-text">{{ video_title }}</a></li>
+              {% endfor %}
             </ul>
           </div>
         </div>
-        </section>
-        <section id="5" >
-        <div class="propertyCategory">
-          <p class="title-text">3D Tours</p>
-          <div class="">
-            <ul class="videoList">
-              
-              <li>Main House</li>
-              
-              <li>Guest House</li>
-              
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section id="6" >
-        <div class="propertyCategory">
-          <p class="title-text">Floor Plans</p>
-          <div class="">
-            <ul class="videoList">
-              
-              <li>Floor 1</li>
-              
-              <li>Floor 2</li>
-              
-            </ul>
-          </div>
-        </div>
-      </section> 
+          {% endfor %}
+      </div>
+      <div class="videoPlayer">
+        <video controls id="videoPlayer">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
-  </section>
   <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">{{ propertyRealtor.realtorTitle}}</p>
@@ -737,8 +785,8 @@
   <section>
     <div class="parallax">
       <div class="parallax-card">
-        <p class="title-textt">{{ titleAddress }} <p>
-        <p class="title-text">{{ extendedAddress }}</p>
+        <h1>{{ titleAddress }} <h1>
+        <h3>{{ extendedAddress }}</h3>
       </div>
     </div>
   </section>
@@ -764,7 +812,7 @@
         <p class="title-textt text-right">{{title}}</p>
         <p class="title-text">{{address}}</p>
         <p class="subtext mt-3">{{extendedAddress}}</p>
-        <p>{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
+        <p class="text">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
       </div>
     </div>
   </footer>
@@ -782,9 +830,7 @@
         var zoomImages = document.querySelectorAll('.zoomify');
         zoomImages.forEach(function (image) {
             var zoomInstance = new Zoomify(image);
-            // Zoom in first
             zoomInstance.zoomIn();
-            // After 2 seconds, zoom out
             setTimeout(function () {
                 zoomInstance.zoomOut(); 
             }, 2000); 
@@ -829,6 +875,54 @@
       }
   
       setInterval(scrollCarousel2, 3000);
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const categories = document.querySelectorAll('.propertyCategory');
+
+        categories.forEach((category, index) => {
+          const videoList = category.querySelector('.videoList');
+          if (index !== 0) {
+            videoList.style.display = 'none';
+          }
+        });
+
+        categories.forEach(category => {
+          const title = category.querySelector('.title-text');
+          const videoList = category.querySelector('.videoList');
+
+          title.addEventListener('click', function() {
+            const isActive = category.classList.contains('active');
+
+            categories.forEach(c => {
+              c.classList.remove('active');
+              c.querySelector('.videoList').style.display = 'none';
+            });
+
+            if (!isActive) {
+              category.classList.add('active');
+              videoList.style.display = 'block';
+            }
+          });
+        });
+      });
+
+      function playVideo(videoUrl) {
+        var videoPlayer = document.getElementById('videoPlayer');
+        var source = videoPlayer.querySelector('source');
+
+        source.src = videoUrl;
+        videoPlayer.load(); 
+        videoPlayer.play();
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const sideMenuTitle = document.querySelector('.sideMenuTitle');
+        const sideMenu = document.querySelector('.sideMenu');
+
+        sideMenuTitle.addEventListener('click', function() {
+          sideMenu.classList.toggle('show-menu');
+        });
+      });
   </script>
 </body>
 </html>
