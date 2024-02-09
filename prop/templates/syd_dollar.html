@@ -6,7 +6,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.css">
@@ -27,7 +26,6 @@
       padding: 0;
       height: 100vh;
     }
-
     #home {
       position: relative;
       height: 100vh;
@@ -100,7 +98,6 @@
       overflow: hidden;
     }
     #details-menu {
-      /* font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; */
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -124,6 +121,7 @@
       font-size: 15px;
       color: black;
       font-family: "Poppins";
+      text-align: justify;
     }
     .price {
       margin-left: 8%;
@@ -131,7 +129,7 @@
     #description {
       display: flex;
       flex-direction: column;
-      height: 140vh;
+      height: 150vh;
       padding: 150px 120px 50px 200px;
     }
     #files {
@@ -149,7 +147,6 @@
       height: 65vh;
       width: 100%;
       margin: 0 0 30px 0;
-      padding: 0;
     }
     .description {
       display: flex;
@@ -161,16 +158,16 @@
       margin: -5% 0 0 1%;
       width: 45%;
       height: 46vh;
-      border-right: 30px solid #80999E;
-      border-bottom: 30px solid #80999E;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
 
     }
     .side-modalImages {
       width: 800px;
       height: 65vh;
       margin-top: -50px;
-      border-right: 30px solid #80999E;
-      border-bottom: 30px solid #80999E;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
     }
     #features {
       display: flex;
@@ -301,16 +298,14 @@
     }
     .propertyMedia {
       display: flex;
-      flex-wrap: wrap;
     }
     
     .propertyCategory {
       margin-right: 20px;
       margin-left: 20px;
       margin-top: -35px;
-      align-items: center;
       text-align: center;
-
+      display: inline-block;
     }
     .videoList {
       list-style: none; 
@@ -464,6 +459,7 @@
       margin: 10px;
       width: 35%;
       font-family: "Poppins";
+      font-size: 20px;
     }
     label {
       font-size: larger;
@@ -655,7 +651,7 @@
           </a>
         </div> 
       </div>
-      <div id="">
+      <div>
         <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
           <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
         </a>
@@ -732,25 +728,29 @@
         </div> 
     </div>
   </section>
-  <section>
-    <div class="propertyVideos">
-      
+  <section id="4" >
+    <div class="propertyVideos">  
       <div class="propertyMedia">
-        <section id="4" >
+          {% for category, videos in propertyVideos.items() %}
         <div class="propertyCategory">
           <p class="title-text">{{ category }}</p>
-          <div class="">
+          <div class="propertyCategoryList">
             <ul class="videoList">
-              {% for video in videos %}
-              <li>{{ video }}</li>
+              {% for video_title, video_url in videos.items() %}
+              <li><a onclick="playVideo('{{ video_url }}')" class="feature-text">{{ video_title }}</a></li>
               {% endfor %}
             </ul>
           </div>
         </div>
-        {% endfor %}
+          {% endfor %}
+      </div>
+      <div class="videoPlayer">
+        <video controls id="videoPlayer">
+          <source src="" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
-  </section>
   <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">{{ propertyRealtor.realtorTitle}}</p>

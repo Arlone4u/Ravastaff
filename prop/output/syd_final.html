@@ -6,7 +6,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.css">
@@ -27,7 +26,6 @@
       padding: 0;
       height: 100vh;
     }
-
     #home {
       position: relative;
       height: 100vh;
@@ -64,7 +62,6 @@
       font-size: 55px;
       font-weight: bold;
       font-family: "PTSerif";
-      text-shadow: #333;
     }
 
     #address {
@@ -101,7 +98,6 @@
       overflow: hidden;
     }
     #details-menu {
-      /* font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif; */
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
@@ -125,6 +121,7 @@
       font-size: 15px;
       color: black;
       font-family: "Poppins";
+      text-align: justify;
     }
     .price {
       margin-left: 8%;
@@ -132,7 +129,7 @@
     #description {
       display: flex;
       flex-direction: column;
-      height: 140vh;
+      height: 150vh;
       padding: 150px 120px 50px 200px;
     }
     #files {
@@ -150,7 +147,6 @@
       height: 65vh;
       width: 100%;
       margin: 0 0 30px 0;
-      padding: 0;
     }
     .description {
       display: flex;
@@ -162,16 +158,16 @@
       margin: -5% 0 0 1%;
       width: 45%;
       height: 46vh;
-      border-right: 30px solid #80999E;
-      border-bottom: 30px solid #80999E;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
 
     }
     .side-modalImages {
       width: 800px;
       height: 65vh;
       margin-top: -50px;
-      border-right: 30px solid #80999E;
-      border-bottom: 30px solid #80999E;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
     }
     #features {
       display: flex;
@@ -302,16 +298,14 @@
     }
     .propertyMedia {
       display: flex;
-      flex-wrap: wrap;
     }
     
     .propertyCategory {
       margin-right: 20px;
       margin-left: 20px;
       margin-top: -35px;
-      align-items: center;
       text-align: center;
-
+      display: inline-block;
     }
     .videoList {
       list-style: none; 
@@ -465,6 +459,7 @@
       margin: 10px;
       width: 35%;
       font-family: "Poppins";
+      font-size: 20px;
     }
     label {
       font-size: larger;
@@ -707,7 +702,7 @@
           </a>
         </div> 
       </div>
-      <div id="">
+      <div>
         <a href="#" class="modal-trigger" data-image="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
           <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg" alt="Modal Trigger Image" class="modalImages">
         </a>
@@ -762,7 +757,7 @@
       </div>
     </div>
   </section>  
-  <section>
+  <section id ="3">
     <div id="carousel">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
@@ -820,10 +815,10 @@
         </div> 
     </div>
   </section>
-  <section>
-    <div class="propertyVideos">
+  <section id="4" >
+    <div class="propertyVideos">  
       <div class="propertyMedia">
-        
+          
         <div class="propertyCategory">
           <p class="title-text">Video Gallery</p>
           <div class="propertyCategoryList">
@@ -836,7 +831,7 @@
             </ul>
           </div>
         </div>
-        
+          
         <div class="propertyCategory">
           <p class="title-text">3D Tours</p>
           <div class="propertyCategoryList">
@@ -849,7 +844,7 @@
             </ul>
           </div>
         </div>
-        
+          
         <div class="propertyCategory">
           <p class="title-text">Floor Plans</p>
           <div class="propertyCategoryList">
@@ -862,7 +857,7 @@
             </ul>
           </div>
         </div>
-        
+          
       </div>
       <div class="videoPlayer">
         <video controls id="videoPlayer">
@@ -871,7 +866,6 @@
         </video>
       </div>
     </div>
-  </section>
   <section>
     <div class="propertyRealtor">
       <p class="title-text text-center">Presented By</p>
@@ -916,7 +910,7 @@
       </div>
     </div>
   </section>  
-  <section class="google-maps-section">
+  <section id="7" class="google-maps-section">
     <div class="">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -929,7 +923,7 @@
       </div>
     </div>
   </section>
-  <section class="contact-form-section">
+  <section id = "8" class="contact-form-section">
     <p class="title-text">Get in touch</p>
     <form id="contactForm" action="#" method="post">
       <div class="form-group">
