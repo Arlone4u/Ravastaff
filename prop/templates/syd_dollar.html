@@ -169,6 +169,75 @@
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
+
+    .desc-void .open-house-cta {
+    z-index: 2;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border: 1px solid #000;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    border-radius: 200%;
+    font-family: gt-sectra,serif;
+    font-size: 45px;
+    line-height: normal;
+    margin-top: 50px;
+    margin-left: -80px;
+  }
+  .desc-void .open-house-cta .open-house-label {
+    display: flex;
+    flex-direction: column;
+}
+  .desc-void {
+    width: 2000px;
+      height: 40vh;
+      margin-top: -550px;
+      padding-bottom: 50px;
+      margin-left: 800px;
+    display: flex;
+    justify-content: center;
+
+   
+}
+
+.desc-void .cross {
+    width: 1px;
+    background: #000;
+    height: 90%;
+    z-index: 1;
+}
+.desc-void .cross-1 {
+    rotate: 45deg;
+    z-index: 1;
+    transform: translate(40px,-4%);
+}
+.desc-void .cross-2 {
+    rotate: 45deg;
+    z-index: 1;
+    transform: translate(60px,-5%);
+}
+.desc-void .cross-3 {
+    rotate: 45deg;
+    z-index: 1;
+    transform: translate(60px,-5%);
+    height: 110%;
+}
+
+.desc-void .open-house-cta .open-house-preview {
+    font-family: Montserrat;
+    font-size: 18px;
+    background: #000;
+    color: #fff;
+    padding: 3px 10px;
+}
+.desc-void .open-house-cta .view-details-cta {
+    font-size: 17px;
+    margin-top: 15px;
+}
     #features {
       display: flex;
       flex-direction: column;
@@ -657,6 +726,25 @@
         </a>
       </div>  
     </div>
+  </div>
+  <div class="desc-void">
+    <div class="cross cross-1"></div>
+    <div class="cross cross-2"></div>
+    <div class="cross cross-3"></div>
+    <div class="open-house-cta">
+          <a href="#" onclick="return false;" class="more-link overlay-content-link" overlay-target="open-house">
+<div class="open-house-label"><span class="label-1">{{ houseviewing1 }}</span> <span class="label-2">{{ houseviewing2 }}</span></div>
+<div class="open-house-preview">
+  <span class="day">Fri, Jul 27</span>
+   <span class="sep">@</span>
+   <span class="time">9:45 AM</span>
+ </div>
+<div class="view-details-cta">
+          + 2 more
+        </div>
+</a>
+      </div>
+  </div>
   </section >
   <section id="2">
     <div id="features">
