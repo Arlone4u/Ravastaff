@@ -674,7 +674,7 @@
       </div>
     </div>
   </section>  
-  <section>
+  <section id ="3">
     <div id="carousel">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
@@ -734,25 +734,20 @@
   </section>
   <section>
     <div class="propertyVideos">
+      
       <div class="propertyMedia">
-        {% for category, videos in propertyVideos.items() %}
+        <section id="4" >
         <div class="propertyCategory">
           <p class="title-text">{{ category }}</p>
-          <div class="propertyCategoryList">
+          <div class="">
             <ul class="videoList">
-              {% for video_title, video_url in videos.items() %}
-              <li><a onclick="playVideo('{{ video_url }}')" class="feature-text">{{ video_title }}</a></li>
+              {% for video in videos %}
+              <li>{{ video }}</li>
               {% endfor %}
             </ul>
           </div>
         </div>
         {% endfor %}
-      </div>
-      <div class="videoPlayer">
-        <video controls id="videoPlayer">
-          <source src="" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   </section>
@@ -782,7 +777,7 @@
       </div>
     </div>
   </section>  
-  <section class="google-maps-section">
+  <section id="7" class="google-maps-section">
     <div class="">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
@@ -795,7 +790,7 @@
       </div>
     </div>
   </section>
-  <section class="contact-form-section">
+  <section id = "8" class="contact-form-section">
     <p class="title-text">{{ inquiry.inquiryTitle }}</p>
     <form id="contactForm" action="#" method="post">
       <div class="form-group">
