@@ -539,44 +539,50 @@
       height: 5vh;
       width: 90%;
     }
-
     .floating-menu {
-      font-family: sans-serif;
-      background: white;
-      padding: 18px;;
-      top: 4%;
-      width: 140px;
-      z-index: 100;
       position: fixed;
-      right: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
-    }
-    .floating-menu a, 
-    .floating-menu h1 {
-      font-size: 1em;
-      display: block;
-      margin: 0 1em;
-      color: black;
-      align-items: center;
+      z-index: 100;
+      top: 35px;
+      right: 20px;
+      background-color: #fff;
+      width: 120px;
+      height: 5vh;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: none;
     }
     .sideMenuTitle {
-      display: flex;
-      flex-direction: row;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: #000;
     }
     .sideMenu {
       display: none;
-      /* height: 100vh; */
-      background: white;
-    }
-    .sideMenu.show-menu {
-      display: block;
+      top: 0;
+      right: 0;
+      float: right;
+      width: 300px;
+      height: 100%;
+      padding: 5px;
+      position: fixed;
+      color: #000;
+      background-color: #fff;
+      z-index: 100;
+      border-left: solid 3px #000;
     }
     .sideMenu a {
       display: block;
-      margin: 0.5em 0;
-      color: black;
+      margin-bottom: 10px;
+      color: #333;
       text-decoration: none;
+      padding: 5px;
+      font-size: 30px;
+      text-align: right;
+    }
+    .sideMenu i.material-icons {
+      font-size: 50px;
     }
 
   </style>
@@ -658,17 +664,6 @@
     </div>
   </section>
   <section>
-    <nav class="floating-menu">
-      <div class="sideMenuTitle">        
-        <h1>MENU</h1>
-        <i class="material-icons">segment</i>
-      </div>
-      <div class="sideMenu">
-        {% for item in menu %}
-          <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
-        {% endfor %}
-      </div>
-    </nav>
     <div id="details">
       <div class="price">
         <p class="subtext">Offered At</p>
@@ -892,108 +887,153 @@
     </div>
   </footer>
 
+  <!-- MODALS -->
+
+  <!-- Floating Sidebar Menu -->
+  <nav class="floating-menu">
+    <div class="sideMenuTitle" id="toggleMenu">        
+      <p>MENU<p>
+      <i class="material-icons">segment</i>
+    </div>
+    <div class="sideMenu" id="sideMenu">
+      <div id="closeMenu"><i class="material-icons">close</i></div>
+      {% for item in menu %}
+        <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+  <nav class="sideMenu">
+    <div class="sideMenu" id="sideMenu">
+      {% for item in menu %}
+        <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+      {% endfor %}
+    </div>
+  </nav>
+
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var carousel = document.querySelector('.carousel');
-        var carouselInstance = new bootstrap.Carousel(carousel, {
-            interval: 5000, 
-            //pause: 'hover', 
-            wrap: true
-        });
+  document.addEventListener("DOMContentLoaded", function() {
+    var carousel = document.querySelector('.carousel');
+    var carouselInstance = new bootstrap.Carousel(carousel, {
+        interval: 5000, 
+        //pause: 'hover', 
+        wrap: true
+  });
   
-        var zoomImages = document.querySelectorAll('.zoomify');
-        zoomImages.forEach(function (image) {
-            var zoomInstance = new Zoomify(image);
-            zoomInstance.zoomIn();
-            setTimeout(function () {
-                zoomInstance.zoomOut(); 
-            }, 2000); 
-        });
+  var zoomImages = document.querySelectorAll('.zoomify');
+  zoomImages.forEach(function (image) {
+    var zoomInstance = new Zoomify(image);
+      zoomInstance.zoomIn();
+      setTimeout(function () {
+          zoomInstance.zoomOut(); 
+      }, 2000); 
     });
+  });
   
-    function scrollCarousel() {
-      const carouselRow = document.getElementById('carousel-image');
-      const imageWidth = carouselRow.firstElementChild.offsetWidth;
-      const fixedOffset = 50; 
+  function scrollCarousel() {
+    const carouselRow = document.getElementById('carousel-image');
+    const imageWidth = carouselRow.firstElementChild.offsetWidth;
+    const fixedOffset = 50; 
   
-  
-      carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-      carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-  
-  
-      setTimeout(() => {
-        carouselRow.style.transition = 'none';
-        carouselRow.style.transform = 'translateX(0)';
-        carouselRow.appendChild(carouselRow.firstElementChild);
-      }, 20000);
-    }
-  
-      setInterval(scrollCarousel, 3000);
+    carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+    carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
   
   
-      function scrollCarousel2() {
-        const carouselRow2 = document.getElementById('carousel-image-2');
-        const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
-        const fixedOffset2 = 50;
+    setTimeout(() => {
+      carouselRow.style.transition = 'none';
+      carouselRow.style.transform = 'translateX(0)';
+      carouselRow.appendChild(carouselRow.firstElementChild);
+    }, 20000);
+  }
+  setInterval(scrollCarousel, 3000);
   
   
-        carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-        carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
-  
-  
-        setTimeout(() => {
-          carouselRow2.style.transition = 'none';
-          carouselRow2.style.transform = 'translateX(0)';
-          carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
-        }, 20000);
+  function scrollCarousel2() {
+    const carouselRow2 = document.getElementById('carousel-image-2');
+    const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
+    const fixedOffset2 = 50;
+
+
+    carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
+    carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
+
+
+    setTimeout(() => {
+      carouselRow2.style.transition = 'none';
+      carouselRow2.style.transform = 'translateX(0)';
+      carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
+    }, 20000);
+  }
+  setInterval(scrollCarousel2, 3000);
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const categories = document.querySelectorAll('.propertyCategory');
+
+    categories.forEach((category, index) => {
+      const videoList = category.querySelector('.videoList');
+      if (index !== 0) {
+        videoList.style.display = 'none';
       }
-  
-      setInterval(scrollCarousel2, 3000);
+    });
 
-      document.addEventListener("DOMContentLoaded", function() {
-        const categories = document.querySelectorAll('.propertyCategory');
+    categories.forEach(category => {
+      const title = category.querySelector('.title-text');
+      const videoList = category.querySelector('.videoList');
 
-        categories.forEach((category, index) => {
-          const videoList = category.querySelector('.videoList');
-          if (index !== 0) {
-            videoList.style.display = 'none';
-          }
+      title.addEventListener('click', function() {
+        const isActive = category.classList.contains('active');
+
+        categories.forEach(c => {
+          c.classList.remove('active');
+          c.querySelector('.videoList').style.display = 'none';
         });
 
-        categories.forEach(category => {
-          const title = category.querySelector('.title-text');
-          const videoList = category.querySelector('.videoList');
-
-          title.addEventListener('click', function() {
-            const isActive = category.classList.contains('active');
-
-            categories.forEach(c => {
-              c.classList.remove('active');
-              c.querySelector('.videoList').style.display = 'none';
-            });
-
-            if (!isActive) {
-              category.classList.add('active');
-              videoList.style.display = 'block';
-            }
-          });
-        });
+        if (!isActive) {
+          category.classList.add('active');
+          videoList.style.display = 'block';
+        }
       });
+    });
+  });
 
-      function playVideo(videoUrl) {
-        var videoPlayer = document.getElementById('videoPlayer');
-        var source = videoPlayer.querySelector('source');
+  function playVideo(videoUrl) {
+    var videoPlayer = document.getElementById('videoPlayer');
+    var source = videoPlayer.querySelector('source');
 
-        source.src = videoUrl;
-        videoPlayer.load(); 
-        videoPlayer.play();
-      }
+    source.src = videoUrl;
+    videoPlayer.load(); 
+    videoPlayer.play();
+  }
 
-      document.addEventListener('DOMContentLoaded', function() {
-        const sideMenuTitle = document.querySelector('.sideMenuTitle');
-        const sideMenu = document.querySelector('.sideMenu');
+  document.getElementById('toggleMenu').addEventListener('click', function() {
+    var sideMenu = document.getElementById('sideMenu');
+    if (sideMenu.style.display === 'none') {
+      sideMenu.style.display = 'block';
+    } else {
+      sideMenu.style.display = 'none';
+    }
+  });
 
+  document.getElementById('closeMenu').addEventListener('click', function() {
+    var sideMenu = document.getElementById('sideMenu');
+    if (sideMenu.style.display === 'block') {
+      sideMenu.style.display = 'none';
+    } else {
+      sideMenu.style.display = 'none';
+    }
+  });
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    var section2 = document.getElementById("details");
+    var floatingMenu = document.querySelector('.floating-menu');
+    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
+      floatingMenu.style.display = "block";
+    } else {
+      floatingMenu.style.display = "none";
+    }
+  }
         sideMenuTitle.addEventListener('click', function() {
           sideMenu.classList.toggle('show-menu');
         });
