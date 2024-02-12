@@ -593,7 +593,7 @@
     <div id="home">
       <div id="menu">
         {% for item in menu %}
-          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+          <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
         {% endfor %}
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -995,7 +995,24 @@
       });
     });
   });
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
 
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Adjust the offset as needed
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+    
   function playVideo(videoUrl) {
     var videoPlayer = document.getElementById('videoPlayer');
     var source = videoPlayer.querySelector('source');
@@ -1034,26 +1051,9 @@
       floatingMenu.style.display = "none";
     }
   }
-        sideMenuTitle.addEventListener('click', function() {
-          sideMenu.classList.toggle('show-menu');
-        });
-      });
-       // Smooth scroll when clicking on anchor links
-       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 100, // Adjust the offset as needed
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
+   sideMenuTitle.addEventListener('click', function() {
+    sideMenu.classList.toggle('show-menu');
+  });
   </script>
 </body>
 </html>
