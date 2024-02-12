@@ -665,7 +665,7 @@
       </div>
       <div class="sideMenu">
         {% for item in menu %}
-          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+          <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
         {% endfor %}
       </div>
     </nav>
@@ -996,6 +996,22 @@
 
         sideMenuTitle.addEventListener('click', function() {
           sideMenu.classList.toggle('show-menu');
+        });
+      });
+       // Smooth scroll when clicking on anchor links
+       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Adjust the offset as needed
+              behavior: 'smooth'
+            });
+          }
         });
       });
   </script>
