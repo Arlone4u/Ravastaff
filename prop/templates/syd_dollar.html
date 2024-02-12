@@ -291,26 +291,6 @@
       font-family: "PTSerif";
     }
 
-    #carousels {
-      height: 60vh;
-      margin: 0 auto;
-      overflow: hidden;
-      white-space: nowrap; 
-    }
-
-    .carousel-row {
-        display: block; 
-        white-space: nowrap; 
-    }
-
-    .carousel-img {
-        display: inline-block; 
-        width: 22%;
-        height: 25vh;
-        margin-right: 18px;
-        margin-bottom: 18px;
-    }
-
     .carousel-container {
               overflow: hidden;
               padding-top: 2cm;
@@ -323,43 +303,45 @@
               margin-right: 20px;
           }
           #first-carousel {
-              display: flex;
-              animation: scrollAnimation 60s linear infinite;
-              margin-bottom: 0.5cm;
-          }
+    display: flex;
+    animation: scrollAnimation 60s linear infinite;
+    margin-bottom: 0.5cm;
+}
 
-          #first-carousel:hover{
-              animation-play-state: paused;
-          }
+#second-carousel {
+    display: flex;
+    animation: scrollAnimationOpposite 60s linear infinite;
+    margin-bottom: 0.5cm;
+}
 
-          #second-carousel {
-              display: flex;
-              animation: scrollAnimationOpposite 60s linear infinite;
-              margin-bottom: 0.5cm;
-          }
+#first-carousel:hover,
+#second-carousel:hover {
+    animation-play-state: paused;
+}
 
-          #second-carousel:hover{
-              animation-play-state: paused;
-          }
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+    100.1% {
+      transform: translateX(-50%);
+    }
+}
 
-
-          @keyframes scrollAnimation {
-              0% {
-                  transform: translateX(0);
-              }
-              100% {
-                  transform: translateX(-100%);
-              }
-          }
-
-          @keyframes scrollAnimationOpposite {
-              0% {
-                  transform: translateX(-50%);
-              }
-              100% {
-                  transform: translateX(0);
-              }
-          }
+@keyframes scrollAnimationOpposite {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    100.1% {
+        transform: translateX(-50%);
+    }
+}
               
     .propertyVideos {
       display: flex;
@@ -790,6 +772,7 @@
           <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
+         
         </div>
         <div class="carousels" id="second-carousel">
           <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
