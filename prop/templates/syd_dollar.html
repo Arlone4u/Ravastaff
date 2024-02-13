@@ -913,13 +913,6 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
-    var carousel = document.querySelector('.carousel');
-    var carouselInstance = new bootstrap.Carousel(carousel, {
-        interval: 5000, 
-        //pause: 'hover', 
-        wrap: true
-  });
-  
   var zoomImages = document.querySelectorAll('.zoomify');
   zoomImages.forEach(function (image) {
     var zoomInstance = new Zoomify(image);
@@ -930,42 +923,7 @@
     });
   });
   
-  function scrollCarousel() {
-    const carouselRow = document.getElementById('carousel-image');
-    const imageWidth = carouselRow.firstElementChild.offsetWidth;
-    const fixedOffset = 50; 
-  
-    carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-  
-  
-    setTimeout(() => {
-      carouselRow.style.transition = 'none';
-      carouselRow.style.transform = 'translateX(0)';
-      carouselRow.appendChild(carouselRow.firstElementChild);
-    }, 20000);
-  }
-  setInterval(scrollCarousel, 3000);
-  
-  
-  function scrollCarousel2() {
-    const carouselRow2 = document.getElementById('carousel-image-2');
-    const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
-    const fixedOffset2 = 50;
-
-
-    carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
-
-
-    setTimeout(() => {
-      carouselRow2.style.transition = 'none';
-      carouselRow2.style.transform = 'translateX(0)';
-      carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
-    }, 20000);
-  }
-  setInterval(scrollCarousel2, 3000);
-
+ 
   document.addEventListener("DOMContentLoaded", function() {
     const categories = document.querySelectorAll('.propertyCategory');
 
