@@ -309,26 +309,6 @@
       font-family: "PTSerif";
     }
 
-    #carousels {
-      height: 60vh;
-      margin: 0 auto;
-      overflow: hidden;
-      white-space: nowrap; 
-    }
-
-    .carousel-row {
-        display: block; 
-        white-space: nowrap; 
-    }
-
-    .carousel-img {
-        display: inline-block; 
-        width: 22%;
-        height: 25vh;
-        margin-right: 18px;
-        margin-bottom: 18px;
-    }
-
     .carousel-container {
               overflow: hidden;
               padding-top: 2cm;
@@ -341,43 +321,57 @@
               margin-right: 20px;
           }
           #first-carousel {
-              display: flex;
-              animation: scrollAnimation 60s linear infinite;
-              margin-bottom: 0.5cm;
-          }
+    display: flex;
+    animation: scrollAnimation 60s linear infinite;
+    margin-bottom: 0.5cm;
+}
 
-          #first-carousel:hover{
-              animation-play-state: paused;
-          }
+#second-carousel {
+    display: flex;
+    animation: scrollAnimationOpposite 60s linear infinite;
+    margin-bottom: 0.5cm;
+}
 
-          #second-carousel {
-              display: flex;
-              animation: scrollAnimationOpposite 60s linear infinite;
-              margin-bottom: 0.5cm;
-          }
+#first-carousel:hover,
+#second-carousel:hover {
+    animation-play-state: paused;
+}
 
-          #second-carousel:hover{
-              animation-play-state: paused;
-          }
+@keyframes scrollAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+    100.1% {
+      transform: translateX(-50%);
+    }
+}
 
+@keyframes scrollAnimationOpposite {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    100.1% {
+        transform: translateX(-50%);
+    }
+}
 
-          @keyframes scrollAnimation {
-              0% {
-                  transform: translateX(0);
-              }
-              100% {
-                  transform: translateX(-100%);
-              }
-          }
+.videoPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; 
+}
 
-          @keyframes scrollAnimationOpposite {
-              0% {
-                  transform: translateX(-50%);
-              }
-              100% {
-                  transform: translateX(0);
-              }
-          }
+#videoPlayer {
+  width: 120vh; /* Set the width to 100% to make the video player responsive */
+  height: 70vh; /* Automatically adjust the height to maintain the aspect ratio */
+}
               
     .propertyVideos {
       display: flex;
@@ -385,7 +379,7 @@
       top: 10px;
       align-items: center;
       background-color: #f0f0f0;
-      height: 60vh;
+      height: 100vh;
     }
     .propertyMedia {
       display: flex;
@@ -767,7 +761,7 @@
     <div id="home">
       <div id="menu">
         {% for item in menu %}
-          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+          <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
         {% endfor %}
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -941,6 +935,7 @@
           <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
+         
         </div>
         <div class="carousels" id="second-carousel">
           <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
@@ -1202,59 +1197,17 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
-    var carousel = document.querySelector('.carousel');
-    var carouselInstance = new bootstrap.Carousel(carousel, {
-        interval: 5000, 
-        //pause: 'hover', 
-        wrap: true
+  var zoomImages = document.querySelectorAll('.zoomify');
+  zoomImages.forEach(function (image) {
+    var zoomInstance = new Zoomify(image);
+      zoomInstance.zoomIn();
+      setTimeout(function () {
+          zoomInstance.zoomOut(); 
+      }, 2000); 
+    });
   });
   
-  // var zoomImages = document.querySelectorAll('.zoomify');
-  // zoomImages.forEach(function (image) {
-  //   var zoomInstance = new Zoomify(image);
-  //     zoomInstance.zoomIn();
-  //     setTimeout(function () {
-  //         zoomInstance.zoomOut(); 
-  //     }, 2000); 
-  //   });
-  });
-  
-  function scrollCarousel() {
-    const carouselRow = document.getElementById('carousel-image');
-    const imageWidth = carouselRow.firstElementChild.offsetWidth;
-    const fixedOffset = 50; 
-  
-    carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-  
-  
-    setTimeout(() => {
-      carouselRow.style.transition = 'none';
-      carouselRow.style.transform = 'translateX(0)';
-      carouselRow.appendChild(carouselRow.firstElementChild);
-    }, 20000);
-  }
-  setInterval(scrollCarousel, 3000);
-  
-  
-  function scrollCarousel2() {
-    const carouselRow2 = document.getElementById('carousel-image-2');
-    const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
-    const fixedOffset2 = 50;
-
-
-    carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
-
-
-    setTimeout(() => {
-      carouselRow2.style.transition = 'none';
-      carouselRow2.style.transform = 'translateX(0)';
-      carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
-    }, 20000);
-  }
-  setInterval(scrollCarousel2, 3000);
-
+ 
   document.addEventListener("DOMContentLoaded", function() {
     const categories = document.querySelectorAll('.propertyCategory');
 
@@ -1284,7 +1237,24 @@
       });
     });
   });
+  document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
 
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100, // Adjust the offset as needed
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+    
   function playVideo(videoUrl) {
     var videoPlayer = document.getElementById('videoPlayer');
     var source = videoPlayer.querySelector('source');
@@ -1322,6 +1292,9 @@
       floatingMenu.style.display = "none";
     }
   }
+   sideMenuTitle.addEventListener('click', function() {
+    sideMenu.classList.toggle('show-menu');
+  });
 
   var openHouseModal = document.getElementById('openHouseModal');
   var openHouseOverlay = document.getElementById('openHouseOverlay');
