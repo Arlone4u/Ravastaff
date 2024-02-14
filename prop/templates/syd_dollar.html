@@ -20,6 +20,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <style>
+    .horizontal-line {
+      width: 100%; 
+      height: 1px; 
+      background-color: #aeacac;
+      margin: 5px;
+    }
     body {
       font-family: "PTSerif";
       margin: 0;
@@ -122,6 +128,14 @@
       color: black;
       font-family: "Poppins";
       text-align: justify;
+      margin: 0;
+    }
+    .text-center {
+      font-size: 15px;
+      color: black;
+      font-family: "Poppins";
+      text-align: center;
+      margin: 0;
     }
     .price {
       margin-left: 8%;
@@ -177,71 +191,75 @@
     }
 
     .desc-void .open-house-cta {
-    z-index: 2;
-    width: 250px;
-    height: 250px;
-    background: #fff;
-    border: 1px solid #000;
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    border-radius: 200%;
-    font-family: gt-sectra,serif;
-    font-size: 45px;
-    line-height: normal;
-    margin-top: 50px;
-    margin-left: -80px;
-  }
-  .desc-void .open-house-cta .open-house-label {
-    display: flex;
-    flex-direction: column;
-}
-  .desc-void {
-    width: 500px;
-    height: 40vh;
-    margin-top: -350px;
-    padding-bottom: 50px;
-    margin-left: 950px;
-    display: flex;
-    justify-content: center;   
-}
+      z-index: 2;
+      width: 320px;
+      height: 320px;
+      background: #fff;
+      border: 1px solid #000;
+      text-align: center;
+      align-items: center;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      border-radius: 200%;
+      font-family: gt-sectra,serif;
+      font-size: 45px;
+      line-height: normal;
+      margin-top: 50px;
+      margin-left: -80px;
+    }
+    .desc-void .open-house-cta .open-house-label {
+      display: flex;
+      flex-direction: column;
+    }
+    .desc-void {
+      width: 500px;
+      height: 40vh;
+      margin-top: -350px;
+      padding-bottom: 50px;
+      margin-left: 950px;
+      display: flex;
+      justify-content: center;   
+    }
 
-.desc-void .cross {
-    width: 1px;
-    background: #000;
-    height: 90%;
-    z-index: 1;
-}
-.desc-void .cross-1 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(40px,-4%);
-}
-.desc-void .cross-2 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(60px,-5%);
-}
-.desc-void .cross-3 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(60px,-5%);
-    height: 110%;
-}
-
-.desc-void .open-house-cta .open-house-preview {
-    font-family: Montserrat;
-    font-size: 18px;
-    background: #000;
-    color: #fff;
-    padding: 3px 10px;
-}
-.desc-void .open-house-cta .view-details-cta {
-    font-size: 17px;
-    margin-top: 15px;
-}
+    .desc-void .cross {
+      width: 1px;
+      background: #000;
+      height: 500px;
+      z-index: 1;
+    }
+    .desc-void .cross-1 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(40px,-15%);
+      height: 450px;
+    }
+    .desc-void .cross-2 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(60px,-20%);
+      height: 520px;
+    }
+    .desc-void .cross-3 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(60px,-15%);
+      height: 450px;
+    }
+    .desc-void .open-house-cta .open-house-preview {
+      font-family: Montserrat;
+      font-size: 18px;
+      background: #000;
+      color: #fff;
+      padding: 3px 10px;
+    }
+    .desc-void .open-house-cta .view-details-cta {
+      font-size: 17px;
+      margin-top: 15px;
+    }
+    #openHouse{
+      text-decoration: none;
+    }
     #features {
       display: flex;
       flex-direction: column;
@@ -463,6 +481,10 @@
       margin-bottom: 20px;
       color: white;
     }
+    h4 {
+      font-size: 1.5em;
+      color: black;
+    }
 
     iframe {
       width: 100%;
@@ -527,12 +549,12 @@
     .inquiryBtn {
       padding: 10px;
       text-align: center;
-      background-color: black;
-      color: white;
       margin: 10px;
-      width: 35%;
+      width: 100%;
       font-family: "Poppins";
       font-size: 20px;
+      background-color: white;
+      border: 1px solid black;
     }
     label {
       font-size: larger;
@@ -548,6 +570,10 @@
     }
     .footerDetails {
       width: 65%;
+    }
+    .footerImage {
+      width: 30%;
+      height: 30%;
     }
     a {
       text-decoration: none;
@@ -601,6 +627,136 @@
     }
     .sideMenu i.material-icons {
       font-size: 50px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 65%;
+      left: 50%;
+      text-align: center;
+      overflow: auto;
+      transform: translate(-50%, -50%);
+      border-radius: 5px;
+    }
+
+    .modal-content {
+      display: flex;
+      align-items: center;
+      width: 25%;
+      height: 60%;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .openHouseModalCard {
+      background-color: #F9F9F9;
+      padding: 1%;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .modal-card {
+      padding: 1%;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+    .scheduleContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000000;
+      width: 360px;
+    }
+    .modal-card .scheduleContainer input[type="radio"] + label{
+      display: inline-block;
+      padding: 10px 0px;
+      width: 180px;
+      border: 1px solid #aeacac;
+      cursor: pointer;  
+    }
+    .modal-card input[type="text"] {
+      border: 1px solid #aeacac;
+      padding: 20px;
+      margin: 5px;
+      width: 360px;
+    }
+    .modal-card input[type="date"] {
+      border: 1px solid #aeacac;
+      width: 360px;
+      padding: 10px;
+    }
+    .modal-card input[type="radio"] {
+      display: none;
+      opacity: 0;
+    }
+    .modal-card input[type="radio"] + label {
+      display: inline-block;
+      padding: 10px 0px;
+      width: 120px;
+      border: 1px solid #aeacac;
+      cursor: pointer;
+    }
+    .modal-card input[type="radio"]:checked + label {
+      background-color: #000000;
+      color: white;
+    }
+    .confirmationModal-Content {
+        flex: 1;
+    }
+    .confirmationModal {
+      display: flex;
+      background-color: #F9F9F9;
+      width: 50%;
+      height: 60%;
+      margin: auto;
+    }
+    .confirmationImage {
+      max-width: 100%; 
+      height: 100%;
+    } 
+    .confirmationImage2 {
+      max-width: 30%; 
+      height: 30%;
+    }
+    .realtorInfoModal {
+      flex-grow: 1;
+      margin: 20px;
+    }
+
+    .modalBtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 5px;
+      color: #000000;
+      text-align: center;
+      cursor: pointer;
+      border: 1px solid #aeacac;
+      font-style: "Poppins";
+      width: 84%;
+      font-size: 20px;
+    }
+    .modalBtn:hover {
+      background-color: #dcdcdc;
+    }
+    .close i {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      color: rgb(255, 242, 0);
+      font-size: 50px;
+    }
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
     }
 
   </style>
@@ -728,21 +884,21 @@
           <div class="cross cross-2"></div>
           <div class="cross cross-3"></div>
           <div class="open-house-cta">
-            <a href="#" onclick="return false;" class="more-link overlay-content-link" overlay-target="open-house">
-          <div class="open-house-label"><span class="label-1">{{ houseviewing1 }}</span> <span class="label-2">{{ houseviewing2 }}</span></div>
-          <div class="open-house-preview">
-            <span class="day">Fri, Jul 27</span>
-            <span class="sep">@</span>
-            <span class="time">9:45 AM</span>
-          </div>
-          <div class="view-details-cta">
-            + 2 more
-          </div>
+            <a id="openHouse" overlay-target="open-house">
+              <div class="open-house-label"><span class="label-1">Open</span> <span class="label-2">House</span></div>
+              <div class="open-house-preview">
+                <span class="day">{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
+                <span class="sep">@</span>
+                <span class="time">{{openHouse.propertyViewing1.start_time}}</span>
+              </div>
+              <div class="view-details-cta">
+                + 2 more
+              </div>
             </a>
-        </div>
-      </div>  
+          </div>
+        </div>  
+      </div>
     </div>
-  </div>
   </div>
   </section >
   <section id="2">
@@ -848,7 +1004,7 @@
             <img src="{{ details.Image }}" alt="Modal Trigger Image" class="realtor-img">
           </div>
           <div class="realtor-info">
-            <h2 class="">{{ realtor }}</h2>
+            <h2>{{ realtor }}</h2>
             <div class="realtor-details">
               <p>TITLE <br>{{ details.Title }}</p>
               <p>COMPANY<br>{{ details.Company }}</p>
@@ -887,9 +1043,8 @@
         {% endfor %}
       </div>
       <div class="inquiryButton">
-        {% for button in inquiryButtons %}
-          <button class="inquiryBtn" type="submit">{{ button }}</button>
-        {% endfor %}
+          <button class="inquiryBtn" type="submit">Send Inquiry</button>
+          <button class="inquiryBtn" id="scheduleTour">Schedule a Tour</button>
       </div>
     </form>
   </section>
@@ -899,7 +1054,11 @@
         <p class="title-textt text-right">{{title}}</p>
         <p class="title-text">{{address}}</p>
         <p class="subtext mt-3">{{extendedAddress}}</p>
+        <p class="text">Powered by Revastaff</p>
         <p class="text">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
+      </div>
+      <div class="overlay">
+        <img src="{{ footerImage }}" alt="Footer Image" class="footerImage">
       </div>
     </div>
   </footer>
@@ -927,6 +1086,119 @@
     </div>
   </nav>
 
+  <!-- Open House Modal -->
+  <div id="openHouseModal" class="modal">
+    <div class="modal-content">
+      <h2 class="title-text">Open House</h2>
+      <div class="horizontal-line"></div>
+      <div class="openHouseModalCard">
+        <h2>{{openHouse.propertyViewing1.day}} - {{openHouse.propertyViewing1.date}}</h2>
+        <p>{{openHouse.propertyViewing1.brokerInfo}}</p>
+        <p>{{openHouse.propertyViewing1.start_time}} to {{openHouse.propertyViewing1.end_time}}</p>
+      </div>
+      <div class="openHouseModalCard">
+        <h2>{{openHouse.propertyViewing2.day}} - {{openHouse.propertyViewing2.date}}</h2>
+        <p>{{openHouse.propertyViewing2.brokerInfo}}</p>
+        <p>{{openHouse.propertyViewing2.start_time}} to {{openHouse.propertyViewing2.end_time}}</p>
+      </div>
+      <div class="openHouseModalCard">
+        <h2>{{openHouse.propertyViewing3.day}} - {{openHouse.propertyViewing3.date}}</h2>
+        <p>{{openHouse.propertyViewing3.brokerInfo}}</p>
+        <p>{{openHouse.propertyViewing3.start_time}} to {{openHouse.propertyViewing3.end_time}}</p>
+      </div>
+    </div>
+  </div>
+  <div id="openHouseOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+
+  <!-- Schedule Tour Modal -->
+  <div id="scheduleTourModal" class="modal">
+    <div class="modal-content">
+      <h4>Schedule a Tour</h4>
+      <div class="horizontal-line"></div>
+      <div class="modal-card">
+        <label for="appointmentType">APPOINTMENT TYPE </label>
+        <div class="scheduleContainer">
+          <input type="radio" id="inPerson" name="appointmentType" class="appointmentType"><label for="inPerson">In person </label>
+          <input type="radio" id="virtualShowing" name="appointmentType" class="appointmentType"><label for="virtualShowing">Virtual showing </label>
+        </div>
+
+      </div>
+      <div class="modal-card">
+        <label for="appointmentDate">APPOINTMENT DATE </label>
+        <div class="scheduleContainer">
+          <input type="date" id="date" name="appointmentDate" class="preferredTime"><label for="date"></label>
+        </div>
+      </div>
+      <div class="modal-card">
+        <label for="preferredTime">PREFERRED TIME </label>
+        <div class="scheduleContainer">
+          <input type="radio" id="morning" name="preferredTime" class="preferredTime"><label for="morning">Morning </label>
+          <input type="radio" id="afternoon" name="preferredTime" class="preferredTime"><label for="afternoon">Afternoon </label>
+          <input type="radio" id="evening" name="preferredTime" class="preferredTime"><label for="evening">Evening </label>
+        </div>
+
+      </div>
+      <button class="modalBtn" id="booking">Request this time <i class="material-icons">navigate_next</i></button>
+    </div>
+  </div>
+  <div id="scheduleTourOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+
+  <!-- Confirm Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <h4>Schedule Tour </h4>
+      <div class="horizontal-line"></div>
+      <div class="modal-card">
+        <p>In Person<br> Wednesday, February 14, 2024<br>Evening</p>
+      </div>
+      <div class="modal-card">
+        <input type="text" placeholder="First Name"> 
+        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="name@email.com">
+        <input type="text" placeholder="555-555-5555">
+        <input type="text" placeholder="I would like to schedule a showing">
+      </div>
+      <button class="modalBtn" id="confirmation">Confirm Booking</button>
+    </div>
+  </div>
+  <div id="bookingOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+
+  <div id="confirmationModal" class="modal">
+    <div class="confirmationModal">
+        <div class="confirmationModal-Content">
+            <a href="#" data-image="{{ images.image1 }}">
+                <img src="{{ images.image1 }}" class="confirmationImage">
+            </a>
+        </div>
+        <div class="confirmationModal-Content">
+            <div class="realtorInfoModal">
+              <h4> Your request for a virtual tour has been received.<h4>
+                <p class="text-center">We’ll follow up with confirmation shortly.</p>
+                <div class="horizontal-line"></div>
+                <p class="text-center">Requested Date: Wednesday, February 14th - EVENING</p>
+                <div class="horizontal-line"></div>
+              <div>
+                {% for realtor, details in propertyRealtor.realtors.items() %}
+                <div class="realtor"> <!--class="realtor"-->
+                     <img src="{{ details.Image }}" alt="Modal Trigger Image" class="confirmationImage2">
+                  <div class="realtorInfoModal"> 
+                    <p class="text">{{ realtor }}</p>
+                    <p class="text">{{ details.Title }}</p>
+                    <p class="text">{{ details.Company }}</p>
+                    <p class="text">{{ details.Phone }}</p>
+                    <p class="text"><a href="mailto:{{ details.Email }}">{{ details.Email }}</a></p>
+                    <p class="text"><a href="{{ details.Web }}">{{ details.Web }}</a></p>
+                    <p class="text">{{ details['License #'] }}</p>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="confirmationOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+
 
   <script>
   document.addEventListener("DOMContentLoaded", function() {
@@ -937,14 +1209,14 @@
         wrap: true
   });
   
-  var zoomImages = document.querySelectorAll('.zoomify');
-  zoomImages.forEach(function (image) {
-    var zoomInstance = new Zoomify(image);
-      zoomInstance.zoomIn();
-      setTimeout(function () {
-          zoomInstance.zoomOut(); 
-      }, 2000); 
-    });
+  // var zoomImages = document.querySelectorAll('.zoomify');
+  // zoomImages.forEach(function (image) {
+  //   var zoomInstance = new Zoomify(image);
+  //     zoomInstance.zoomIn();
+  //     setTimeout(function () {
+  //         zoomInstance.zoomOut(); 
+  //     }, 2000); 
+  //   });
   });
   
   function scrollCarousel() {
@@ -1041,7 +1313,6 @@
   });
 
   window.onscroll = function() {scrollFunction()};
-
   function scrollFunction() {
     var section2 = document.getElementById("details");
     var floatingMenu = document.querySelector('.floating-menu');
@@ -1049,6 +1320,83 @@
       floatingMenu.style.display = "block";
     } else {
       floatingMenu.style.display = "none";
+    }
+  }
+
+  var openHouseModal = document.getElementById('openHouseModal');
+  var openHouseOverlay = document.getElementById('openHouseOverlay');
+  var scheduleModal = document.getElementById('scheduleTourModal');
+  var scheduleOverlay = document.getElementById('scheduleTourOverlay');
+  var bookingModal = document.getElementById('bookingModal');
+  var bookingOverlay = document.getElementById('bookingOverlay');
+  var confirmationModal = document.getElementById('confirmationModal');
+  var confirmationOverlay = document.getElementById('confirmationOverlay');
+
+  var openHouseBtn = document.getElementById("openHouse");
+  var openHouseCloseBtn = document.getElementsByClassName("close")[0];
+  var scheduleBtn = document.getElementById("scheduleTour");
+  var scheduleCloseBtn = document.getElementsByClassName("close")[1];
+  var bookingBtn = document.getElementById("booking");
+  var bookingCloseBtn = document.getElementsByClassName("close")[2];
+  var confirmationBtn = document.getElementById("confirmation");
+  var confirmationCloseBtn = document.getElementsByClassName("close")[3];
+
+  openHouseBtn.onclick = function() {   
+    openHouseModal.style.display = "block";
+    openHouseOverlay.style.display = "block";
+  }
+
+  openHouseCloseBtn.onclick = function() {   
+    openHouseModal.style.display = "none";
+    openHouseOverlay.style.display = "none";
+  }
+
+  scheduleBtn.onclick = function() {   
+    scheduleModal.style.display = "block";
+    scheduleOverlay.style.display = "block";
+  }
+
+  scheduleCloseBtn.onclick = function() {   
+    scheduleModal.style.display = "none";
+    scheduleOverlay.style.display = "none";
+  }
+
+  bookingBtn.onclick = function() {   
+    bookingModal.style.display = "block";
+    bookingOverlay.style.display = "block";
+  }
+
+  bookingCloseBtn.onclick = function() {   
+    bookingModal.style.display = "none";
+    bookingOverlay.style.display = "none";
+  }
+
+  confirmationBtn.onclick = function() {   
+    confirmationModal.style.display = "block";
+    confirmationOverlay.style.display = "block";
+  }
+
+  confirmationCloseBtn.onclick = function() {   
+    confirmationModal.style.display = "none";
+    confirmationOverlay.style.display = "none";
+  }
+
+  window.onclick = function(event) {
+    if (event.target == openHouseModal) {
+      openHouseModal.style.display = "none";
+      openHouseOverlay.style.display = "none";
+    }
+    if (event.target == scheduleModal) {
+      scheduleModal.style.display = "none";
+      scheduleOverlay.style.display = "none";
+    }
+    if (event.target == bookingModal) {
+      bookingModal.style.display = "none";
+      bookingOverlay.style.display = "none";
+    }
+    if (event.target == confirmationModal) {
+      confirmationModal.style.display = "none";
+      confirmationOverlay.style.display = "none";
     }
   }
   </script>
