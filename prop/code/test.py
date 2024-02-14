@@ -31,6 +31,7 @@ def generate_html(config_file, template_file, output_file):
         images=home_data.get('images', {}),
         title=home_data.get('title', ''),
         menu=home_data.get('menu', []),
+        openHouse=home_data.get('openHouse',[]),
         price=home_data.get('price', ''),
         titleAddress=home_data.get('titleAddress', ''),
         extendedAddress=home_data.get('extendedAddress', ''),
@@ -43,7 +44,8 @@ def generate_html(config_file, template_file, output_file):
         propertyRealtor=home_data.get('propertyRealtor', []),
         inquiry=home_data.get('inquiry', []),
         inquiryButtons=home_data.get('inquiryButtons', []),
-        footerDetails=home_data.get('footerDetails', [])
+        footerDetails=home_data.get('footerDetails', []),
+        footerImage=home_data.get('footerImage', '')
     )
 
     with open(output_file_path, 'w') as output_file:
