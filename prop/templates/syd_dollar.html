@@ -81,7 +81,7 @@
     .title-text {
       font-size: 45px;
       padding: 0;
-      margin: 0;
+      margin-bottom: 20px;
     }
 
     .title-textt {
@@ -385,7 +385,7 @@
       top: 10px;
       align-items: center;
       background-color: #f0f0f0;
-      height: 60vh;
+      height: 100vh;
     }
     .propertyMedia {
       display: flex;
@@ -422,6 +422,11 @@
       justify-content: center;
       align-items: center;
       margin-top: 20px; 
+    }
+
+    #videoPlayer {
+      width: 120vh; /* Set the width to 100% to make the video player responsive */
+      height: 70vh; /* Automatically adjust the height to maintain the aspect ratio */
     }
 
     .propertyRealtor {
@@ -1081,7 +1086,7 @@
   <nav class="sideMenu">
     <div class="sideMenu" id="sideMenu">
       {% for item in menu %}
-        <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+        <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
       {% endfor %}
     </div>
   </nav>
@@ -1090,7 +1095,6 @@
   <div id="openHouseModal" class="modal">
     <div class="modal-content">
       <h2 class="title-text">Open House</h2>
-      <div class="horizontal-line"></div>
       <div class="openHouseModalCard">
         <h2>{{openHouse.propertyViewing1.day}} - {{openHouse.propertyViewing1.date}}</h2>
         <p>{{openHouse.propertyViewing1.brokerInfo}}</p>
@@ -1201,59 +1205,17 @@
 
 
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var carousel = document.querySelector('.carousel');
-    var carouselInstance = new bootstrap.Carousel(carousel, {
-        interval: 5000, 
-        //pause: 'hover', 
-        wrap: true
+  document.addEventListener("DOMContentLoaded", function() {  
+  var zoomImages = document.querySelectorAll('.zoomify');
+  zoomImages.forEach(function (image) {
+    var zoomInstance = new Zoomify(image);
+      zoomInstance.zoomIn();
+      setTimeout(function () {
+          zoomInstance.zoomOut(); 
+      }, 2000); 
+    });
   });
   
-  // var zoomImages = document.querySelectorAll('.zoomify');
-  // zoomImages.forEach(function (image) {
-  //   var zoomInstance = new Zoomify(image);
-  //     zoomInstance.zoomIn();
-  //     setTimeout(function () {
-  //         zoomInstance.zoomOut(); 
-  //     }, 2000); 
-  //   });
-  });
-  
-  function scrollCarousel() {
-    const carouselRow = document.getElementById('carousel-image');
-    const imageWidth = carouselRow.firstElementChild.offsetWidth;
-    const fixedOffset = 50; 
-  
-    carouselRow.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    carouselRow.style.transform = `translateX(calc(-${imageWidth / 2}px - ${fixedOffset}px))`;
-  
-  
-    setTimeout(() => {
-      carouselRow.style.transition = 'none';
-      carouselRow.style.transform = 'translateX(0)';
-      carouselRow.appendChild(carouselRow.firstElementChild);
-    }, 20000);
-  }
-  setInterval(scrollCarousel, 3000);
-  
-  
-  function scrollCarousel2() {
-    const carouselRow2 = document.getElementById('carousel-image-2');
-    const imageWidth2 = carouselRow2.firstElementChild.offsetWidth;
-    const fixedOffset2 = 50;
-
-
-    carouselRow2.style.transition = `transform 20s cubic-bezier(0.25, 0.1, 0.25, 1)`;
-    carouselRow2.style.transform = `translateX(calc(${imageWidth2 / 2}px + ${fixedOffset2}px))`;
-
-
-    setTimeout(() => {
-      carouselRow2.style.transition = 'none';
-      carouselRow2.style.transform = 'translateX(0)';
-      carouselRow2.insertBefore(carouselRow2.lastElementChild, carouselRow2.firstElementChild);
-    }, 20000);
-  }
-  setInterval(scrollCarousel2, 3000);
 
   document.addEventListener("DOMContentLoaded", function() {
     const categories = document.querySelectorAll('.propertyCategory');
@@ -1310,6 +1272,23 @@
     } else {
       sideMenu.style.display = 'none';
     }
+  });
+
+         // Smooth scroll when clicking on anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, // Adjust the offset as needed
+          behavior: 'smooth'
+        });
+      }
+    });
   });
 
   window.onscroll = function() {scrollFunction()};
