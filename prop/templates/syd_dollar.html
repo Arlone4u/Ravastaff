@@ -81,7 +81,7 @@
     .title-text {
       font-size: 45px;
       padding: 0;
-      margin: 0;
+      margin-bottom: 20px;
     }
 
     .title-textt {
@@ -309,6 +309,26 @@
       font-family: "PTSerif";
     }
 
+    #carousels {
+      height: 60vh;
+      margin: 0 auto;
+      overflow: hidden;
+      white-space: nowrap; 
+    }
+
+    .carousel-row {
+        display: block; 
+        white-space: nowrap; 
+    }
+
+    .carousel-img {
+        display: inline-block; 
+        width: 22%;
+        height: 25vh;
+        margin-right: 18px;
+        margin-bottom: 18px;
+    }
+
     .carousel-container {
               overflow: hidden;
               padding-top: 2cm;
@@ -321,57 +341,43 @@
               margin-right: 20px;
           }
           #first-carousel {
-    display: flex;
-    animation: scrollAnimation 60s linear infinite;
-    margin-bottom: 0.5cm;
-}
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
 
-#second-carousel {
-    display: flex;
-    animation: scrollAnimationOpposite 60s linear infinite;
-    margin-bottom: 0.5cm;
-}
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
 
-#first-carousel:hover,
-#second-carousel:hover {
-    animation-play-state: paused;
-}
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
 
-@keyframes scrollAnimation {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-    100.1% {
-      transform: translateX(-50%);
-    }
-}
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
 
-@keyframes scrollAnimationOpposite {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-    100.1% {
-        transform: translateX(-50%);
-    }
-}
 
-.videoPlayer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px; 
-}
+          @keyframes scrollAnimation {
+              0% {
+                  transform: translateX(0);
+              }
+              100% {
+                  transform: translateX(-100%);
+              }
+          }
 
-#videoPlayer {
-  width: 120vh; 
-  height: 70vh; 
-}
+          @keyframes scrollAnimationOpposite {
+              0% {
+                  transform: translateX(-50%);
+              }
+              100% {
+                  transform: translateX(0);
+              }
+          }
               
     .propertyVideos {
       display: flex;
@@ -416,6 +422,11 @@
       justify-content: center;
       align-items: center;
       margin-top: 20px; 
+    }
+
+    #videoPlayer {
+      width: 120vh; /* Set the width to 100% to make the video player responsive */
+      height: 70vh; /* Automatically adjust the height to maintain the aspect ratio */
     }
 
     .propertyRealtor {
@@ -761,7 +772,7 @@
     <div id="home">
       <div id="menu">
         {% for item in menu %}
-          <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
+          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
         {% endfor %}
       </div>
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -935,7 +946,6 @@
           <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
           </a>
-         
         </div>
         <div class="carousels" id="second-carousel">
           <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
@@ -1076,7 +1086,7 @@
   <nav class="sideMenu">
     <div class="sideMenu" id="sideMenu">
       {% for item in menu %}
-        <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+        <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
       {% endfor %}
     </div>
   </nav>
@@ -1085,7 +1095,6 @@
   <div id="openHouseModal" class="modal">
     <div class="modal-content">
       <h2 class="title-text">Open House</h2>
-      <div class="horizontal-line"></div>
       <div class="openHouseModalCard">
         <h2>{{openHouse.propertyViewing1.day}} - {{openHouse.propertyViewing1.date}}</h2>
         <p>{{openHouse.propertyViewing1.brokerInfo}}</p>
@@ -1196,7 +1205,7 @@
 
 
   <script>
-  document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function() {  
   var zoomImages = document.querySelectorAll('.zoomify');
   zoomImages.forEach(function (image) {
     var zoomInstance = new Zoomify(image);
@@ -1207,7 +1216,7 @@
     });
   });
   
- 
+
   document.addEventListener("DOMContentLoaded", function() {
     const categories = document.querySelectorAll('.propertyCategory');
 
@@ -1237,24 +1246,7 @@
       });
     });
   });
-  document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
 
-          const targetId = this.getAttribute('href').substring(1);
-          const targetElement = document.getElementById(targetId);
-
-          if (targetElement) {
-            window.scrollTo({
-              top: targetElement.offsetTop - 100, // Adjust the offset as needed
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-    });
-    
   function playVideo(videoUrl) {
     var videoPlayer = document.getElementById('videoPlayer');
     var source = videoPlayer.querySelector('source');
@@ -1282,6 +1274,23 @@
     }
   });
 
+         // Smooth scroll when clicking on anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, // Adjust the offset as needed
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
   window.onscroll = function() {scrollFunction()};
   function scrollFunction() {
     var section2 = document.getElementById("details");
@@ -1292,9 +1301,6 @@
       floatingMenu.style.display = "none";
     }
   }
-   sideMenuTitle.addEventListener('click', function() {
-    sideMenu.classList.toggle('show-menu');
-  });
 
   var openHouseModal = document.getElementById('openHouseModal');
   var openHouseOverlay = document.getElementById('openHouseOverlay');
