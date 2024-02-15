@@ -360,25 +360,31 @@
               animation-play-state: paused;
           }
 
-
           @keyframes scrollAnimation {
-              0% {
-                  transform: translateX(0);
-              }
-              100% {
-                  transform: translateX(-100%);
-              }
-          }
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+    100.1% {
+      transform: translateX(-50%);
+    }
+}
 
-          @keyframes scrollAnimationOpposite {
-              0% {
-                  transform: translateX(-50%);
-              }
-              100% {
-                  transform: translateX(0);
-              }
-          }
-              
+
+@keyframes scrollAnimationOpposite {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    100.1% {
+        transform: translateX(-50%);
+    }
+}  
+
     .propertyVideos {
       display: flex;
       flex-direction: column;
