@@ -72,6 +72,48 @@
       font-size: 32px;
     }
 
+    .slideshow {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    animation: fade 30s infinite;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: zoominout 30s infinite alternate;
+}
+
+@keyframes zoominout {
+    0% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.slideshow img.active {
+    opacity: 1;
+}
+
+
     .title-text {
       font-size: 45px;
       padding: 0;
@@ -553,7 +595,7 @@
     }
     .floating-menu {
       position: fixed;
-      z-index: 100;
+      z-index: 1;
       top: 35px;
       right: 20px;
       background-color: #fff;
@@ -597,6 +639,219 @@
       font-size: 50px;
     }
 
+    
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 70%; /* Adjusted max-width for a more reasonable size */
+  max-height: 50vh; /* Adjusted max-height for a more reasonable size */
+}
+
+.modal-img {
+  width: 100%; /* Adjusted to fill the modal-content container */
+  height: auto;
+}
+
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Slideshow styles */
+.mySlides {
+  display: none;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+/* Add responsiveness */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.modals {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-contents {
+  margin: auto;
+  display: block;
+  max-width: 70%; /* Adjusted max-width for a more reasonable size */
+  max-height: 50vh; /* Adjusted max-height for a more reasonable size */
+}
+
+.modal-images {
+  width: 100%;
+  height: auto;
+}
+
+.close-buttons {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-buttons:hover,
+.close-buttons:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Slideshow styles */
+.my-slides {
+  display: none;
+}
+
+/* Navigation buttons */
+.prev-buttons, .next-buttons {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next-buttons {
+  right: 0;
+}
+
+/* Add responsiveness */
+@media only screen and (max-width: 700px) {
+  .modal-contents {
+    width: 100%;
+  }
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: black;
+}
+
+.custom-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* Close button style */
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Styles for the image links */
+.custom-carousel-img {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Styles for the navigation buttons */
+.custom-prev, .custom-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-prev {
+  left: 0;
+}
+
+.custom-next {
+  right: 0;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
   </style>
 
 </head>
@@ -608,8 +863,8 @@
           <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
         {% endfor %}
       </div>
-      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+         <ol class="carousel-indicators">
           <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
@@ -623,54 +878,68 @@
           <li data-target="#carouselExampleIndicators" data-slide-to="10"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="11"></li>
           <li data-target="#carouselExampleIndicators" data-slide-to="12"></li>
-        </ol>
-        <div class="carousel-inner">
+        </ol> -->
+        <!-- <div class="carousel-inner">
           <div class="carousel-item active">
-            <img class="d-block w-100 zoomify" src="{{ images.image1 }}" alt="First slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg" alt="First slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image2 }}" alt="Second slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg" alt="Second slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image3 }}" alt="Third slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg" alt="Third slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image4 }}" alt="Fourth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg" alt="Fourth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image5 }}" alt="Fifth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg" alt="Fifth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image6 }}" alt="Sixth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg" alt="Sixth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image7 }}" alt="Seventh slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg" alt="Seventh slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image8 }}" alt="Eighth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg" alt="Eighth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image9 }}" alt="Ninth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg" alt="Ninth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image10 }}" alt="Tenth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2810of35%29.jpg" alt="Tenth slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image11 }}" alt="Eleventh slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg" alt="Eleventh slide">
           </div>
           <div class="carousel-item">
-            <img class="d-block w-100 zoomify" src="{{ images.image12 }}" alt="Twelveth slide">
+            <img class="d-block w-100 zoomify" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg" alt="Twelveth slide">
           </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        </div> -->
+        <!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="sr-only">Next</span>
-        </a>
-      </div>
+        </a> -->
+      <!-- </div> -->
+      <div class="slideshow">
+        <img class="active" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2810of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
+        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
+    </div>
       <div id="title">{{ title }}</div>
       <div id="address">{{ address }}</div>
     </div>
@@ -708,15 +977,112 @@
           <p class="subtext">{{propertyDescription}}</p>
         </div> 
         <div class="">
-          <a href="#" class="modal-trigger" data-image="{{ images.image9 }}">
-            <img src="{{ images.image9 }}" alt="Modal Trigger Image" class="side-modalImages">
-          </a>
+          <img id="imgLink" src="{{ images.image9 }}" class="side-modalImages">
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image9 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image10 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image11 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image12 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image1 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image2 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image3 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image4 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image5 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image6 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image7 }}">
+              </div>
+              <div class="mySlides">
+                <img class="modal-img" src="{{ images.image8 }}">
+              </div>
+
+              <!-- Add more slides as needed -->
+          
+              <!-- Navigation buttons -->
+             
+          </div>
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
         </div> 
       </div>
-      <div class="bottomPhoto">
-        <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
-          <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
-        </a>
+      <div class="">
+        <img id="imgLinks" src="{{ images.image11 }}" class="modalImages" onclick="openModals('{{ images.image11 }}')">
+        <div id="modals" class="modals">
+          <span class="close-buttons" onclick="closeModals()">&times;</span>
+          <div class="modal-contents">
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image11 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image12 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image1 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image2 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image3 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image4 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image5 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image6 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image7 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image8 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image9 }}">
+            </div>
+            <div class="my-slides">
+              <img class="modal-images" src="{{ images.image10 }}">
+            </div>
+          </div>
+            <!-- Add more slides as needed -->
+        
+            <!-- Navigation buttons -->
+            <a class="prev-buttons" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next-buttons" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+        </div>
+        
+      </div>
+      </div>
         <div class="desc-void">
           <div class="cross cross-1"></div>
           <div class="cross cross-2"></div>
@@ -752,59 +1118,62 @@
     </div>
   </section>  
   <section id ="3">
+    <div id="customModal" class="custom-modal">
+      <span class="custom-close">&times;</span>
+      <img class="custom-modal-content" id="customModalImage">
+    </div>
     <div id="carousel">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
-          <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image1 }}">
+            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
+            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
+            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
+            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
+            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image7 }}">
+            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image8 }}">
+            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-         
         </div>
         <div class="carousels" id="second-carousel">
-          <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image1 }}">
+            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
+            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
+            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
+            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
+            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image7 }}">
+            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image8 }}">
+            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
         </div>
         </div> 
@@ -924,6 +1293,178 @@
 
 
   <script>
+
+        // Get modal elements
+        var customModal = document.getElementById('customModal');
+    var customModalImg = document.getElementById('customModalImage');
+    var customModalIndex = 0;
+
+    // Get all custom modal trigger links
+    var customModalTriggers = document.querySelectorAll('.custom-modal-trigger');
+
+    // Loop through each custom modal trigger link
+    customModalTriggers.forEach(function(trigger, index) {
+      // Attach click event listener to each trigger
+      trigger.addEventListener('click', function() {
+        // Set the custom modal image source based on the clicked trigger
+        var imageSrc = trigger.getAttribute('data-image');
+        customModalIndex = index; // Set the current index
+
+        // Display the custom modal
+        customModal.style.display = 'block';
+
+        // Show the selected image
+        showCustomImage(imageSrc);
+      });
+    });
+
+    // Close custom modal when close button (×) is clicked
+    var customCloseBtn = document.querySelector('.custom-close');
+    customCloseBtn.addEventListener('click', function() {
+      customModal.style.display = 'none';
+    });
+
+    // Close custom modal when clicking outside the image
+    window.addEventListener('click', function(event) {
+      if (event.target === customModal) {
+        customModal.style.display = 'none';
+      }
+    });
+
+    // Slideshow functionality for custom modal
+    function showCustomImage(src) {
+      customModalImg.src = src;
+
+      // Add navigation buttons if more than one image
+      if (customModalTriggers.length > 1) {
+        var customPrevBtn = document.createElement('a');
+        customPrevBtn.className = 'custom-prev';
+        customPrevBtn.innerHTML = '&#10094;';
+        customPrevBtn.addEventListener('click', function() {
+          navigateCustomSlides(-1);
+        });
+        customModal.appendChild(customPrevBtn);
+
+        var customNextBtn = document.createElement('a');
+        customNextBtn.className = 'custom-next';
+        customNextBtn.innerHTML = '&#10095;';
+        customNextBtn.addEventListener('click', function() {
+          navigateCustomSlides(1);
+        });
+        customModal.appendChild(customNextBtn);
+      }
+    }
+
+    // Navigate through slides for custom modal
+    function navigateCustomSlides(direction) {
+      customModalIndex += direction;
+
+      // Wrap around if reaching the end
+      if (customModalIndex >= customModalTriggers.length) {
+        customModalIndex = 0;
+      } else if (customModalIndex < 0) {
+        customModalIndex = customModalTriggers.length - 1;
+      }
+
+      // Show the image at the new index
+      var newImageSrc = customModalTriggers[customModalIndex].getAttribute('data-image');
+      showCustomImage(newImageSrc);
+    }
+
+var slideIndexs = 1;
+showSlidess(slideIndexs);
+
+function plusSlides(n) {
+  showSlidess(slideIndexs += n);
+}
+
+function currentSlide(n) {
+  showSlidess(slideIndexs = n);
+}
+
+function showSlidess(n) {
+  var i;
+  var slides = document.getElementsByClassName("my-slides");
+  if (n > slides.length) { slideIndexs = 1; }
+  if (n < 1) { slideIndexs = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndexs - 1].style.display = "block";
+}
+
+var modals = document.getElementById("modals");
+
+function openModals(imageSrc) {
+  modals.style.display = "block";
+  showSlidess(slideIndexs);
+}
+
+function closeModals() {
+  modals.style.display = "none";
+}
+
+document.querySelector("a.prev-buttons").addEventListener("click", function() {
+  plusSlides(-1);
+});
+
+document.querySelector("a.next-buttons").addEventListener("click", function() {
+  plusSlides(1);
+});
+
+// Slideshow functionality
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+
+var modal = document.getElementById("myModal");
+var img = document.getElementById("imgLink");
+
+img.onclick = function () {
+  modal.style.display = "block";
+  showSlides(slideIndex);
+};
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+
+       const images = document.querySelectorAll('.slideshow img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((image, i) => {
+            if (i === index) {
+                image.classList.add('active');
+            } else {
+                image.classList.remove('active');
+            }
+        });
+    }
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }, 9000);  // Adjusted interval to 30 seconds
   document.addEventListener("DOMContentLoaded", function() {
   var zoomImages = document.querySelectorAll('.zoomify');
   zoomImages.forEach(function (image) {
