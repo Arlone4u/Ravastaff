@@ -94,7 +94,7 @@
       border: 1px solid white;
     }
 
-    #title {
+    /* #title {
       position: absolute;
       top: 25px;
       left: 240px;
@@ -102,13 +102,13 @@
       font-size: 55px;
       font-weight: bold;
       font-family: "PTSerif";
-    }
+    } */
     .title {
-      position: absolute;
-      top: 25px;
-      left: 240px;
+      position: relative;
+      top: 4%;
+      left: 12%;
       color: white;
-      font-size: 55px;
+      font-size: 4em;
       font-weight: bold;
       font-family: "PTSerif";
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -217,6 +217,12 @@
       color: #6e6e6e;
       font-family: "Poppins";
     }
+    .textDescription {
+      font-size: 1.1em;
+      margin-top:-20px;
+      color: #6e6e6e;
+      font-family: "Poppins";
+    }
     .text {
       font-size: 15px;
       color: black;
@@ -238,10 +244,11 @@
       display: flex;
       flex-direction: column;
       max-height: 100%;
-      padding: 150px 120px 150px 200px;
+      padding: 8% 12%;
     }
     #files {
       display: flex;
+      margin: 0 0 5% 0;
     }
     .file {
       display: flex; 
@@ -256,6 +263,7 @@
       width: 100%;
       margin: 0 0 30px 0;
     }
+
     .description {
       display: flex;
       max-width: 45%;
@@ -264,7 +272,7 @@
       letter-spacing: 1px;
     }
     .modalImages {
-      margin: -5% 0 0 1%;
+      margin: -5% 0 0 0;
       width: 45%;
       height: 46vh;
       border-right: 30px solid #feeca4f2;
@@ -272,17 +280,17 @@
 
     }
     .side-modalImages {
-      width: 800px;
-      height: 65vh;
+      max-width: 85%;
+      height: 100%;
+      float: right;
       margin-top: -50px;
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
 
     .bottomPhoto {
-      margin: 0;
+      margin: 5% 5% 5% 0;
       padding: 0;
-      right: 0;
     }
 
     .desc-void .open-house-cta {
@@ -310,11 +318,12 @@
     .desc-void {
       width: 500px;
       height: 40vh;
-      margin-top: -350px;
+      top: 0;
       padding-bottom: 50px;
-      margin-left: 950px;
-      display: flex;
-      justify-content: center;   
+      margin-left: 700px; 
+      margin-top: -500px; 
+       display: flex;
+      justify-content: flex-end;   
     }
 
     .desc-void .cross {
@@ -367,7 +376,7 @@
     }
 
     #feature-title {
-      margin-top: -60px;
+      margin-top: -4.1%;
     }
     
     #feature-list {
@@ -478,7 +487,7 @@
       top: 10px;
       align-items: center;
       background-color: #f0f0f0;
-      height: 100vh;
+      max-height: 100%;
     }
     .propertyMedia {
       display: flex;
@@ -514,19 +523,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 20px; 
     }
 
     #videoPlayer {
       width: 120vh; 
       height: 70vh; 
+      padding-bottom: 5%;
     }
 
     .propertyRealtor {
       margin: 100px 100px;
       display: flex;
       flex-direction: column;
-      /* max-height: 60vh; */
       max-height: 100%;
       margin-top: 50px;
     }
@@ -556,8 +564,8 @@
     }
 
     .realtor-img {
-      width: 100%; 
-      height: 20vh;
+      max-width: 100%; 
+      max-height: 20vh;
       margin-left: 20px;
     }
     .realtorImg {
@@ -626,19 +634,33 @@
     }
 
     .contact-form-section {
-      max-width: 600px;
-      height: 80vh;
+      max-width: 40%;
+      height: 100%;
       margin: 0 auto;
-      padding: 20px;
+      padding: 5%;
       text-align: center;
     }
     .form-group {
       display: flex;
       justify-content: space-between;
       flex-flow: column wrap;
-      align-items: center;
       margin-bottom: 0;
-      padding: 50px;
+    }
+    .form-group input[type="text"] {
+      border: none; 
+      border-bottom: 1px solid #9E9F9F; 
+      padding: 1%; 
+      margin-bottom: 10px; 
+      width: 100%; 
+      box-sizing: border-box;
+      outline: none;
+    }
+    .form-group label {
+      text-align: left;
+      font-size: 1em;
+      color: #9E9F9F;
+      font-family: "Poppins";
+      margin: 0;
     }
     .inquiryButton {
       display: flex;
@@ -648,15 +670,12 @@
     .inquiryBtn {
       padding: 10px;
       text-align: center;
-      margin: 10px;
+      margin: 5px;
       width: 100%;
       font-family: "Poppins";
       font-size: 20px;
       background-color: white;
       border: 1px solid black;
-    }
-    label {
-      font-size: larger;
     }
     .footer {
       max-width: 100%;
@@ -699,7 +718,9 @@
       height: 5vh;
       padding: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      display: none;
+      /* display: none; */
+      transition: transform 0.3s ease; /* Add transition for slide-in effect */
+      transform: translateX(120%);
     }
     .sideMenuTitle {
       cursor: pointer;
@@ -709,7 +730,7 @@
       color: #000;
     }
     .sideMenu {
-      display: none;
+      /* display: none; */
       top: 0;
       right: 0;
       float: right;
@@ -721,6 +742,8 @@
       background-color: #fff;
       z-index: 100;
       border-left: solid 3px #000;
+      transition: transform 0.3s ease; /* Add transition for slide-in effect */
+      transform: translateX(100%);
     }
     
     .sideMenu a {
@@ -738,11 +761,9 @@
 
     .modal {
       display: none;
-      position: fixed;
       z-index: 1000;
       top: 65%;
       left: 50%;
-      font-family: "Poppins";
       text-align: center;
       overflow: auto;
       transform: translate(-50%, -50%);
@@ -769,6 +790,8 @@
       padding: 1%;
       font-size: .8em;
       max-width: 100%;
+      font-family: "Poppins";
+
     }
     .scheduleContainer {
       display: flex;
@@ -895,7 +918,7 @@
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
     </div>
-      <div id="title" class="title">{{ title }}</div>
+      <div  class="title">{{ title }}</div>
        <div id="address">{{ address }}</div>
       <button id="scroll-button" onclick="scrollToDescription()"> 
         <span><i class="material-icons">south</i></span>
@@ -934,9 +957,9 @@
       </div>
       <div id="propertyDescription">
         <div class="description">
-          <p class="subtext">{{propertyDescription}}</p>
+          <p class="textDescription">{{propertyDescription}}</p>
         </div> 
-        <div class="">
+        <div class="sideImage">
           <a href="#" class="modal-trigger" data-image="{{ images.image9 }}">
             <img src="{{ images.image9 }}" alt="Modal Trigger Image" class="side-modalImages">
           </a>
@@ -946,25 +969,25 @@
         <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
           <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
         </a>
-        <div class="desc-void">
-          <div class="cross cross-1"></div>
-          <div class="cross cross-2"></div>
-          <div class="cross cross-3"></div>
-          <div class="open-house-cta">
-            <a id="openHouse" overlay-target="open-house">
-              <div class="open-house-label"><span class="label-1">Open</span> <span class="label-2">House</span></div>
-              <div class="open-house-preview">
-                <span class="day">{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
-                <span class="sep">@</span>
-                <span class="time">{{openHouse.propertyViewing1.start_time}}</span>
-              </div>
-              <div class="view-details-cta">
-                + 2 more
-              </div>
-            </a>
-          </div>
-        </div>  
       </div>
+      <div class="desc-void">
+        <div class="cross cross-1"></div>
+        <div class="cross cross-2"></div>
+        <div class="cross cross-3"></div>
+        <div class="open-house-cta">
+          <a id="openHouse" overlay-target="open-house">
+            <div class="open-house-label"><span class="label-1">Open</span> <span class="label-2">House</span></div>
+            <div class="open-house-preview">
+              <span class="day">{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
+              <span class="sep">@</span>
+              <span class="time">{{openHouse.propertyViewing1.start_time}}</span>
+            </div>
+            <div class="view-details-cta">
+              + 2 more
+            </div>
+          </a>
+        </div>
+      </div> 
     </div>
   </div>
   </section >
@@ -1105,7 +1128,7 @@
     <form id="contactForm" action="#" method="post">
       <div class="form-group">
         {% for field, label in inquiry.inquiryDetails.items() %}
-          <label for="{{ field }}">{{ label }}:</label>
+          <label for="{{ field }}">{{ label }} *</label>
           <input type="text" id="{{ field }}" name="{{ field }}" required>
         {% endfor %}
       </div>
@@ -1142,12 +1165,12 @@
       <p>MENU<p>
       <i class="material-icons">segment</i>
     </div>
-    <div class="sideMenu" id="sideMenu">
+  </nav>
+  <nav class="sideMenu" id="sideMenu">
       <div id="closeMenu"><i class="material-icons">close</i></div>
       {% for item in menu %}
         <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
       {% endfor %}
-    </div>
   </nav>
 
   <!-- Open House Modal -->
@@ -1171,7 +1194,7 @@
       </div>
     </div>
   </div>
-  <div id="openHouseOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Schedule Tour Modal -->
   <div id="scheduleTourModal" class="modal">
@@ -1205,7 +1228,7 @@
       </div>
     </div>
   </div>
-  <div id="scheduleTourOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Confirm Booking Modal -->
   <div id="bookingModal" class="modal">
@@ -1225,7 +1248,7 @@
       <button class="modalBtn" id="confirmation">Confirm Booking</button>
     </div>
   </div>
-  <div id="bookingOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <div id="confirmationModal" class="modal">
     <div class="confirmationModal">
@@ -1261,7 +1284,7 @@
         </div>
     </div>
   </div>
-  <div id="confirmationOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Brochure Modal -->
   <div id="brochureModal" class="modal">
@@ -1272,7 +1295,7 @@
       <p>Flyer 2</p>
     </div>
   </div>
-  <div id="brochureOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
   
   <!-- Document Modal -->
   <div id="documentModal" class="modal">
@@ -1284,9 +1307,7 @@
     </div>
   </div>
 
-  <div id="documentOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
-
-
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <script>
 
@@ -1374,26 +1395,35 @@ const images = document.querySelectorAll('.slideshow img');
     videoPlayer.play();
   }
 
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var section2 = document.getElementById("details");
+    var floatingMenu = document.querySelector('.floating-menu');
+    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
+      floatingMenu.style.transform = "translateX(0%)";
+    } else {
+      floatingMenu.style.transform = "translateX(120%)";
+    }
+  }
+
+
   document.getElementById('toggleMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    if (sideMenu.style.display === 'none') {
-      sideMenu.style.display = 'block';
+    if (sideMenu.style.transform === 'translateX(0%)') {
+      sideMenu.style.transform = 'translateX(100%)'; 
     } else {
-      sideMenu.style.display = 'none';
+      sideMenu.style.transform = 'translateX(0%)';
     }
   });
 
   document.getElementById('closeMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    if (sideMenu.style.display === 'block') {
-      sideMenu.style.display = 'none';
-
-    } else {
-      sideMenu.style.display = 'none';
-    }
+    sideMenu.style.transform = 'translateX(100%)'; 
   });
 
-         // Smooth scroll when clicking on anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1403,133 +1433,84 @@ const images = document.querySelectorAll('.slideshow img');
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 100, // Adjust the offset as needed
+          top: targetElement.offsetTop - 100,
           behavior: 'smooth'
         });
       }
     });
   });
 
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
-    var section2 = document.getElementById("details");
-    var floatingMenu = document.querySelector('.floating-menu');
-    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
-      floatingMenu.style.display = "block";
-    } else {
-      floatingMenu.style.display = "none";
-    }
-  }
+
   var brochureModal = document.getElementById('brochureModal');
-  var brochureOverlay = document.getElementById('brochureOverlay');
   var documentModal = document.getElementById('documentModal');
-  var documentOverlay = document.getElementById('documentOverlay');
   var openHouseModal = document.getElementById('openHouseModal');
-  var openHouseOverlay = document.getElementById('openHouseOverlay');
   var scheduleModal = document.getElementById('scheduleTourModal');
-  var scheduleOverlay = document.getElementById('scheduleTourOverlay');
   var bookingModal = document.getElementById('bookingModal');
-  var bookingOverlay = document.getElementById('bookingOverlay');
   var confirmationModal = document.getElementById('confirmationModal');
-  var confirmationOverlay = document.getElementById('confirmationOverlay');
+  var overlay = document.getElementById('overlay');
 
   var brochureBtn = document.getElementById("brochure");
-  var brochureCloseBtn = document.getElementsByClassName("#brochure .close");
   var documentBtn = document.getElementById("document");
-  var documentCloseBtn = document.getElementsByClassName("#document .close");
   var openHouseBtn = document.getElementById("openHouse");
-  var openHouseCloseBtn = document.getElementsByClassName("#openHouse .close");
   var scheduleBtn = document.getElementById("scheduleTour");
-  var scheduleCloseBtn = document.getElementsByClassName("#scheduleTour .close");
   var bookingBtn = document.getElementById("booking");
-  var bookingCloseBtn = document.getElementsByClassName("#booking .close");
   var confirmationBtn = document.getElementById("confirmation");
-  var confirmationCloseBtn = document.getElementsByClassName("#confirmation .close");
+
+  var closeBtns = document.querySelectorAll(".close");
+
+  function closeAllModals() {
+    brochureModal.style.display = "none";
+    documentModal.style.display = "none";
+    openHouseModal.style.display = "none";
+    scheduleModal.style.display = "none";
+    bookingModal.style.display = "none";
+    confirmationModal.style.display = "none";
+    overlay.style.display = "none";
+  }
 
   brochureBtn.onclick = function() {   
     brochureModal.style.display = "block";
-    brochureOverlay.style.display = "block";
-  }
-
-  brochureCloseBtn.onclick = function() {   
-    brochureModal.style.display = "none";
-    brochureOverlay.style.display = "none";
+    overlay.style.display = "block";
   }
   documentBtn.onclick = function() {   
     documentModal.style.display = "block";
-    documentOverlay.style.display = "block";
-  }
-
-  documentCloseBtn.onclick = function() {   
-    documentModal.style.display = "none";
-    documentOverlay.style.display = "none";
+    overlay.style.display = "block";
   }
   openHouseBtn.onclick = function() {   
     openHouseModal.style.display = "block";
-    openHouseOverlay.style.display = "block";
+    overlay.style.display = "block";
   }
-
-  openHouseCloseBtn.onclick = function() {   
-    openHouseModal.style.display = "none";
-    openHouseOverlay.style.display = "none";
-  }
-
   scheduleBtn.onclick = function() {   
     scheduleModal.style.display = "block";
-    scheduleOverlay.style.display = "block";
+    overlay.style.display = "block";
   }
-
-  scheduleCloseBtn.onclick = function() {   
-    scheduleModal.style.display = "none";
-    scheduleOverlay.style.display = "none";
-  }
-
   bookingBtn.onclick = function() {   
     bookingModal.style.display = "block";
-    bookingOverlay.style.display = "block";
+    overlay.style.display = "block";
   }
-
-  bookingCloseBtn.onclick = function() {   
-    bookingModal.style.display = "none";
-    bookingOverlay.style.display = "none";
-  }
-
   confirmationBtn.onclick = function() {   
     confirmationModal.style.display = "block";
-    confirmationOverlay.style.display = "block";
-  }
-
-  confirmationCloseBtn.onclick = function() {   
-    confirmationModal.style.display = "none";
-    confirmationOverlay.style.display = "none";
+    overlay.style.display = "block";
   }
 
   window.onclick = function(event) {
-    if (event.target == brochureModal) {
-      brochureModal.style.display = "none";
-      brochureOverlay.style.display = "none";
-    }
-    if (event.target == documentModal) {
-      documentModal.style.display = "none";
-      documentOverlay.style.display = "none";
-    }
-    if (event.target == openHouseModal) {
-      openHouseModal.style.display = "none";
-      openHouseOverlay.style.display = "none";
-    }
-    if (event.target == scheduleModal) {
-      scheduleModal.style.display = "none";
-      scheduleOverlay.style.display = "none";
-    }
-    if (event.target == bookingModal) {
-      bookingModal.style.display = "none";
-      bookingOverlay.style.display = "none";
-    }
-    if (event.target == confirmationModal) {
-      confirmationModal.style.display = "none";
-      confirmationOverlay.style.display = "none";
+    console.log(event.target);
+    if (
+        event.target == brochureModal ||
+        event.target == documentModal ||
+        event.target == openHouseModal ||
+        event.target == scheduleModal ||
+        event.target == bookingModal ||
+        event.target == confirmationModal
+    ) {
+        closeAllModals();
     }
   }
+  closeBtns.forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      closeAllModals();
+    });
+  });
   </script>
 </body>
 </html>
