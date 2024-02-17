@@ -250,6 +250,7 @@
       display: flex; 
       margin-right: 80px; 
       padding-top: 20px;
+      padding-bottom: 20px;
     }
     #propertyDescription {
       display: flex;
@@ -880,7 +881,7 @@
       color: rgb(227, 193, 0);
     }
 
-    /* Mobile Phones */
+ 
 /* Mobile Phones */
 @media only screen and (max-device-width: 450px) {
   body {
@@ -888,46 +889,308 @@
     width: 100%;
     margin: 0;
   }
+
+  #home {
+    height: 50vh;
+    overflow: hidden;
+  }
+
   #menu {
     display: none;
   }
 
   #title {
-    top: 25px;
-    left: 20px;
+    top: 20px;
+    left: 30px;
     color: white;
     font-size: 25px;
     font-weight: bold;
     font-family: "PTSerif";
+    padding: 0;
   }
 
-  .floating-menu {
-    top: 35px;
-    right: 20px; /* Adjust as needed */
+  #scroll-button {
+    display: none;
+  }
+
+  .address-container {
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #000000;
+  }
+
+  #address {
+    left: 50%;
+    bottom: 8%;
+    transform: translate(-50%);
+    color: white;
+    font-size: 31px;
+  }
+
+  .address-text {
+    font-size: 2px;
+    padding: 0;
+  }
+
+  #offered {
+   width: 100%;
+  }
+
+  #details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 700vh;
+    background-color: #F7F7F7;
+  }
+
+  #details-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #details-menu p {
+    color: black;
+  }
+
+  .price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .material-icons {
+    font-size: 40px;
+  }
+
+  .med-text {
+    font-size: 21px;
+    padding: 0;
+  }
+
+  .subtext {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+    font-family: "Poppins";
+  }
+
+  .title-text {
+    font-size: 25px;
+    padding: 0;
+  }
+
+  .detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+
+  .text,
+  .text-center {
+    font-size: 15px;
+    color: black;
+    font-family: "Poppins";
+    text-align: justify;
+    margin: 0;
+  }
+
+
+  #description {
+  max-width: 100%;
+  font-size: 18px;
+  line-height: 1.5;
+  padding: 0;
+  margin-left: 30px;
+}
+
+.title-textt {
+  font-size: 38px;
+  padding: 0;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+i.material-icons {
+  font-size: 30px;
+}
+
+.file {
+  font-size: 16px;
+  flex-basis: 100%;
+  margin-left: 20px;
+  margin-right: 0;
+
+}
+
+.description {
+  margin: 10px;
+  max-width: 100%;
+  max-height: 100%;
+  line-height: 2.5;
+  letter-spacing: 1px;
+}  
+.topPhoto,
+  .bottomPhoto{
+    display: flex;
+    flex-direction: column; /* Change flex direction to column */
+    align-items: center; /* Align items to the center */
+    margin: 20px; /* Add margin for separation */
+  }
+  .modalImages,
+  .side-modalImages {
+    width: 100%; /* Adjust width of the images */
+    height: auto; /* Adjust height to maintain aspect ratio */
+    border: none;
+  }
+  .desc-void {  
+    align-items: center; /* Align items to the center */
+    margin: 20px; /* Add margin for separation */
+    margin-bottom: 20px;
+}
+    .desc-void .open-house-cta .open-house-label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .desc-void .cross {
+      width: 1px;
+      background: #000;
+      height: 500px;
+      z-index: 1;
+    }
+    .desc-void .cross-1 {
+    rotate: 45deg;
+    z-index: 1;
+    transform: translate(48px,-5%);
+    height: 430px;
+}
+.desc-void .cross-2 {
+    rotate: 45deg;
+    z-index: 1;
+    transform: translate(60px,-7%);
+    height: 470px;
+}
+.desc-void .cross-3 {
+    rotate: 45deg;
+    z-index: 1;
+    transform: translate(92px,-3%);
+    height: 420px;
+}
+  
+    .desc-void .open-house-cta .view-details-cta {
+      font-size: 17px;
+      margin-top: 15px;
+    }
+    #openHouse{
+      text-decoration: none;
+    }
+
+    #features {
+    padding: 0;
+    background-color: #F7F7F7;
     
   }
 
-  .sideMenu {
+    #feature-title {
+  margin-top: -25px;
+  text-align: center;
+  
+}
+#feature-title .title-text {
+  font-size: 38px;
+  white-space: nowrap;
+}
+#feature-list {
+  display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+#feature-list a {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid black;
+  transition: background-color 0.3s, transform 0.3s;
+  margin: 5px; /* Adjust margin for spacing between items */
+}
+
+#feature-list a:hover {
+  background-color: #E3E3E3;
+  color: black;
+  transform: scaleX(1.02);
+  transform-origin: center;
+}
+.propertyVideos {
+      display: flex;
+      flex-direction: column;
+      top: 10px;
+      align-items: center;
+      background-color: #f0f0f0;
+      height: 70vh;
+    }
+
+.videoPlayer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px; 
+    }
+
+    #videoPlayer {
+      width: 60vh; 
+      height: 40vh; 
+    }
+    
+    .propertyRealtor {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      max-height: 100%;
+      margin-top: 50px;
+    }
+
+    .realtorDetails {
    
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    padding: 5px;
-    position: fixed;
-    color: #000;
-    background-color: #fff;
-    z-index: 100;
-    border-left: solid 3px #000;
-  }
+ 
+    }
+    .realtor {
+     
+      align-items: center; 
+      margin-bottom: 20px;
+    }
+    .realtor-img {
+      width: 100%; 
+      height: 20vh;
+      margin-left: 20px;
+    }
+    .realtorImg {
+     
+      align-items: center;
+    }
+    .realtor-info {
+      
+    
 
-  .sideMenu a {
-    text-align: right; /* Align text to the right */
-  }
+    }
+    .realtor-details {
+    display: none;
+    }
 
-  .sideMenu i.material-icons {
-    font-size: 50px;
-  }
+
 }
   </style>
 
@@ -955,13 +1218,15 @@
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
     </div>
       <div id="title" class="title">{{ title }}</div>
-       <div id="address">{{ address }}</div>
+      <div class="address-container">
+        <div id="address">{{ address }}</div>
+      </div>
       <button id="scroll-button" onclick="scrollToDescription()"> 
         <span><i class="material-icons">south</i></span>
       </button>
     </div>
   </section>
-  <section>
+  <section id="offered">
     <div id="details">
       <div class="price">
         <p class="subtext">Offered At</p>
@@ -995,16 +1260,18 @@
         <div class="description">
           <p class="subtext">{{propertyDescription}}</p>
         </div> 
-        <div class="">
+      </div>
+        <div class="topPhoto">
           <a href="#" class="modal-trigger" data-image="{{ images.image9 }}">
             <img src="{{ images.image9 }}" alt="Modal Trigger Image" class="side-modalImages">
           </a>
         </div> 
-      </div>
+  
       <div class="bottomPhoto">
         <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
           <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
         </a>
+      </div>
         <div class="desc-void">
           <div class="cross cross-1"></div>
           <div class="cross cross-2"></div>
@@ -1023,7 +1290,7 @@
             </a>
           </div>
         </div>  
-      </div>
+      
     </div>
   </div>
   </section >
@@ -1589,6 +1856,25 @@ const images = document.querySelectorAll('.slideshow img');
       confirmationOverlay.style.display = "none";
     }
   }
+
+  document.addEventListener("DOMContentLoaded", function() {
+  const menuButton = document.getElementById('toggleMenu');
+  const sideMenu = document.getElementById('sideMenu');
+
+  // Initially hide the menu on smaller screens
+  if (window.innerWidth <= 450) {
+    sideMenu.style.display = 'none';
+  }
+
+  menuButton.addEventListener('click', function() {
+    // Toggle the menu's display when the button is clicked
+    if (sideMenu.style.display === 'none') {
+      sideMenu.style.display = 'block';
+    } else {
+      sideMenu.style.display = 'none';
+    }
+  });
+});
   </script>
 </body>
 </html>
