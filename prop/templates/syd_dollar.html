@@ -97,7 +97,7 @@
       border: 1px solid white;
     }
 
-    #title {
+    /* #title {
       position: absolute;
       top: 25px;
       left: 240px;
@@ -105,13 +105,13 @@
       font-size: 55px;
       font-weight: bold;
       font-family: "PTSerif";
-    }
+    } */
     .title {
-      position: absolute;
-      top: 25px;
-      left: 240px;
+      position: relative;
+      top: 4%;
+      left: 12%;
       color: white;
-      font-size: 55px;
+      font-size: 4em;
       font-weight: bold;
       font-family: "PTSerif";
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -220,6 +220,12 @@
       color: #6e6e6e;
       font-family: "Poppins";
     }
+    .textDescription {
+      font-size: 1.1em;
+      margin-top:-20px;
+      color: #6e6e6e;
+      font-family: "Poppins";
+    }
     .text {
       font-size: 15px;
       color: black;
@@ -241,10 +247,11 @@
       display: flex;
       flex-direction: column;
       max-height: 100%;
-      padding: 150px 120px 150px 200px;
+      padding: 8% 12%;
     }
     #files {
       display: flex;
+      margin: 0 0 5% 0;
     }
     .file {
       display: flex; 
@@ -260,15 +267,17 @@
       width: 100%;
       margin: 0 0 30px 0;
     }
+
     .description {
       display: flex;
       max-width: 45%;
       max-height: 100%;
       line-height: 2.5;
       letter-spacing: 1px;
+      margin: 5% 0 5% 0;
     }
     .modalImages {
-      margin: -5% 0 0 1%;
+      margin: -5% 0 0 0;
       width: 45%;
       height: 46vh;
       border-right: 30px solid #feeca4f2;
@@ -276,17 +285,17 @@
 
     }
     .side-modalImages {
-      width: 800px;
-      height: 65vh;
+      max-width: 85%;
+      height: 100%;
+      float: right;
       margin-top: -50px;
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
 
     .bottomPhoto {
-      margin: 0;
+      margin: 5% 5% 5% 0;
       padding: 0;
-      right: 0;
     }
 
     .desc-void .open-house-cta {
@@ -314,11 +323,12 @@
     .desc-void {
       width: 500px;
       height: 40vh;
-      margin-top: -350px;
+      top: 0;
       padding-bottom: 50px;
-      margin-left: 950px;
-      display: flex;
-      justify-content: center;   
+      margin-left: 750px; 
+      margin-top: -550px; 
+       display: flex;
+      justify-content: flex-end;   
     }
 
     .desc-void .cross {
@@ -371,14 +381,16 @@
     }
 
     #feature-title {
-      margin-top: -60px;
+      margin-top: -4.1%;
     }
     
     #feature-list {
       display: flex;
-      flex-wrap: wrap; 
-      align-items: flex-start;
-      max-width: 60%;      
+      flex-wrap: wrap;
+      align-items: stretch;
+      max-width: 90%;
+      align-content: center;
+      justify-content: center;     
     }
 
     #feature-list a {
@@ -488,7 +500,7 @@
       top: 10px;
       align-items: center;
       background-color: #f0f0f0;
-      height: 100vh;
+      max-height: 100%;
     }
     .propertyMedia {
       display: flex;
@@ -524,19 +536,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 20px; 
     }
 
     #videoPlayer {
       width: 120vh; 
       height: 70vh; 
+      padding-bottom: 5%;
     }
 
     .propertyRealtor {
       margin: 100px 100px;
       display: flex;
       flex-direction: column;
-      /* max-height: 60vh; */
       max-height: 100%;
       margin-top: 50px;
     }
@@ -566,8 +577,8 @@
     }
 
     .realtor-img {
-      width: 100%; 
-      height: 20vh;
+      max-width: 100%; 
+      max-height: 20vh;
       margin-left: 20px;
     }
     .realtorImg {
@@ -636,19 +647,33 @@
     }
 
     .contact-form-section {
-      max-width: 600px;
-      height: 80vh;
+      max-width: 40%;
+      height: 100%;
       margin: 0 auto;
-      padding: 20px;
+      padding: 5%;
       text-align: center;
     }
     .form-group {
       display: flex;
       justify-content: space-between;
       flex-flow: column wrap;
-      align-items: center;
       margin-bottom: 0;
-      padding: 50px;
+    }
+    .form-group input[type="text"] {
+      border: none; 
+      border-bottom: 1px solid #9E9F9F; 
+      padding: 1%; 
+      margin-bottom: 10px; 
+      width: 100%; 
+      box-sizing: border-box;
+      outline: none;
+    }
+    .form-group label {
+      text-align: left;
+      font-size: 1em;
+      color: #9E9F9F;
+      font-family: "Poppins";
+      margin: 0;
     }
     .inquiryButton {
       display: flex;
@@ -658,15 +683,12 @@
     .inquiryBtn {
       padding: 10px;
       text-align: center;
-      margin: 10px;
+      margin: 5px;
       width: 100%;
       font-family: "Poppins";
       font-size: 20px;
       background-color: white;
       border: 1px solid black;
-    }
-    label {
-      font-size: larger;
     }
     .footer {
       max-width: 100%;
@@ -701,7 +723,8 @@
     }
     .floating-menu {
       position: fixed;
-      z-index: 100;
+      /* z-index: 100; */
+      z-index: 1;
       top: 35px;
       right: 20px;
       background-color: #fff;
@@ -709,7 +732,9 @@
       height: 5vh;
       padding: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      display: none;
+      /* display: none; */
+      transition: transform 0.3s ease; /* Add transition for slide-in effect */
+      transform: translateX(120%);
     }
     .sideMenuTitle {
       cursor: pointer;
@@ -719,7 +744,7 @@
       color: #000;
     }
     .sideMenu {
-      display: none;
+      /* display: none; */
       top: 0;
       right: 0;
       float: right;
@@ -731,6 +756,8 @@
       background-color: #fff;
       z-index: 100;
       border-left: solid 3px #000;
+      transition: transform 0.3s ease; /* Add transition for slide-in effect */
+      transform: translateX(100%);
     }
     
     .sideMenu a {
@@ -748,11 +775,9 @@
 
     .modal {
       display: none;
-      position: fixed;
       z-index: 1000;
       top: 65%;
       left: 50%;
-      font-family: "Poppins";
       text-align: center;
       overflow: auto;
       transform: translate(-50%, -50%);
@@ -779,6 +804,8 @@
       padding: 1%;
       font-size: .8em;
       max-width: 100%;
+      font-family: "Poppins";
+
     }
     .scheduleContainer {
       display: flex;
@@ -879,6 +906,206 @@
     .companyIcon {
       font-size: 15px;    
       color: rgb(227, 193, 0);
+    }
+
+    .slideshowModal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black;
+    }
+
+    .slideshow-modal-content {
+      margin: auto;
+      display: block;
+      max-width: 70%; 
+      max-height: 50vh;
+    }
+
+    .slideshowModal-img {
+      width: 100%; 
+      height: auto;
+    }
+
+
+    .closeSlideshow {
+      color: #fff;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .closeSlideshow:hover,
+    .closeSlideshow:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .next {
+      right: 0;
+    }
+    @media only screen and (max-width: 700px) {
+      .slideshow-modal-content {
+        width: 100%;
+      }
+    }
+
+    .slideshowModals {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black;
+    }
+
+    .slideshowModal-contents {
+      margin: auto;
+      display: block;
+      max-width: 70%; 
+      max-height: 50vh; 
+    }
+    .slideshowModal-images {
+      width: 100%;
+      height: auto;
+    }
+
+    .slideshow-close-buttons {
+      color: #fff;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .slideshow-close-buttons:hover,
+    .slideshow-close-buttons:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .my-slides {
+      display: none;
+    }
+
+    .prev-buttons, .next-buttons {
+      position: absolute;
+      top: 50%;
+      width: auto;
+      margin-top: -22px;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .next-buttons {
+      right: 0;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .slideshow-modal-contents {
+        width: 100%;
+      }
+    }
+
+    .custom-modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      padding-top: 50px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: black;
+      background-color: black;
+    }
+
+    .custom-modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .custom-close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .custom-carousel-img {
+      width: 100px; 
+      height: auto;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .custom-prev, .custom-next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .custom-prev {
+      left: 0;
+    }
+
+    .custom-next {
+      right: 0;
+    }
+
+    .custom-prev:hover, .custom-next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
     }
 
  
@@ -1217,10 +1444,7 @@ i.material-icons {
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
     </div>
-      <div id="title" class="title">{{ title }}</div>
-      <div class="address-container">
-        <div id="address">{{ address }}</div>
-      </div>
+      <div  class="title">{{ propertyAddress }}</div>
       <button id="scroll-button" onclick="scrollToDescription()"> 
         <span><i class="material-icons">south</i></span>
       </button>
@@ -1245,52 +1469,128 @@ i.material-icons {
   </section>
   <section id="1">
     <div id="description">
-      <div class="title-textt" >{{ titleAddress }}</div>
-      <div id="files">
-        <div class="file" id="brochure">
-            <span><i class="material-icons">download</i></span>
-            <p class="text">Brochure</p>
-        </div>
-        <div class="file" id="document">
-            <span><i class="material-icons">download</i></span>
-            <p class="text">Documents</p>
-        </div>
-      </div>
+      <div class="title-textt" >{{ propertyAddress }}</div>
       <div id="propertyDescription">
         <div class="description">
-          <p class="subtext">{{propertyDescription}}</p>
+          <p class="textDescription">{{propertyDescription}}</p>
         </div> 
+        <div class="sideImage">
+        <img id="imgLink" src="{{ images.image9 }}" class="side-modalImages">
+
+        <div id="myModal" class="slideshowModal">
+          <span class="closeSlideshow" onclick="closeModal()">&times;</span>
+          <div class="slideshow-modal-content">
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image9 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image10 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image11 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image12 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image1 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image2 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image3 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image4 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image5 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image6 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image7 }}">
+            </div>
+            <div class="mySlides">
+              <img class="slideshowModal-img" src="{{ images.image8 }}">
+            </div>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-        <div class="topPhoto">
-          <a href="#" class="modal-trigger" data-image="{{ images.image9 }}">
-            <img src="{{ images.image9 }}" alt="Modal Trigger Image" class="side-modalImages">
-          </a>
-        </div> 
-  
-      <div class="bottomPhoto">
-        <a href="#" class="modal-trigger" data-image="{{ images.image11 }}">
-          <img src="{{ images.image11 }}" alt="Modal Trigger Image" class="modalImages">
-        </a>
-      </div>
-        <div class="desc-void">
-          <div class="cross cross-1"></div>
-          <div class="cross cross-2"></div>
-          <div class="cross cross-3"></div>
-          <div class="open-house-cta">
-            <a id="openHouse" overlay-target="open-house">
-              <div class="open-house-label"><span class="label-1">Open</span> <span class="label-2">House</span></div>
-              <div class="open-house-preview">
-                <span class="day">{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
-                <span class="sep">@</span>
-                <span class="time">{{openHouse.propertyViewing1.start_time}}</span>
-              </div>
-              <div class="view-details-cta">
-                + 2 more
-              </div>
-            </a>
-          </div>
-        </div>  
+
+      </div> 
+    </div>
+    <div class="bottomPhoto">
+      <img id="imgLink" src="{{ images.image11 }}" class="modalImages" onclick="openModals('{{ images.image11 }}')">
       
+      <div id="myslideshowModals" class="slideshowModals">
+        <span class="slideshow-close-buttons" onclick="closeModals()">&times;</span>
+        <div class="slideshowModal-contents">
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image11 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image12 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image1 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image2 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image3 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image4 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image5 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image6 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image7 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image8 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image9 }}">
+          </div>
+          <div class="my-slides">
+            <img class="slideshowModal-images" src="{{ images.image10 }}">
+          </div>
+        </div>
+          <a class="prev-buttons" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next-buttons" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </div>
+      <div class="desc-void">
+        <div class="cross cross-1"></div>
+        <div class="cross cross-2"></div>
+        <div class="cross cross-3"></div>
+        <div class="open-house-cta">
+          <a id="openHouse" overlay-target="open-house">
+            <div class="open-house-label"><span class="label-1">Open</span> <span class="label-2">House</span></div>
+            <div class="open-house-preview">
+              <span class="day">{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
+              <span class="sep">@</span>
+              <span class="time">{{openHouse.propertyViewing1.start_time}}</span>
+            </div>
+            <div class="view-details-cta">
+              + 2 more
+            </div>
+          </a>
+        </div>
+      </div> 
+    </div>
+    </div>
+      </div>
     </div>
   </div>
   </section >
@@ -1307,58 +1607,62 @@ i.material-icons {
     </div>
   </section>  
   <section id ="3">
+    <div id="customModal" class="custom-modal">
+      <span class="custom-close">&times;</span>
+      <img class="custom-modal-content" id="customModalImage">
+    </div>
     <div id="carousel">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
-          <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image1 }}">
+            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
+            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
+            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
+            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
+            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image7 }}">
+            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image8 }}">
+            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
         </div>
         <div class="carousels" id="second-carousel">
-          <a href="#" class="modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image1 }}">
+            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
+            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">      
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
+            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
+            <img src="{{ images.image5 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
+            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image7 }}">
+            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="carousel-img">
+          <a href="#" class="custom-modal-trigger" data-image="{{ images.image8 }}">
+            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
         </div>
         </div> 
@@ -1421,7 +1725,7 @@ i.material-icons {
   <section>
     <div class="parallax">
       <div class="parallax-card">
-        <h1>{{ titleAddress }} <h1>
+        <h1>{{ propertyAddress }} <h1>
         <h3>{{ extendedAddress }}</h3>
       </div>
     </div>
@@ -1431,7 +1735,7 @@ i.material-icons {
     <form id="contactForm" action="#" method="post">
       <div class="form-group">
         {% for field, label in inquiry.inquiryDetails.items() %}
-          <label for="{{ field }}">{{ label }}:</label>
+          <label for="{{ field }}">{{ label }} *</label>
           <input type="text" id="{{ field }}" name="{{ field }}" required>
         {% endfor %}
       </div>
@@ -1448,7 +1752,7 @@ i.material-icons {
           <p class="title-text">{{title}}</p>
         </div>
         <div class="footerDetails">
-          <p class="address-text">{{address}}</p>
+          <p class="address-text">{{propertyAddress}}</p>
           <p class="subtext">{{extendedAddress}}</p>
           <p class="subtext">Powered by <span class="companyIcon"><i class="material-icons">real_estate_agent</i></span> Revastaff</p>
         </div>
@@ -1468,12 +1772,12 @@ i.material-icons {
       <p>MENU<p>
       <i class="material-icons">segment</i>
     </div>
-    <div class="sideMenu" id="sideMenu">
+  </nav>
+  <nav class="sideMenu" id="sideMenu">
       <div id="closeMenu"><i class="material-icons">close</i></div>
       {% for item in menu %}
         <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
       {% endfor %}
-    </div>
   </nav>
 
   <!-- Open House Modal -->
@@ -1497,7 +1801,7 @@ i.material-icons {
       </div>
     </div>
   </div>
-  <div id="openHouseOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Schedule Tour Modal -->
   <div id="scheduleTourModal" class="modal">
@@ -1531,7 +1835,7 @@ i.material-icons {
       </div>
     </div>
   </div>
-  <div id="scheduleTourOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Confirm Booking Modal -->
   <div id="bookingModal" class="modal">
@@ -1551,7 +1855,7 @@ i.material-icons {
       <button class="modalBtn" id="confirmation">Confirm Booking</button>
     </div>
   </div>
-  <div id="bookingOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <div id="confirmationModal" class="modal">
     <div class="confirmationModal">
@@ -1587,36 +1891,151 @@ i.material-icons {
         </div>
     </div>
   </div>
-  <div id="confirmationOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
-
-  <!-- Brochure Modal -->
-  <div id="brochureModal" class="modal">
-    <div class="modal-content">
-      <h2>Flyers & Brochures </h2>
-      <div class="horizontal-line"></div>
-      <p>Flyer 1</p>
-      <p>Flyer 2</p>
-    </div>
-  </div>
-  <div id="brochureOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
-  
-  <!-- Document Modal -->
-  <div id="documentModal" class="modal">
-    <div class="modal-content">
-      <h2>Documents </h2>
-      <div class="horizontal-line"></div>
-      <p>Sample Document 1</p>
-      <p>Sample Document 2</p>
-    </div>
-  </div>
-
-  <div id="documentOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
-
-
+  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <script>
+    
+        var customModal = document.getElementById('customModal');
+        var customModalImg = document.getElementById('customModalImage');
+        var customModalIndex = 0;
 
-const images = document.querySelectorAll('.slideshow img');
+        var customModalTriggers = document.querySelectorAll('.custom-modal-trigger');
+
+        customModalTriggers.forEach(function(trigger, index) {
+          trigger.addEventListener('click', function() {
+            var imageSrc = trigger.getAttribute('data-image');
+            customModalIndex = index;
+
+            customModal.style.display = 'block';
+            showCustomImage(imageSrc);
+          });
+        });
+
+        var customCloseBtn = document.querySelector('.custom-close');
+        customCloseBtn.addEventListener('click', function() {
+          customModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+          if (event.target === customModal) {
+            customModal.style.display = 'none';
+          }
+        });
+
+        function showCustomImage(src) {
+          customModalImg.src = src;
+
+          if (customModalTriggers.length > 1) {
+            var customPrevBtn = document.createElement('a');
+            customPrevBtn.className = 'custom-prev';
+            customPrevBtn.innerHTML = '&#10094;';
+            customPrevBtn.addEventListener('click', function() {
+              navigateCustomSlides(-1);
+            });
+            customModal.appendChild(customPrevBtn);
+
+            var customNextBtn = document.createElement('a');
+            customNextBtn.className = 'custom-next';
+            customNextBtn.innerHTML = '&#10095;';
+            customNextBtn.addEventListener('click', function() {
+              navigateCustomSlides(1);
+            });
+            customModal.appendChild(customNextBtn);
+          }
+        }
+
+        function navigateCustomSlides(direction) {
+          customModalIndex += direction;
+
+          if (customModalIndex >= customModalTriggers.length) {
+            customModalIndex = 0;
+          } else if (customModalIndex < 0) {
+            customModalIndex = customModalTriggers.length - 1;
+          }
+          var newImageSrc = customModalTriggers[customModalIndex].getAttribute('data-image');
+          showCustomImage(newImageSrc);
+        }
+
+    var slideIndexs = 1;
+    showSlidess(slideIndexs);
+
+    function plusSlides(n) {
+      showSlidess(slideIndexs += n);
+    }
+
+    function currentSlide(n) {
+      showSlidess(slideIndexs = n);
+    }
+
+    function showSlidess(n) {
+      var i;
+      var slides = document.getElementsByClassName("my-slides");
+      if (n > slides.length) { slideIndexs = 1; }
+      if (n < 1) { slideIndexs = slides.length; }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndexs - 1].style.display = "block";
+    }
+
+    var modals = document.getElementById("myslideshowModals");
+
+    function openModals(imageSrc) {
+      modals.style.display = "block";
+      showSlidess(slideIndexs);
+    }
+
+    function closeModals() {
+      modals.style.display = "none";
+    }
+
+    document.querySelector(".prev-buttons").addEventListener("click", function() {
+      plusSlides();
+    });
+
+    document.querySelector(".next-buttons").addEventListener("click", function() {
+      plusSlides();
+    });
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      if (n > slides.length) { slideIndex = 1; }
+      if (n < 1) { slideIndex = slides.length; }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+    }
+
+    var modal = document.getElementById("myModal");
+    var img = document.getElementById("imgLink");
+
+    img.onclick = function () {
+      modal.style.display = "block";
+      showSlides(slideIndex);
+    };
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }, 9000); 
+  const images = document.querySelectorAll('.slideshow img');
     let currentIndex = 0;
     function showImage(index) {
         images.forEach((image, i) => {
@@ -1630,7 +2049,7 @@ const images = document.querySelectorAll('.slideshow img');
     setInterval(() => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
-    }, 9000);  // Adjusted interval to 30 seconds
+    }, 9000);
   document.addEventListener("DOMContentLoaded", function() {
   var zoomImages = document.querySelectorAll('.zoomify');
   zoomImages.forEach(function (image) {
@@ -1700,26 +2119,35 @@ const images = document.querySelectorAll('.slideshow img');
     videoPlayer.play();
   }
 
+  window.onscroll = function() {
+    scrollFunction();
+  };
+
+  function scrollFunction() {
+    var section2 = document.getElementById("details");
+    var floatingMenu = document.querySelector('.floating-menu');
+    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
+      floatingMenu.style.transform = "translateX(0%)";
+    } else {
+      floatingMenu.style.transform = "translateX(120%)";
+    }
+  }
+
+
   document.getElementById('toggleMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    if (sideMenu.style.display === 'none') {
-      sideMenu.style.display = 'block';
+    if (sideMenu.style.transform === 'translateX(0%)') {
+      sideMenu.style.transform = 'translateX(100%)'; 
     } else {
-      sideMenu.style.display = 'none';
+      sideMenu.style.transform = 'translateX(0%)';
     }
   });
 
   document.getElementById('closeMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    if (sideMenu.style.display === 'block') {
-      sideMenu.style.display = 'none';
-
-    } else {
-      sideMenu.style.display = 'none';
-    }
+    sideMenu.style.transform = 'translateX(100%)'; 
   });
 
-         // Smooth scroll when clicking on anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -1729,152 +2157,63 @@ const images = document.querySelectorAll('.slideshow img');
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 100, // Adjust the offset as needed
+          top: targetElement.offsetTop - 100,
           behavior: 'smooth'
         });
       }
     });
   });
 
-  window.onscroll = function() {scrollFunction()};
-  function scrollFunction() {
-    var section2 = document.getElementById("details");
-    var floatingMenu = document.querySelector('.floating-menu');
-    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
-      floatingMenu.style.display = "block";
-    } else {
-      floatingMenu.style.display = "none";
-    }
-  }
-  var brochureModal = document.getElementById('brochureModal');
-  var brochureOverlay = document.getElementById('brochureOverlay');
-  var documentModal = document.getElementById('documentModal');
-  var documentOverlay = document.getElementById('documentOverlay');
+
   var openHouseModal = document.getElementById('openHouseModal');
-  var openHouseOverlay = document.getElementById('openHouseOverlay');
   var scheduleModal = document.getElementById('scheduleTourModal');
-  var scheduleOverlay = document.getElementById('scheduleTourOverlay');
   var bookingModal = document.getElementById('bookingModal');
-  var bookingOverlay = document.getElementById('bookingOverlay');
   var confirmationModal = document.getElementById('confirmationModal');
-  var confirmationOverlay = document.getElementById('confirmationOverlay');
+  var overlay = document.getElementById('overlay');
 
-  var brochureBtn = document.getElementById("brochure");
-  var brochureCloseBtn = document.getElementsByClassName("#brochure .close");
-  var documentBtn = document.getElementById("document");
-  var documentCloseBtn = document.getElementsByClassName("#document .close");
   var openHouseBtn = document.getElementById("openHouse");
-  var openHouseCloseBtn = document.getElementsByClassName("#openHouse .close");
   var scheduleBtn = document.getElementById("scheduleTour");
-  var scheduleCloseBtn = document.getElementsByClassName("#scheduleTour .close");
   var bookingBtn = document.getElementById("booking");
-  var bookingCloseBtn = document.getElementsByClassName("#booking .close");
   var confirmationBtn = document.getElementById("confirmation");
-  var confirmationCloseBtn = document.getElementsByClassName("#confirmation .close");
 
-  brochureBtn.onclick = function() {   
-    brochureModal.style.display = "block";
-    brochureOverlay.style.display = "block";
-  }
+  var closeBtns = document.querySelectorAll(".close");
 
-  brochureCloseBtn.onclick = function() {   
-    brochureModal.style.display = "none";
-    brochureOverlay.style.display = "none";
-  }
-  documentBtn.onclick = function() {   
-    documentModal.style.display = "block";
-    documentOverlay.style.display = "block";
+  function closeAllModals() {
+    openHouseModal.style.display = "none";
+    scheduleModal.style.display = "none";
+    bookingModal.style.display = "none";
+    confirmationModal.style.display = "none";
+    overlay.style.display = "none";
   }
 
-  documentCloseBtn.onclick = function() {   
-    documentModal.style.display = "none";
-    documentOverlay.style.display = "none";
-  }
   openHouseBtn.onclick = function() {   
     openHouseModal.style.display = "block";
-    openHouseOverlay.style.display = "block";
+    overlay.style.display = "block";
   }
-
-  openHouseCloseBtn.onclick = function() {   
-    openHouseModal.style.display = "none";
-    openHouseOverlay.style.display = "none";
-  }
-
   scheduleBtn.onclick = function() {   
     scheduleModal.style.display = "block";
-    scheduleOverlay.style.display = "block";
+    overlay.style.display = "block";
   }
-
-  scheduleCloseBtn.onclick = function() {   
-    scheduleModal.style.display = "none";
-    scheduleOverlay.style.display = "none";
-  }
-
   bookingBtn.onclick = function() {   
     bookingModal.style.display = "block";
-    bookingOverlay.style.display = "block";
+    overlay.style.display = "block";
   }
-
-  bookingCloseBtn.onclick = function() {   
-    bookingModal.style.display = "none";
-    bookingOverlay.style.display = "none";
-  }
-
   confirmationBtn.onclick = function() {   
     confirmationModal.style.display = "block";
-    confirmationOverlay.style.display = "block";
-  }
-
-  confirmationCloseBtn.onclick = function() {   
-    confirmationModal.style.display = "none";
-    confirmationOverlay.style.display = "none";
+    overlay.style.display = "block";
   }
 
   window.onclick = function(event) {
-    if (event.target == brochureModal) {
-      brochureModal.style.display = "none";
-      brochureOverlay.style.display = "none";
-    }
-    if (event.target == documentModal) {
-      documentModal.style.display = "none";
-      documentOverlay.style.display = "none";
-    }
-    if (event.target == openHouseModal) {
-      openHouseModal.style.display = "none";
-      openHouseOverlay.style.display = "none";
-    }
-    if (event.target == scheduleModal) {
-      scheduleModal.style.display = "none";
-      scheduleOverlay.style.display = "none";
-    }
-    if (event.target == bookingModal) {
-      bookingModal.style.display = "none";
-      bookingOverlay.style.display = "none";
-    }
-    if (event.target == confirmationModal) {
-      confirmationModal.style.display = "none";
-      confirmationOverlay.style.display = "none";
+    console.log(event.target);
+    if (
+        event.target == openHouseModal ||
+        event.target == scheduleModal ||
+        event.target == bookingModal ||
+        event.target == confirmationModal
+    ) {
+        closeAllModals();
     }
   }
-
-  document.addEventListener("DOMContentLoaded", function() {
-  const menuButton = document.getElementById('toggleMenu');
-  const sideMenu = document.getElementById('sideMenu');
-
-  // Initially hide the menu on smaller screens
-  if (window.innerWidth <= 450) {
-    sideMenu.style.display = 'none';
-  }
-
-  menuButton.addEventListener('click', function() {
-    // Toggle the menu's display when the button is clicked
-    if (sideMenu.style.display === 'none') {
-      sideMenu.style.display = 'block';
-    } else {
-      sideMenu.style.display = 'none';
-    }
-  });
-});
   </script>
 </body>
 </html>
