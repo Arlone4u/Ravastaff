@@ -27,13 +27,12 @@ def generate_html(config_file, template_file, output_file):
     template = Template(template_content)
 
     rendered_html = template.render(
-        address=home_data.get('address', ''),
+        propertyAddress=home_data.get('propertyAddress', ''),
         images=home_data.get('images', {}),
         title=home_data.get('title', ''),
         menu=home_data.get('menu', []),
         openHouse=home_data.get('openHouse',[]),
         price=home_data.get('price', ''),
-        titleAddress=home_data.get('titleAddress', ''),
         extendedAddress=home_data.get('extendedAddress', ''),
         details=home_data.get('details', []),
         file=home_data.get('file', []),
