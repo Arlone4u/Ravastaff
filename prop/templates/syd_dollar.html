@@ -205,13 +205,8 @@
       height: 100vh;
       animation: fade 30s infinite;
     }
-      @keyframes fade {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 1;
-        }
+    100% {
+        opacity: 1;
     }
     .slideshow img {
       position: absolute;
@@ -275,7 +270,6 @@
     }
     /* #files {
       display: flex;
-      margin: 0 0 5% 0;
     }
     .file {
       display: flex; 
@@ -777,7 +771,220 @@
       width: 0;
     }
     .modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 70%; /* Adjusted max-width for a more reasonable size */
+  max-height: 50vh; /* Adjusted max-height for a more reasonable size */
+}
+
+.modal-img {
+  width: 100%; /* Adjusted to fill the modal-content container */
+  height: auto;
+}
+
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Slideshow styles */
+.mySlides {
+  display: none;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+/* Add responsiveness */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.modals {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-contents {
+  margin: auto;
+  display: block;
+  max-width: 70%; /* Adjusted max-width for a more reasonable size */
+  max-height: 50vh; /* Adjusted max-height for a more reasonable size */
+}
+
+.modal-images {
+  width: 100%;
+  height: auto;
+}
+
+.close-buttons {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-buttons:hover,
+.close-buttons:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Slideshow styles */
+.my-slides {
+  display: none;
+}
+
+/* Navigation buttons */
+.prev-buttons, .next-buttons {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next-buttons {
+  right: 0;
+}
+
+/* Add responsiveness */
+@media only screen and (max-width: 700px) {
+  .modal-contents {
+    width: 100%;
+  }
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: black;
+}
+
+.custom-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* Close button style */
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Styles for the image links */
+.custom-carousel-img {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Styles for the navigation buttons */
+.custom-prev, .custom-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-prev {
+  left: 0;
+}
+
+.custom-next {
+  right: 0;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+    .modal {
       display: none;
+      position: fixed;
       z-index: 1000;
       top: 60%;
       left: 50vw;
@@ -804,8 +1011,6 @@
       padding: 1%;
       font-size: .8vw;
       max-width: 100%;
-      font-family: "Poppins";
-
     }
     .scheduleContainer {
       display: flex;
@@ -2459,7 +2664,7 @@
         {% endfor %}
       </div>
     </div>
-  </section>  
+  </section>
   <section id ="3">
     <div id="customModal" class="custom-modal">
       <span class="custom-close">&times;</span>
@@ -2478,7 +2683,7 @@
             <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
             <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
@@ -2498,16 +2703,16 @@
             <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">      
+            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
             <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5 }}" alt="Modal Trigger Image" class="custom-carousel-img">
+            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
             <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
@@ -2519,7 +2724,7 @@
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
         </div>
-        </div> 
+        </div>
     </div>
   </section>
   <section id="4">
@@ -2605,7 +2810,7 @@
         {% endfor %}
       </div>
     </div>
-  </section>  
+  </section>
   <section id="7" class="google-maps-section">
     <div class="">
       <iframe src="{{ googleMapAddress }}" width="1000" height="500" style="border:0;" allowfullscreen="" loading="async" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -2614,7 +2819,7 @@
   <section>
     <div class="parallax">
       <div class="parallax-card">
-        <h1>{{ propertyAddress }} <h1>
+        <h1>{{ titleAddress }} <h1>
         <h3>{{ extendedAddress }}</h3>
       </div>
     </div>
@@ -2662,8 +2867,7 @@
       <p classs="subtext">MENU<p>
       <i class="material-icons">segment</i>
     </div>
-  </nav>
-  <nav class="sideMenu" id="sideMenu">
+    <div class="sideMenu" id="sideMenu">
       <div id="closeMenu"><i class="material-icons">close</i></div>
       {% for item in menu %}
         <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
@@ -2742,7 +2946,7 @@
         <label>In Person<br> Thursday, February 15, 2024<br>Evening</label>
       </div>
       <div class="modal-card">
-        <input type="text" placeholder="First Name"> 
+        <input type="text" placeholder="First Name">
         <input type="text" placeholder="Last Name">
         <input type="text" placeholder="name@email.com">
         <input type="text" placeholder="555-555-5555">
@@ -2751,7 +2955,7 @@
       <button class="modalBtn" id="confirmation">Confirm Booking</button>
     </div>
   </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="bookingOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <div id="confirmationModal" class="modal">
     <div class="confirmationModal">
@@ -3046,18 +3250,24 @@
 
   document.getElementById('toggleMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    if (sideMenu.style.transform === 'translateX(0%)') {
-      sideMenu.style.transform = 'translateX(100%)'; 
+    if (sideMenu.style.display === 'none') {
+      sideMenu.style.display = 'block';
     } else {
-      sideMenu.style.transform = 'translateX(0%)';
+      sideMenu.style.display = 'none';
     }
   });
 
   document.getElementById('closeMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    sideMenu.style.transform = 'translateX(100%)'; 
+    if (sideMenu.style.display === 'block') {
+      sideMenu.style.display = 'none';
+
+    } else {
+      sideMenu.style.display = 'none';
+    }
   });
 
+         // Smooth scroll when clicking on anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -3067,26 +3277,46 @@
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 100,
+          top: targetElement.offsetTop - 100, // Adjust the offset as needed
           behavior: 'smooth'
         });
       }
     });
   });
 
-
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    var section2 = document.getElementById("details");
+    var floatingMenu = document.querySelector('.floating-menu');
+    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
+      floatingMenu.style.display = "block";
+    } else {
+      floatingMenu.style.display = "none";
+    }
+  }
+  var brochureModal = document.getElementById('brochureModal');
+  var brochureOverlay = document.getElementById('brochureOverlay');
+  var documentModal = document.getElementById('documentModal');
+  var documentOverlay = document.getElementById('documentOverlay');
   var openHouseModal = document.getElementById('openHouseModal');
   // var scheduleModal = document.getElementById('scheduleTourModal');
   // var bookingModal = document.getElementById('bookingModal');
   // var confirmationModal = document.getElementById('confirmationModal');
   var overlay = document.getElementById('overlay');
 
+  var brochureBtn = document.getElementById("brochure");
+  var brochureCloseBtn = document.getElementsByClassName("#brochure .close");
+  var documentBtn = document.getElementById("document");
+  var documentCloseBtn = document.getElementsByClassName("#document .close");
   var openHouseBtn = document.getElementById("openHouse");
   // var scheduleBtn = document.getElementById("scheduleTour");
   // var bookingBtn = document.getElementById("booking");
   // var confirmationBtn = document.getElementById("confirmation");
 
-  var closeBtns = document.querySelectorAll(".close");
+  brochureBtn.onclick = function() {   
+    brochureModal.style.display = "block";
+    brochureOverlay.style.display = "block";
+  }
 
   function closeAllModals() {
     openHouseModal.style.display = "none";
@@ -3095,10 +3325,18 @@
     // confirmationModal.style.display = "none";
     overlay.style.display = "none";
   }
+  documentBtn.onclick = function() {   
+    documentModal.style.display = "block";
+    documentOverlay.style.display = "block";
+  }
 
+  documentCloseBtn.onclick = function() {   
+    documentModal.style.display = "none";
+    documentOverlay.style.display = "none";
+  }
   openHouseBtn.onclick = function() {   
     openHouseModal.style.display = "block";
-    overlay.style.display = "block";
+    openHouseOverlay.style.display = "block";
   }
   // scheduleBtn.onclick = function() {   
   //   scheduleModal.style.display = "block";
@@ -3113,6 +3351,11 @@
   //   overlay.style.display = "block";
   // }
 
+  confirmationCloseBtn.onclick = function() {   
+    confirmationModal.style.display = "none";
+    confirmationOverlay.style.display = "none";
+  }
+
   window.onclick = function(event) {
     console.log(event.target);
     if (
@@ -3122,6 +3365,26 @@
         // event.target == confirmationModal
     ) {
         closeAllModals();
+    }
+    if (event.target == documentModal) {
+      documentModal.style.display = "none";
+      documentOverlay.style.display = "none";
+    }
+    if (event.target == openHouseModal) {
+      openHouseModal.style.display = "none";
+      openHouseOverlay.style.display = "none";
+    }
+    if (event.target == scheduleModal) {
+      scheduleModal.style.display = "none";
+      scheduleOverlay.style.display = "none";
+    }
+    if (event.target == bookingModal) {
+      bookingModal.style.display = "none";
+      bookingOverlay.style.display = "none";
+    }
+    if (event.target == confirmationModal) {
+      confirmationModal.style.display = "none";
+      confirmationOverlay.style.display = "none";
     }
   }
   closeBtns.forEach(function(btn) {
