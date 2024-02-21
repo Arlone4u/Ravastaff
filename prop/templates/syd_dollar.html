@@ -48,8 +48,9 @@
     }
     .title-text {
       font-size: 45px;
-      padding: 0;
+      margin: 0;
       font-family: "PTSerif";
+      text-align: center;
     }
     .feature-text {
       font-size: 20px;
@@ -76,6 +77,7 @@
       margin-top:-20px;
       color: #6e6e6e;
       font-family: "Poppins";
+      text-align: center;
     }
     .text {
       font-size: 15px;
@@ -503,18 +505,18 @@
       justify-content: center;
       align-items: center;
       background-color: #f0f0f0;
-      max-height: 100%;
     }
     .propertyMedia {
       display: flex;
+      flex-direction: column;
     }
     
     .propertyCategory {
+      display: flex;
+      flex-direction: column;
       margin-right: 20px;
       margin-left: 20px;
-      margin-top: -35px;
       text-align: center;
-      display: inline-block;
       font-size: 45px;
     }
     .videoList {
@@ -527,25 +529,19 @@
       text-align: center;
       list-style: none; 
       padding: 0;
-      margin: 20px;
-    }
-
-    .subVideoList {
-      list-style-type: none;
-      padding: 0;
-      margin-left: 20px;
+      margin: 0 20px;
     }
 
     .videoPlayer {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0% 2% 4% 2%;
     }
 
     #videoPlayer {
-      width: 100%; 
-      height: 90vh; 
-      padding: 10%;
+      height: 80vh;
+      width: 80%;
     }
     .propertyRealtor {
       display: flex;
@@ -555,7 +551,6 @@
       flex-direction: column;
       max-height: 100%;
       margin-top: 50px;
-      /* border: 2px solid blue; */
       width: 100%;
       padding: 2%;
     }
@@ -566,22 +561,18 @@
       justify-content: space-between;
       align-items: center;
       width: 90%;
-      /* border: 2px solid black; */
     }
     .realtor {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
       align-items: center; 
-      /* margin-bottom: 20px; */
       width: 100%;
       padding: 1%;
-      /* border: 2px solid rgb(197, 82, 132); */
     }
     .realtor-info {
       display: flex;
       margin: 1%;
-      /* border: 2px solid blue; */
     }
     .realtor-details {
       display: flex;
@@ -590,11 +581,9 @@
       align-items: center;
       text-align: center;
       width: 60%;
-      /* border: 2px solid violet; */
     }
     .realtor-details p {
       padding: 1.5%;
-      /* border: 2px solid rgb(117, 28, 117); */
       text-align: center;
     }
 
@@ -606,7 +595,6 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      /* border: 2px solid red; */
     }
     .google-maps-section {
       text-align: center;
@@ -1121,6 +1109,19 @@
       text-align: center;
       margin: 4% 0 1% 0;
     }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+    }
+    .description {
+      width: 100%;
+    }
+    .contact-form-section {
+      max-width: 50%;
+    }
+    .inquiryButton {
+      flex-direction: column;
+    }
   }
 
     /* Ipad */
@@ -1179,27 +1180,59 @@
     .navbar {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
       align-items: center;
       grid-gap: 5px;
+      z-index: 998;
     }
     .title {
-      color: white;
-      font-family: "PTSerif";
       font-size: 2.5em;
-      /* border: 2px solid black; */
-      margin: 1% 1% 0 3%;
+      justify-content: flex-start;
+      margin: 3% 1% 0 4%;
+    }
+    .floating-menu {
+      position: fixed;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; 
+      transform: translateX(0%);
+    }
+    .sideMenuTitle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: #000;
+    }
+    .sideMenu {
+      top: 0;
+      right: 0;
+      float: right;
+      width: 300px;
+      height: 100%;
+      padding: 25px;
+      position: fixed;
+      color: #000;
+      background-color: #fff;
+      z-index: 1000;
+      border-left: solid 3px #000;
+      transition: transform 0.3s ease; 
+      transform: translateX(100%);
+    }
+    
+    .sideMenu a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      font-size: 30px;
+      text-align: right;
+    }
+    .sideMenu i.material-icons {
+      font-size: 50px;
     }
     #menu {
-      padding-right: 3%;
-      justify-content: center;
-      align-items: center;
-      /* border: 2px solid black; */
-    }
-
-    #menu a {
-      font-size: .8em;
-      /* border: 2px solid black; */
+      display: none;
     }
     #scroll-button {
       height: 60px;
@@ -1231,7 +1264,7 @@
       justify-content: center;
     }
     .description {
-      max-width: 100%;
+      width: 100%;
     } 
     .modalImages {
       width: 100%;
@@ -1241,7 +1274,6 @@
     }
     .side-modalImages {
       width: 100%;
-      /* border: 2px solid black; */
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
@@ -1300,10 +1332,10 @@
       font-family: "PTSerif";
     }
     #feature-list a {
-      margin-right: 15px; 
-      margin-bottom: 5px;
-      padding: 6px 10px;
-      border-radius: 15px; 
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
       background-color: #f0f0f0; 
       color: #333; 
       text-decoration: none;
@@ -1311,7 +1343,7 @@
       transition: background-color 0.3s;
     }
     .feature-text {
-      font-size: 16px;
+      font-size: 20px;
       font-family: "PTSerif";
     }
 
@@ -1422,14 +1454,6 @@
     .inquiryButton {
       flex-direction: column;
     }
-    /* .inquiryBtn {
-      padding: 10px;
-      text-align: center;
-      margin: 5px;
-      width: 100%;
-      font-family: "Poppins";
-      font-size: 20px;
-    } */
 
     .footer {
       display: flex;
@@ -1602,7 +1626,6 @@ i.material-icons {
 
 .description {
   margin: 10px;
-  /* width: 100%; */
   max-height: 100%;
   line-height: 2.5;
   letter-spacing: 1px;
@@ -1615,19 +1638,19 @@ i.material-icons {
 .topPhoto,
   .bottomPhoto{
     display: flex;
-    flex-direction: column; /* Change flex direction to column */
-    align-items: center; /* Align items to the center */
-    margin: 20px; /* Add margin for separation */
+    flex-direction: column; 
+    align-items: center; 
+    margin: 20px;
   }
   .modalImages,
   .side-modalImages {
-    width: 100%; /* Adjust width of the images */
-    height: auto; /* Adjust height to maintain aspect ratio */
+    width: 100%; 
+    height: auto;
     border: none;
   }
   .desc-void {  
-    align-items: center; /* Align items to the center */
-    margin: 20px; /* Add margin for separation */
+    align-items: center; 
+    margin: 20px; 
     margin-bottom: 20px;
 }
     .desc-void .open-house-cta .open-house-label {
@@ -1699,7 +1722,7 @@ i.material-icons {
   text-decoration: none;
   border: 1px solid black;
   transition: background-color 0.3s, transform 0.3s;
-  margin: 5px; /* Adjust margin for spacing between items */
+  margin: 5px; 
 }
 
 #feature-list a:hover {
@@ -1738,10 +1761,6 @@ i.material-icons {
       margin-top: 50px;
     }
 
-    /* .realtorDetails {
-   
- 
-    } */
     .realtor {
      
       align-items: center; 
@@ -1756,11 +1775,7 @@ i.material-icons {
      
       align-items: center;
     }
-    /* .realtor-info {
-      
-    
 
-    } */
     .realtor-details {
     display: none;
     }
@@ -2018,21 +2033,19 @@ i.material-icons {
           {% for category, videos in propertyVideos.items() %}
         <div class="propertyCategory">
           <p class="title-text">{{ category }}</p>
-          <div class="propertyCategoryList">
             <ul class="videoList">
               {% for video_title, video_url in videos.items() %}
               <li><a onclick="playVideo('{{ video_url }}')" class="feature-text">{{ video_title }}</a></li>
               {% endfor %}
             </ul>
+          <div class="videoPlayer">
+            <video controls id="videoPlayer">
+              <source src="" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
           {% endfor %}
-      </div>
-      <div class="videoPlayer">
-        <video controls id="videoPlayer">
-          <source src="" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
       </div>
     </div>
   <section>
@@ -2212,7 +2225,7 @@ i.material-icons {
                 <div class="horizontal-line"></div>
               <div>
                 {% for realtor, details in propertyRealtor.realtors.items() %}
-                <div class="realtor"> <!--class="realtor"-->
+                <div class="realtor">
                      <img src="{{ details.Image }}" alt="Modal Trigger Image" class="confirmationImage2">
                   <div class="realtorInfoModal"> 
                     <p class="text">{{ realtor }}</p>
@@ -2407,49 +2420,50 @@ i.material-icons {
       descriptionSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
-
   document.addEventListener("DOMContentLoaded", function() {
-    const categories = document.querySelectorAll('.propertyCategory');
+  const categories = document.querySelectorAll('.propertyCategory');
 
-    categories.forEach((category, index) => {
-      const videoList = category.querySelector('.videoList');
-      if (index !== 0) {
-        videoList.style.display = 'none';
-      }
-    });
+  categories.forEach(category => {
+    category.classList.remove('active'); 
+    category.querySelector('.videoList').style.display = 'block';
+  });
 
-    categories.forEach(category => {
-      const title = category.querySelector('.title-text');
-      const videoList = category.querySelector('.videoList');
+  categories.forEach(category => {
+    const videoList = category.querySelector('.videoList');
 
+    videoList.querySelectorAll('.feature-text').forEach(title => {
       title.addEventListener('click', function() {
-        const isActive = category.classList.contains('active');
-
-        categories.forEach(c => {
-          c.classList.remove('active');
-          c.querySelector('.videoList').style.display = 'none';
-        });
-
-        if (!isActive) {
-          category.classList.add('active');
-          videoList.style.display = 'block';
-        }
+        const videoUrl = getVideoUrlFromCategory(category);
+        playVideo(videoUrl);
       });
     });
   });
+});
 
-  function playVideo(videoUrl) {
-    var videoPlayer = document.getElementById('videoPlayer');
-    var source = videoPlayer.querySelector('source');
+function playVideo(videoUrl) {
+  var videoPlayer = document.getElementById('videoPlayer');
+  var source = videoPlayer.querySelector('source');
 
-    source.src = videoUrl;
-    videoPlayer.load(); 
-    videoPlayer.play();
+  source.src = videoUrl;
+  videoPlayer.load();
+  videoPlayer.play();
+}
+
+  function menuHome() {
+    var home;
+
+    if (window.matchMedia("(max-width: 1000px)").matches && window.matchMedia("(min-width: 451px)").matches) {
+      home = document.getElementById("home");
+      var floatingMenu = document.querySelector('.floating-menu');
+      floatingMenu.style.transform = "translateX(0%)";
+    } else {
+      floatingMenu.style.transform = "translateX(120%)";
+    }
   }
 
   window.onscroll = function() {
     scrollFunction();
+    menuHome();
   };
 
   function scrollFunction() {
