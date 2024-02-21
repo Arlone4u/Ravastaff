@@ -20,6 +20,77 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <style>
+    /*Text Styles*/
+    h1 {
+      font-size: 6em;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    h3 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: white;
+    }
+    h4 {
+      font-size: 1.5em;
+      color: black;
+    }
+    p {
+      font-size: 1em;
+      text-align: justify;
+      font-family: "Poppins";
+    }
+    .title-textt {
+      font-size: 55px;
+      padding: 0;
+      margin: 0;
+    }
+    .title-text {
+      font-size: 45px;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    .feature-text {
+      font-size: 20px;
+      font-family: "PTSerif";
+    }
+
+    .address-text {
+      font-size: 2.2em;
+      padding: 0;
+    }
+    .centerTitle {
+      font-size: 45px;
+      font-family: "PTSerif";
+      padding: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .med-text {
+      font-size: 30px;
+      padding: 0;
+    }
+    .subtext {
+      font-size: 15px;
+      margin-top:-20px;
+      color: #6e6e6e;
+      font-family: "Poppins";
+    }
+    .text {
+      font-size: 15px;
+      color: black;
+      font-family: "Poppins";
+      text-align: justify;
+      margin: 0;
+    }
+    .text-center {
+      font-size: 15px;
+      color: black;
+      font-family: "Poppins";
+      text-align: center;
+      margin: 0;
+    }
     .horizontal-line {
       width: 100%; 
       height: 1px; 
@@ -30,34 +101,46 @@
       font-family: "PTSerif";
       margin: 0;
       padding: 0;
-      height: 100%;
     }
     #home {
       position: relative;
-      height: 100vh;
       overflow: hidden;
+      height: 100vh; 
+    }
+    .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      grid-gap: 50px;
+      padding: 0;
+      z-index: 1000;
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.435) 20%,rgba(255, 255, 255, 0.086) 100%);
+    }
+    .title {
+      color: white;
+      font-size: 3.5em;
+      font-weight: bold;
+      font-family: "PTSerif";
+      z-index: 999;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin: 2% 2% 0 10%;
     }
     
     #menu {
-      position: absolute;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.358) 20%,rgba(255,255,255,0) 100%);
-      font-family: "Poppins";
-      z-index: 1;
-      height: 100px;
-      width: 100%;
       display: flex;
+      flex-wrap: wrap;
       justify-content: flex-end;
       align-items: center;
-      padding-right:12%;
+      font-family: "Poppins";
+      padding-right: 8%;
     }
-
     #menu a {
       color: white;
       text-decoration: none;
       padding: 0 15px;
-      font-size: 16px;
-      float: left;
-
+      font-size: 1em;
+      z-index: 999;
     }
     #scroll-button {
       position: absolute;
@@ -70,8 +153,8 @@
       opacity: 0.9;
       transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
       z-index: 2;
-      height: 8.5%;
-      width: 4.2%;
+      height: 80px;
+      width: 80px;
       overflow: hidden;
     }
     #scroll-button i {
@@ -94,29 +177,9 @@
       border: 1px solid white;
     }
 
-    /* #title {
-      position: absolute;
-      top: 25px;
-      left: 240px;
-      color: white;
-      font-size: 55px;
-      font-weight: bold;
-      font-family: "PTSerif";
-    } */
-    .title {
-      position: relative;
-      top: 4%;
-      left: 12%;
-      color: white;
-      font-size: 4em;
-      font-weight: bold;
-      font-family: "PTSerif";
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-
     #address {
       position: absolute;
+      display: none;
       bottom: 50px;
       left: 240px;
       color: white;
@@ -126,9 +189,8 @@
     }
 
     .slideshow {
-      position: relative;
       max-width: 100%;
-      height: auto;
+      height: 100vh;
       animation: fade 30s infinite;
     }
       @keyframes fade {
@@ -144,7 +206,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: auto;
+      height: 100vh;
       opacity: 0;
       transition: opacity 1s ease-in-out;
       animation: zoominout 30s infinite alternate;
@@ -160,45 +222,20 @@
     .slideshow img.active {
       opacity: 1;
     }
-    .title-text {
-      font-size: 45px;
-      padding: 0;
-      /* margin-bottom: 20px; */
-    }
-    .address-text {
-      font-size: 2.2em;
-      padding: 0;
-      /* margin-bottom: 20px; */
-    }
-    .centerTitle {
-      font-size: 45px;
-      padding: 0;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    .title-textt {
-      font-size: 55px;
-      padding: 0;
-      margin: 0;
-    }
-
-    .med-text {
-      font-size: 30px;
-      padding: 0;
-    }
     #details {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      max-width: 100%;
+      text-align: center;
       background-color: #F7F7F7;
-      padding: 30px 120px;
-      overflow: hidden;
+      padding: 15px 0px;
     }
     .price {
-      margin-left: 8%;
+      display: flex;
+      flex-direction: column;
       flex-wrap: wrap;
+      padding: 0 15px;
     }
     #details-menu {
       display: flex;
@@ -206,53 +243,23 @@
       justify-content: center;
       align-items: flex-start;
     }
-    #details-menu p {
-      color: black;
-      padding: 0 15px;
-    }
     .detail-item {
       flex-direction: column;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 0 15px;
       height: 12vh;
-
-    }
-    .subtext {
-      font-size: 15px;
-      margin-top:-20px;
-      color: #6e6e6e;
-      font-family: "Poppins";
-    }
-    .textDescription {
-      font-size: 1.1em;
-      margin-top:-20px;
-      color: #6e6e6e;
-      font-family: "Poppins";
-    }
-    .text {
-      font-size: 15px;
-      color: black;
-      font-family: "Poppins";
-      text-align: justify;
-      margin: 0;
-    }
-    .text-center {
-      font-size: 15px;
-      color: black;
-      font-family: "Poppins";
-      text-align: center;
-      margin: 0;
     }
 
     #description {
       display: flex;
       flex-direction: column;
-      max-height: 100%;
+      justify-content: space-between;
       padding: 2% 5%;
     }
-    #files {
+    /* #files {
       display: flex;
       margin: 0 0 5% 0;
     }
@@ -261,107 +268,96 @@
       margin-right: 80px; 
       padding-top: 20px;
       padding-bottom: 20px;
+    } */
+
+    .propertyAddress {
+      font-size: 55px;
+      margin: 5%;
     }
     #propertyDescription {
       display: flex;
       flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: space-between;
       align-items: center;
+      flex-direction: row;
+      justify-content: space-evenly;
       width: 100%;
       grid-gap: 20px;
-      margin: 0 0 30px 0;
     }
     #propertyDescriptionBottom {
       display: flex;
       flex-wrap: wrap;
-      flex-direction: row;
       align-items: center;
-      grid-gap: 10%;
-      margin: 0 0 30px 0;
+      justify-content: space-evenly;
+      width: 100%;
+      grid-gap: 20px;
     }
 
     .description {
-      /* display: flex; */
-      max-width: 45%;
-      max-height: 100%;
+      width: 50%;
       font-family: "Poppins";
       line-height: 1.5;
       font-size: 1.2em;
-      letter-spacing: 1px;
-      margin: 5% 0 5% 0;
+      text-align: justify;
+      letter-spacing: 2px;
+      padding: 2%;
     }
     .modalImages {
-      width: 100%;
-      height: auto;
+      width: 600px;
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
-
     }
     .side-modalImages {
-      flex-grow: 1;
-      width: 100%;
-      height: 100%;
-      float: right;
+      width: 600px;
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
     .topPhoto,
     .bottomPhoto{
-      display: flex;
       margin: 20px;
-      width: 50%;
+      justify-content: flex-end;
     }
-
-    .open-house-cta {
-      z-index: 2;
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .desc-void {
+      justify-content: center;
+      align-items: center;
       width: 320px;
       height: 320px;
       background: #fff;
-      border: 1px solid #000;
       text-align: center;
-      align-items: center;
-      flex-direction: column;
-      display: flex;
       padding: 20px;
-      justify-content: center;
       border-radius: 200%;
       font-size: 45px;
-      line-height: normal;
-      margin-top: 10px;
+      z-index: 2;
+      border: 2px solid black;
     }
-    .open-house-label {
-      display: flex;
-      flex-direction: column;
-    }
-    .desc-void {
-      display: flex;
-      justify-content: center;
-    }
-
     .cross {
+      justify-content: center;
+      align-items: center;
       width: 1px;
       background: #000;
       height: 500px;
       z-index: 1;
+      rotate: 45deg;
     } 
-    .cross-1 {
-      rotate: 45deg;
-      z-index: 1;
-      transform: translate(30px,-35%);
-      height: 450px;
-    }
-    .cross-2 {
-      rotate: 45deg;
-      z-index: 1;
-      transform: translate(90px,-40%);
-      height: 520px;
-    }
-    .cross-3 {
-      rotate: 45deg;
-      z-index: 1;
-      transform: translate(80px,-35%);
-      height: 450px;
+      .cross-1 {
+        transform: translate(120px,-30%);
+        height: 450px;
+      }
+      .cross-2 {
+        transform: translate(170px,-27%);
+        height: 510px;
+      }
+      .cross-3 {
+        transform: translate(140px,-30%);
+        height: 450px;
+      }
+    .open-house-label {
+      display: flex;
+      flex-direction: column;
     }
     .open-house-preview {
       font-family: Montserrat;
@@ -373,24 +369,25 @@
     .view-details-cta {
       font-size: 17px;
       margin-top: 15px;
-    }
-
-    #openHouse{
       text-decoration: none;
     }
     #features {
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
-      max-height: 100%;
-      margin: 100px 0 0px 0;
-      padding: 0;
+      flex-grow: unset;
       background-color: #F7F7F7;
-      padding: 30px 120px;
+      padding: 4% 8%;
     }
-
     #feature-title {
-      margin-top: -4.1%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 45px;
+      font-family: "PTSerif";
+      margin-top: -7.5%;
     }
     
     #feature-list {
@@ -399,11 +396,13 @@
       align-items: stretch;
       max-width: 90%;
       align-content: center;
-      justify-content: center;     
+      justify-content: center;    
+      margin-top: 4%;
     }
 
     #feature-list a {
       display: inline-flex; 
+      border: 2px solid black; 
       margin-right: 20px; 
       margin-bottom: 10px;
       padding: 8px 15px;
@@ -420,11 +419,6 @@
       color: black; 
       transform: scaleX(1.02);
       transform-origin: center;
-    }
-
-    .feature-text {
-      font-size: 20px;
-      font-family: "PTSerif";
     }
 
     #carousels {
@@ -479,34 +473,34 @@
           }
 
           @keyframes scrollAnimation {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-    100.1% {
-      transform: translateX(-50%);
-    }
-}
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+            100.1% {
+              transform: translateX(-50%);
+            }
+          }
 
 
-@keyframes scrollAnimationOpposite {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-    100.1% {
-        transform: translateX(-50%);
-    }
-}  
-
+          @keyframes scrollAnimationOpposite {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+            100.1% {
+                transform: translateX(-50%);
+            }
+          }  
     .propertyVideos {
       display: flex;
       flex-direction: column;
       top: 10px;
+      justify-content: center;
       align-items: center;
       background-color: #f0f0f0;
       max-height: 100%;
@@ -521,6 +515,7 @@
       margin-top: -35px;
       text-align: center;
       display: inline-block;
+      font-size: 45px;
     }
     .videoList {
       list-style: none; 
@@ -552,31 +547,41 @@
       height: 90vh; 
       padding: 10%;
     }
-
     .propertyRealtor {
-      margin: 100px 100px;
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       flex-direction: column;
       max-height: 100%;
       margin-top: 50px;
+      /* border: 2px solid blue; */
+      width: 100%;
+      padding: 2%;
     }
-
     .realtorDetails {
+      display: flex;
       flex-direction: column;
       flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      /* border: 2px solid black; */
     }
     .realtor {
       display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
       align-items: center; 
-      margin-bottom: 20px;
+      /* margin-bottom: 20px; */
+      width: 100%;
+      padding: 1%;
+      /* border: 2px solid rgb(197, 82, 132); */
     }
-
     .realtor-info {
-      flex-wrap: wrap;
-      flex-grow: 1;
-      margin: 50px;
-
+      display: flex;
+      margin: 1%;
+      /* border: 2px solid blue; */
     }
     .realtor-details {
       display: flex;
@@ -584,39 +589,28 @@
       flex-wrap: wrap;
       align-items: center;
       text-align: center;
-      justify-content: space-around;
+      width: 60%;
+      /* border: 2px solid violet; */
+    }
+    .realtor-details p {
+      padding: 1.5%;
+      /* border: 2px solid rgb(117, 28, 117); */
+      text-align: center;
     }
 
     .realtor-img {
       max-width: 100%; 
       max-height: 20vh;
-      margin-left: 20px;
     }
     .realtorImg {
       display: flex;
       align-items: center;
+      justify-content: flex-start;
+      /* border: 2px solid red; */
     }
-    
     .google-maps-section {
       text-align: center;
     }
-
-    h1 {
-      font-size: 6em;
-      margin-bottom: 50px;
-      color: white;
-    }
-
-    h3 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      color: white;
-    }
-    h4 {
-      font-size: 1.5em;
-      color: black;
-    }
-
     iframe {
       width: 100%;
       height: 60vh;
@@ -624,7 +618,6 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-
     .parallax {
       display: flex;
       flex-direction: column;
@@ -639,7 +632,6 @@
       height: 80vh;
       position: relative;
     }
-
     .parallax::before {
       content: '';
       position: absolute;
@@ -649,14 +641,12 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5); 
     }
-
     .parallax-card {
       padding: 20px;
       border-radius: 10px;
       position: relative; 
       z-index: 1; 
     }
-
     .contact-form-section {
       max-width: 40%;
       height: 100%;
@@ -709,6 +699,7 @@
       margin: 60px 0 0 0;
       display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: center;
     }
@@ -1117,33 +1108,348 @@
     .custom-prev:hover, .custom-next:hover {
       background-color: rgba(0, 0, 0, 0.8);
     }
-@media only screen and (min-device-width: 451px) and (max-device-width: 1000px) {
 
-  #propertyDescription {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  @media only screen and (min-device-width: 1001px) and (max-device-width: 1385px) {
+    .navbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      grid-gap: 5px;
+    }
+    .title {
+      text-align: center;
+      margin: 4% 0 1% 0;
+    }
   }
 
-  #description {
-    margin-left: 80px;
-}
+    /* Ipad */
+  @media only screen and (min-device-width: 451px) and (max-device-width: 1000px) {
+    .title-text {
+      font-size: 40px;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    .address-text {
+      font-size: 1.8em;
+      text-align: left;
+    }
+    .subtext {
+      font-size: 1em;
+    }
+    .text {
+      font-size: 1em;
+    }
+    h1 {
+      font-size: 4em;
+      margin-bottom: 40px;
+      color: white;
+    }
 
-.title-textt {
-  font-size: 38px;
-  padding: 0;
-  margin-top: 40px;
-  margin-left: 20px;
-}
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: white;
+    }
 
-i.material-icons {
-  font-size: 30px;
-}
+    body {
+      width: 100%;
+      margin: 0;
+    }
+    #home {
+      width: 100%;
+      height: 60vh;
+    }
+    .slideshow {
+      max-width: 100%;
+      height: 100%;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+    }
+      @keyframes zoominout {
+        0% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+      }
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      grid-gap: 5px;
+    }
+    .title {
+      color: white;
+      font-family: "PTSerif";
+      font-size: 2.5em;
+      /* border: 2px solid black; */
+      margin: 1% 1% 0 3%;
+    }
+    #menu {
+      padding-right: 3%;
+      justify-content: center;
+      align-items: center;
+      /* border: 2px solid black; */
+    }
 
-.description {
-  max-width: 100%;
-}  
+    #menu a {
+      font-size: .8em;
+      /* border: 2px solid black; */
+    }
+    #scroll-button {
+      height: 60px;
+      width: 60px;
+    }
+    #scroll-button i {
+      font-size: 1em;
+    }
+    #details {
+      justify-content: center;
+      max-height: 100%;
+      padding: 30px 20px;
+      grid-gap: 20px;
+    }
+    .detail-item {
+      width: 50%;
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+    }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+    }
+    #propertyDescription {
+      justify-content: center;
+    }
+    #propertyDescriptionBottom {
+      justify-content: center;
+    }
+    .description {
+      max-width: 100%;
+    } 
+    .modalImages {
+      width: 100%;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
 
+    }
+    .side-modalImages {
+      width: 100%;
+      /* border: 2px solid black; */
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
+    }
+    .topPhoto,
+    .bottomPhoto{
+      margin: 20px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+
+    .open-house-cta {
+      padding: 10px;
+      justify-content: center;
+      border-radius: 200%;
+      font-size: 45px;
+      line-height: normal;
+      margin-top: 10px;
+       border: 2px solid black;
+    }
+    .open-house-label {
+      display: flex;
+      flex-direction: column;
+    }
+    .desc-void {
+      justify-content: center;
+      border: 2px solid black;
+    }
+
+    .cross {
+      width: 1px;
+      background: #000;
+      height: 500px;
+      z-index: 1;
+    } 
+    .cross-1 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(100px,-28%);
+      height: 450px;
+    }
+    .cross-2 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(138px,-25%);
+      height: 510px;
+    }
+    .cross-3 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(115px,-28%);
+      height: 450px;
+    }
+    #feature-title {
+      font-size: 40px;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    #feature-list a {
+      margin-right: 15px; 
+      margin-bottom: 5px;
+      padding: 6px 10px;
+      border-radius: 15px; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      text-decoration: none;
+      border: 1px solid black;
+      transition: background-color 0.3s;
+    }
+    .feature-text {
+      font-size: 16px;
+      font-family: "PTSerif";
+    }
+
+    #carousels {
+      height: 40vh;
+    }
+
+    .carousel-row {
+        display: block; 
+        white-space: nowrap; 
+    }
+
+    .carousel-img {
+        display: inline-block; 
+        width: 18%;
+        height: 20vh;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 2cm;
+              padding-bottom: 2cm;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              height: 3.5cm;
+              width: 5cm;
+              margin-right: 20px;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+    .propertyVideos {
+      top: 10px;
+    }
+    .propertyRealtor {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      max-height: 100%;
+      margin-top: 50px;
+      width: 100%;
+    }
+    .realtorDetails {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+    }
+    .realtor {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; 
+      width: 100%;
+    }
+    .realtor-info {
+      display: flex;
+      margin: 1%;
+    }
+    .realtor-details {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+      width: 60%;
+    }
+    .realtor-details p {
+      padding: 1%;
+      text-align: center;
+    }
+
+    .realtor-img {
+      max-width: 100%; 
+      max-height: 20vh;
+    }
+    .realtorImg {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .contact-form-section {
+      max-width: 60%;
+    }
+    .inquiryButton {
+      flex-direction: column;
+    }
+    /* .inquiryBtn {
+      padding: 10px;
+      text-align: center;
+      margin: 5px;
+      width: 100%;
+      font-family: "Poppins";
+      font-size: 20px;
+    } */
+
+    .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+    .footerDetails {
+      max-width: 65%;
+    }
+    .footerSection {
+      float: right;
+      font-size: 2em;
+      color: #000;
+    }
+    .footerImage {
+      width: 30%;
+      height: 30%;
+    }
 
 }
 /* Mobile Phones */
@@ -1467,10 +1773,13 @@ i.material-icons {
 <body>
   <section id="home">
     <div id="home">
-      <div id="menu">
-        {% for item in menu %}
-          <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
-        {% endfor %}
+      <div class="navbar">
+        <div  class="title">{{ propertyAddress }}</div>
+        <div id="menu">
+          {% for item in menu %}
+            <a href="#{{ loop.index }}" id="menu{{ loop.index }}">{{ item }}</a>
+          {% endfor %}
+        </div>
       </div>
       <div class="slideshow">
         <img class="active" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
@@ -1486,7 +1795,8 @@ i.material-icons {
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
     </div>
-      <div  class="title">{{ propertyAddress }}</div>
+    <div id="address">{{ propertyAddress }}</div>
+
       <button id="scroll-button" onclick="scrollToDescription()"> 
         <span><i class="material-icons">south</i></span>
       </button>
@@ -1495,7 +1805,7 @@ i.material-icons {
   <section id="offered">
     <div id="details">
       <div class="price">
-        <p class="subtext">Offered At</p>
+        <p>Offered At</p>
         <p class="title-text">${{ price }}</p>
       </div>
       <div id="details-menu">
@@ -1512,10 +1822,10 @@ i.material-icons {
 
   <section id="1">
     <div id="description">
-      <div class="title-textt" >{{ propertyAddress }}</div>
+      <div class="propertyAddress" >{{ propertyAddress }}</div>
       <div id="propertyDescription">
         <div class="description">{{propertyDescription}}</div>
-        <div class="topPhoto"> <!--sideImage-->
+        <div class="topPhoto">
           <img id="imgLink" src="{{ images.image9 }}" class="side-modalImages">
     
           <div id="myModal" class="slideshowModal">
@@ -1562,84 +1872,77 @@ i.material-icons {
           <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
       </div> 
-      <div id="propertyDescriptionBottom">
-        <div class="bottomPhoto">
-          <img id="imgLink" src="{{ images.image11 }}" class="modalImages" onclick="openModals('{{ images.image11 }}')">
-        </div>
+    </div>
+    <div id="propertyDescriptionBottom">
+      <div class="bottomPhoto">
+        <img id="imgLink" src="{{ images.image11 }}" class="modalImages" onclick="openModals('{{ images.image11 }}')">
+      </div>
+      <div class="circle">
+        <div class="cross cross-1"></div>
+        <div class="cross cross-2"></div>
+        <div class="cross cross-3"></div>
         <div class="desc-void">
-          <div class="cross cross-1"></div>
-          <div class="cross cross-2"></div>
-          <div class="cross cross-3"></div> 
-          <div class="open-house-cta">
-            <a id="openHouse" overlay-target="open-house">
-              <div class="open-house-label"><span class="label-1">Open</span> <span class="label-2">House</span></div>
-              <div class="open-house-preview">
-                <span class="day">{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
-                <span class="sep">@</span>
-                <span class="time">{{openHouse.propertyViewing1.start_time}}</span>
-              </div>
-              <div class="view-details-cta">
-                + 2 more
-              </div>
-            </a>
+          <a id="openHouse" overlay-target="open-house">
+            <div class="open-house-label"><span>Open</span><span>House</span></div>
+            <div class="open-house-preview">
+              <span>{{openHouse.propertyViewing1.day}}, {{openHouse.propertyViewing1.date}}</span>
+              <span>@</span>
+              <span>{{openHouse.propertyViewing1.start_time}}</span>
+            </div>
+            <div class="view-details-cta">
+              + 2 more
+            </div>
+          </a>
+        </div>
+      </div>
+        <div id="myslideshowModals" class="slideshowModals">
+          <span class="slideshow-close-buttons" onclick="closeModals()">&times;</span>
+          <div class="slideshowModal-contents">
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image11 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image12 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image1 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image2 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image3 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image4 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image5 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image6 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image7 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image8 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image9 }}">
+            </div>
+            <div class="my-slides">
+              <img class="slideshowModal-images" src="{{ images.image10 }}">
+            </div>
+          </div>
+            <a class="prev-buttons" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next-buttons" onclick="plusSlides(1)">&#10095;</a>
           </div>
         </div>
-          <div id="myslideshowModals" class="slideshowModals">
-            <span class="slideshow-close-buttons" onclick="closeModals()">&times;</span>
-            <div class="slideshowModal-contents">
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image11 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image12 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image1 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image2 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image3 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image4 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image5 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image6 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image7 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image8 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image9 }}">
-              </div>
-              <div class="my-slides">
-                <img class="slideshowModal-images" src="{{ images.image10 }}">
-              </div>
-            </div>
-              <a class="prev-buttons" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next-buttons" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-          </div>
-      </div>
-    </div>
-    </div>
-      </div>
-    </div>
-  </div>
   </section >
   <section id="2">
     <div id="features">
-      <div id="feature-title">
-        <p class="title-text">{{ featureTitle}}</p>
-      </div>
+      <div id="feature-title">{{ featureTitle}}</div>
       <div id="feature-list">
         {% for feature in features %}
           <a href="#" class="feature-text" id="features{{ loop.index }}">{{ feature }}</a>
@@ -1739,24 +2042,21 @@ i.material-icons {
         {% for realtor, details in propertyRealtor.realtors.items() %}
         <div class="realtor">
           <div class="realtorImg">
-            <!-- <img src="{{ details.Image }}" alt="Modal Trigger Image" class="realtor-img"> -->
-          </div>
+            <img src="{{ details.Image }}" alt="Modal Trigger Image" class="realtor-img">
+          </div> 
           <div class="realtor-info">
-            <!-- <h2>{{ realtor }}</h2> -->
-            <div class="realtor-details">
-              <img src="{{ details.Image }}" alt="Modal Trigger Image" class="realtor-img">
-              <h2>{{ realtor }}</h2>
-
-              <p>TITLE <br>{{ details.Title }}</p>
-              <p>COMPANY<br>{{ details.Company }}</p>
-              <p>PHONE<br>{{ details.Phone }}</p>
-              <p>EMAIL<br><a href="mailto:{{ details.Email }}">{{ details.Email }}</a></p>
-              <p>WEBSITE<br><a href="{{ details.Web }}">{{ details.Web }}</a></p>
-              <p>LICENSE<br>{{ details['License #'] }}</p>
-            </div>
-            <hr> 
+            <h2>{{ realtor }}</h2>
+          </div>
+          <div class="realtor-details">
+            <p>TITLE <br>{{ details.Title }}</p>
+            <p>COMPANY<br>{{ details.Company }}</p>
+            <p>PHONE<br>{{ details.Phone }}</p>
+            <p>EMAIL<br><a href="mailto:{{ details.Email }}">{{ details.Email }}</a></p>
+            <p>WEBSITE<br><a href="{{ details.Web }}">{{ details.Web }}</a></p>
+            <p>LICENSE<br>{{ details['License #'] }}</p>
           </div>
         </div>
+        <div class="horizontal-line"></div>
         {% endfor %}
       </div>
     </div>
@@ -1792,18 +2092,13 @@ i.material-icons {
   <footer>
     <div class="footer">
       <div class="footerDetails" >
-        <div class="footerSection">
-          <p class="title-text">{{title}}</p>
-        </div>
+        <div class="footerSection">{{title}}</div>
         <div class="footerDetails">
           <p class="address-text">{{propertyAddress}}</p>
-          <p class="subtext">{{extendedAddress}}</p>
-          <p class="subtext">Powered by <span class="companyIcon"><i class="material-icons">real_estate_agent</i></span> Revastaff</p>
+          <p class="text">{{extendedAddress}}</p>
+          <p class="text">Powered by <span class="companyIcon"><i class="material-icons">real_estate_agent</i></span> Revastaff</p>
         </div>
         <p class="text">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
-      </div>
-      <div class="overlay">
-        <img src="{{ footerImage }}" alt="Footer Image" class="footerImage">
       </div>
     </div>
   </footer>
@@ -2094,26 +2389,16 @@ i.material-icons {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
     }, 9000);
-  document.addEventListener("DOMContentLoaded", function() {
-  var zoomImages = document.querySelectorAll('.zoomify');
-  zoomImages.forEach(function (image) {
-    var zoomInstance = new Zoomify(image);
-      zoomInstance.zoomIn();
-      setTimeout(function () {
-          zoomInstance.zoomOut();
-      }, 2000);
-    });
-  });
 
   document.addEventListener("DOMContentLoaded", function() {  
   var zoomImages = document.querySelectorAll('.zoomify');
   zoomImages.forEach(function (image) {
     var zoomInstance = new Zoomify(image);
-      zoomInstance.zoomIn();
-      setTimeout(function () {
-          zoomInstance.zoomOut(); 
-      }, 2000); 
-    });
+      zoomInstance.zoomOut();
+      // setTimeout(function () {
+      //     zoomInstance.zoomOut(); 
+      // }, 2000); 
+    }, 1000);
   });
 
   function scrollToDescription() {
