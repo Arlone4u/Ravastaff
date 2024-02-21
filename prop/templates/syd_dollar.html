@@ -195,13 +195,8 @@
       height: 100vh;
       animation: fade 30s infinite;
     }
-      @keyframes fade {
-        0% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 1;
-        }
+    100% {
+        opacity: 1;
     }
     .slideshow img {
       position: absolute;
@@ -213,16 +208,9 @@
       transition: opacity 1s ease-in-out;
       animation: zoominout 30s infinite alternate;
     }
-      @keyframes zoominout {
-        0% {
-            transform: scale(1.2);
-        }
-        100% {
-            transform: scale(1);
-        }
-      }
-    .slideshow img.active {
-      opacity: 1;
+
+    100% {
+        transform: scale(1);
     }
     #details {
       display: flex;
@@ -263,7 +251,6 @@
     }
     /* #files {
       display: flex;
-      margin: 0 0 5% 0;
     }
     .file {
       display: flex; 
@@ -549,6 +536,7 @@
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
+      /* max-height: 60vh; */
       max-height: 100%;
       margin-top: 50px;
       width: 100%;
@@ -636,33 +624,19 @@
       z-index: 1; 
     }
     .contact-form-section {
-      max-width: 40%;
-      height: 100%;
+      max-width: 600px;
+      height: 80vh;
       margin: 0 auto;
-      padding: 5%;
+      padding: 20px;
       text-align: center;
     }
     .form-group {
       display: flex;
       justify-content: space-between;
       flex-flow: column wrap;
+      align-items: center;
       margin-bottom: 0;
-    }
-    .form-group input[type="text"] {
-      border: none; 
-      border-bottom: 1px solid #9E9F9F; 
-      padding: 1%; 
-      margin-bottom: 10px; 
-      width: 100%; 
-      box-sizing: border-box;
-      outline: none;
-    }
-    .form-group label {
-      text-align: left;
-      font-size: 1em;
-      color: #9E9F9F;
-      font-family: "Poppins";
-      margin: 0;
+      padding: 50px;
     }
     .inquiryButton {
       display: flex;
@@ -672,12 +646,15 @@
     .inquiryBtn {
       padding: 10px;
       text-align: center;
-      margin: 5px;
+      margin: 10px;
       width: 100%;
       font-family: "Poppins";
       font-size: 20px;
       background-color: white;
       border: 1px solid black;
+    }
+    label {
+      font-size: larger;
     }
     .footer {
       max-width: 100%;
@@ -713,7 +690,6 @@
     }
     .floating-menu {
       position: fixed;
-      /* z-index: 100; */
       z-index: 1;
       top: 35px;
       right: 20px;
@@ -762,11 +738,226 @@
       font-size: 50px;
     }
 
+    
+    .modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 70%; /* Adjusted max-width for a more reasonable size */
+  max-height: 50vh; /* Adjusted max-height for a more reasonable size */
+}
+
+.modal-img {
+  width: 100%; /* Adjusted to fill the modal-content container */
+  height: auto;
+}
+
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Slideshow styles */
+.mySlides {
+  display: none;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+/* Add responsiveness */
+@media only screen and (max-width: 700px) {
+  .modal-content {
+    width: 100%;
+  }
+}
+
+.modals {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+.modal-contents {
+  margin: auto;
+  display: block;
+  max-width: 70%; /* Adjusted max-width for a more reasonable size */
+  max-height: 50vh; /* Adjusted max-height for a more reasonable size */
+}
+
+.modal-images {
+  width: 100%;
+  height: auto;
+}
+
+.close-buttons {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close-buttons:hover,
+.close-buttons:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Slideshow styles */
+.my-slides {
+  display: none;
+}
+
+/* Navigation buttons */
+.prev-buttons, .next-buttons {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.next-buttons {
+  right: 0;
+}
+
+/* Add responsiveness */
+@media only screen and (max-width: 700px) {
+  .modal-contents {
+    width: 100%;
+  }
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: black;
+}
+
+.custom-modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+/* Close button style */
+.custom-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Styles for the image links */
+.custom-carousel-img {
+  width: 100px; /* Adjust as needed */
+  height: auto;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Styles for the navigation buttons */
+.custom-prev, .custom-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.custom-prev {
+  left: 0;
+}
+
+.custom-next {
+  right: 0;
+}
+
+.custom-prev:hover, .custom-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
     .modal {
       display: none;
+      position: fixed;
       z-index: 1000;
       top: 65%;
       left: 50%;
+      font-family: "Poppins";
       text-align: center;
       overflow: auto;
       transform: translate(-50%, -50%);
@@ -793,8 +984,6 @@
       padding: 1%;
       font-size: .8em;
       max-width: 100%;
-      font-family: "Poppins";
-
     }
     .scheduleContainer {
       display: flex;
@@ -1819,17 +2008,15 @@ i.material-icons {
     }
 
     .realtor {
-     
-      align-items: center; 
+      align-items: center;
       margin-bottom: 20px;
     }
     .realtor-img {
-      width: 100%; 
+      width: 100%;
       height: 20vh;
       margin-left: 20px;
     }
     .realtorImg {
-     
       align-items: center;
     }
 
@@ -2021,7 +2208,7 @@ i.material-icons {
         {% endfor %}
       </div>
     </div>
-  </section>  
+  </section>
   <section id ="3">
     <div id="customModal" class="custom-modal">
       <span class="custom-close">&times;</span>
@@ -2040,7 +2227,7 @@ i.material-icons {
             <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
             <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
@@ -2060,16 +2247,16 @@ i.material-icons {
             <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">      
+            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
             <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
+            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5 }}" alt="Modal Trigger Image" class="custom-carousel-img">
+            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
           <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
             <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
@@ -2081,11 +2268,11 @@ i.material-icons {
             <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
         </div>
-        </div> 
+        </div>
     </div>
   </section>
   <section id="4" >
-    <div class="propertyVideos">  
+    <div class="propertyVideos">
       <div class="propertyMedia">
           {% for category, videos in propertyVideos.items() %}
         <div class="propertyCategory">
@@ -2130,7 +2317,7 @@ i.material-icons {
         {% endfor %}
       </div>
     </div>
-  </section>  
+  </section>
   <section id="7" class="google-maps-section">
     <div class="">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -2139,7 +2326,7 @@ i.material-icons {
   <section>
     <div class="parallax">
       <div class="parallax-card">
-        <h1>{{ propertyAddress }} <h1>
+        <h1>{{ titleAddress }} <h1>
         <h3>{{ extendedAddress }}</h3>
       </div>
     </div>
@@ -2149,7 +2336,7 @@ i.material-icons {
     <form id="contactForm" action="#" method="post">
       <div class="form-group">
         {% for field, label in inquiry.inquiryDetails.items() %}
-          <label for="{{ field }}">{{ label }} *</label>
+          <label for="{{ field }}">{{ label }}:</label>
           <input type="text" id="{{ field }}" name="{{ field }}" required>
         {% endfor %}
       </div>
@@ -2172,21 +2359,17 @@ i.material-icons {
       </div>
     </div>
   </footer>
-
-  <!-- MODALS -->
-
-  <!-- Floating Sidebar Menu -->
   <nav class="floating-menu">
-    <div class="sideMenuTitle" id="toggleMenu">        
+    <div class="sideMenuTitle" id="toggleMenu">
       <p>MENU<p>
       <i class="material-icons">segment</i>
     </div>
-  </nav>
-  <nav class="sideMenu" id="sideMenu">
+    <div class="sideMenu" id="sideMenu">
       <div id="closeMenu"><i class="material-icons">close</i></div>
       {% for item in menu %}
         <a href="#{{ loop.index }}" class="scroll-link" id="menu{{ loop.index }}">{{ item }}</a>
       {% endfor %}
+    </div>
   </nav>
 
   <!-- Open House Modal -->
@@ -2210,7 +2393,7 @@ i.material-icons {
       </div>
     </div>
   </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="openHouseOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Schedule Tour Modal -->
   <div id="scheduleTourModal" class="modal">
@@ -2244,7 +2427,7 @@ i.material-icons {
       </div>
     </div>
   </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="scheduleTourOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <!-- Confirm Booking Modal -->
   <div id="bookingModal" class="modal">
@@ -2255,7 +2438,7 @@ i.material-icons {
         <label>In Person<br> Thursday, February 15, 2024<br>Evening</label>
       </div>
       <div class="modal-card">
-        <input type="text" placeholder="First Name"> 
+        <input type="text" placeholder="First Name">
         <input type="text" placeholder="Last Name">
         <input type="text" placeholder="name@email.com">
         <input type="text" placeholder="555-555-5555">
@@ -2264,7 +2447,7 @@ i.material-icons {
       <button class="modalBtn" id="confirmation">Confirm Booking</button>
     </div>
   </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="bookingOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
 
   <div id="confirmationModal" class="modal">
     <div class="confirmationModal">
@@ -2300,152 +2483,192 @@ i.material-icons {
         </div>
     </div>
   </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  <div id="confirmationOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+
+  <!-- Brochure Modal -->
+  <div id="brochureModal" class="modal">
+    <div class="modal-content">
+      <h2>Flyers & Brochures </h2>
+      <div class="horizontal-line"></div>
+      <p>Flyer 1</p>
+      <p>Flyer 2</p>
+    </div>
+  </div>
+  <div id="brochureOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+  
+  <!-- Document Modal -->
+  <div id="documentModal" class="modal">
+    <div class="modal-content">
+      <h2>Documents </h2>
+      <div class="horizontal-line"></div>
+      <p>Sample Document 1</p>
+      <p>Sample Document 2</p>
+    </div>
+  </div>
+
+  <div id="documentOverlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
+
+
 
   <script>
-    
+
+        // Get modal elements
         var customModal = document.getElementById('customModal');
-        var customModalImg = document.getElementById('customModalImage');
-        var customModalIndex = 0;
+    var customModalImg = document.getElementById('customModalImage');
+    var customModalIndex = 0;
 
-        var customModalTriggers = document.querySelectorAll('.custom-modal-trigger');
+    // Get all custom modal trigger links
+    var customModalTriggers = document.querySelectorAll('.custom-modal-trigger');
 
-        customModalTriggers.forEach(function(trigger, index) {
-          trigger.addEventListener('click', function() {
-            var imageSrc = trigger.getAttribute('data-image');
-            customModalIndex = index;
+    // Loop through each custom modal trigger link
+    customModalTriggers.forEach(function(trigger, index) {
+      // Attach click event listener to each trigger
+      trigger.addEventListener('click', function() {
+        // Set the custom modal image source based on the clicked trigger
+        var imageSrc = trigger.getAttribute('data-image');
+        customModalIndex = index; // Set the current index
 
-            customModal.style.display = 'block';
-            showCustomImage(imageSrc);
-          });
-        });
+        // Display the custom modal
+        customModal.style.display = 'block';
 
-        var customCloseBtn = document.querySelector('.custom-close');
-        customCloseBtn.addEventListener('click', function() {
-          customModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', function(event) {
-          if (event.target === customModal) {
-            customModal.style.display = 'none';
-          }
-        });
-
-        function showCustomImage(src) {
-          customModalImg.src = src;
-
-          if (customModalTriggers.length > 1) {
-            var customPrevBtn = document.createElement('a');
-            customPrevBtn.className = 'custom-prev';
-            customPrevBtn.innerHTML = '&#10094;';
-            customPrevBtn.addEventListener('click', function() {
-              navigateCustomSlides(-1);
-            });
-            customModal.appendChild(customPrevBtn);
-
-            var customNextBtn = document.createElement('a');
-            customNextBtn.className = 'custom-next';
-            customNextBtn.innerHTML = '&#10095;';
-            customNextBtn.addEventListener('click', function() {
-              navigateCustomSlides(1);
-            });
-            customModal.appendChild(customNextBtn);
-          }
-        }
-
-        function navigateCustomSlides(direction) {
-          customModalIndex += direction;
-
-          if (customModalIndex >= customModalTriggers.length) {
-            customModalIndex = 0;
-          } else if (customModalIndex < 0) {
-            customModalIndex = customModalTriggers.length - 1;
-          }
-          var newImageSrc = customModalTriggers[customModalIndex].getAttribute('data-image');
-          showCustomImage(newImageSrc);
-        }
-
-    var slideIndexs = 1;
-    showSlidess(slideIndexs);
-
-    function plusSlides(n) {
-      showSlidess(slideIndexs += n);
-    }
-
-    function currentSlide(n) {
-      showSlidess(slideIndexs = n);
-    }
-
-    function showSlidess(n) {
-      var i;
-      var slides = document.getElementsByClassName("my-slides");
-      if (n > slides.length) { slideIndexs = 1; }
-      if (n < 1) { slideIndexs = slides.length; }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndexs - 1].style.display = "block";
-    }
-
-    var modals = document.getElementById("myslideshowModals");
-
-    function openModals(imageSrc) {
-      modals.style.display = "block";
-      showSlidess(slideIndexs);
-    }
-
-    function closeModals() {
-      modals.style.display = "none";
-    }
-
-    document.querySelector(".prev-buttons").addEventListener("click", function() {
-      plusSlides();
+        // Show the selected image
+        showCustomImage(imageSrc);
+      });
     });
 
-    document.querySelector(".next-buttons").addEventListener("click", function() {
-      plusSlides();
+    // Close custom modal when close button (×) is clicked
+    var customCloseBtn = document.querySelector('.custom-close');
+    customCloseBtn.addEventListener('click', function() {
+      customModal.style.display = 'none';
     });
 
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) { slideIndex = 1; }
-      if (n < 1) { slideIndex = slides.length; }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    // Close custom modal when clicking outside the image
+    window.addEventListener('click', function(event) {
+      if (event.target === customModal) {
+        customModal.style.display = 'none';
       }
-      slides[slideIndex - 1].style.display = "block";
+    });
+
+    // Slideshow functionality for custom modal
+    function showCustomImage(src) {
+      customModalImg.src = src;
+
+      // Add navigation buttons if more than one image
+      if (customModalTriggers.length > 1) {
+        var customPrevBtn = document.createElement('a');
+        customPrevBtn.className = 'custom-prev';
+        customPrevBtn.innerHTML = '&#10094;';
+        customPrevBtn.addEventListener('click', function() {
+          navigateCustomSlides(-1);
+        });
+        customModal.appendChild(customPrevBtn);
+
+        var customNextBtn = document.createElement('a');
+        customNextBtn.className = 'custom-next';
+        customNextBtn.innerHTML = '&#10095;';
+        customNextBtn.addEventListener('click', function() {
+          navigateCustomSlides(1);
+        });
+        customModal.appendChild(customNextBtn);
+      }
     }
 
-    var modal = document.getElementById("myModal");
-    var img = document.getElementById("imgLink");
+    // Navigate through slides for custom modal
+    function navigateCustomSlides(direction) {
+      customModalIndex += direction;
 
-    img.onclick = function () {
-      modal.style.display = "block";
-      showSlides(slideIndex);
-    };
+      // Wrap around if reaching the end
+      if (customModalIndex >= customModalTriggers.length) {
+        customModalIndex = 0;
+      } else if (customModalIndex < 0) {
+        customModalIndex = customModalTriggers.length - 1;
+      }
 
-    function closeModal() {
-      modal.style.display = "none";
+      // Show the image at the new index
+      var newImageSrc = customModalTriggers[customModalIndex].getAttribute('data-image');
+      showCustomImage(newImageSrc);
     }
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }, 9000); 
-  const images = document.querySelectorAll('.slideshow img');
+var slideIndexs = 1;
+showSlidess(slideIndexs);
+
+function plusSlides(n) {
+  showSlidess(slideIndexs += n);
+}
+
+function currentSlide(n) {
+  showSlidess(slideIndexs = n);
+}
+
+function showSlidess(n) {
+  var i;
+  var slides = document.getElementsByClassName("my-slides");
+  if (n > slides.length) { slideIndexs = 1; }
+  if (n < 1) { slideIndexs = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndexs - 1].style.display = "block";
+}
+
+var modals = document.getElementById("modals");
+
+function openModals(imageSrc) {
+  modals.style.display = "block";
+  showSlidess(slideIndexs);
+}
+
+function closeModals() {
+  modals.style.display = "none";
+}
+
+document.querySelector("a.prev-buttons").addEventListener("click", function() {
+  plusSlides(-1);
+});
+
+document.querySelector("a.next-buttons").addEventListener("click", function() {
+  plusSlides(1);
+});
+
+// Slideshow functionality
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex - 1].style.display = "block";
+}
+
+var modal = document.getElementById("myModal");
+var img = document.getElementById("imgLink");
+
+img.onclick = function () {
+  modal.style.display = "block";
+  showSlides(slideIndex);
+};
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+
+       const images = document.querySelectorAll('.slideshow img');
     let currentIndex = 0;
+
     function showImage(index) {
         images.forEach((image, i) => {
             if (i === index) {
@@ -2455,6 +2678,7 @@ i.material-icons {
             }
         });
     }
+
     setInterval(() => {
         currentIndex = (currentIndex + 1) % images.length;
         showImage(currentIndex);
@@ -2536,18 +2760,24 @@ function playVideo(videoUrl) {
 
   document.getElementById('toggleMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    if (sideMenu.style.transform === 'translateX(0%)') {
-      sideMenu.style.transform = 'translateX(100%)'; 
+    if (sideMenu.style.display === 'none') {
+      sideMenu.style.display = 'block';
     } else {
-      sideMenu.style.transform = 'translateX(0%)';
+      sideMenu.style.display = 'none';
     }
   });
 
   document.getElementById('closeMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
-    sideMenu.style.transform = 'translateX(100%)'; 
+    if (sideMenu.style.display === 'block') {
+      sideMenu.style.display = 'none';
+
+    } else {
+      sideMenu.style.display = 'none';
+    }
   });
 
+         // Smooth scroll when clicking on anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
@@ -2557,61 +2787,131 @@ function playVideo(videoUrl) {
 
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 100,
+          top: targetElement.offsetTop - 100, // Adjust the offset as needed
           behavior: 'smooth'
         });
       }
     });
   });
 
-
+  window.onscroll = function() {scrollFunction()};
+  function scrollFunction() {
+    var section2 = document.getElementById("details");
+    var floatingMenu = document.querySelector('.floating-menu');
+    if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
+      floatingMenu.style.display = "block";
+    } else {
+      floatingMenu.style.display = "none";
+    }
+  }
+  var brochureModal = document.getElementById('brochureModal');
+  var brochureOverlay = document.getElementById('brochureOverlay');
+  var documentModal = document.getElementById('documentModal');
+  var documentOverlay = document.getElementById('documentOverlay');
   var openHouseModal = document.getElementById('openHouseModal');
+  var openHouseOverlay = document.getElementById('openHouseOverlay');
   var scheduleModal = document.getElementById('scheduleTourModal');
+  var scheduleOverlay = document.getElementById('scheduleTourOverlay');
   var bookingModal = document.getElementById('bookingModal');
+  var bookingOverlay = document.getElementById('bookingOverlay');
   var confirmationModal = document.getElementById('confirmationModal');
-  var overlay = document.getElementById('overlay');
+  var confirmationOverlay = document.getElementById('confirmationOverlay');
 
+  var brochureBtn = document.getElementById("brochure");
+  var brochureCloseBtn = document.getElementsByClassName("#brochure .close");
+  var documentBtn = document.getElementById("document");
+  var documentCloseBtn = document.getElementsByClassName("#document .close");
   var openHouseBtn = document.getElementById("openHouse");
+  var openHouseCloseBtn = document.getElementsByClassName("#openHouse .close");
   var scheduleBtn = document.getElementById("scheduleTour");
+  var scheduleCloseBtn = document.getElementsByClassName("#scheduleTour .close");
   var bookingBtn = document.getElementById("booking");
+  var bookingCloseBtn = document.getElementsByClassName("#booking .close");
   var confirmationBtn = document.getElementById("confirmation");
+  var confirmationCloseBtn = document.getElementsByClassName("#confirmation .close");
 
-  var closeBtns = document.querySelectorAll(".close");
-
-  function closeAllModals() {
-    openHouseModal.style.display = "none";
-    scheduleModal.style.display = "none";
-    bookingModal.style.display = "none";
-    confirmationModal.style.display = "none";
-    overlay.style.display = "none";
+  brochureBtn.onclick = function() {   
+    brochureModal.style.display = "block";
+    brochureOverlay.style.display = "block";
   }
 
+  brochureCloseBtn.onclick = function() {   
+    brochureModal.style.display = "none";
+    brochureOverlay.style.display = "none";
+  }
+  documentBtn.onclick = function() {   
+    documentModal.style.display = "block";
+    documentOverlay.style.display = "block";
+  }
+
+  documentCloseBtn.onclick = function() {   
+    documentModal.style.display = "none";
+    documentOverlay.style.display = "none";
+  }
   openHouseBtn.onclick = function() {   
     openHouseModal.style.display = "block";
-    overlay.style.display = "block";
+    openHouseOverlay.style.display = "block";
   }
+
+  openHouseCloseBtn.onclick = function() {   
+    openHouseModal.style.display = "none";
+    openHouseOverlay.style.display = "none";
+  }
+
   scheduleBtn.onclick = function() {   
     scheduleModal.style.display = "block";
-    overlay.style.display = "block";
+    scheduleOverlay.style.display = "block";
   }
+
+  scheduleCloseBtn.onclick = function() {   
+    scheduleModal.style.display = "none";
+    scheduleOverlay.style.display = "none";
+  }
+
   bookingBtn.onclick = function() {   
     bookingModal.style.display = "block";
-    overlay.style.display = "block";
+    bookingOverlay.style.display = "block";
   }
+
+  bookingCloseBtn.onclick = function() {   
+    bookingModal.style.display = "none";
+    bookingOverlay.style.display = "none";
+  }
+
   confirmationBtn.onclick = function() {   
     confirmationModal.style.display = "block";
-    overlay.style.display = "block";
+    confirmationOverlay.style.display = "block";
+  }
+
+  confirmationCloseBtn.onclick = function() {   
+    confirmationModal.style.display = "none";
+    confirmationOverlay.style.display = "none";
   }
 
   window.onclick = function(event) {
-    console.log(event.target);
-    if (
-        event.target == openHouseModal ||
-        event.target == scheduleModal ||
-        event.target == bookingModal ||
-        event.target == confirmationModal
-    ) {
-        closeAllModals();
+    if (event.target == brochureModal) {
+      brochureModal.style.display = "none";
+      brochureOverlay.style.display = "none";
+    }
+    if (event.target == documentModal) {
+      documentModal.style.display = "none";
+      documentOverlay.style.display = "none";
+    }
+    if (event.target == openHouseModal) {
+      openHouseModal.style.display = "none";
+      openHouseOverlay.style.display = "none";
+    }
+    if (event.target == scheduleModal) {
+      scheduleModal.style.display = "none";
+      scheduleOverlay.style.display = "none";
+    }
+    if (event.target == bookingModal) {
+      bookingModal.style.display = "none";
+      bookingOverlay.style.display = "none";
+    }
+    if (event.target == confirmationModal) {
+      confirmationModal.style.display = "none";
+      confirmationOverlay.style.display = "none";
     }
   }
   closeBtns.forEach(function(btn) {
