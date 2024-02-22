@@ -1476,311 +1476,357 @@
     }
 
 }
-/* Mobile Phones */
-@media only screen and (max-device-width: 450px) {
-  body {
-    font-size: 12px;
-    width: 100%;
-    margin: 0;
-  }
+@media only screen and (min-device-width: 320px) and (max-device-width: 450px) {
+   .title-text {
+      font-size: 40px;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    .address-text {
+      font-size: 1.8em;
+      text-align: left;
+    }
+    .subtext {
+      font-size: 1em;
+    }
+    .text {
+      font-size: 1em;
+    }
+    h1 {
+      font-size: 4em;
+      margin-bottom: 40px;
+      color: white;
+    }
 
-  #home {
-    height: 50vh;
-    overflow: hidden;
-  }
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: white;
+    }
 
-  #menu {
-    display: none;
-  }
+    body {
+      width: 100%;
+      margin: 0;
+    }
+    #home {
+      width: 100%;
+      height: 50vh;
+    }
+    .slideshow {
+      max-width: 100%;
+      height: 100%;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+    }
+      @keyframes zoominout {
+        0% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+      }
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 5px;
+      z-index: 998;
+    }
+    .title {
+      font-size: 2.4em;
+      justify-content: flex-start;
+      margin: 3% 1% 0 4%;
+    }
+    .floating-menu {
+      position: fixed;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; 
+      transform: translateX(0%);
+    }
+    .sideMenuTitle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: #000;
+    }
+    .sideMenu {
+      top: 0;
+      right: 0;
+      float: right;
+      width: 300px;
+      height: 100%;
+      padding: 25px;
+      position: fixed;
+      color: #000;
+      background-color: #fff;
+      z-index: 1000;
+      border-left: solid 3px #000;
+      transition: transform 0.3s ease; 
+      transform: translateX(100%);
+    }
+    
+    .sideMenu a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      font-size: 30px;
+      text-align: right;
+    }
+    .sideMenu i.material-icons {
+      font-size: 50px;
+    }
+    #menu {
+      display: none;
+    }
+    #scroll-button {
+      height: 60px;
+      width: 60px;
+    }
+    #scroll-button i {
+      font-size: 1em;
+    }
+    #details {
+      justify-content: center;
+      max-height: 100%;
+      padding: 30px 20px;
+      grid-gap: 20px;
+    }
+    .detail-item {
+      width: 50%;
+      height: 15vh;
+      display: flex;
+      justify-content: center;
+    }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+      font-size: 50px;
+    }
+    #propertyDescription {
+      justify-content: center;
+    }
+    #propertyDescriptionBottom {
+      justify-content: center;
+    }
+    .description {
+      width: 100%;
+      font-size: 18px;
+    } 
+    .modalImages {
+      width: 100%;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
 
-  #title {
-    top: 20px;
-    left: 30px;
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: "PTSerif";
-    padding: 0;
-  }
+    }
+    .side-modalImages {
+      width: 100%;
+      border-right: 30px solid #feeca4f2;
+      border-bottom: 30px solid #feeca4f2;
+    }
+    .topPhoto,
+    .bottomPhoto{
+      margin: 20px;
+      width: 100%;
+      justify-content: flex-end;
+    }
 
-  #scroll-button {
-    display: none;
-  }
-
-  .address-container {
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    background-color: #000000;
-  }
-
-  #address {
-    left: 50%;
-    bottom: 8%;
-    transform: translate(-50%);
-    color: white;
-    font-size: 31px;
-  }
-
-  .address-text {
-    font-size: 2px;
-    padding: 0;
-  }
-
-  #offered {
-   width: 100%;
-  }
-
-  #details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-height: 700vh;
-    background-color: #F7F7F7;
-  }
-
-  #details-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  #details-menu p {
-    color: black;
-  }
-
-  .price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .material-icons {
-    font-size: 40px;
-  }
-
-  .med-text {
-    font-size: 21px;
-    padding: 0;
-  }
-
-  .subtext {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #666;
-    font-family: "Poppins";
-  }
-
-  .title-text {
-    font-size: 25px;
-    padding: 0;
-  }
-
-  .detail-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-  }
-
-
-  .text,
-  .text-center {
-    font-size: 15px;
-    color: black;
-    font-family: "Poppins";
-    text-align: justify;
-    margin: 0;
-  }
-
-
-  #description {
-  max-width: 100%;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 0;
-  margin-left: 30px;
-}
-
-.title-textt {
-  font-size: 38px;
-  padding: 0;
-  margin-top: 40px;
-  margin-left: 20px;
-}
-
-i.material-icons {
-  font-size: 30px;
-}
-
-.file {
-  font-size: 16px;
-  flex-basis: 100%;
-  margin-left: 20px;
-  margin-right: 0;
-
-}
-
-.description {
-  margin: 10px;
-  max-height: 100%;
-  line-height: 2.5;
-  letter-spacing: 1px;
-}  
-
-#propertyDescription {
-  display: flex;
-  flex-direction: column;
-}
-.topPhoto,
-  .bottomPhoto{
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    margin: 20px;
-  }
-  .modalImages,
-  .side-modalImages {
-    width: 100%; 
-    height: auto;
-    border: none;
-  }
-  .desc-void {  
-    align-items: center; 
-    margin: 20px; 
-    margin-bottom: 20px;
-}
-    .desc-void .open-house-cta .open-house-label {
+    .open-house-cta {
+      padding: 10px;
+      justify-content: center;
+      border-radius: 200%;
+      font-size: 45px;
+      line-height: normal;
+      margin-top: 10px;
+       border: 2px solid black;
+    }
+    .open-house-label {
       display: flex;
       flex-direction: column;
     }
+    .desc-void {
+      justify-content: center;
+      border: 2px solid black;
+    }
 
-    .desc-void .cross {
+    .cross {
       width: 1px;
       background: #000;
       height: 500px;
       z-index: 1;
+    } 
+    .cross-1 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(100px,-28%);
+      height: 450px;
     }
-    .desc-void .cross-1 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(48px,-5%);
-    height: 430px;
-}
-.desc-void .cross-2 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(60px,-7%);
-    height: 470px;
-}
-.desc-void .cross-3 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(92px,-3%);
-    height: 420px;
-}
-  
-    .desc-void .open-house-cta .view-details-cta {
-      font-size: 17px;
-      margin-top: 15px;
+    .cross-2 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(138px,-25%);
+      height: 510px;
     }
-    #openHouse{
-      text-decoration: none;
+    .cross-3 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(115px,-28%);
+      height: 450px;
     }
-
-    #features {
-    padding: 0;
-    background-color: #F7F7F7;
-    
-  }
-
     #feature-title {
-  margin-top: -25px;
-  text-align: center;
-  
-}
-#feature-title .title-text {
-  font-size: 38px;
-  white-space: nowrap;
-}
-#feature-list {
-  display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-#feature-list a {
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: #f0f0f0;
-  color: #333;
-  text-decoration: none;
-  border: 1px solid black;
-  transition: background-color 0.3s, transform 0.3s;
-  margin: 5px; 
-}
-
-#feature-list a:hover {
-  background-color: #E3E3E3;
-  color: black;
-  transform: scaleX(1.02);
-  transform-origin: center;
-}
-.propertyVideos {
-      display: flex;
-      flex-direction: column;
-      top: 10px;
-      align-items: center;
-      background-color: #f0f0f0;
-      height: 70vh;
-    }
-
-.videoPlayer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px; 
-    }
-
-    #videoPlayer {
-      width: 60vh; 
-      height: 40vh; 
-    }
-    
-    .propertyRealtor {
-      margin: 0;
+      font-size: 40px;
       padding: 0;
+      font-family: "PTSerif";
+    }
+    #feature-list a {
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      text-decoration: none;
+      border: 1px solid black;
+      transition: background-color 0.3s;
+    }
+    .feature-text {
+      font-size: 20px;
+      font-family: "PTSerif";
+    }
+
+    #carousels {
+      height: 40vh;
+    }
+
+    .carousel-row {
+        display: block; 
+        white-space: nowrap; 
+    }
+
+    .carousel-img {
+        display: inline-block; 
+        width: 18%;
+        height: 20vh;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 2cm;
+              padding-bottom: 2cm;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              height: 3.5cm;
+              width: 5cm;
+              margin-right: 20px;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              margin-bottom: 0.5cm;
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+    .propertyVideos {
+      top: 10px;
+    }
+    .propertyRealtor {
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       flex-direction: column;
       max-height: 100%;
       margin-top: 50px;
+      width: 100%;
+    }
+    .realtorDetails {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+    }
+    .realtor {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; 
+      width: 100%;
+    }
+    .realtor-info {
+      display: flex;
+      margin: 1%;
+    }
+    .realtor-details {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+      width: 60%;
+    }
+    .realtor-details p {
+      padding: 1%;
+      text-align: center;
     }
 
-    .realtor {
-     
-      align-items: center; 
-      margin-bottom: 20px;
-    }
     .realtor-img {
-      width: 100%; 
-      height: 20vh;
-      margin-left: 20px;
+      max-width: 100%; 
+      max-height: 20vh;
     }
     .realtorImg {
-     
+      display: flex;
       align-items: center;
+      justify-content: flex-start;
+    }
+    .contact-form-section {
+      max-width: 60%;
+    }
+    .inquiryButton {
+      flex-direction: column;
     }
 
-    .realtor-details {
-    display: none;
+    .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
     }
-
-
+    .footerDetails {
+      max-width: 65%;
+    }
+    .footerSection {
+      float: right;
+      font-size: 2em;
+      color: #000;
+    }
+    .footerImage {
+      width: 30%;
+      height: 30%;
+    }
 }
   </style>
 
