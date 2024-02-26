@@ -741,6 +741,7 @@
       align-items: center;
       list-style: none;
       margin: 0 auto;
+      padding: 0;
     }
     .socmed li {
       margin: 0.5vw 1vw;
@@ -1153,69 +1154,44 @@
       background-color: rgba(0, 0, 0, 0.8);
     }
 
-  /* @media only screen and (min-device-width: 1001px) and (max-device-width: 1385px) {
-    .navbar {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      grid-gap: 5px;
-    }
-    .title {
-      text-align: center;
-      margin: 4% 0 1% 0;
-    }
-    .propertyAddress {
-      justify-content: center;
-      display: flex;
-    }
-    .description {
-      width: 100%;
-    }
-    .contact-form-section {
-      max-width: 5                                                  0%;
-    }
-    .inquiryButton {
-      flex-direction: column;
-    }
-  } */
-
-    /* Ipad
-  @media only screen and (min-device-width: 451px) and (max-device-width: 1000px) {
+@media only screen and (min-device-width: 1001px) and (max-device-width: 1385px) { 
     .title-text {
-      font-size: 40px;
+      font-size: 8vw;
       padding: 0;
       font-family: "PTSerif";
     }
     .address-text {
-      font-size: 1.8em;
+      font-size: 8vw;
       text-align: left;
     }
     .subtext {
-      font-size: 1em;
+      font-size: 4vw;
+    }
+    .med-text {
+      font-size: 6vw;
+      padding: 0;
     }
     .text {
-      font-size: 1em;
+      font-size: 4vw;
     }
     h1 {
-      font-size: 4em;
+      font-size: 10vw;
       margin-bottom: 40px;
       color: white;
     }
 
     h3 {
-      font-size: 1.5em;
+      font-size: 6vw;
       margin-bottom: 15px;
       color: white;
     }
-
     body {
       width: 100%;
       margin: 0;
     }
     #home {
       width: 100%;
-      height: 60vh;
+      height: 50vh;
     }
     .slideshow {
       max-width: 100%;
@@ -1241,29 +1217,24 @@
       z-index: 998;
     }
     .title {
-      font-size: 2.5em;
+      font-size: 8vw;
       justify-content: flex-start;
       margin: 3% 1% 0 4%;
     }
     .floating-menu {
-      position: fixed;
+      /* position: fixed;
       z-index: 999;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease; 
       transform: translateX(0%);
-    }
-    .sideMenuTitle {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      color: #000;
-    }
+      overflow: hidden; */
+      display: none;
+    } 
     .sideMenu {
       top: 0;
       right: 0;
       float: right;
-      width: 300px;
+      width: 200px;
       height: 100%;
       padding: 25px;
       position: fixed;
@@ -1281,7 +1252,7 @@
       color: #333;
       text-decoration: none;
       padding: 5px;
-      font-size: 30px;
+      font-size: 4vw;
       text-align: right;
     }
     .sideMenu i.material-icons {
@@ -1291,11 +1262,11 @@
       display: none;
     }
     #scroll-button {
-      height: 60px;
-      width: 60px;
+      height: 12vw;
+      width: 12vw;
     }
     #scroll-button i {
-      font-size: 1em;
+      font-size: 4vw;
     }
     #details {
       justify-content: center;
@@ -1305,13 +1276,19 @@
     }
     .detail-item {
       width: 50%;
-      height: 15vh;
+      /* height: 15vh; */
       display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
       justify-content: center;
+    }
+    .detail-item .material-icons {
+      font-size: 6vw;
     }
     .propertyAddress {
       justify-content: center;
       display: flex;
+      font-size: 8vw;
     }
     #propertyDescription {
       justify-content: center;
@@ -1321,17 +1298,19 @@
     }
     .description {
       width: 100%;
+      font-size: 4vw;
+      padding: 5vw 10vw 10vw 10vw;
     } 
     .modalImages {
       width: 100%;
-      border-right: 30px solid #feeca4f2;
-      border-bottom: 30px solid #feeca4f2;
+      border-right: 4vw solid #feeca4f2;
+      border-bottom: 4vw solid #feeca4f2;
 
     }
     .side-modalImages {
       width: 100%;
-      border-right: 30px solid #feeca4f2;
-      border-bottom: 30px solid #feeca4f2;
+      border-right: 4vw solid #feeca4f2;
+      border-bottom: 4vw solid #feeca4f2;
     }
     .topPhoto,
     .bottomPhoto{
@@ -1339,23 +1318,21 @@
       width: 100%;
       justify-content: flex-end;
     }
-
-    .open-house-cta {
-      padding: 10px;
-      justify-content: center;
-      border-radius: 200%;
-      font-size: 45px;
-      line-height: normal;
-      margin-top: 10px;
-       border: 2px solid black;
-    }
-    .open-house-label {
-      display: flex;
-      flex-direction: column;
+    .circle {
+      width: 100vw;
     }
     .desc-void {
       justify-content: center;
       border: 2px solid black;
+      width: 80vw;
+      height: 80vw;
+      font-size: 8vw;
+    }
+    .open-house-preview {
+        font-size: 4vw;
+    }
+    .view-details-cta {
+      font-size: 4vw;
     }
 
     .cross {
@@ -1383,9 +1360,19 @@
       height: 450px;
     }
     #feature-title {
-      font-size: 40px;
+      font-size: 8vw;
       padding: 0;
       font-family: "PTSerif";
+    }
+    #feature-list {      
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      max-width: 90%;
+      align-content: center;
+      justify-content: center;    
+      margin-top: 4%;
     }
     #feature-list a {
       margin-right: 20px; 
@@ -1394,12 +1381,14 @@
       border-radius: 20px; 
       background-color: #f0f0f0; 
       color: #333; 
+      font-size: 4vw;
       text-decoration: none;
       border: 1px solid black;
       transition: background-color 0.3s;
+      text-align: center;
     }
     .feature-text {
-      font-size: 20px;
+      font-size: 4vw;
       font-family: "PTSerif";
     }
 
@@ -1422,19 +1411,19 @@
 
     .carousel-container {
               overflow: hidden;
-              padding-top: 2cm;
-              padding-bottom: 2cm;
+              padding-top: 4vw;
+              padding-bottom: 4vw;
           }
           .carousels img {
               flex: 0 0 auto;
-              height: 3.5cm;
-              width: 5cm;
-              margin-right: 20px;
+              /* height: 3.5cm; */
+              width: 30vw;
+              margin-right: 1vw;
           }
           #first-carousel {
               display: flex;
               animation: scrollAnimation 60s linear infinite;
-              margin-bottom: 0.5cm;
+              /* margin-bottom: 0.5cm; */
           }
 
           #first-carousel:hover{
@@ -1444,7 +1433,7 @@
           #second-carousel {
               display: flex;
               animation: scrollAnimationOpposite 60s linear infinite;
-              margin-bottom: 0.5cm;
+              /* margin-bottom: 0.5cm; */
           }
 
           #second-carousel:hover{
@@ -1453,6 +1442,18 @@
     .propertyVideos {
       top: 10px;
     }
+    .propertyCategory {
+      /* display: flex;
+      flex-direction: column; */
+      /* margin-right: 20px;
+      margin-left: 20px; */
+      /* text-align: center; */
+      font-size: 8vw;
+    }
+    #videoPlayer {
+      width: 80vw;
+    }
+
     .propertyRealtor {
       display: flex;
       flex-wrap: wrap;
@@ -1462,6 +1463,9 @@
       max-height: 100%;
       margin-top: 50px;
       width: 100%;
+    }
+    .centerTitle {
+      font-size: 8vw;
     }
     .realtorDetails {
       display: flex;
@@ -1481,6 +1485,7 @@
     .realtor-info {
       display: flex;
       margin: 1%;
+      font-size: 6vw;
     }
     .realtor-details {
       display: flex;
@@ -1488,16 +1493,17 @@
       flex-wrap: wrap;
       align-items: center;
       text-align: center;
-      width: 60%;
+      width: 60vw;
     }
     .realtor-details p {
       padding: 1%;
       text-align: center;
+      font-size: 4vw;
     }
 
     .realtor-img {
-      max-width: 100%; 
-      max-height: 20vh;
+      width: 20vw; 
+      /* max-height: 20vh; */
     }
     .realtorImg {
       display: flex;
@@ -1505,33 +1511,571 @@
       justify-content: flex-start;
     }
     .contact-form-section {
-      max-width: 60%;
+      max-width: 60vw;
+      margin-bottom: 15vw;
+    }
+    .form-group label {
+      font-size: 3vw;
+    }
+    .form-group input[type="text"] {
+      width: 50vw;
     }
     .inquiryButton {
       flex-direction: column;
+      width: 60vw;
     }
-
+    .inquiryBtn {
+      font-size: 4vw;
+      width: 50vw;
+    }
     .footer {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-evenly;
-      width: 100%;
+      width: 100vw;
     }
     .footerDetails {
-      max-width: 65%;
+      max-width: 65vw;
+      /* display: flex;
+      flex-direction: column; */
+    }
+    .poweredText {
+      display: flex;
+      font-family: "Poppins";
+      font-size: 4vw;
+    }
+    .poweredText .material-icons {
+      font-size: 4vw;    
+      color: rgb(227, 193, 0);
+      padding: 0 .5vw;
     }
     .footerSection {
-      float: right;
-      font-size: 2em;
+      display: flex;
+      justify-content: flex-end;
+      font-size: 6vw;
       color: #000;
+    }
+    .text .companyIcon .material-icons {
+      font-size: 8vw;    
+      color: rgb(227, 193, 0);
+    }
+    .footertext {
+      font-size: 4vw;
+      margin: 10vw 0 20vw 0;
+      padding-bottom: 15vw;
+      font-family: "Poppins";
     }
     .footerImage {
       width: 30%;
       height: 30%;
     }
+    .socmed ul{
+      margin: 2vw;
+      padding: 2vw;
+    }
+    .socmed li {
+      margin: 0 2vw;
+    }
+    .socmed li img {
+      width: 8vw;
+      height: 8vw;
+    }
 
-} */
+    /* .navbar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      grid-gap: 5px;
+    }
+    .title {
+      text-align: center;
+      margin: 4% 0 1% 0;
+    }
+    .address-text {
+      font-size: 4vw;
+    }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+    }
+    .description {
+      width: 100vw;
+    } */
+    /* .text {
+      font-size: 2vw;
+    }
+    .poweredText {
+      display: flex;
+      font-family: "Poppins";
+      font-size: 2vw;
+    }
+    .poweredText .material-icons {
+      font-size: 2vw;    
+      color: rgb(227, 193, 0);
+      padding: 0 .5vw;
+    }
+    .footerSection {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 4vw;
+      color: #000;
+    }
+    .text .companyIcon .material-icons {
+      font-size: 8vw;    
+      color: rgb(227, 193, 0);
+    }
+    .footertext {
+      font-size: 2vw;
+      margin: 5vw 0 20vw 0;
+      padding-bottom: 15vw;
+      font-family: "Poppins";
+    }
+    .socmed ul{
+      margin: 2vw;
+      /* padding: 2vw; */
+    /* }
+    .socmed li {
+      margin: 0 2vw;
+    }
+    .socmed li img {
+      width: 5vw;
+      height: 5vw; */
+    /* } */
+  } 
+
+
+/* Ipad*/
+@media only screen and (min-device-width: 451px) and (max-device-width: 1000px) {
+   .title-text {
+      font-size: 8vw;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    .address-text {
+      font-size: 8vw;
+      text-align: left;
+    }
+    .subtext {
+      font-size: 4vw;
+    }
+    .med-text {
+      font-size: 6vw;
+      padding: 0;
+    }
+    .text {
+      font-size: 4vw;
+    }
+    h1 {
+      font-size: 10vw;
+      margin-bottom: 40px;
+      color: white;
+    }
+
+    h3 {
+      font-size: 6vw;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    body {
+      width: 100%;
+      margin: 0;
+    }
+    #home {
+      width: 100%;
+      height: 50vh;
+    }
+    .slideshow {
+      max-width: 100%;
+      height: 100%;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+    }
+      @keyframes zoominout {
+        0% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+      }
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 5px;
+      z-index: 998;
+    }
+    .title {
+      font-size: 8vw;
+      justify-content: flex-start;
+      margin: 3% 1% 0 4%;
+    }
+    .floating-menu {
+      /* position: fixed;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; 
+      transform: translateX(0%);
+      overflow: hidden; */
+      display: none;
+    } 
+    .sideMenu {
+      top: 0;
+      right: 0;
+      float: right;
+      width: 200px;
+      height: 100%;
+      padding: 25px;
+      position: fixed;
+      color: #000;
+      background-color: #fff;
+      z-index: 1000;
+      border-left: solid 3px #000;
+      transition: transform 0.3s ease; 
+      transform: translateX(100%);
+    }
+    
+    .sideMenu a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      font-size: 4vw;
+      text-align: right;
+    }
+    .sideMenu i.material-icons {
+      font-size: 50px;
+    }
+    #menu {
+      display: none;
+    }
+    #scroll-button {
+      height: 12vw;
+      width: 12vw;
+    }
+    #scroll-button i {
+      font-size: 4vw;
+    }
+    #details {
+      justify-content: center;
+      max-height: 100%;
+      padding: 30px 20px;
+      grid-gap: 20px;
+    }
+    .detail-item {
+      width: 50%;
+      /* height: 15vh; */
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .detail-item .material-icons {
+      font-size: 6vw;
+    }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+      font-size: 8vw;
+    }
+    #propertyDescription {
+      justify-content: center;
+    }
+    #propertyDescriptionBottom {
+      justify-content: center;
+    }
+    .description {
+      width: 100%;
+      font-size: 4vw;
+      padding: 5vw 10vw 10vw 10vw;
+    } 
+    .modalImages {
+      width: 100%;
+      border-right: 4vw solid #feeca4f2;
+      border-bottom: 4vw solid #feeca4f2;
+
+    }
+    .side-modalImages {
+      width: 100%;
+      border-right: 4vw solid #feeca4f2;
+      border-bottom: 4vw solid #feeca4f2;
+    }
+    .topPhoto,
+    .bottomPhoto{
+      margin: 20px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .circle {
+      width: 100vw;
+    }
+    .desc-void {
+      justify-content: center;
+      border: 2px solid black;
+      width: 80vw;
+      height: 80vw;
+      font-size: 8vw;
+    }
+    .open-house-preview {
+        font-size: 4vw;
+    }
+    .view-details-cta {
+      font-size: 4vw;
+    }
+
+    .cross {
+      width: 1px;
+      background: #000;
+      height: 500px;
+      z-index: 1;
+    } 
+    .cross-1 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(100px,-28%);
+      height: 450px;
+    }
+    .cross-2 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(138px,-25%);
+      height: 510px;
+    }
+    .cross-3 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(115px,-28%);
+      height: 450px;
+    }
+    #feature-title {
+      font-size: 8vw;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    #feature-list {      
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      max-width: 90%;
+      align-content: center;
+      justify-content: center;    
+      margin-top: 4%;
+    }
+    #feature-list a {
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      font-size: 4vw;
+      text-decoration: none;
+      border: 1px solid black;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+    .feature-text {
+      font-size: 4vw;
+      font-family: "PTSerif";
+    }
+
+    #carousels {
+      height: 40vh;
+    }
+
+    .carousel-row {
+        display: block; 
+        white-space: nowrap; 
+    }
+
+    .carousel-img {
+        display: inline-block; 
+        width: 18%;
+        height: 20vh;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 4vw;
+              padding-bottom: 4vw;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              /* height: 3.5cm; */
+              width: 30vw;
+              margin-right: 1vw;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              /* margin-bottom: 0.5cm; */
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              /* margin-bottom: 0.5cm; */
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+    .propertyVideos {
+      top: 10px;
+    }
+    .propertyCategory {
+      /* display: flex;
+      flex-direction: column; */
+      /* margin-right: 20px;
+      margin-left: 20px; */
+      /* text-align: center; */
+      font-size: 8vw;
+    }
+    #videoPlayer {
+      width: 80vw;
+    }
+    .propertyRealtor {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      max-height: 100%;
+      margin-top: 50px;
+      width: 100%;
+    }
+    .centerTitle {
+      font-size: 8vw;
+    }
+    .realtorDetails {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+    }
+    .realtor {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; 
+      width: 100%;
+    }
+    .realtor-info {
+      display: flex;
+      margin: 1%;
+      font-size: 6vw;
+    }
+    .realtor-details {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+      width: 60vw;
+    }
+    .realtor-details p {
+      padding: 1%;
+      text-align: center;
+      font-size: 4vw;
+    }
+
+    .realtor-img {
+      width: 20vw; 
+      /* max-height: 20vh; */
+    }
+    .realtorImg {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .contact-form-section {
+      max-width: 60vw;
+    }
+    .form-group label {
+      font-size: 3vw;
+    }
+    .form-group input[type="text"] {
+      width: 50vw;
+    }
+    .inquiryButton {
+      flex-direction: column;
+      width: 60vw;
+    }
+    .inquiryBtn {
+      font-size: 4vw;
+      width: 50vw;
+    }
+    .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100vw;
+    }
+    .footerDetails {
+      max-width: 65vw;
+      /* display: flex;
+      flex-direction: column; */
+    }
+    .poweredText {
+      display: flex;
+      font-family: "Poppins";
+      font-size: 4vw;
+    }
+    .poweredText .material-icons {
+      font-size: 4vw;    
+      color: rgb(227, 193, 0);
+      padding: 0 .5vw;
+    }
+    .footerSection {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 6vw;
+      color: #000;
+    }
+    .text .companyIcon .material-icons {
+      font-size: 8vw;    
+      color: rgb(227, 193, 0);
+    }
+    .footertext {
+      font-size: 4vw;
+      margin: 10vw 0 20vw 0;
+      padding-bottom: 15vw;
+      font-family: "Poppins";
+    }
+    .footerImage {
+      width: 30%;
+      height: 30%;
+    }
+    .socmed ul{
+      margin: 2vw;
+      padding: 2vw;
+    }
+    .socmed li {
+      margin: 0 2vw;
+    }
+    .socmed li img {
+      width: 8vw;
+      height: 8vw;
+    }
+    
+}
+
 /* Mobile Phones */
 @media only screen and (min-device-width: 320px) and (max-device-width: 450px) {
    .title-text {
@@ -2017,7 +2561,7 @@
   <section id="offered">
     <div id="details">
       <div class="price">
-        <p>Offered At</p>
+        <p class="text">Offered At</p>
         <p class="title-text">${{ price }}</p>
       </div>
       <div id="details-menu">

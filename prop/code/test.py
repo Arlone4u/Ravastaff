@@ -44,6 +44,7 @@ def generate_html(config_file, template_file, output_file):
         propertyRealtor=home_data.get('propertyRealtor', []),
         inquiry=home_data.get('inquiry', []),
         inquiryButtons=home_data.get('inquiryButtons', []),
+        emailRecipient=home_data.get('emailRecipient', ''),
         footerDetails=home_data.get('footerDetails', []),
         footerImage=home_data.get('footerImage', ''),
         icons=home_data.get('icons', []),
