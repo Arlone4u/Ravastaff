@@ -22,8 +22,8 @@
   <style>
     /*Text Styles*/
     h1 {
-      font-size: 6em;
-      margin-bottom: 50px;
+      font-size: 6vw;
+      margin-bottom: 1vw;
       color: white;
     }
 
@@ -36,20 +36,21 @@
       font-size: 1.5em;
       color: black;
     }
-    p {
-      font-size: 1em;
+    /* p {
+      font-size: 1vw;
       text-align: justify;
       font-family: "Poppins";
-    }
+    } */
     .title-textt {
       font-size: 55px;
       padding: 0;
       margin: 0;
     }
     .title-text {
-      font-size: 45px;
-      padding: 0;
+      font-size: 2.8vw;
+      margin: 0;
       font-family: "PTSerif";
+      text-align: center;
     }
     .feature-text {
       font-size: 20px;
@@ -57,32 +58,38 @@
     }
 
     .address-text {
-      font-size: 2.2em;
+      font-size: 2.5vw;
       padding: 0;
     }
     .centerTitle {
-      font-size: 45px;
+      font-size: 2.5vw;
       font-family: "PTSerif";
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: 3vw;
       text-align: center;
     }
     .med-text {
-      font-size: 30px;
-      padding: 0;
+                font-size: 1.8vw;
+                padding: 0;
     }
     .subtext {
-      font-size: 15px;
+      font-size: .8vw;
       margin-top:-20px;
       color: #6e6e6e;
       font-family: "Poppins";
+      text-align: center;
     }
     .text {
-      font-size: 15px;
+      font-size: 1vw;
       color: black;
       font-family: "Poppins";
-      text-align: justify;
+      /* text-align: justify; */
       margin: 0;
+    }
+    .footertext {
+      font-size: 1vw;
+      margin: 2vw 0 2vw 0;
+      padding-bottom: 5vw;
     }
     .text-center {
       font-size: 15px;
@@ -119,7 +126,7 @@
     }
     .title {
       color: white;
-      font-size: 3.5em;
+      font-size: 3vw;
       font-weight: bold;
       font-family: "PTSerif";
       z-index: 999;
@@ -139,8 +146,11 @@
       color: white;
       text-decoration: none;
       padding: 0 15px;
-      font-size: 1em;
+      font-size: 1vw;
       z-index: 999;
+    }
+    .mobile-menu {
+      display: none;
     }
     #scroll-button {
       position: absolute;
@@ -153,12 +163,12 @@
       opacity: 0.9;
       transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
       z-index: 2;
-      height: 80px;
-      width: 80px;
+      height: 5vw;
+      width: 5vw;
       overflow: hidden;
     }
     #scroll-button i {
-      font-size: 1.5em;
+      font-size: 1.5vw;
       color: white;
     }
     #scroll-button span {
@@ -208,15 +218,15 @@
       width: 100%;
       height: 100vh;
       opacity: 0;
-      transition: opacity 1s ease-in-out;
-      animation: zoominout 30s infinite alternate;
+      transition: opacity 3s ease-in-out;
+      animation: zoominout 3s infinite alternate;
     }
       @keyframes zoominout {
         0% {
-            transform: scale(1.2);
+            transform: scale(1.02);
         }
         100% {
-            transform: scale(1);
+            transform: scale(1.01);
         }
       }
     .slideshow img.active {
@@ -250,7 +260,10 @@
       justify-content: center;
       text-align: center;
       padding: 0 15px;
-      height: 12vh;
+      /* height: 12vh; */
+    }
+    .material-icons {
+      font-size: 2vw;
     }
 
     #description {
@@ -271,7 +284,7 @@
     } */
 
     .propertyAddress {
-      font-size: 55px;
+      font-size: 3vw;
       margin: 5%;
     }
     #propertyDescription {
@@ -287,27 +300,29 @@
       display: flex;
       flex-wrap: wrap;
       align-items: center;
+      flex-direction: row;
       justify-content: space-evenly;
       width: 100%;
       grid-gap: 20px;
+      margin-bottom: 5vw;
     }
 
     .description {
       width: 50%;
       font-family: "Poppins";
       line-height: 1.5;
-      font-size: 1.2em;
-      text-align: justify;
+      font-size: 1vw;
+      /* text-align: justify; */
       letter-spacing: 2px;
       padding: 2%;
     }
     .modalImages {
-      width: 600px;
+      width: 40vw;
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
     .side-modalImages {
-      width: 600px;
+      width: 40vw;
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
@@ -320,54 +335,54 @@
       display: flex;
       justify-content: center;
       align-items: center;
-    }
-    .desc-void {
-      justify-content: center;
-      align-items: center;
-      width: 320px;
-      height: 320px;
-      background: #fff;
-      text-align: center;
-      padding: 20px;
-      border-radius: 200%;
-      font-size: 45px;
-      z-index: 2;
-      border: 2px solid black;
+      margin: 2.5%;
+      width: 40vw;
     }
     .cross {
       justify-content: center;
       align-items: center;
       width: 1px;
       background: #000;
-      height: 500px;
       z-index: 1;
       rotate: 45deg;
     } 
       .cross-1 {
         transform: translate(120px,-30%);
-        height: 450px;
+        height: 45vh;
       }
       .cross-2 {
         transform: translate(170px,-27%);
-        height: 510px;
+        height: 51vh;
       }
       .cross-3 {
         transform: translate(140px,-30%);
-        height: 450px;
+        height: 45vh;
       }
+    .desc-void {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20vw;
+      height: 20vw;
+      background: #fff;
+      text-align: center;
+      border-radius: 50%;
+      font-size: 3vw;
+      z-index: 2;
+      border: 2px solid black;
+    }
     .open-house-label {
       display: flex;
       flex-direction: column;
     }
     .open-house-preview {
-      font-family: Montserrat;
-      font-size: 18px;
+      font-size: 1vw;
       background: #000;
       color: #fff;
       padding: 3px 10px;
     }
     .view-details-cta {
-      font-size: 17px;
+      font-size: 1vw;
       margin-top: 15px;
       text-decoration: none;
     }
@@ -385,9 +400,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 45px;
+      font-size: 2.5vw;
       font-family: "PTSerif";
-      margin-top: -7.5%;
+      /* margin-top: -7.5%; */
     }
     
     #feature-list {
@@ -401,12 +416,14 @@
     }
 
     #feature-list a {
-      display: inline-flex; 
+      /* display: flex;  */
       border: 2px solid black; 
       margin-right: 20px; 
       margin-bottom: 10px;
       padding: 8px 15px;
       border-radius: 20px; 
+      font-size: 1.2vw;
+      font-family: "PTSerif";
       background-color: #f0f0f0; 
       color: #333; 
       text-decoration: none;
@@ -436,21 +453,21 @@
     .carousel-img {
         display: inline-block; 
         width: 22%;
-        height: 25vh;
+        height: 20vh;
         margin-right: 18px;
         margin-bottom: 18px;
     }
 
     .carousel-container {
               overflow: hidden;
-              padding-top: 2cm;
-              padding-bottom: 2cm;
+              padding: 3vw 0 2vw 0;
+              /* padding-bottom: 2cm; */
           }
           .carousels img {
               flex: 0 0 auto;
-              height: 6.5cm;
-              width: 10cm;
-              margin-right: 20px;
+              /* height: 30vh; */
+              width: 25vw;
+              margin-right: 1vw;
           }
           #first-carousel {
               display: flex;
@@ -503,19 +520,20 @@
       justify-content: center;
       align-items: center;
       background-color: #f0f0f0;
-      max-height: 100%;
     }
     .propertyMedia {
       display: flex;
+      flex-direction: column;
+      margin: 5vw 0;
     }
     
     .propertyCategory {
-      margin-right: 20px;
-      margin-left: 20px;
-      margin-top: -35px;
+      display: flex;
+      flex-direction: column;
+      /* margin-right: 20px;
+      margin-left: 20px; */
       text-align: center;
-      display: inline-block;
-      font-size: 45px;
+      font-size: 2.5vw;
     }
     .videoList {
       list-style: none; 
@@ -527,25 +545,19 @@
       text-align: center;
       list-style: none; 
       padding: 0;
-      margin: 20px;
-    }
-
-    .subVideoList {
-      list-style-type: none;
-      padding: 0;
-      margin-left: 20px;
+      margin: 0 20px;
     }
 
     .videoPlayer {
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 0% 2% 4% 2%;
     }
 
     #videoPlayer {
-      width: 100%; 
-      height: 90vh; 
-      padding: 10%;
+      /* height: 80vh; */
+      width: 60vw;
     }
     .propertyRealtor {
       display: flex;
@@ -553,11 +565,9 @@
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
-      max-height: 100%;
       margin-top: 50px;
-      /* border: 2px solid blue; */
-      width: 100%;
-      padding: 2%;
+      /* width: 100vw; */
+      margin: 2vw;
     }
     .realtorDetails {
       display: flex;
@@ -566,22 +576,19 @@
       justify-content: space-between;
       align-items: center;
       width: 90%;
-      /* border: 2px solid black; */
     }
     .realtor {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      /* justify-content: space-evenly; */
       align-items: center; 
-      /* margin-bottom: 20px; */
       width: 100%;
       padding: 1%;
-      /* border: 2px solid rgb(197, 82, 132); */
     }
     .realtor-info {
       display: flex;
       margin: 1%;
-      /* border: 2px solid blue; */
+      font-size: 2vw;
     }
     .realtor-details {
       display: flex;
@@ -589,24 +596,23 @@
       flex-wrap: wrap;
       align-items: center;
       text-align: center;
-      width: 60%;
-      /* border: 2px solid violet; */
+      width: 100vw;
     }
     .realtor-details p {
       padding: 1.5%;
-      /* border: 2px solid rgb(117, 28, 117); */
       text-align: center;
+      font-size: 1vw;
+      font-family: "Poppins";
     }
 
     .realtor-img {
-      max-width: 100%; 
-      max-height: 20vh;
+      width: 10vw; 
+      /* max-height: 20vh; */
     }
     .realtorImg {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      /* border: 2px solid red; */
     }
     .google-maps-section {
       text-align: center;
@@ -629,7 +635,7 @@
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      height: 80vh;
+      height: 100vh;
       position: relative;
     }
     .parallax::before {
@@ -637,7 +643,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.5); 
     }
@@ -648,24 +654,24 @@
       z-index: 1; 
     }
     .contact-form-section {
-      max-width: 40%;
-      height: 100%;
+      max-width: 45vw;
+      /* height: 100%; */
       margin: 0 auto;
-      padding: 5%;
+      padding: 5vw;
       text-align: center;
     }
     .form-group {
       display: flex;
       justify-content: space-between;
       flex-flow: column wrap;
-      margin-bottom: 0;
+      margin: 5vw 0 3vw 0;
     }
     .form-group input[type="text"] {
       border: none; 
       border-bottom: 1px solid #9E9F9F; 
       padding: 1%; 
       margin-bottom: 10px; 
-      width: 100%; 
+      width: 35vw; 
       box-sizing: border-box;
       outline: none;
     }
@@ -685,18 +691,18 @@
       padding: 10px;
       text-align: center;
       margin: 5px;
-      width: 100%;
+      width: 100vw;
       font-family: "Poppins";
-      font-size: 20px;
+      font-size: 1.2vw;
       background-color: white;
       border: 1px solid black;
     }
     .footer {
-      max-width: 100%;
-      max-height: 100%;
+      /* max-width: 100%;
+      max-height: 100%; */
       background-color: #f0f0f0;
-      padding: 80px 0 30px 0;
-      margin: 60px 0 0 0;
+      padding: 4vw 0 3vw 0;
+      /* margin: 60px 0 0 0; */
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
@@ -704,16 +710,43 @@
       justify-content: center;
     }
     .footerDetails {
-      max-width: 65%;
+      max-width: 65vw;
     }
     .footerSection {
       float: right;
-      font-size: 3em;
+      font-size: 3vw;
       color: #000;
     }
     .footerImage {
       width: 30%;
       height: 30%;
+    }
+    footer {
+      background-color: #3f3939;
+      color: white;
+      text-align: center;
+      padding: .5vw 0;
+      width: 100vw;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      z-index: 1100;
+    }
+    .socmed ul{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 0 auto;
+    }
+    .socmed li {
+      margin: 0.5vw 1vw;
+    }
+    .socmed li img {
+      width: 1.5vw;
+      height: 1.5vw;
     }
     a {
       text-decoration: none;
@@ -730,7 +763,7 @@
       top: 35px;
       right: 20px;
       background-color: #fff;
-      width: 120px;
+      width: 7vw;
       height: 5vh;
       padding: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -741,9 +774,12 @@
     .sideMenuTitle {
       cursor: pointer;
       display: flex;
-      align-items: center;
+      /* align-items: center; */
       justify-content: space-around;
       color: #000;
+    }
+    .sideMenuTitle p, .material-icons {
+      font-size: 1vw;
     }
     .sideMenu {
       top: 0;
@@ -767,7 +803,7 @@
       color: #333;
       text-decoration: none;
       padding: 5px;
-      font-size: 30px;
+      font-size: 2vw;
       text-align: right;
     }
     .sideMenu i.material-icons {
@@ -904,9 +940,16 @@
       background-color: rgba(0, 0, 0, 0.5);
       z-index: 999;
     }
-    .companyIcon {
-      font-size: 15px;    
+    .poweredText {
+      display: flex;
+      font-family: "Poppins";
+      width: 100vw;
+      font-size: 1vw;
+    }
+    .poweredText .material-icons {
+      font-size: 1.5vw;    
       color: rgb(227, 193, 0);
+      padding: 0 .5vw;
     }
 
     .slideshowModal {
@@ -953,7 +996,7 @@
     }
 
     .mySlides {
-      display: none;
+      display: flex;
     }
 
     .prev, .next {
@@ -1109,7 +1152,7 @@
       background-color: rgba(0, 0, 0, 0.8);
     }
 
-  @media only screen and (min-device-width: 1001px) and (max-device-width: 1385px) {
+  /* @media only screen and (min-device-width: 1001px) and (max-device-width: 1385px) {
     .navbar {
       display: flex;
       flex-direction: column;
@@ -1121,9 +1164,22 @@
       text-align: center;
       margin: 4% 0 1% 0;
     }
-  }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+    }
+    .description {
+      width: 100%;
+    }
+    .contact-form-section {
+      max-width: 5                                                  0%;
+    }
+    .inquiryButton {
+      flex-direction: column;
+    }
+  } */
 
-    /* Ipad */
+    /* Ipad
   @media only screen and (min-device-width: 451px) and (max-device-width: 1000px) {
     .title-text {
       font-size: 40px;
@@ -1179,27 +1235,59 @@
     .navbar {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
       align-items: center;
       grid-gap: 5px;
+      z-index: 998;
     }
     .title {
-      color: white;
-      font-family: "PTSerif";
       font-size: 2.5em;
-      /* border: 2px solid black; */
-      margin: 1% 1% 0 3%;
+      justify-content: flex-start;
+      margin: 3% 1% 0 4%;
+    }
+    .floating-menu {
+      position: fixed;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; 
+      transform: translateX(0%);
+    }
+    .sideMenuTitle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: #000;
+    }
+    .sideMenu {
+      top: 0;
+      right: 0;
+      float: right;
+      width: 300px;
+      height: 100%;
+      padding: 25px;
+      position: fixed;
+      color: #000;
+      background-color: #fff;
+      z-index: 1000;
+      border-left: solid 3px #000;
+      transition: transform 0.3s ease; 
+      transform: translateX(100%);
+    }
+    
+    .sideMenu a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      font-size: 30px;
+      text-align: right;
+    }
+    .sideMenu i.material-icons {
+      font-size: 50px;
     }
     #menu {
-      padding-right: 3%;
-      justify-content: center;
-      align-items: center;
-      /* border: 2px solid black; */
-    }
-
-    #menu a {
-      font-size: .8em;
-      /* border: 2px solid black; */
+      display: none;
     }
     #scroll-button {
       height: 60px;
@@ -1231,7 +1319,7 @@
       justify-content: center;
     }
     .description {
-      max-width: 100%;
+      width: 100%;
     } 
     .modalImages {
       width: 100%;
@@ -1241,7 +1329,6 @@
     }
     .side-modalImages {
       width: 100%;
-      /* border: 2px solid black; */
       border-right: 30px solid #feeca4f2;
       border-bottom: 30px solid #feeca4f2;
     }
@@ -1300,10 +1387,10 @@
       font-family: "PTSerif";
     }
     #feature-list a {
-      margin-right: 15px; 
-      margin-bottom: 5px;
-      padding: 6px 10px;
-      border-radius: 15px; 
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
       background-color: #f0f0f0; 
       color: #333; 
       text-decoration: none;
@@ -1311,7 +1398,7 @@
       transition: background-color 0.3s;
     }
     .feature-text {
-      font-size: 16px;
+      font-size: 20px;
       font-family: "PTSerif";
     }
 
@@ -1422,14 +1509,6 @@
     .inquiryButton {
       flex-direction: column;
     }
-    /* .inquiryBtn {
-      padding: 10px;
-      text-align: center;
-      margin: 5px;
-      width: 100%;
-      font-family: "Poppins";
-      font-size: 20px;
-    } */
 
     .footer {
       display: flex;
@@ -1451,321 +1530,453 @@
       height: 30%;
     }
 
-}
+} */
 /* Mobile Phones */
-@media only screen and (max-device-width: 450px) {
-  body {
-    font-size: 12px;
-    width: 100%;
-    margin: 0;
-  }
-
-  #home {
-    height: 50vh;
-    overflow: hidden;
-  }
-
-  #menu {
-    display: none;
-  }
-
-  #title {
-    top: 20px;
-    left: 30px;
-    color: white;
-    font-size: 25px;
-    font-weight: bold;
-    font-family: "PTSerif";
-    padding: 0;
-  }
-
-  #scroll-button {
-    display: none;
-  }
-
-  .address-container {
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    background-color: #000000;
-  }
-
-  #address {
-    left: 50%;
-    bottom: 8%;
-    transform: translate(-50%);
-    color: white;
-    font-size: 31px;
-  }
-
-  .address-text {
-    font-size: 2px;
-    padding: 0;
-  }
-
-  #offered {
-   width: 100%;
-  }
-
-  #details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-height: 700vh;
-    background-color: #F7F7F7;
-  }
-
-  #details-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  #details-menu p {
-    color: black;
-  }
-
-  .price {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .material-icons {
-    font-size: 40px;
-  }
-
-  .med-text {
-    font-size: 21px;
-    padding: 0;
-  }
-
-  .subtext {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #666;
-    font-family: "Poppins";
-  }
-
-  .title-text {
-    font-size: 25px;
-    padding: 0;
-  }
-
-  .detail-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-  }
-
-
-  .text,
-  .text-center {
-    font-size: 15px;
-    color: black;
-    font-family: "Poppins";
-    text-align: justify;
-    margin: 0;
-  }
-
-
-  #description {
-  max-width: 100%;
-  font-size: 18px;
-  line-height: 1.5;
-  padding: 0;
-  margin-left: 30px;
-}
-
-.title-textt {
-  font-size: 38px;
-  padding: 0;
-  margin-top: 40px;
-  margin-left: 20px;
-}
-
-i.material-icons {
-  font-size: 30px;
-}
-
-.file {
-  font-size: 16px;
-  flex-basis: 100%;
-  margin-left: 20px;
-  margin-right: 0;
-
-}
-
-.description {
-  margin: 10px;
-  /* width: 100%; */
-  max-height: 100%;
-  line-height: 2.5;
-  letter-spacing: 1px;
-}  
-
-#propertyDescription {
-  display: flex;
-  flex-direction: column;
-}
-.topPhoto,
-  .bottomPhoto{
-    display: flex;
-    flex-direction: column; /* Change flex direction to column */
-    align-items: center; /* Align items to the center */
-    margin: 20px; /* Add margin for separation */
-  }
-  .modalImages,
-  .side-modalImages {
-    width: 100%; /* Adjust width of the images */
-    height: auto; /* Adjust height to maintain aspect ratio */
-    border: none;
-  }
-  .desc-void {  
-    align-items: center; /* Align items to the center */
-    margin: 20px; /* Add margin for separation */
-    margin-bottom: 20px;
-}
-    .desc-void .open-house-cta .open-house-label {
-      display: flex;
-      flex-direction: column;
+@media only screen and (min-device-width: 320px) and (max-device-width: 450px) {
+   .title-text {
+      font-size: 10vw;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    .address-text {
+      font-size: 5vw;
+      text-align: left;
+    }
+    .subtext {
+      font-size: 4vw;
+    }
+    .med-text {
+      font-size: 6vw;
+      padding: 0;
+    }
+    .text {
+      font-size: 1em;
+    }
+    h1 {
+      font-size: 4em;
+      margin-bottom: 40px;
+      color: white;
     }
 
-    .desc-void .cross {
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: white;
+    }
+
+    body {
+      width: 100%;
+      margin: 0;
+    }
+    #home {
+      width: 100%;
+      height: 50vh;
+    }
+    .slideshow {
+      max-width: 100%;
+      height: 100%;
+    }
+    .slideshow img {
+      width: 100%;
+      height: 100%;
+    }
+      @keyframes zoominout {
+        0% {
+            transform: scale(1.2);
+        }
+        100% {
+            transform: scale(1);
+        }
+      }
+    .navbar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-gap: 5px;
+      z-index: 998;
+    }
+    .title {
+      font-size: 8vw;
+      justify-content: flex-start;
+      margin: 3% 1% 0 4%;
+    }
+    .floating-menu {
+      /* position: fixed;
+      z-index: 999;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease; 
+      transform: translateX(0%);
+      overflow: hidden; */
+      display: none;
+    } 
+
+    .mobile-menu {
+      position: fixed;
+      z-index: 1500;
+      z-index: 1;
+      top: 35px;
+      right: 20px;
+      background-color: #fff;
+      width: 7vw;
+      height: 5vh;
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .mobile-menu .sideMenuTitle {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: #000;
+    }
+    .mobile-menu .sideMenuTitle p, .material-icons {
+      font-size: 1vw;
+    }
+    .sideMenu {
+      top: 0;
+      right: 0;
+      float: right;
+      width: 200px;
+      height: 100%;
+      padding: 25px;
+      position: fixed;
+      color: #000;
+      background-color: #fff;
+      z-index: 1000;
+      border-left: solid 3px #000;
+      transition: transform 0.3s ease; 
+      transform: translateX(100%);
+    }
+    
+    .sideMenu a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+      padding: 5px;
+      font-size: 4vw;
+      text-align: right;
+    }
+    .sideMenu i.material-icons {
+      font-size: 50px;
+    }
+    #menu {
+      display: none;
+    }
+    #scroll-button {
+      height: 60px;
+      width: 60px;
+    }
+    #scroll-button i {
+      font-size: 1em;
+    }
+    #details {
+      justify-content: center;
+      max-height: 100%;
+      padding: 30px 20px;
+      grid-gap: 20px;
+    }
+    .detail-item {
+      width: 50%;
+      /* height: 15vh; */
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .detail-item .material-icons {
+      font-size: 6vw;
+    }
+    .propertyAddress {
+      justify-content: center;
+      display: flex;
+      font-size: 8vw;
+    }
+    #propertyDescription {
+      justify-content: center;
+    }
+    #propertyDescriptionBottom {
+      justify-content: center;
+    }
+    .description {
+      width: 100%;
+      font-size: 4vw;
+      padding: 5vw 10vw 10vw 10vw;
+    } 
+    .modalImages {
+      width: 100%;
+      border-right: 4vw solid #feeca4f2;
+      border-bottom: 4vw solid #feeca4f2;
+
+    }
+    .side-modalImages {
+      width: 100%;
+      border-right: 4vw solid #feeca4f2;
+      border-bottom: 4vw solid #feeca4f2;
+    }
+    .topPhoto,
+    .bottomPhoto{
+      margin: 20px;
+      width: 100%;
+      justify-content: flex-end;
+    }
+    .circle {
+      width: 100vw;
+    }
+    .desc-void {
+      justify-content: center;
+      border: 2px solid black;
+      width: 80vw;
+      height: 80vw;
+      font-size: 10vw;
+    }
+    .open-house-preview {
+        font-size: 4vw;
+    }
+    .view-details-cta {
+      font-size: 4vw;
+    }
+
+    .cross {
       width: 1px;
       background: #000;
       height: 500px;
       z-index: 1;
+    } 
+    .cross-1 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(100px,-28%);
+      height: 450px;
     }
-    .desc-void .cross-1 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(48px,-5%);
-    height: 430px;
-}
-.desc-void .cross-2 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(60px,-7%);
-    height: 470px;
-}
-.desc-void .cross-3 {
-    rotate: 45deg;
-    z-index: 1;
-    transform: translate(92px,-3%);
-    height: 420px;
-}
-  
-    .desc-void .open-house-cta .view-details-cta {
-      font-size: 17px;
-      margin-top: 15px;
+    .cross-2 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(138px,-25%);
+      height: 510px;
     }
-    #openHouse{
-      text-decoration: none;
+    .cross-3 {
+      rotate: 45deg;
+      z-index: 1;
+      transform: translate(115px,-28%);
+      height: 450px;
     }
-
-    #features {
-    padding: 0;
-    background-color: #F7F7F7;
-    
-  }
-
     #feature-title {
-  margin-top: -25px;
-  text-align: center;
-  
-}
-#feature-title .title-text {
-  font-size: 38px;
-  white-space: nowrap;
-}
-#feature-list {
-  display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-#feature-list a {
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 20px;
-  background-color: #f0f0f0;
-  color: #333;
-  text-decoration: none;
-  border: 1px solid black;
-  transition: background-color 0.3s, transform 0.3s;
-  margin: 5px; /* Adjust margin for spacing between items */
-}
-
-#feature-list a:hover {
-  background-color: #E3E3E3;
-  color: black;
-  transform: scaleX(1.02);
-  transform-origin: center;
-}
-.propertyVideos {
+      font-size: 8vw;
+      padding: 0;
+      font-family: "PTSerif";
+    }
+    #feature-list {      
       display: flex;
       flex-direction: column;
+      flex-wrap: wrap;
+      align-items: stretch;
+      max-width: 90%;
+      align-content: center;
+      justify-content: center;    
+      margin-top: 4%;
+    }
+    #feature-list a {
+      margin-right: 20px; 
+      margin-bottom: 10px;
+      padding: 8px 15px;
+      border-radius: 20px; 
+      background-color: #f0f0f0; 
+      color: #333; 
+      font-size: 4vw;
+      text-decoration: none;
+      border: 1px solid black;
+      transition: background-color 0.3s;
+      text-align: center;
+    }
+    .feature-text {
+      font-size: 4vw;
+      font-family: "PTSerif";
+    }
+
+    #carousels {
+      height: 40vh;
+    }
+
+    .carousel-row {
+        display: block; 
+        white-space: nowrap; 
+    }
+
+    .carousel-img {
+        display: inline-block; 
+        width: 18%;
+        height: 20vh;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-container {
+              overflow: hidden;
+              padding-top: 4vw;
+              padding-bottom: 4vw;
+          }
+          .carousels img {
+              flex: 0 0 auto;
+              /* height: 3.5cm; */
+              width: 30vw;
+              margin-right: 1vw;
+          }
+          #first-carousel {
+              display: flex;
+              animation: scrollAnimation 60s linear infinite;
+              /* margin-bottom: 0.5cm; */
+          }
+
+          #first-carousel:hover{
+              animation-play-state: paused;
+          }
+
+          #second-carousel {
+              display: flex;
+              animation: scrollAnimationOpposite 60s linear infinite;
+              /* margin-bottom: 0.5cm; */
+          }
+
+          #second-carousel:hover{
+              animation-play-state: paused;
+          }
+    .propertyVideos {
       top: 10px;
-      align-items: center;
-      background-color: #f0f0f0;
-      height: 70vh;
     }
-
-.videoPlayer {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px; 
+    .propertyCategory {
+      /* display: flex;
+      flex-direction: column; */
+      /* margin-right: 20px;
+      margin-left: 20px; */
+      /* text-align: center; */
+      font-size: 8vw;
     }
-
-    #videoPlayer {
-      width: 60vh; 
-      height: 40vh; 
-    }
-    
     .propertyRealtor {
-      margin: 0;
-      padding: 0;
       display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
       flex-direction: column;
       max-height: 100%;
       margin-top: 50px;
+      width: 100%;
+    }
+    .centerTitle {
+      font-size: 8vw;
+    }
+    .realtorDetails {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+    }
+    .realtor {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center; 
+      width: 100%;
+    }
+    .realtor-info {
+      display: flex;
+      margin: 1%;
+      font-size: 6vw;
+    }
+    .realtor-details {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+      width: 60%;
+    }
+    .realtor-details p {
+      padding: 1%;
+      text-align: center;
+      font-size: 4vw;
     }
 
-    /* .realtorDetails {
-   
- 
-    } */
-    .realtor {
-     
-      align-items: center; 
-      margin-bottom: 20px;
-    }
     .realtor-img {
-      width: 100%; 
-      height: 20vh;
-      margin-left: 20px;
+      width: 20vw; 
+      /* max-height: 20vh; */
     }
     .realtorImg {
-     
+      display: flex;
       align-items: center;
+      justify-content: flex-start;
     }
-    /* .realtor-info {
-      
+    .contact-form-section {
+      max-width: 60%;
+    }
+    .form-group input[type="text"] {
+      width: 50vw;
+    }
+    .inquiryButton {
+      flex-direction: column;
+      width: 60vw;
+    }
+    .inquiryBtn {
+      font-size: 4vw;
+      width: 50vw;
+
+    }
+    .footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+    .footerDetails {
+      max-width: 65%;
+      /* display: flex;
+      flex-direction: column; */
+    }
+    .poweredText {
+      display: flex;
+      font-family: "Poppins";
+      font-size: 4vw;
+    }
+    .poweredText .material-icons {
+      font-size: 4vw;    
+      color: rgb(227, 193, 0);
+      padding: 0 .5vw;
+    }
+    .footerSection {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 5vw;
+      color: #000;
+    }
+    .text .companyIcon .material-icons {
+      font-size: 8vw;    
+      color: rgb(227, 193, 0);
+    }
+    .footertext {
+      font-size: 4vw;
+      margin: 10vw 0 10vw 0;
+      padding-bottom: 10vw;
+      font-family: "Poppins";
+    }
+    .footerImage {
+      width: 30%;
+      height: 30%;
+    }
+    .socmed ul{
+      margin: 2vw;
+      padding: 2vw;
+    }
+    .socmed li {
+      margin: 0 2vw;
+    }
+    .socmed li img {
+      width: 8vw;
+      height: 8vw;
+    }
     
-
-    } */
-    .realtor-details {
-    display: none;
-    }
-
-
 }
   </style>
 
@@ -1794,8 +2005,8 @@ i.material-icons {
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2810of35%29.jpg">
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
         <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
-    </div>
-    <div id="address">{{ propertyAddress }}</div>
+      </div>
+      <div id="address">{{ propertyAddress }}</div>
 
       <button id="scroll-button" onclick="scrollToDescription()"> 
         <span><i class="material-icons">south</i></span>
@@ -1817,7 +2028,7 @@ i.material-icons {
           </div>
         {% endfor %}
       </div>
-    </div>
+    </div>                                                                                                   
   </section>
 
   <section id="1">
@@ -1878,9 +2089,9 @@ i.material-icons {
         <img id="imgLink" src="{{ images.image11 }}" class="modalImages" onclick="openModals('{{ images.image11 }}')">
       </div>
       <div class="circle">
-        <div class="cross cross-1"></div>
+        <!-- <div class="cross cross-1"></div>
         <div class="cross cross-2"></div>
-        <div class="cross cross-3"></div>
+        <div class="cross cross-3"></div> -->
         <div class="desc-void">
           <a id="openHouse" overlay-target="open-house">
             <div class="open-house-label"><span>Open</span><span>House</span></div>
@@ -1945,7 +2156,7 @@ i.material-icons {
       <div id="feature-title">{{ featureTitle}}</div>
       <div id="feature-list">
         {% for feature in features %}
-          <a href="#" class="feature-text" id="features{{ loop.index }}">{{ feature }}</a>
+          <a href="#" id="features{{ loop.index }}">{{ feature }}</a>
         {% endfor %}
       </div>
     </div>
@@ -2017,24 +2228,23 @@ i.material-icons {
       <div class="propertyMedia">
           {% for category, videos in propertyVideos.items() %}
         <div class="propertyCategory">
-          <p class="title-text">{{ category }}</p>
-          <div class="propertyCategoryList">
+          {{ category }}
             <ul class="videoList">
               {% for video_title, video_url in videos.items() %}
               <li><a onclick="playVideo('{{ video_url }}')" class="feature-text">{{ video_title }}</a></li>
               {% endfor %}
             </ul>
+          <div class="videoPlayer">
+            <video controls id="videoPlayer">
+              <source src="" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
           {% endfor %}
       </div>
-      <div class="videoPlayer">
-        <video controls id="videoPlayer">
-          <source src="" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
     </div>
+  </section>
   <section>
     <div class="propertyRealtor">
       <p class="centerTitle">{{ propertyRealtor.realtorTitle}}</p>
@@ -2044,9 +2254,7 @@ i.material-icons {
           <div class="realtorImg">
             <img src="{{ details.Image }}" alt="Modal Trigger Image" class="realtor-img">
           </div> 
-          <div class="realtor-info">
-            <h2>{{ realtor }}</h2>
-          </div>
+          <div class="realtor-info">{{ realtor }}</div>
           <div class="realtor-details">
             <p>TITLE <br>{{ details.Title }}</p>
             <p>COMPANY<br>{{ details.Company }}</p>
@@ -2074,41 +2282,54 @@ i.material-icons {
       </div>
     </div>
   </section>
-  <section id = "8" class="contact-form-section">
-    <p class="title-text">{{ inquiry.inquiryTitle }}</p>
-    <form id="contactForm" action="#" method="post">
-      <div class="form-group">
-        {% for field, label in inquiry.inquiryDetails.items() %}
-          <label for="{{ field }}">{{ label }} *</label>
-          <input type="text" id="{{ field }}" name="{{ field }}" required>
-        {% endfor %}
-      </div>
-      <div class="inquiryButton">
-          <button class="inquiryBtn" type="submit">Send Inquiry</button>
-          <button class="inquiryBtn" id="scheduleTour">Schedule a Tour</button>
-      </div>
-    </form>
+  <section id = "8">
+    <div class="contact-form-section">
+      <div class="title-text">{{ inquiry.inquiryTitle }}</div>
+      <form id="contactForm" action="#" method="post">
+        <div class="form-group">
+          {% for field, label in inquiry.inquiryDetails.items() %}
+            <label for="{{ field }}">{{ label }} *</label>
+            <input type="text" id="{{ field }}" name="{{ field }}" required>
+          {% endfor %}
+        </div>
+        <div class="inquiryButton">
+            <button class="inquiryBtn" type="submit">Send Inquiry</button>
+            <button class="inquiryBtn" id="scheduleTour">Schedule a Tour</button>
+        </div>
+      </form>
+    </div>
   </section>
-  <footer>
     <div class="footer">
       <div class="footerDetails" >
         <div class="footerSection">{{title}}</div>
-        <div class="footerDetails">
+        <div class="">
           <p class="address-text">{{propertyAddress}}</p>
           <p class="text">{{extendedAddress}}</p>
-          <p class="text">Powered by <span class="companyIcon"><i class="material-icons">real_estate_agent</i></span> Revastaff</p>
+          <p class="poweredText">Powered by <span><i class="material-icons">real_estate_agent</i></span> Revastaff</p>
         </div>
-        <p class="text">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
+        <p class="footertext">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
       </div>
     </div>
-  </footer>
+    <footer>                                                                                                                                                                  
+      <div  class="socmed">
+        <ul>
+          <li> <img src= {{icons.facebookIcon}}></li>
+          <li> <img src={{icons.xIcon}}></li>
+          <li> <img src={{icons.instagramIcon}}></li>
+          <li> <img src={{icons.pinterestIcon}}></li>
+          <li> <img src={{icons.linkedInIcon}}></li>
+          <li> <img src={{icons.emailIcon}}></li>
+          <li> <img src={{icons.tiktokIcon}}></li>
+        </ul>
+      </div>
+    </footer>
 
   <!-- MODALS -->
 
   <!-- Floating Sidebar Menu -->
   <nav class="floating-menu">
     <div class="sideMenuTitle" id="toggleMenu">        
-      <p>MENU<p>
+      <p classs="subtext">MENU<p>
       <i class="material-icons">segment</i>
     </div>
   </nav>
@@ -2212,7 +2433,7 @@ i.material-icons {
                 <div class="horizontal-line"></div>
               <div>
                 {% for realtor, details in propertyRealtor.realtors.items() %}
-                <div class="realtor"> <!--class="realtor"-->
+                <div class="realtor">
                      <img src="{{ details.Image }}" alt="Modal Trigger Image" class="confirmationImage2">
                   <div class="realtorInfoModal"> 
                     <p class="text">{{ realtor }}</p>
@@ -2335,6 +2556,7 @@ i.material-icons {
     document.querySelector(".next-buttons").addEventListener("click", function() {
       plusSlides();
     });
+      
 
     var slideIndex = 1;
     showSlides(slideIndex);
@@ -2407,49 +2629,50 @@ i.material-icons {
       descriptionSection.scrollIntoView({ behavior: 'smooth' });
     }
   }
-  
-
   document.addEventListener("DOMContentLoaded", function() {
-    const categories = document.querySelectorAll('.propertyCategory');
+  const categories = document.querySelectorAll('.propertyCategory');
 
-    categories.forEach((category, index) => {
-      const videoList = category.querySelector('.videoList');
-      if (index !== 0) {
-        videoList.style.display = 'none';
-      }
-    });
+  categories.forEach(category => {
+    category.classList.remove('active'); 
+    category.querySelector('.videoList').style.display = 'block';
+  });
 
-    categories.forEach(category => {
-      const title = category.querySelector('.title-text');
-      const videoList = category.querySelector('.videoList');
+  categories.forEach(category => {
+    const videoList = category.querySelector('.videoList');
 
+    videoList.querySelectorAll('.feature-text').forEach(title => {
       title.addEventListener('click', function() {
-        const isActive = category.classList.contains('active');
-
-        categories.forEach(c => {
-          c.classList.remove('active');
-          c.querySelector('.videoList').style.display = 'none';
-        });
-
-        if (!isActive) {
-          category.classList.add('active');
-          videoList.style.display = 'block';
-        }
+        const videoUrl = getVideoUrlFromCategory(category);
+        playVideo(videoUrl);
       });
     });
   });
+});
 
-  function playVideo(videoUrl) {
-    var videoPlayer = document.getElementById('videoPlayer');
-    var source = videoPlayer.querySelector('source');
+function playVideo(videoUrl) {
+  var videoPlayer = document.getElementById('videoPlayer');
+  var source = videoPlayer.querySelector('source');
 
-    source.src = videoUrl;
-    videoPlayer.load(); 
-    videoPlayer.play();
-  }
+  source.src = videoUrl;
+  videoPlayer.load();
+  videoPlayer.play();
+}
+
+  // function mobileMenu() {
+  //   var home;
+
+  //   if (window.matchMedia("(max-width: 450px)").matches && window.matchMedia("(min-width: 320px)").matches) {
+  //     home = document.getElementById("home");
+  //     var mobileMenu = document.querySelector('.mobile-menu');
+  //     mobileMenu.style.transform = "translateX(0%)";
+  //   } else {
+  //     mobileMenu.style.transform = "translateX(120%)";
+  //   }
+  // }
 
   window.onscroll = function() {
     scrollFunction();
+    // mobileMenu();
   };
 
   function scrollFunction() {

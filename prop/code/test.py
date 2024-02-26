@@ -40,11 +40,13 @@ def generate_html(config_file, template_file, output_file):
         featureTitle=home_data.get('featureTitle', ''),
         features=home_data.get('features', []),
         propertyVideos=home_data.get('propertyVideos', []),
+        floorPlans=home_data.get('floorPlans', []),
         propertyRealtor=home_data.get('propertyRealtor', []),
         inquiry=home_data.get('inquiry', []),
         inquiryButtons=home_data.get('inquiryButtons', []),
         footerDetails=home_data.get('footerDetails', []),
-        footerImage=home_data.get('footerImage', '')
+        footerImage=home_data.get('footerImage', ''),
+        icons=home_data.get('icons', []),
     )
 
     with open(output_file_path, 'w') as output_file:
