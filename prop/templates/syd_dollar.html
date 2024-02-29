@@ -641,6 +641,7 @@
       width: 35vw; 
       box-sizing: border-box;
       outline: none;
+      font-size: 1vw;
     }
     .form-group label {
       text-align: left;
@@ -3525,6 +3526,56 @@ function playVideo(element) {
       closeAllModals();
     });
   });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Wait for the DOM to be fully loaded
+
+    // Function to validate email
+    function isValidEmail(email) {
+      // Regular expression for a valid email address
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+
+    // Function to validate phone number
+    function isValidPhoneNumber(phoneNumber) {
+      // Regular expression for a valid phone number
+      var phoneRegex = /^[0-9\s+]+$/;
+      return phoneRegex.test(phoneNumber);
+    }
+
+    // Function to handle form submission
+    function handleFormSubmit(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+
+      // Create an object to store the form data
+      var formData = {};
+
+      // Loop through each form field and add its value to the formData object
+      document.querySelectorAll('#contactForm input').forEach(function(input) {
+        formData[input.name] = input.value;
+      });
+
+      // Validate email
+      if (formData['email'] && !isValidEmail(formData['email'])) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      // Validate phone number
+      if (formData['phone'] && !isValidPhoneNumber(formData['phone'])) {
+        alert('Please enter a valid phone number.');
+        return;
+      }
+
+      // Log the JSON structure to the console
+      console.log(JSON.stringify(formData, null, 2));
+    }
+
+    // Attach the handleFormSubmit function to the form's submit event
+    document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
+  });
+
   </script>
 </body>
 </html>
