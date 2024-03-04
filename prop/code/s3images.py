@@ -27,6 +27,6 @@ if __name__ == "__main__":
     job_number = input("Enter job number: ")
 
     # Hardcoded bucket name
-    bucket_name = "revastaff-ph"
+    bucket_name = "vizalu"
 
     enumerate_bucket_path(bucket_name, job_number)
