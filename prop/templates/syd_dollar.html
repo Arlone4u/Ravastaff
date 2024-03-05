@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{propertyAddress}}</title>  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -555,7 +556,7 @@
       align-items: center; 
       width: 100%;
       padding: 1%;
-      grid-gap: 4vw;
+      /* grid-gap: 2vw; */
     }
     .realtor-info {
       display: flex;
@@ -668,6 +669,10 @@
       font-size: 1.2vw;
       background-color: white;
       border: .1vw solid black;
+    }
+    .inquiryBtn:hover {
+      background-color: black;
+      color: white;
     }
     .footer {
       background-color: #f0f0f0;
@@ -1100,21 +1105,26 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
+      cursor: pointer;
       bottom: 50%; /* Start from the middle of the viewport */
       left: 0;
       transform: translateY(50%);
     }
-    #share-buttons a {
-      display: inline-block;
-      width: 2.5vw;
-      /* height: 40px; */
+    #share-buttons li {
+      display: flex;
       background-color: #333;
-      color: #fff;
-      font-size: 1vw;
-      text-align: center;
-      line-height: 2vw; 
-      margin-bottom: .2vw;
-      text-decoration: none;
+      /* margin-bottom: .2vw; */
+    }
+    #share-buttons img {
+      width: 1.5vw;
+      margin: .4vw;
+    }
+    #share-buttons li:hover {
+      animation: transition ease-in-out 0.3s;    /* Smooth transition over 0.3 seconds */
+      transform: translateX(0%) scale(1.1); 
+      left: 0;
+      padding-left: .5vw;
+      background-color: white;
     }
 
 /* Ipad*/
@@ -1654,18 +1664,15 @@
       left: 16vw;
       top: 32vw;
     }
-
     .custom-close {
       top: 1vw;
       right: 4vw;
       font-size: 6vw;
     }
-
     .custom-carousel-img {
       width: 100px; 
       margin: 10px;
     }
-
     .custom-prev, .custom-next {
       top: 50%;
       width: auto;
@@ -1674,21 +1681,17 @@
       font-size: 6vw;
       border-radius: 0 3px 3px 0;
     }
-
     .custom-prev {
       right: 50vw;
       top: 54vw;
     }
-
     .custom-next {
       left: 50vw;
       top: 54vw;
     }
-    #share-buttons a {
-      width: 4vw;
-      font-size: 2vw;
-      line-height: 4vw; 
-      margin-bottom: .5vw;
+    #share-buttons img {
+      width: 3vw;
+      margin: .4vw;
     }
 }
 
@@ -2269,11 +2272,9 @@
       left: 81vw;
       top: 72vw;
     }
-    #share-buttons a {
-      width: 8vw;
-      font-size: 4vw;
-      line-height: 8vw; 
-      margin-bottom: 1vw;
+    #share-buttons img {
+      width: 6vw;
+      margin: .4vw;
     }
 }
   </style>
@@ -2607,7 +2608,7 @@
   </section>  
   <section id="7" class="google-maps-section">
     <div class="">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3013.1195413333116!2d-73.71289279999999!3d40.95696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c29108a3e137b7%3A0xc00f0b31bd15b6e4!2s12%20Hannan%20Pl%2C%20Rye%2C%20NY%2010580%2C%20USA!5e0!3m2!1sen!2sph!4v1707282693510!5m2!1sen!2sph" width="1000" height="500" style="border:0;" allowfullscreen="" loading="async" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="{{ googleMapAddress }}" width="1000" height="500" style="border:0;" allowfullscreen="" loading="async" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
   <section>
@@ -2639,7 +2640,7 @@
     <div class="footer">
       <div class="footerDetails" >
         <p class="address-text">{{propertyAddress}}, {{extendedAddress}}</p>
-        <img src={{icons.revaLogo}} class="revaLogo">
+        <img src={{revaLogo}} class="revaLogo">
         <p class="footertext">{{footerDetails.copyright}}. {{ footerDetails.footerDescription}}</p>
       </div>
     </div>
@@ -2647,13 +2648,9 @@
     <footer>                                                                                                                                                                  
       <div  class="socmed">
         <ul>
-          <li> <img src= {{icons.facebookIcon}}></li>
-          <li> <img src={{icons.xIcon}}></li>
-          <li> <img src={{icons.instagramIcon}}></li>
-          <li> <img src={{icons.pinterestIcon}}></li>
-          <li> <img src={{icons.linkedInIcon}}></li>
-          <li> <img src={{icons.emailIcon}}></li>
-          <li> <img src={{icons.tiktokIcon}}></li>
+          {% for platform, details in socialMedias.items() %}
+            <li><a href="{{ details[platform + 'Link'] }}"><img src="{{ details[platform + 'Icon'] }}"></a></li>
+          {% endfor %}
         </ul>
       </div>
     </footer>
@@ -2675,14 +2672,10 @@
 
   </nav>
 
-  <div id="share-buttons">
-    <a class="facebook" target="blank"><i class="fab fa-facebook"></i></a>
-    <a class="twitter" target="blank"><i class="fab fa-twitter"></i></a>
-    <a class="instagram" target="blank"><i class="fab fa-instagram"></i></a>
-    <a class="pinterest" target="blank"><i class="fab fa-pinterest"></i></a>
-    <a class="linkedin" target="blank"><i class="fab fa-linkedin"></i></a>
-    <a class="gmail" target="blank"><i class="fab fa-google-plus"></i></a>
-    <a class="tiktok" target="blank"><i class="fab fa-tiktok"></i></a>
+  <div  id="share-buttons">
+    {% for platform, details in socialShare.items() %}
+      <li><a class="{{platform}}" href=""><img src="{{ details[platform + 'Icon'] }}"></a></li>
+    {% endfor %}
   </div>
 
   <div id="openHouseModal" class="modal">
@@ -2796,208 +2789,208 @@
   </div>
   <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div> -->
 
-  <script>
+<script>
 
-document.addEventListener('DOMContentLoaded', function () {
-      var slideIndex = 1;
-      showSlides(slideIndex);
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("my-slides");
-        if (!slides || slides.length === 0) {
-          console.error("No slides found");
-          return;
-        }
-        if (n > slides.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = slides.length;
-        }
-        for (i = 0; i < slides.length; i++) {
-          if (slides[i] && slides[i].style) {
-            slides[i].style.display = "none";
-          }
-        }
-        if (slides[slideIndex - 1] && slides[slideIndex - 1].style) {
-          slides[slideIndex - 1].style.display = "block";
-        }
-      }
-      document.querySelector('.prev-buttons').addEventListener('click', function (event) {
-        event.stopPropagation();
-        plusSlides(-1);
-      });
-      document.querySelector('.next-buttons').addEventListener('click', function (event) {
-        event.stopPropagation();
-        plusSlides(1);
-      });
-      function closeModals() {
-        console.log('Modal closed');
-      }
-    });
-    
-        var customModal = document.getElementById('customModal');
-        var customModalImg = document.getElementById('customModalImage');
-        var customModalIndex = 0;
-
-        var customModalTriggers = document.querySelectorAll('.custom-modal-trigger');
-
-        customModalTriggers.forEach(function(trigger, index) {
-          trigger.addEventListener('click', function() {
-            var imageSrc = trigger.getAttribute('data-image');
-            customModalIndex = index;
-
-            customModal.style.display = 'block';
-            showCustomImage(imageSrc);
-          });
-        });
-
-        var customCloseBtn = document.querySelector('.custom-close');
-        customCloseBtn.addEventListener('click', function() {
-          customModal.style.display = 'none';
-        });
-
-        window.addEventListener('click', function(event) {
-          if (event.target === customModal) {
-            customModal.style.display = 'none';
-          }
-        });
-
-        function showCustomImage(src) {
-          customModalImg.src = src;
-
-          if (customModalTriggers.length > 1) {
-            var customPrevBtn = document.createElement('a');
-            customPrevBtn.className = 'custom-prev';
-            customPrevBtn.innerHTML = '&#10094;';
-            customPrevBtn.addEventListener('click', function() {
-              navigateCustomSlides(-1);
-            });
-            customModal.appendChild(customPrevBtn);
-
-            var customNextBtn = document.createElement('a');
-            customNextBtn.className = 'custom-next';
-            customNextBtn.innerHTML = '&#10095;';
-            customNextBtn.addEventListener('click', function() {
-              navigateCustomSlides(1);
-            });
-            customModal.appendChild(customNextBtn);
-          }
-        }
-
-        function navigateCustomSlides(direction) {
-          customModalIndex += direction;
-
-          if (customModalIndex >= customModalTriggers.length) {
-            customModalIndex = 0;
-          } else if (customModalIndex < 0) {
-            customModalIndex = customModalTriggers.length - 1;
-          }
-          var newImageSrc = customModalTriggers[customModalIndex].getAttribute('data-image');
-          showCustomImage(newImageSrc);
-        }
-
-    var slideIndexs = 1;
-    showSlidess(slideIndexs);
-
-    function plusSlides(n) {
-      showSlidess(slideIndexs += n);
-    }
-
-    function currentSlide(n) {
-      showSlidess(slideIndexs = n);
-    }
-
-    function showSlidess(n) {
-      var i;
-      var slides = document.getElementsByClassName("my-slides");
-      if (n > slides.length) { slideIndexs = 1; }
-      if (n < 1) { slideIndexs = slides.length; }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slideIndexs - 1].style.display = "block";
-    }
-
-    var modals = document.getElementById("myslideshowModals");
-
-    function openModals(imageSrc) {
-      modals.style.display = "block";
-      showSlidess(slideIndexs);
-    }
-
-    function closeModals() {
-      modals.style.display = "none";
-    }
-
-    document.querySelector(".prev-buttons").addEventListener("click", function() {
-      plusSlides();
-    });
-
-    document.querySelector(".next-buttons").addEventListener("click", function() {
-      plusSlides();
-    });
-      
-
+  document.addEventListener('DOMContentLoaded', function () {
     var slideIndex = 1;
     showSlides(slideIndex);
-
     function plusSlides(n) {
       showSlides(slideIndex += n);
     }
-
     function currentSlide(n) {
       showSlides(slideIndex = n);
     }
-
     function showSlides(n) {
       var i;
-      var slides = document.getElementsByClassName("mySlides");
-      if (n > slides.length) { slideIndex = 1; }
-      if (n < 1) { slideIndex = slides.length; }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      var slides = document.getElementsByClassName("my-slides");
+      if (!slides || slides.length === 0) {
+        console.error("No slides found");
+        return;
       }
-      slides[slideIndex - 1].style.display = "block";
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (i = 0; i < slides.length; i++) {
+        if (slides[i] && slides[i].style) {
+          slides[i].style.display = "none";
+        }
+      }
+      if (slides[slideIndex - 1] && slides[slideIndex - 1].style) {
+        slides[slideIndex - 1].style.display = "block";
+      }
     }
-
-    var modal = document.getElementById("myModal");
-    var img = document.getElementById("imgLink");
-
-    img.onclick = function () {
-      modal.style.display = "block";
-      showSlides(slideIndex);
-    };
-
-    function closeModal() {
-      modal.style.display = "none";
+    document.querySelector('.prev-buttons').addEventListener('click', function (event) {
+      event.stopPropagation();
+      plusSlides(-1);
+    });
+    document.querySelector('.next-buttons').addEventListener('click', function (event) {
+      event.stopPropagation();
+      plusSlides(1);
+    });
+    function closeModals() {
+      console.log('Modal closed');
     }
+  });
+    
+  var customModal = document.getElementById('customModal');
+  var customModalImg = document.getElementById('customModalImage');
+  var customModalIndex = 0;
 
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }, 9000); 
+  var customModalTriggers = document.querySelectorAll('.custom-modal-trigger');
+
+  customModalTriggers.forEach(function(trigger, index) {
+    trigger.addEventListener('click', function() {
+      var imageSrc = trigger.getAttribute('data-image');
+      customModalIndex = index;
+
+      customModal.style.display = 'block';
+      showCustomImage(imageSrc);
+    });
+  });
+
+  var customCloseBtn = document.querySelector('.custom-close');
+  customCloseBtn.addEventListener('click', function() {
+    customModal.style.display = 'none';
+  });
+
+  window.addEventListener('click', function(event) {
+    if (event.target === customModal) {
+      customModal.style.display = 'none';
+    }
+  });
+
+  function showCustomImage(src) {
+    customModalImg.src = src;
+
+    if (customModalTriggers.length > 1) {
+      var customPrevBtn = document.createElement('a');
+      customPrevBtn.className = 'custom-prev';
+      customPrevBtn.innerHTML = '&#10094;';
+      customPrevBtn.addEventListener('click', function() {
+        navigateCustomSlides(-1);
+      });
+      customModal.appendChild(customPrevBtn);
+
+      var customNextBtn = document.createElement('a');
+      customNextBtn.className = 'custom-next';
+      customNextBtn.innerHTML = '&#10095;';
+      customNextBtn.addEventListener('click', function() {
+        navigateCustomSlides(1);
+      });
+      customModal.appendChild(customNextBtn);
+    }
+  }
+
+  function navigateCustomSlides(direction) {
+    customModalIndex += direction;
+
+    if (customModalIndex >= customModalTriggers.length) {
+      customModalIndex = 0;
+    } else if (customModalIndex < 0) {
+      customModalIndex = customModalTriggers.length - 1;
+    }
+    var newImageSrc = customModalTriggers[customModalIndex].getAttribute('data-image');
+    showCustomImage(newImageSrc);
+  }
+
+  var slideIndexs = 1;
+  showSlidess(slideIndexs);
+
+  function plusSlides(n) {
+    showSlidess(slideIndexs += n);
+  }
+
+  function currentSlide(n) {
+    showSlidess(slideIndexs = n);
+  }
+
+  function showSlidess(n) {
+    var i;
+    var slides = document.getElementsByClassName("my-slides");
+    if (n > slides.length) { slideIndexs = 1; }
+    if (n < 1) { slideIndexs = slides.length; }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndexs - 1].style.display = "block";
+  }
+
+  var modals = document.getElementById("myslideshowModals");
+
+  function openModals(imageSrc) {
+    modals.style.display = "block";
+    showSlidess(slideIndexs);
+  }
+
+  function closeModals() {
+    modals.style.display = "none";
+  }
+
+  document.querySelector(".prev-buttons").addEventListener("click", function() {
+    plusSlides();
+  });
+
+  document.querySelector(".next-buttons").addEventListener("click", function() {
+    plusSlides();
+  });
+      
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slides[slideIndex - 1].style.display = "block";
+  }
+
+  var modal = document.getElementById("myModal");
+  var img = document.getElementById("imgLink");
+
+  img.onclick = function () {
+    modal.style.display = "block";
+    showSlides(slideIndex);
+  };
+
+  function closeModal() {
+    modal.style.display = "none";
+  }
+
+  setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+  }, 9000); 
   const images = document.querySelectorAll('.slideshow img');
     let currentIndex = 0;
     function showImage(index) {
-        images.forEach((image, i) => {
-            if (i === index) {
-                image.classList.add('active');
-            } else {
-                image.classList.remove('active');
-            }
-        });
-    }
-    setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }, 9000);
+      images.forEach((image, i) => {
+        if (i === index) {
+            image.classList.add('active');
+        } else {
+            image.classList.remove('active');
+        }
+    });
+  }
+  setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+  }, 9000);
 
   document.addEventListener("DOMContentLoaded", function() {  
   var zoomImages = document.querySelectorAll('.zoomify');
@@ -3017,25 +3010,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-function playVideo(element) {
-      var videoPlayer = element.closest('.propertyCategory').querySelector('video');
-      var source = videoPlayer.querySelector('source');
-      var videoUrl = element.dataset.videoUrl;
-      console.log('Clicked video title:', element.innerText);
-      if (videoUrl) {
-        console.log('Video URL:', videoUrl);
-        videoPlayer.pause();
-        videoPlayer.currentTime = 0;
-        videoPlayer.addEventListener('canplay', function onCanPlay() {
-          videoPlayer.removeEventListener('canplay', onCanPlay);
-          videoPlayer.play();
-        });
-        source.src = videoUrl;
-        videoPlayer.load();
-      } else {
-        console.error('Error: Video URL is undefined.');
-      }
+  function playVideo(element) {
+    var videoPlayer = element.closest('.propertyCategory').querySelector('video');
+    var source = videoPlayer.querySelector('source');
+    var videoUrl = element.dataset.videoUrl;
+    console.log('Clicked video title:', element.innerText);
+    if (videoUrl) {
+      console.log('Video URL:', videoUrl);
+      videoPlayer.pause();
+      videoPlayer.currentTime = 0;
+      videoPlayer.addEventListener('canplay', function onCanPlay() {
+        videoPlayer.removeEventListener('canplay', onCanPlay);
+        videoPlayer.play();
+      });
+      source.src = videoUrl;
+      videoPlayer.load();
+    } else {
+      console.error('Error: Video URL is undefined.');
     }
+  }
 
   window.onscroll = function() {
     scrollFunction();
@@ -3050,7 +3043,6 @@ function playVideo(element) {
       floatingMenu.style.transform = "translateX(120%)";
     }
   }
-
 
   document.getElementById('toggleMenu').addEventListener('click', function() {
     var sideMenu = document.getElementById('sideMenu');
@@ -3186,6 +3178,21 @@ function playVideo(element) {
     // Attach the handleFormSubmit function to the form's submit event
     document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
   });
+
+  const link = encodeURI(window.location.href);
+  const message = encodeURIComponent('Hey, I found this property');
+  const title = encodeURIComponent(document.querySelector('title').textContent);
+
+  console.log([link, message, title]);
+
+  const fb = document.querySelector('.facebook');
+  fb.href = `https://www.facebook.com/share.php?u=${link}`;
+
+  const x = document.querySelector('.x');
+  x.href = `https://www.twitter.com/share?&url=${link}&text=${message}&hashtags=realEstate,property`;
+  
+  const gmail = document.querySelector('.gmail');
+  gmail.href = `https://mail.google.com/mail/u/0/#inbox?compose=new&messagebody=${link}`;
 
   </script>
 </body>

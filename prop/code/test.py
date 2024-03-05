@@ -43,12 +43,15 @@ def generate_html(config_file, template_file, output_file):
         tours=home_data.get('tours', []),
         plans=home_data.get('plans', []),
         propertyRealtor=home_data.get('propertyRealtor', []),
+        googleMapAddress=home_data.get('googleMapAddress', ''),
         inquiry=home_data.get('inquiry', []),
         inquiryButtons=home_data.get('inquiryButtons', []),
         emailRecipient=home_data.get('emailRecipient', ''),
         footerDetails=home_data.get('footerDetails', []),
         footerImage=home_data.get('footerImage', ''),
-        icons=home_data.get('icons', []),
+        socialMedias=home_data.get('socialMedias', []),
+        socialShare=home_data.get('socialShare', []),
+        revaLogo=home_data.get('revaLogo', '')
     )
 
     with open(output_file_path, 'w') as output_file:
