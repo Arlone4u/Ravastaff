@@ -21,6 +21,8 @@ def generate_html(config_file, template_file, output_file):
 
     output_file_path = os.path.join(output_folder, output_file)
 
+    openHouseCount = len(home_data.get('openHouse', []))
+
     with open(template_path, 'r') as template_file:
         template_content = template_file.read()
 
@@ -32,6 +34,7 @@ def generate_html(config_file, template_file, output_file):
         title=home_data.get('title', ''),
         menu=home_data.get('menu', []),
         openHouse=home_data.get('openHouse',[]),
+        openHouseCount=openHouseCount,
         price=home_data.get('price', ''),
         extendedAddress=home_data.get('extendedAddress', ''),
         details=home_data.get('details', []),
