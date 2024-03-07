@@ -132,7 +132,7 @@
       grid-gap: 50px;
       padding: 0;
       z-index: 99;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.435) 20%,rgba(255, 255, 255, 0.086) 100%);
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.435) 20%,rgba(255, 255, 255, 0.0) 100%);
     }
     .title {
       color: white;
@@ -782,6 +782,8 @@
       z-index: 1000;
       top: 60%;
       left: 50vw;
+      width: 100%;
+      height: 100%;
       text-align: center;
       overflow: auto;
       transform: translate(-50%, -50%);
@@ -794,6 +796,9 @@
       margin: 0 auto;
       padding: 2vw;
       text-align: center;
+      width: 30%;
+      max-height: 75%;
+      overflow-y: auto;
     }
     .openHouseModalCard {
       background-color: #F9F9F9;
@@ -2371,9 +2376,7 @@
               <span>@</span>
               <span>{{openHouse.propertyViewing1.start_time}}</span>
             </div>
-            <div class="view-details-cta">
-              + 2 more
-            </div>
+            <div class="view-details-cta"> + {{ openHouseCount - 1}} more </div>
           </a>
         </div>
       </div>
@@ -2569,21 +2572,13 @@
   <div id="openHouseModal" class="modal">
     <div class="modal-content">
       <h2 class="title-text">Open House</h2>
+      {% for key, viewing in openHouse.items() %}
       <div class="openHouseModalCard">
-        <h2>{{openHouse.propertyViewing1.day}} - {{openHouse.propertyViewing1.date}}</h2>
-        <p>{{openHouse.propertyViewing1.brokerInfo}}</p>
-        <p>{{openHouse.propertyViewing1.start_time}} to {{openHouse.propertyViewing1.end_time}}</p>
+        <h2>{{ viewing.day }} - {{ viewing.date }}</h2>
+        <p>{{ viewing.brokerInfo }}</p>
+        <p>{{ viewing.start_time }} to {{ viewing.end_time }}</p>
       </div>
-      <div class="openHouseModalCard">
-        <h2>{{openHouse.propertyViewing2.day}} - {{openHouse.propertyViewing2.date}}</h2>
-        <p>{{openHouse.propertyViewing2.brokerInfo}}</p>
-        <p>{{openHouse.propertyViewing2.start_time}} to {{openHouse.propertyViewing2.end_time}}</p>
-      </div>
-      <div class="openHouseModalCard">
-        <h2>{{openHouse.propertyViewing3.day}} - {{openHouse.propertyViewing3.date}}</h2>
-        <p>{{openHouse.propertyViewing3.brokerInfo}}</p>
-        <p>{{openHouse.propertyViewing3.start_time}} to {{openHouse.propertyViewing3.end_time}}</p>
-      </div>
+      {% endfor %}
     </div>
   </div>
   <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
