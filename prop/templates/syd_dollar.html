@@ -454,6 +454,7 @@
           .carousels img {
               flex: 0 0 auto;
               width: 25vw;
+              height: 16vw;
               margin-right: 1vw;
           }
           #first-carousel {
@@ -604,7 +605,7 @@
       justify-content: center;
       text-align: center;
       background: linear-gradient(180deg,rgba(0, 0, 0, 0.644) 20%,rgba(255,255,255,0) 100%);
-      background-image: url('https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg');
+      background-image: url("{{images.image2}}");
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -994,6 +995,7 @@
     }
     .slideshowModal-images {
       width: 52vw;
+      /* height: 38vw; */
       position: fixed;
       left: 24vw;
       top: 4vw;
@@ -1013,9 +1015,9 @@
       text-decoration: none;
       cursor: pointer;
     }
-    .my-slides {
+    /* .my-slides {
       display: none;
-    }
+    } */
     .prev-buttons, .next-buttons {
       position: absolute;
       top: 50%;
@@ -2095,8 +2097,8 @@
       margin: 0 2vw;
     }
     .socmed li img {
-      width: 8vw;
-      height: 8vw;
+      width: 6vw;
+      height: 6vw;
     }
     .floating-menu {
       top: 8vw;
@@ -2292,18 +2294,9 @@
         </div>
       </div>
       <div class="slideshow">
-        <img class="active" src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2801of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2802of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2803of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2804of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2805of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2806of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2807of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2808of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2809of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2810of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2811of35%29.jpg">
-        <img src="https://revastaff-ph.s3.us-east-1.amazonaws.com/revajobs/12008/new/12%20Hannan%20Pl%20Rye%2C%20NY%2010580%2812of35%29.jpg">
+        {% for image in images.values() %}
+        <img src="{{image}}" >
+        {% endfor %}
       </div>
       <div id="address">{{ propertyAddress }}</div>
 
@@ -2336,61 +2329,40 @@
       <div id="propertyDescription">
         <div class="description">{{propertyDescription}}</div>
         <div class="topPhoto">
-          <img id="imgLink" src="{{ images.image9 }}" class="side-modalImages">
-    
-          <div id="myModal" class="slideshowModal">
-            <span class="closeSlideshow" onclick="closeModal()">&times;</span>
-            <div class="slideshow-modal-content">
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image9 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image10 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image11 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image12 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image1 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image2 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image3 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image4 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image5 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image6 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image7 }}">
-              </div>
-              <div class="mySlides">
-                <img class="slideshowModal-img" src="{{ images.image8 }}">
-              </div>
-          </div>
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-      </div> 
-    </div>
+          <img id="topPhoto" src="{{ images.image5 }}" class="side-modalImages">
+        
+         <div id="myModal" class="slideshowModal">
+           <span class="closeSlideshow" onclick="closeTopPhotoModal()">&times;</span>
+           <div class="slideshow-modal-content">
+             <div class="mySlides">
+              {% for sideImage in images.values() %}
+              <img src="{{ sideImage }}" class="slideshowModal-img">
+              {% endfor %}
+             </div>
+           </div>
+            <a class="prev" onclick="topSlides(-1)">&#10094;</a>
+            <a class="next" onclick="topSlides(1)">&#10095;</a>
+         </div>
+        </div> 
+      </div>
     <div id="propertyDescriptionBottom">
       <div class="bottomPhoto">
-        <img id="imgLink" src="{{ images.image11 }}" class="modalImages" onclick="openModals('{{ images.image11 }}')">
+        <img id="bottomPhoto" src="{{ images.image8 }}" class="modalImages">
+    
+        <div id="myslideshowModals" class="slideshowModals">
+            <span class="slideshow-close-buttons" onclick="closeBottomPhotoModal()">&times;</span>
+            <div class="slideshowModal-contents">
+              <div class="my-slides">
+                {% for bottomImage in images.values() %}
+                <img src="{{ bottomImage }}" class="slideshowModal-images">
+                {% endfor %}
+              </div>
+            </div>
+              <a class="prev-buttons" onclick="bottomSlides(-1)">&#10094;</a>
+              <a class="next-buttons" onclick="bottomSlides(1)">&#10095;</a>
+        </div>
       </div>
       <div class="circle">
-        <!-- <div class="cross cross-1"></div>
-        <div class="cross cross-2"></div>
-        <div class="cross cross-3"></div> -->
         <div class="desc-void">
           <a id="openHouse" overlay-target="open-house">
             <div class="open-house-label"><span>Open</span><span>House</span></div>
@@ -2405,50 +2377,7 @@
           </a>
         </div>
       </div>
-        <div id="myslideshowModals" class="slideshowModals">
-          <span class="slideshow-close-buttons" onclick="closeModals()">&times;</span>
-          <div class="slideshowModal-contents">
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image11 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image12 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image1 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image2 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image3 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image4 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image5 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image6 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image7 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image8 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image9 }}">
-            </div>
-            <div class="my-slides">
-              <img class="slideshowModal-images" src="{{ images.image10 }}">
-            </div>
-          </div>
-            <a class="prev-buttons" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next-buttons" onclick="plusSlides(1)">&#10095;</a>
-          </div>
-        </div>
+    </div>
   </section >
   <section id="2">
     <div id="features">
@@ -2468,56 +2397,18 @@
     <div id="carousel">
       <div class="carousel-container">
         <div class="carousels" id="first-carousel">
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
+          {% for image in images.values() %}
+          <a href="#" class="custom-modal-trigger" data-image="{{ image }}">
+            <img src="{{ image }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5}}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
+          {% endfor %}
         </div>
         <div class="carousels" id="second-carousel">
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image1 }}">
-            <img src="{{ images.image1 }}" alt="Modal Trigger Image" class="custom-carousel-img">
+          {% for image in images.values() %}
+          <a href="#" class="custom-modal-trigger" data-image="{{ image }}">
+            <img src="{{ image }}" alt="Modal Trigger Image" class="custom-carousel-img">
           </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image2 }}">
-            <img src="{{ images.image2 }}" alt="Modal Trigger Image" class="custom-carousel-img">      
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image3 }}">
-            <img src="{{ images.image3 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image4 }}">
-            <img src="{{ images.image4 }}" alt="Modal Trigger Image" class="custom-carousel-img"> 
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image5 }}">
-            <img src="{{ images.image5 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image6 }}">
-            <img src="{{ images.image6 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image7 }}">
-            <img src="{{ images.image7 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
-          <a href="#" class="custom-modal-trigger" data-image="{{ images.image8 }}">
-            <img src="{{ images.image8 }}" alt="Modal Trigger Image" class="custom-carousel-img">
-          </a>
+          {% endfor %}
         </div>
         </div> 
     </div>
@@ -2571,10 +2462,7 @@
             <div class="horizontal-line"></div>
             <div class="floorPlanImage">
               {% for plan_title,image_url in plans.items() %}
-              <!-- <video controls id="videoPlayer" data-video-url="{{ video_url }}"> -->
                 <img src="{{ image_url }}" alt="Floor Plan">
-                <!-- Your browser does not support the video tag. -->
-              <!-- </video> -->
               {% endfor %}
             </div>
           </div>
@@ -2699,142 +2587,76 @@
     </div>
   </div>
   <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
-  <!-- Schedule Tour Modal -->
-  <!-- <div id="scheduleTourModal" class="modal">
-    <div class="modal-content">
-      <h4>Schedule a Tour</h4>
-      <div class="horizontal-line"></div>
-      <div class="modal-card">
-        <label for="appointmentType">APPOINTMENT TYPE </label>
-        <div class="scheduleContainer">
-          <input type="radio" id="inPerson" name="appointmentType" class="appointmentType"><label for="inPerson">In person </label>
-          <input type="radio" id="virtualShowing" name="appointmentType" class="appointmentType"><label for="virtualShowing">Virtual showing </label>
-        </div>
 
-      </div>
-      <div class="modal-card">
-        <label for="appointmentDate">APPOINTMENT DATE </label>
-        <div class="scheduleContainer">
-          <input type="date" id="date" name="appointmentDate" class="preferredTime"><label for="date"></label>
-        </div>
-      </div>
-      <div class="modal-card">
-        <label for="preferredTime">PREFERRED TIME </label>
-        <div class="scheduleContainer">
-          <input type="radio" id="morning" name="preferredTime" class="preferredTime"><label for="morning">Morning </label>
-          <input type="radio" id="afternoon" name="preferredTime" class="preferredTime"><label for="afternoon">Afternoon </label>
-          <input type="radio" id="evening" name="preferredTime" class="preferredTime"><label for="evening">Evening </label>
-        </div>
-      </div>
-      <div class="modal-card">
-        <button class="modalBtn" id="booking">Request this time <i class="material-icons">navigate_next</i></button>
-      </div>
-    </div>
-  </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div> -->
-
-  <!-- Confirm Booking Modal -->
-  <!-- <div id="bookingModal" class="modal">
-    <div class="modal-content">
-      <h4>Schedule Tour </h4>
-      <div class="horizontal-line"></div>
-      <div class="modal-card">
-        <label>In Person<br> Thursday, February 15, 2024<br>Evening</label>
-      </div>
-      <div class="modal-card">
-        <input type="text" placeholder="First Name"> 
-        <input type="text" placeholder="Last Name">
-        <input type="text" placeholder="name@email.com">
-        <input type="text" placeholder="555-555-5555">
-        <input type="text" placeholder="I would like to schedule a showing">
-      </div>
-      <button class="modalBtn" id="confirmation">Confirm Booking</button>
-    </div>
-  </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div>
-
-  <div id="confirmationModal" class="modal">
-    <div class="confirmationModal">
-        <div class="confirmationModal-Content">
-            <a href="#" data-image="{{ images.image1 }}">
-                <img src="{{ images.image1 }}" class="confirmationImage">
-            </a>
-        </div>
-        <div class="confirmationModal-Content">
-            <div class="realtorInfoModal">
-              <div class="text-center"> Your request for a virtual tour has been received.<div>
-                <div class="text-center">We’ll follow up with confirmation shortly.</div>
-                <div class="horizontal-line"></div>
-                <div class="text-center">Requested Date: Thursday, February 15th - EVENING</div>
-                <div class="horizontal-line"></div>
-              <div>
-                {% for realtor, details in propertyRealtor.realtors.items() %}
-                <div class="realtor">
-                     <img src="{{ details.Image }}" alt="Modal Trigger Image" class="confirmationImage2">
-                  <div class="realtorInfoModal"> 
-                    <p class="text">{{ realtor }}</p>
-                    <p class="text">{{ details.Title }}</p>
-                    <p class="text">{{ details.Company }}</p>
-                    <p class="text">{{ details.Phone }}</p>
-                    <p class="text"><a href="mailto:{{ details.Email }}">{{ details.Email }}</a></p>
-                    <p class="text"><a href="{{ details.Web }}">{{ details.Web }}</a></p>
-                    <p class="text">{{ details['License #'] }}</p>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-        </div>
-    </div>
-  </div>
-  <div id="overlay" class="overlay"><span class="close"><i class="material-icons">cancel</i></span></div> -->
 
 <script>
-
-  document.addEventListener('DOMContentLoaded', function () {
-    var slideIndex = 1;
-    showSlides(slideIndex);
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("my-slides");
-      if (!slides || slides.length === 0) {
-        console.error("No slides found");
-        return;
-      }
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-      for (i = 0; i < slides.length; i++) {
-        if (slides[i] && slides[i].style) {
-          slides[i].style.display = "none";
-        }
-      }
-      if (slides[slideIndex - 1] && slides[slideIndex - 1].style) {
-        slides[slideIndex - 1].style.display = "block";
-      }
-    }
-    document.querySelector('.prev-buttons').addEventListener('click', function (event) {
-      event.stopPropagation();
-      plusSlides(-1);
-    });
-    document.querySelector('.next-buttons').addEventListener('click', function (event) {
-      event.stopPropagation();
-      plusSlides(1);
-    });
-    function closeModals() {
-      console.log('Modal closed');
-    }
+  // TOP PHOTO SLIDESHOW
+  document.getElementById('topPhoto').addEventListener('click', function() {
+    const topPhotoModal = document.getElementById('myModal');
+    topPhotoModal.style.display = 'block';
   });
-    
+
+  function closeTopPhotoModal() {
+    const topPhotoModal = document.getElementById('myModal');
+    topPhotoModal.style.display = 'none';
+  }
+
+  var topSlideIndex = 1;
+  showTopSlide(topSlideIndex);
+
+  function topSlides(n) {
+    showTopSlide(topSlideIndex += n);
+  }
+
+  function presentSlide(n) {
+    showTopSlide(topSlideIndex = n);
+  }
+
+  function showTopSlide(n) {
+    var i;
+    var slideTop = document.getElementsByClassName("mySlides")[0].getElementsByTagName("img");
+    if (n > slideTop.length) { topSlideIndex = 1; }
+    if (n < 1) { topSlideIndex = slideTop.length; }
+    for (i = 0; i < slideTop.length; i++) {
+      slideTop[i].style.display = "none";
+    }
+    slideTop[topSlideIndex - 1].style.display = "block";
+  }
+
+  //BOTTOM PHOTO SLIDESHOW
+  document.getElementById('bottomPhoto').addEventListener('click', function() {
+    const bottomPhotoModal = document.getElementById('myslideshowModals');
+    bottomPhotoModal.style.display = 'block';
+  });
+
+  function closeBottomPhotoModal() {
+    const bottomPhotoModal = document.getElementById('myslideshowModals');
+    bottomPhotoModal.style.display = 'none';
+  }
+
+  var bottomSlideIndex = 1;
+  showBottomSlide(bottomSlideIndex);
+
+  function bottomSlides(n) {
+    showBottomSlide(bottomSlideIndex += n);
+  }
+
+  function currentSlide(n) {
+    showBottomSlide(bottomSlideIndex = n);
+  }
+
+  function showBottomSlide(n) {
+    var i;
+    var slideBottom = document.getElementsByClassName("my-slides")[0].getElementsByTagName("img");
+    if (n > slideBottom.length) { bottomSlideIndex = 1; }
+    if (n < 1) { bottomSlideIndex = slideBottom.length; }
+    for (i = 0; i < slideBottom.length; i++) {
+      slideBottom[i].style.display = "none";
+    }
+    slideBottom[bottomSlideIndex - 1].style.display = "block";
+  }
+
+  //CAROUSEL SLIDESHOW
   var customModal = document.getElementById('customModal');
   var customModalImg = document.getElementById('customModalImage');
   var customModalIndex = 0;
@@ -2896,82 +2718,8 @@
     showCustomImage(newImageSrc);
   }
 
-  var slideIndexs = 1;
-  showSlidess(slideIndexs);
 
-  function plusSlides(n) {
-    showSlidess(slideIndexs += n);
-  }
-
-  function currentSlide(n) {
-    showSlidess(slideIndexs = n);
-  }
-
-  function showSlidess(n) {
-    var i;
-    var slides = document.getElementsByClassName("my-slides");
-    if (n > slides.length) { slideIndexs = 1; }
-    if (n < 1) { slideIndexs = slides.length; }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndexs - 1].style.display = "block";
-  }
-
-  var modals = document.getElementById("myslideshowModals");
-
-  function openModals(imageSrc) {
-    modals.style.display = "block";
-    showSlidess(slideIndexs);
-  }
-
-  function closeModals() {
-    modals.style.display = "none";
-  }
-
-  document.querySelector(".prev-buttons").addEventListener("click", function() {
-    plusSlides();
-  });
-
-  document.querySelector(".next-buttons").addEventListener("click", function() {
-    plusSlides();
-  });
-      
-
-  var slideIndex = 1;
-  showSlides(slideIndex);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-  }
-
-  var modal = document.getElementById("myModal");
-  var img = document.getElementById("imgLink");
-
-  img.onclick = function () {
-    modal.style.display = "block";
-    showSlides(slideIndex);
-  };
-
-  function closeModal() {
-    modal.style.display = "none";
-  }
-
+  // HOME IMAGES
   setInterval(() => {
       currentIndex = (currentIndex + 1) % images.length;
       showImage(currentIndex);
@@ -2992,14 +2740,13 @@
       showImage(currentIndex);
   }, 9000);
 
+
+
   document.addEventListener("DOMContentLoaded", function() {  
   var zoomImages = document.querySelectorAll('.zoomify');
   zoomImages.forEach(function (image) {
     var zoomInstance = new Zoomify(image);
       zoomInstance.zoomOut();
-      // setTimeout(function () {
-      //     zoomInstance.zoomOut(); 
-      // }, 2000); 
     }, 1000);
   });
 
@@ -3179,6 +2926,7 @@
     document.getElementById('contactForm').addEventListener('submit', handleFormSubmit);
   });
 
+  // SOCIAL MEDIA SHARING
   const link = encodeURI(window.location.href);
   const message = encodeURIComponent('Hey, I found this property');
   const title = encodeURIComponent(document.querySelector('title').textContent);
@@ -3193,6 +2941,18 @@
   
   const gmail = document.querySelector('.gmail');
   gmail.href = `https://mail.google.com/mail/u/0/#inbox?compose=new&messagebody=${link}`;
+
+  const instagram = document.querySelector('.instagram');
+  instagram.href = `https://instagram.com/direct/new?`;
+
+  webLink = 'https://revastaff.com/production/';
+  const pinterest = document.querySelector('.pinterest');
+  pinterest.href = `https://www.pinterest.com/pin/create/button/?url=${webLink}&description=${message}&title=${title}`;
+  
+  const reddit = document.querySelector('.reddit');
+  reddit.href = `https://www.reddit.com/submit?url=${link}&title=${title}`;
+
+
 
   </script>
 </body>
