@@ -5,7 +5,7 @@ from jinja2 import Template
 def generate_html(config_file, template_file, output_file):
     config_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'config', config_file))
 
-    template_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'templates', template_file))
+    template_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'template', template_file))
 
     try:
         with open(config_path, 'r') as cfg_file:
@@ -63,4 +63,4 @@ def generate_html(config_file, template_file, output_file):
     print(f"Generated HTML saved to: {output_file_path}")
 
 if __name__ == "__main__":
-    generate_html('syd_config.cfg', 'syd_dollar.html', 'syd_final.html')
+    generate_html('config.cfg', 'dollar.html', 'final.html')
