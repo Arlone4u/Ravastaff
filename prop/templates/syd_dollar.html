@@ -5,18 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{propertyAddress}}</title>  
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PTSerif">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/zoomify/2.2.0/zoomify.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -131,7 +127,7 @@
       grid-gap: 50px;
       padding: 0;
       z-index: 99;
-      background: linear-gradient(180deg,rgba(0, 0, 0, 0.435) 20%,rgba(255, 255, 255, 0.086) 100%);
+      background: linear-gradient(180deg,rgba(0, 0, 0, 0.435) 20%,rgba(255, 255, 255, 0) 100%);
     }
     .title {
       color: white;
@@ -197,7 +193,6 @@
       color: white;
       font-size: 32px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
     }
     .slideshow {
       max-width: 100%;
@@ -206,9 +201,6 @@
     }
       @keyframes fade {
         0% {
-            opacity: 1;
-        }
-        100% {
             opacity: 1;
         }
     }
@@ -2249,7 +2241,7 @@
         <div class="form-group">
           {% for field, label in inquiry.inquiryDetails.items() %}
             <label for="{{ field }}">{{ label }} *</label>
-            <input type="text" id="{{ field }}" name="{{ field }}" required>
+            <input type="text" id="{{ field }}" name="{{ field }}" autocomplete="off" required>
           {% endfor %}
         </div>
         <div class="inquiryButton">
@@ -2464,40 +2456,10 @@
       showImage(currentIndex);
   }, 9000);
 
-
-
-  document.addEventListener("DOMContentLoaded", function() {  
-  var zoomImages = document.querySelectorAll('.zoomify');
-  zoomImages.forEach(function (image) {
-    var zoomInstance = new Zoomify(image);
-      zoomInstance.zoomOut();
-    }, 1000);
-  });
-
   function scrollToDescription() {
     const descriptionSection = document.getElementById('description');
     if (descriptionSection) {
       descriptionSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  function playVideo(element) {
-    var videoPlayer = element.closest('.propertyCategory').querySelector('video');
-    var source = videoPlayer.querySelector('source');
-    var videoUrl = element.dataset.videoUrl;
-    console.log('Clicked video title:', element.innerText);
-    if (videoUrl) {
-      console.log('Video URL:', videoUrl);
-      videoPlayer.pause();
-      videoPlayer.currentTime = 0;
-      videoPlayer.addEventListener('canplay', function onCanPlay() {
-        videoPlayer.removeEventListener('canplay', onCanPlay);
-        videoPlayer.play();
-      });
-      source.src = videoUrl;
-      videoPlayer.load();
-    } else {
-      console.error('Error: Video URL is undefined.');
     }
   }
 
@@ -2562,7 +2524,7 @@
   }
 
   window.onclick = function(event) {
-    console.log(event.target);
+    // console.log(event.target);
     if (
         event.target == openHouseModal 
     ) {
@@ -2613,8 +2575,6 @@
   const link = encodeURI(window.location.href);
   const message = encodeURIComponent('Hey, I found this property');
   const title = encodeURIComponent(document.querySelector('title').textContent);
-
-  console.log([link, message, title]);
 
   const fb = document.querySelector('.facebook');
   fb.href = `https://www.facebook.com/share.php?u=${link}`;
