@@ -18,6 +18,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
   <style>
+
     h1 {
       font-size: 6vw;
       margin-bottom: 1vw;
@@ -155,7 +156,7 @@
     }
     #scroll-button {
       position: absolute;
-      bottom: 5%;
+      bottom: 10%;
       right: 11%;
       background-color: rgba(112, 110, 110, 0.477);
       border: 1px solid white;
@@ -184,15 +185,6 @@
       opacity: 1;
       transform: scale(1.1);  
       border: 1px solid white;
-    }
-    #address {
-      position: absolute;
-      display: none;
-      bottom: 50px;
-      left: 240px;
-      color: white;
-      font-size: 32px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
     .slideshow {
       max-width: 100%;
@@ -224,6 +216,32 @@
       }
     .slideshow img.active {
       opacity: 1;
+    }
+    .progress-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4vh;
+      background-color: #F7F7F7;
+    }
+    .bullets {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+    }
+    .bullet {
+      width: 10px;
+      height: 10px;
+      background-color: #999;
+      margin: 0 5px; 
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .bullet.active {
+      background-color: #333; 
     }
     #details {
       display: flex;
@@ -2004,8 +2022,11 @@
       top: 72vw;
     }
     #share-buttons img {
-      width: 6vw;
+      width: 9vw;
       margin: .4vw;
+    }
+    #share-buttons li {
+      padding: 1vw;
     }
 }
   </style>
@@ -2027,11 +2048,16 @@
         <img src="{{image}}" >
         {% endfor %}
       </div>
-      <div id="address">{{ propertyAddress }}</div>
-
       <button id="scroll-button" onclick="scrollToDescription()"> 
         <span><i class="material-icons">south</i></span>
       </button>
+    </div>
+    <div class="progress-bar">
+      <div class="bullets">
+        {% for i in range(images|length) %}
+        <span class="bullet" data-index="{{ i }}"></span>
+        {% endfor %}
+      </div>
     </div>
   </section>
   <section id="offered">
@@ -2434,27 +2460,46 @@
     showCustomImage(newImageSrc);
   }
 
-
-  // HOME IMAGES
-  setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
-  }, 9000); 
+  //HOME
   const images = document.querySelectorAll('.slideshow img');
-    let currentIndex = 0;
-    function showImage(index) {
-      images.forEach((image, i) => {
+  const bulletsContainer = document.querySelector('.progress-bar');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    images.forEach((image, i) => {
+      if (i === index) {
+          image.classList.add('active');
+      } else {
+          image.classList.remove('active');
+      }
+  });
+    updateBullets(index);
+  }
+  function updateBullets(index) {
+    const bullets = bulletsContainer.querySelectorAll('.bullet');
+    bullets.forEach((bullet, i) => {
         if (i === index) {
-            image.classList.add('active');
+            bullet.classList.add('active');
         } else {
-            image.classList.remove('active');
+            bullet.classList.remove('active');
         }
     });
+    bullets.forEach(function (bullet, index) {
+      bullet.addEventListener('click', function () {
+          goToImage(index);
+      });
+    });
   }
+  function goToImage(index) {
+    currentIndex = index;
+    showImage(index);
+  }    
+  showImage(currentIndex);
+
   setInterval(() => {
-      currentIndex = (currentIndex + 1) % images.length;
-      showImage(currentIndex);
-  }, 9000);
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }, 6000);
 
   function scrollToDescription() {
     const descriptionSection = document.getElementById('description');
@@ -2466,7 +2511,6 @@
   window.onscroll = function() {
     scrollFunction();
   };
-
   function scrollFunction() {
     var section2 = document.getElementById("details");
     var floatingMenu = document.querySelector('.floating-menu');
@@ -2507,7 +2551,6 @@
     });
   });
 
-
   var openHouseModal = document.getElementById('openHouseModal');
   var overlay = document.getElementById('overlay');
   var openHouseBtn = document.getElementById("openHouse");
@@ -2524,7 +2567,6 @@
   }
 
   window.onclick = function(event) {
-    // console.log(event.target);
     if (
         event.target == openHouseModal 
     ) {
@@ -2594,8 +2636,6 @@
   
   const reddit = document.querySelector('.reddit');
   reddit.href = `https://www.reddit.com/submit?url=${link}&title=${title}`;
-
-
 
   </script>
 </body>
