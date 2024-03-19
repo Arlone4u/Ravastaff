@@ -247,7 +247,6 @@
       align-items: center;
       text-align: center;
       background-color: #F7F7F7;
-      padding: 2vw 0;
     }
     .price {
       display: flex;
@@ -269,8 +268,8 @@
       text-align: center;
       padding: 0 1vw;
     }
-    .material-icons {
-      font-size: 2vw;
+    .detail-item .material-icons {
+      font-size: 3vw;
     }
     #description {
       display: flex;
@@ -335,13 +334,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 20vw;
-      height: 20vw;
+      width: 30vw;
+      height: 30vw;
       background: #fff;
       text-align: center;
       border-radius: 50%;
       font-size: 3vw;
-      z-index: 2;
       border: 2px solid black;
     }
     .open-house-label {
@@ -685,8 +683,8 @@
       margin: 0.5vw 1vw;
     }
     .socmed li img {
-      width: 1.5vw;
-      height: 1.5vw;
+      width: 35px;
+      height: 35px;
     }
     a {
       text-decoration: none;
@@ -706,7 +704,7 @@
       padding: .5vw;
       box-shadow: 0 0 1vw rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease; 
-      transform: translateX(120%);
+      transform: translateX(150%);
     }
     .sideMenuTitle {
       cursor: pointer;
@@ -714,7 +712,7 @@
       justify-content: space-around;
       color: #000;
     }
-    .sideMenuTitle p, .material-icons {
+    .sideMenuTitle p, .sideMenuTitle .material-icons {
       font-size: 1vw;
       margin: 0 auto;
     }
@@ -743,7 +741,7 @@
       justify-content: flex-end;
     }
     .sideMenu i.material-icons {
-      font-size: 2vw;
+      font-size: 2=vw;
       width: 0;
     }
     .modal {
@@ -987,13 +985,14 @@
       bottom: 50%; 
       left: 0;
       transform: translateY(50%);
+      z-index: 99;
     }
     #share-buttons li {
       display: flex;
       background-color: #333;
     }
     #share-buttons img {
-      width: 1.5vw;
+      width: 40px;
       margin: .4vw;
     }
     #share-buttons li:hover {
@@ -1005,7 +1004,7 @@
     }
 
 /* Ipad*/
-@media only screen and (min-device-width: 451px) and (max-device-width: 1000px) {
+@media only screen and (min-device-width: 451px) and (max-device-width: 1100px) {
    .title-text {
       font-size: 6vw;
       padding: 0;
@@ -1080,12 +1079,11 @@
       flex-direction: row;
       align-items: center;
       grid-gap: 5px;
-      z-index: 998;
     }
     .title {
       font-size: 6vw;
       justify-content: flex-start;
-      margin: 3% 1% 0 4%;
+      margin: 3% 1% 0 8%;
     }
     .sideMenu {
       top: 0;
@@ -1121,7 +1119,7 @@
     #details {
       justify-content: center;
       max-height: 100%;
-      padding: 4vw 0 6vw 0;
+      padding: 4vw 0 4vw 0;
       grid-gap: 2vw;
     }
     .detail-item {
@@ -1132,7 +1130,7 @@
       justify-content: center;
     }
     .detail-item .material-icons {
-      font-size: 3vw;
+      font-size: 6vw;
     }
     .propertyAddress {
       justify-content: center;
@@ -1229,7 +1227,8 @@
     }
     .carousels img {
         flex: 0 0 auto;
-        width: 32vw;
+        width: 50vw;
+        height: 32vw;
         margin-right: 1vw;
     }
     #first-carousel {
@@ -1362,8 +1361,8 @@
       margin: 0 2vw;
     }
     .socmed li img {
-      width: 5vw;
-      height: 5vw;
+      width: 35px;
+      height: 35px;
     }
     .floating-menu {
       top: 5vw;
@@ -1371,7 +1370,7 @@
       width: 14vw;
       padding: 1vw;
     }
-    .sideMenuTitle p, .material-icons {
+    .sideMenuTitle p, .sideMenuTitle .material-icons {
       font-size: 2.5vw;
     }
     .sideMenu {
@@ -1509,7 +1508,7 @@
       top: 54vw;
     }
     #share-buttons img {
-      width: 3vw;
+      width: 40px;
       margin: .4vw;
     }
 }
@@ -1594,12 +1593,11 @@
       flex-direction: row;
       align-items: center;
       grid-gap: 5px;
-      z-index: 998;
     }
     .title {
       font-size: 8vw;
       justify-content: flex-start;
-      margin: 3% 1% 0 4%;
+      margin: 3% 1% 0 8%;
     }
     .floating-menu {
       width: 22vw;
@@ -1636,7 +1634,6 @@
     #details {
       justify-content: center;
       max-height: 100%;
-      padding: 30px 20px;
       grid-gap: 20px;
       position: relative;
     }
@@ -1648,13 +1645,13 @@
       justify-content: center;
     }
     .detail-item .material-icons {
-      font-size: 6vw;
+      font-size: 9vw;
     }
     .propertyAddress {
       justify-content: center;
       display: flex;
       font-size: 8vw;
-      margin: 20vw 0 10vw 0;
+      margin: 5vw 0 10vw 0;
     }
     #propertyDescription {
       justify-content: center;
@@ -1689,8 +1686,8 @@
     .desc-void {
       justify-content: center;
       border: 2px solid black;
-      width: 80vw;
-      height: 80vw;
+      width: 70vw;
+      height: 70vw;
       font-size: 10vw;
     }
     .open-house-preview {
@@ -1753,7 +1750,8 @@
     }
     .carousels img {
       flex: 0 0 auto;
-      width: 30vw;
+      width: 50vw;
+      height: 32vw;
       margin-right: 1vw;
     }
     #first-carousel {
@@ -1894,7 +1892,7 @@
       width: 25vw;
       padding: 2.5vw;
     }
-    .sideMenuTitle p, .material-icons {
+    .sideMenuTitle p, .sideMenuTitle .material-icons {
       font-size: 4vw;
       width: auto;
     }
@@ -2025,7 +2023,7 @@
       top: 72vw;
     }
     #share-buttons img {
-      width: 9vw;
+      width: 7vw;
       margin: .4vw;
     }
     #share-buttons li {
@@ -2125,6 +2123,7 @@
       </div>
       <div class="circle">
         <div class="desc-void">
+          {% if openHouse %}
           <a id="openHouse" overlay-target="open-house">
             <div class="open-house-label"><span>Open</span><span>House</span></div>
             <div class="open-house-preview">
@@ -2132,8 +2131,20 @@
               <span>@</span>
               <span>{{openHouse.propertyViewing1.start_time}}</span>
             </div>
+            {% if openHouseCount > 1 %}
             <div class="view-details-cta"> + {{ openHouseCount - 1}} more </div>
+            {% endif %}
           </a>
+          {% endif %}
+
+          {% if not openHouse %}
+          <a overlay-target="open-house">
+            <div class="open-house-label"><span>{{propertyAddress}}</span></div>
+            <div class="open-house-preview">
+              <span>{{extendedAddress}}</span>
+            </div>
+          </a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -2523,7 +2534,7 @@
     if (document.body.scrollTop > section2.offsetTop || document.documentElement.scrollTop > section2.offsetTop) {
       floatingMenu.style.transform = "translateX(0%)";
     } else {
-      floatingMenu.style.transform = "translateX(120%)";
+      floatingMenu.style.transform = "translateX(150%)";
     }
   }
 
